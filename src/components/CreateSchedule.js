@@ -2,11 +2,11 @@
 
 
 export default function NewSchedule() {
-    return (
-        <div>
-            {/* html för formulär
-            
+  return (
+    <div>
+      {/* html för formulär
+      
             */}
-        </div>
-    )
+    </div>
+  )
 }
