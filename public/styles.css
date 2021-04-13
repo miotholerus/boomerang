@@ -34,6 +34,14 @@ body {
 .container {
   background-color: #c5c5c5;
   padding: 10px;
+  margin: 7px;
+}
+.group-box {
+  border-radius: 10px;
+  
+}
+.create-schedule-box {
+  margin: 33px;
 }
 ul {
   list-style-type: none;
@@ -63,10 +71,4 @@ i.li-user-icon {
 }
 li {
   display: block;
-}
-.group-box {
-  border-radius: 10px;
-}
-.create-schedule-box {
-  margin: 33px;
 }
