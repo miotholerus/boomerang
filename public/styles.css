@@ -2,7 +2,7 @@
 /*
 h2 - Välkommen till
 h3 - Skapa grupp, Skapa körschema
-h4 - Grupper, Körschema, (Fotbollsgruppen)
+h4 - Grupper, Körschema, (Fotbollsgruppen?)
 h5/p - Namn på grupp:
 h1 - Inbjudan är skickad! Grattis!
 */
@@ -29,19 +29,15 @@ body {
 }
 .header {
   background-color: #afafaf;
-  padding: 5px;
+  padding: 7px;
+  position: absolute;
+  height: 33px;
+  width: 100%;
 }
 .container {
   background-color: #c5c5c5;
-  padding: 10px;
+  padding: 8px;
   margin: 7px;
-}
-.group-box {
-  border-radius: 10px;
-  
-}
-.create-schedule-box {
-  margin: 33px;
 }
 ul {
   list-style-type: none;
@@ -71,4 +67,75 @@ i.li-user-icon {
 }
 li {
   display: block;
+}
+.group-box {
+  border-radius: 10px;
+}
+.create-schedule-box {
+  margin: 33px;
+}
+
+.side-by-side {
+  
+  background-color: #c5c5c5;
+  /* width: 100%; */
+  /* float: left; */
+  /* height: 0px; */
+  /* width: 50%; */
+  /* padding: 0 10px; */
+}
+.column1 {
+  width: 44px; height: 44px; float: left;
+  text-align: center;
+  vertical-align: middle;
+}
+.column2 {
+  margin-left: 44px; height: 44px;
+}
+
+.sub-header {
+  /* position: absolute; */
+  width: 100%; /*375*/
+  height: 85px;
+  left: 0px;
+  top: 0px;
+}
+.form {
+  border-radius: 10px;
+}
+input {
+  padding-left: 11px;
+}
+.standard-input {
+  /* position: absolute; */
+  width: 333px;
+  height: 50px;
+  /* left: 19px; */
+  top: 438px;
+  border-radius: 10px;
+  border: 1px;
+  margin-bottom: 10px;
+}
+.input-side-by-side {
+  width: 345px;
+}
+.small-input {
+  
+  width: 156px;
+  height: 40px;
+  /* left: 20px; */
+  top: 543px;
+  border-radius: 10px;
+  border: 1px;
+}
+#aktivitetens-start {
+  margin-right: 4px;
+}
+#aktivitetens-slut {
+  margin-left: 3px;
+}
+.create-schedule {
+  position: absolute;
+  top: 33px
+
 }

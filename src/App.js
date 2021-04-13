@@ -1,4 +1,5 @@
-// import './App.css';
+import futbol from './futbol-solid.svg';
+import logo from './logo.svg';
 // $ npm install --save react-router-dom
 // import { BrowserRouter, Route, Link } from "react-router-dom";
 import GroupCreated from './components/GroupCreated';
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="App">
       {/* Router */}
-        <GroupCreated />
+        {/* <GroupCreated /> */}
         <CreateSchedule />
         <ViewSchedule />
       {/* Router */}
