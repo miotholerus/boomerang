@@ -1,0 +1,72 @@
+﻿
+/*
+h2 - Välkommen till
+h3 - Skapa grupp, Skapa körschema
+h4 - Grupper, Körschema, (Fotbollsgruppen)
+h5/p - Namn på grupp:
+h1 - Inbjudan är skickad! Grattis!
+*/
+p {
+  /* position: absolute; */
+  /* width: 103px; */
+  /* height: 18px; */
+  /* left: 17px; */
+  /* top: 224px; */
+
+  /* font-family: Roboto; */
+  /* font-style: normal; */
+  /* font-weight: normal; */
+  font-size: 15px;
+  line-height: 18px;
+
+  /* identical to box height */
+  /* text-align: center; */
+  letter-spacing: -0.333333px;
+}
+body {
+  font-size: larger;
+  font-family: "roboto";
+}
+.header {
+  background-color: #afafaf;
+  padding: 5px;
+}
+.container {
+  background-color: #c5c5c5;
+  padding: 10px;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.right {
+  text-align: right;
+  text-align: end;
+}
+.button-v3 {
+  /* top: 50%; */
+  left: 50%;
+  /* -ms-transform: translate(-50%, -50%); */
+  transform: translate(-50%, -0%);
+  position: relative;
+  border: none;
+  margin-bottom: 10px;
+  padding: 16px;
+  border-radius: 33px;
+  
+  /* text-align: center; */
+}
+i.li-user-icon {
+  /* height: 33px; */
+  /* width: 33px; */
+  font-size: 33px;
+}
+li {
+  display: block;
+}
+.group-box {
+  border-radius: 10px;
+}
+.create-schedule-box {
+  margin: 33px;
+}

@@ -1,6 +1,6 @@
 import './App.css';
 // $ npm install --save react-router-dom
-import { BrowserRouter, Route, Link } from "react-router-dom";
+//import { BrowserRouter, Route, Link } from "react-router-dom";
 import GroupCreated from './components/GroupCreated';
 import CreateSchedule from './components/CreateSchedule';
 import ViewSchedule from './components/ViewSchedule';
@@ -14,10 +14,11 @@ function App() {
   return (
     <div className="App">
       {/* Router */}
-      <GroupCreated />
-      <CreateSchedule />
-      <ViewSchedule />
-    </div>
+        <GroupCreated />
+        <CreateSchedule />
+        <ViewSchedule />
+      {/* Router */}
+      </div>
   );
 }
 
