@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+// $ npm install --save react-router-dom
+import { BrowserRouter, Route, Link } from "react-router-dom";
+// or? put this in index.html
+// <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
+// or? just this
+const ReactRouterDOM = window.ReactRouterDOM; // contains functions BrowserRouter, Route, Link
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
