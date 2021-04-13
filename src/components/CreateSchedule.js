@@ -9,7 +9,7 @@ export default function CreateSchedule() {
             <span class="my-account right">Siri</span>
             <i class="fa fa-user-circle right menu-user-icon"></i>
       
-            <div class="container group-box">
+            <div class="container group-box"/>
               <h3>Skapa körschema</h3>
               <label for="destination">Fyll i destination:</label>
               <input type="text" id="destination"></input>
