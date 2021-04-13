@@ -1,6 +1,6 @@
 ﻿import React from 'react'
 
-export default function ViewSchedule() {
+export default function GroupCreated() {
     return (
         <div>
             

@@ -1,12 +1,12 @@
 ﻿import React from 'react'
 
 
-export default function NewSchedule() {
+export default function CreateSchedule() {
   return (
     <div>
       {/* html för formulär
       
-            */}
+      */}
     </div>
   )
 }
