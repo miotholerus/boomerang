@@ -2,6 +2,9 @@
 
 
 export default function CreateSchedule() {
+  function createTheSchedule(){
+
+  }
   return (
 
 
@@ -13,17 +16,11 @@ export default function CreateSchedule() {
           <label for="container create-schedule-box"><br></br>Fyll i destination: </label>
           <input type="text" class="s" name="new" />
           <br></br><br></br>
-
         </form>
       </div>
 
-  
-      <button onclick="CreateSchedule()" class="dropbtn">Välj dag för skjustning</button>
-      
-        
-      
-      <div className="s">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <div className="s">
+      <button onclick={() =>createTheSchedule()}  class="dropbtn">Välj dag för skjustning</button>
         <label for="container create-schedule-box">Måndag</label>
         <input type="radio" className="s" name="new" /><br></br>
         <label for="container create-schedule-box">Tisdag</label>
@@ -38,9 +35,7 @@ export default function CreateSchedule() {
         <input type="radio" className="s" name="new" /><br></br>
         <label for="container create-schedule-box">Söndag</label>
         <input type="radio" className="s" name="new" /><br></br>
-  
       </div>
- 
     </div>
   )
 }
