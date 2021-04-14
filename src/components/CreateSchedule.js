@@ -30,7 +30,18 @@ export default function CreateSchedule() {
             
               <input className="standard-input" placeholder="Fyll i destinationen" id="fyll-i-destination"></input>
               <br></br>
-              <input className="standard-input" placeholder="Välj dag för skjutsning" id="valj-dag-for-skjutsning"></input>
+              <input className="standard-input" ></input>
+              
+              <select placeholder="Välj dag för skjutsning" id="valj-dag-for-skjutsning">
+                <option value="måndag">Måndag</option>
+                <option value="tisdag">Tisdag</option>
+                <option value="onsdag">Onsdag</option>
+                <option value="torsdag">Torsdag</option>
+                <option value="fredag">Fredag</option>
+                <option value="lördag">Lördag</option>
+                <option value="söndag">Söndag</option>
+              </select>
+              
               <br></br>
               <input className="standard-input" placeholder="Välj antal veckor" id="valj-antal-veckor"></input>
             
