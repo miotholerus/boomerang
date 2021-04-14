@@ -21,6 +21,7 @@ function App() {
   // schedule ska bli en array/json med all info schemat behöver
   // Behövs en Schedule-komponent? En komponent per skjutstillfälle?
 
+  
 
   return (
     <div className="App">
@@ -29,7 +30,9 @@ function App() {
       
       {/* <GroupCreated /> */}
     
-      <CreateSchedule schedule={schedule}/>  
+      <CreateSchedule schedule={schedule} setSchedule={setSchedule} />
+
+
     
       {/* <ViewSchedule /> */}
 

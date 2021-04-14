@@ -11,18 +11,18 @@
         "ordning-for-chaufforer": [
             {
                 "tillfalle": "Tis 8 mars",
-                "till-aktivitet": "Siri",
-                "fran-aktivitet": "Siri"
+                "tillaktivitet": "Siri",
+                "franaktivitet": "Siri"
             },
             {
                 "tillfalle": "Tis 15 mars",
-                "till-aktivitet": "Peter",
-                "fran-aktivitet": "Peter"
+                "tillaktivitet": "Peter",
+                "franaktivitet": "Peter"
             },
             {
                 "tillfalle": "Tis 22 mars",
-                "till-aktivitet": "Hanna",
-                "fran-aktivitet": "Hanna"
+                "tillaktivitet": "Hanna",
+                "franaktivitet": "Hanna"
             }
         ]
     }

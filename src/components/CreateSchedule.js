@@ -2,6 +2,7 @@
 import React from 'react'
 import Header from './Header'
 
+
 function Football() {
   return (
     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="futbol" className="svg-inline--fa fa-futbol fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -10,7 +11,26 @@ function Football() {
   )
 }
 
-export default function CreateSchedule() {
+export default function CreateSchedule({schedule, setSchedule}) {
+  
+
+  function saveSchedule(e) {
+    alert("Kör saveSchedule");
+    // const starttid = starttidRef.current.value;
+
+    const starttid = document.getElementById("starttid");
+    const sluttid = document.getElementById("sluttid");
+    const adress = document.getElementById("adress-for-destination").value;
+    const veckodag = document.getElementById("veckodag").value;
+    const upprepa = document.getElementById("upprepa").value;
+
+
+    // if (starttid === '') return;
+
+    alert(starttid+" "+sluttid+" "+adress+" "+veckodag);
+
+  }
+
   return (
     <div>
       <Header/>
@@ -32,22 +52,24 @@ export default function CreateSchedule() {
 
             <div className="input-side-by-side">
               <input type="time" className="small-input input-left" placeholder="Starttid kl." id="starttid"></input>
-
+              
               <input type="time" className="small-input input-right" placeholder="Sluttid kl." id="sluttid"></input>
+              <button onClick={saveSchedule}>Spara</button>
             </div>
 
             <input className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
             
+            
             <div className="input-side-by-side">
-              <select className="small-input option-list input-left" id="veckodag">
+              <select defaultValue="Veckodag" className="small-input option-list input-left" id="veckodag">
                 <option id="option-placeholder" value="" disabled selected>Veckodag</option>
-                <option value="måndag">Måndag</option>
-                <option value="tisdag">Tisdag</option>
-                <option value="onsdag">Onsdag</option>
-                <option value="torsdag">Torsdag</option>
-                <option value="fredag">Fredag</option>
-                <option value="lördag">Lördag</option>
-                <option value="söndag">Söndag</option>
+                <option value="Måndag">Måndag</option>
+                <option value="Tisdag">Tisdag</option>
+                <option value="Onsdag">Onsdag</option>
+                <option value="Torsdag">Torsdag</option>
+                <option value="Fredag">Fredag</option>
+                <option value="Lördag">Lördag</option>
+                <option value="Söndag">Söndag</option>
               </select>
 
               <select className="small-input option-list input-right" id="upprepa">
