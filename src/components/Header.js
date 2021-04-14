@@ -2,11 +2,11 @@
 
 export default function Header() {
   return (
-    <div class="header">
-      <i class="fa fa-bars"></i>
-      <span class="banner">Boomerang</span>
-      <span class="my-account right">Siri</span>
-      <i class="fa fa-user-circle right menu-user-icon"></i>
+    <div className="header">
+      <i className="fa fa-bars"></i>
+      <span className="banner"> Boomerang </span>
+      <span className="my-account right">Siri </span>
+      <i className="fa fa-user-circle right menu-user-icon"></i>
     </div>
   )
 }
