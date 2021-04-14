@@ -1,0 +1,29 @@
+﻿[
+    {
+        "id": "SAMPLE",
+        "starttid": "17:00",
+        "sluttid": "19:00",
+        "adress-for-destination": "Fyrishovshallen, Solvägen 21",
+        "veckodag": "tisdag",
+        "upprepa": "varje-vecka",
+        "startdatum": "2021-04-13",
+        "slutdatum": "2021-05-23",
+        "ordning-for-chaufforer": [
+            {
+                "tillfalle": "Tis 8 mars",
+                "till-aktivitet": "Siri",
+                "fran-aktivitet": "Siri"
+            },
+            {
+                "tillfalle": "Tis 15 mars",
+                "till-aktivitet": "Peter",
+                "fran-aktivitet": "Peter"
+            },
+            {
+                "tillfalle": "Tis 22 mars",
+                "till-aktivitet": "Hanna",
+                "fran-aktivitet": "Hanna"
+            }
+        ]
+    }
+]

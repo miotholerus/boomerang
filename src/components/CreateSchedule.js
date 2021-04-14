@@ -15,39 +15,90 @@ export default function CreateSchedule() {
     <div>
       <Header/>
       <div className="page-content">
-        <div className="sub-header side-by-side">
-          <div className="icon-column"> 
+        <div className="sub-header-football">
+          <div className="football-column"> 
             <Football/>
           </div>
           <div className="group-column"> 
-            <p>Fotbollsgruppen<br></br>
-            Peter, Hanna, Siri</p>
+            Fotbollsgruppen<br></br>
+            Peter, Hanna, Siri
           </div>
         </div>
         <form className="container form">
-          <div>
-            <h3>Skapa körschema</h3>
+        
+          <h3>Skapa gruppens körschema</h3>
+          <div className="aktivitet">
+            <p>Aktivitet</p>
+
+            <div className="input-side-by-side">
+              <input type="time" className="small-input input-left" placeholder="Starttid kl." id="starttid"></input>
+
+              <input type="time" className="small-input input-right" placeholder="Sluttid kl." id="sluttid"></input>
+            </div>
+
+            <input className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
             
-              <input className="standard-input" placeholder="Fyll i destinationen" id="fyll-i-destination"></input>
-              <br></br>
-              <input className="standard-input" placeholder="Välj dag för skjutsning" id="valj-dag-for-skjutsning"></input>
-              <br></br>
-              <input className="standard-input" placeholder="Välj antal veckor" id="valj-antal-veckor"></input>
-            
+            <div className="input-side-by-side">
+              <select className="small-input option-list input-left" id="veckodag">
+                <option id="option-placeholder" value="" disabled selected>Veckodag</option>
+                <option value="måndag">Måndag</option>
+                <option value="tisdag">Tisdag</option>
+                <option value="onsdag">Onsdag</option>
+                <option value="torsdag">Torsdag</option>
+                <option value="fredag">Fredag</option>
+                <option value="lördag">Lördag</option>
+                <option value="söndag">Söndag</option>
+              </select>
+
+              <select className="small-input option-list input-right" id="upprepa">
+                <option id="option-placeholder" value="" disabled selected>Upprepa</option>
+                <option value="upprepa-inte">Upprepa inte</option>
+                <option value="varje-dag">Varje dag</option>
+                <option value="varje-vecka">Varje vecka</option>
+              </select>
+            </div>
           </div>
-          <div>
+
+          <div className="schema">
+            <p>Schema</p>
+
+            <div className="input-side-by-side">
+              <input type="date" className="small-input input-left" placeholder="Startdatum" id="startdatum"></input>
+
+              <input type="date" className="small-input input-right" placeholder="Slutdatum" id="slutdatum"></input>
+            </div>
+          </div>
+          
+          <div className="skjutsning">
+            <p>Skjutsning</p>
+
+            {/* Avancerat, egen komponent? */}
+            <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+              <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
+              <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
+              <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
+              <option value="op3">Tillfälle 3 | Till aktivitet... | Från aktivitet...</option>
+            </select>
+            <select className="standard-input option-list input-left" id="upphamtning-avlamning">
+              <option id="option-placeholder" value="" disabled selected>Upphämtning/avlämning</option>
+              <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
+              <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
+              <option value="op3">Tillfälle 3 | Till aktivitet... | Från aktivitet...</option>
+            </select>
+          </div>
+          {/* <div>
             <p>Tid för aktivitet:</p>
             
-              <div className="input-side-by-side">
-                <input className="small-input" placeholder="Aktivitetens start" id="aktivitetens-start"></input>
-                
-                <input className="small-input" placeholder="Aktivitetens slut" id="aktivitetens-slut"></input>
-              </div>
+
+
               
+              
+
+
               <br></br>
               <input className="standard-input" placeholder="Välj ordning för chaufförer" id="valj-ordning-for-chaufforer"></input>
             
-          </div>
+          </div> */}
           <div id="upphamtningslista">
             <h5>Upphämtningslista:</h5>
           </div>
