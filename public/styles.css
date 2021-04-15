@@ -124,6 +124,7 @@ i.li-user-icon {
 
 
 .button-v3 {
+  
   /* top: 50%; */
   left: 50%;
   /* -ms-transform: translate(-50%, -50%); */
@@ -133,6 +134,12 @@ i.li-user-icon {
   margin-bottom: 10px;
   padding: 16px;
   border-radius: 33px;
+
+  display: inline-block;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+
   
   /* text-align: center; */
 }
