@@ -13,43 +13,49 @@ function Football() {
   )
 }
 
-function SaveButton() {
-  let history = useHistory();
 
-  // spara här
-
-  function gotoViewSchedule() {
-    history.push("/viewschedule")
-  }
-
-  return (
-    <button type="button" className="button-v3" onClick={gotoViewSchedule}>Gå vidare</button>
-  )
-}
 
 export default function CreateSchedule({schedule, setSchedule}) {
+  
   let history = useHistory();
 
+  function SaveButton() {
+
+    function SaveSchedule(e) {
+      // spara här
+      alert("Kör saveSchedule");
+      // const starttid = starttidRef.current.value;
   
-  function saveSchedule(e) {
-    alert("Kör saveSchedule");
-    // const starttid = starttidRef.current.value;
+      const starttid = document.getElementById("starttid");
+      const sluttid = document.getElementById("sluttid");
+      const adress = document.getElementById("adress-for-destination");
+      const veckodag = document.getElementById("veckodag");
+      const upprepa = document.getElementById("upprepa");
+      const startdatum = document.getElementById("startdatum");
+      const slutdatum = document.getElementById("slutdatum");
 
-    const starttid = document.getElementById("starttid");
-    const sluttid = document.getElementById("sluttid");
-    const adress = document.getElementById("adress-for-destination");
-    const veckodag = document.getElementById("veckodag");
-    const upprepa = document.getElementById("upprepa");
-
-    // if (starttid === '') return;
-    // alert(starttid+" "+sluttid+" "+adress+" "+veckodag);
-
-    const newSchedule = [starttid, sluttid, adress, veckodag, upprepa];
+  
+      // if (starttid === '') return;
+      alert(starttid.value+" "+sluttid.value+" "+adress.value+" "+veckodag.value+" "+upprepa.value+" "+startdatum.value+" "+slutdatum.value);
+  
+      const newSchedule = [starttid, sluttid, adress, veckodag, upprepa];
+      
+      setSchedule(newSchedule);
+  
+  
+      
     
-    setSchedule(newSchedule);
-    
+      function gotoViewSchedule() {
+        history.push("/viewschedule")
+      }
+  
+      gotoViewSchedule();
+      
+    }
 
-
+    return (
+      <button type="button" className="button-v3" onClick={SaveSchedule}>Gå vidare</button>
+    )
   }
 
   return (
