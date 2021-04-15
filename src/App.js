@@ -1,25 +1,43 @@
 import futbol from './futbol-solid.svg';
 import logo from './logo.svg';
-// $ npm install --save react-router-dom
-// import { BrowserRouter, Route, Link } from "react-router-dom";
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link
+} from "react-router-dom";
+
 import GroupCreated from './components/GroupCreated';
 import CreateSchedule from './components/CreateSchedule';
 import ViewSchedule from './components/ViewSchedule';
-// or? put this in index.html
-// <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
-// or? just this
-// const ReactRouterDOM = window.ReactRouterDOM; // contains functions BrowserRouter, Route, Link
+
+import {useState} from 'react'
+// import StateComponent from './StateComponent'
 
 function App() {
+  
+  const [schedule, setSchedule] = useState([])
+  // setSchedule varje gång schemat ändras, börjar tomt
+  // schedule ska bli en array/json med all info schemat behöver
+  // Behövs en Schedule-komponent? En komponent per skjutstillfälle?
+
+  
 
   return (
     <div className="App">
-      {/* Router */}
-        {/* <GroupCreated /> */}
-        <CreateSchedule />
-        <ViewSchedule />
-      {/* Router */}
-      </div>
+      {/* {state}
+      <StateComponent setState={setState}/> */}
+      
+      {/* <GroupCreated /> */}
+    
+      <CreateSchedule schedule={schedule} setSchedule={setSchedule} />
+
+
+    
+      {/* <ViewSchedule /> */}
+
+    </div>
   );
 }
 
