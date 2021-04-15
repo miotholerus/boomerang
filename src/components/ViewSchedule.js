@@ -3,10 +3,13 @@ import Header from './Header'
 import RideOccation from './RideOccation'
 
 export default function ViewSchedule({schedule}) {
+    const loadedSchedule = [...schedule];
+    loadedSchedule
+
     return (
         <div>
             <Header/>
-            
+
         </div>
         // egentligen bör vi hämta och mappa en lista av occations ur schedule, snarare än direkt över schedule
         // schedule.map(occation => {
