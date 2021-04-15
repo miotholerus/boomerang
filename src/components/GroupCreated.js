@@ -27,7 +27,7 @@ export default function GroupCreated() {
         </ul>
       </div>
       <br></br>
-      <div className="container create-schedule-box">
+      <div className="container before-create-schedule-box">
         <p>Vill du skapa körschema?</p>
         <p><a href="">Hoppa över</a></p>
         <button className="button-v3" id="create-schedule">Skapa körschema</button>

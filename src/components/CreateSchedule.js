@@ -1,6 +1,8 @@
 ﻿
 import React from 'react'
 import Header from './Header'
+import ViewSchedule from './ViewSchedule'
+
 
 function Football() {
   return (
@@ -10,7 +12,26 @@ function Football() {
   )
 }
 
-export default function CreateSchedule() {
+export default function CreateSchedule({schedule, setSchedule}) {
+  
+
+  function saveSchedule(e) {
+    alert("Kör saveSchedule");
+    // const starttid = starttidRef.current.value;
+
+    const starttid = document.getElementById("starttid");
+    const sluttid = document.getElementById("sluttid");
+    const adress = document.getElementById("adress-for-destination").value;
+    const veckodag = document.getElementById("veckodag").value;
+    const upprepa = document.getElementById("upprepa").value;
+
+
+    // if (starttid === '') return;
+
+    alert(starttid+" "+sluttid+" "+adress+" "+veckodag);
+
+  }
+
   return (
     <div>
       <Header />
@@ -53,7 +74,7 @@ export default function CreateSchedule() {
             <input className="standard-input" placeholder="Välj antal veckor" id="valj-antal-veckor"></input>
 
           </div>
-          <div>
+          {/* <div>
             <p>Tid för aktivitet:</p>
 
             <div className="input-side-by-side">
@@ -75,65 +96,3 @@ export default function CreateSchedule() {
   )
 }
 
-
-
-
-
-
-
-
-
-// import React from 'react'
-
-
-// export default function CreateSchedule() {
-//   function createTheSchedule(){
-
-//   }
-//   return (
-
-
-//     <div >
-
-      // <div className="container create-schedule-box">
-      //   <form>
-      //     <b>Skapa körschema</b>
-      //     <label for="container create-schedule-box"><br></br>Fyll i destination: </label>
-      //     <input type="text" class="s" name="new" />
-      //     <br></br><br></br>
-      //   </form>
-      // </div>
-
-//   <div className="s">
-//       <button onclick={() =>createTheSchedule()}  class="dropbtn">Välj dag för skjustning</button>
-//         <label for="container create-schedule-box">Måndag</label>
-//         <input type="radio" className="s" name="new" /><br></br>
-//         <label for="container create-schedule-box">Tisdag</label>
-//         <input type="radio" className="s" name="new" /><br></br>
-//         <label for="container create-schedule-box">Onsdag</label>
-//         <input type="radio" className="s" name="new" /><br></br>
-//         <label for="container create-schedule-box">Torsdag</label>
-//         <input type="radio" className="s" name="new" /><br></br>
-//         <label for="container create-schedule-box">Fredag</label>
-//         <input type="radio" className="s" name="new" /><br></br>
-//         <label for="container create-schedule-box">Lördag</label>
-//         <input type="radio" className="s" name="new" /><br></br>
-//         <label for="container create-schedule-box">Söndag</label>
-//         <input type="radio" className="s" name="new" /><br></br>
-//       </div>
-//     </div>
-//   )
-// }
-
-// window.onclick = function(event) {
-//   if (!event.target.matches('.dropbtn')) {
-//     var dropdowns = document.getElementsByClassName("dropdown-content");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//      }
-//     }
-//   }
-// }
