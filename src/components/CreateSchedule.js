@@ -13,7 +13,6 @@ function Football() {
 export default function CreateSchedule() {
   return (
     <div>
-<<<<<<< HEAD
       <i class="fa fa-bars"></i>
             <span class="banner">Boomerang</span>
             <span class="my-account right">Siri</span>
@@ -53,7 +52,6 @@ export default function CreateSchedule() {
               <br/>
               <br/>
               
-=======
       <Header/>
       <div className="page-content">
         <div className="sub-header side-by-side">
@@ -94,7 +92,6 @@ export default function CreateSchedule() {
           </div>
         </form>
       </div>
->>>>>>> main
     </div>
   )
 }
