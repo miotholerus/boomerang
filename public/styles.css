@@ -106,11 +106,20 @@ body {
 }
 
 
+
+/* LISTOR */
 ul {
   list-style-type: none;
   padding-left: 0;
 }
-
+li {
+  display: block;
+}
+i.li-user-icon {
+  /* height: 33px; */
+  /* width: 33px; */
+  font-size: 33px;
+}
 
 
 
@@ -128,16 +137,7 @@ ul {
   /* text-align: center; */
 }
 
-li {
-  display: block;
-}
 
-
-i.li-user-icon {
-  /* height: 33px; */
-  /* width: 33px; */
-  font-size: 33px;
-}
 
 /* SKAPA KÖRSCHEMA-FORMULÄRET */
 .form {
@@ -147,7 +147,6 @@ input {
   padding-left: 11px;
   margin-bottom: 10px;
 }
-
 
 .standard-input {
   /* position: absolute; */

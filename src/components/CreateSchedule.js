@@ -1,6 +1,7 @@
 ﻿
 import React from 'react'
 import Header from './Header'
+import ViewSchedule from './ViewSchedule'
 
 
 function Football() {

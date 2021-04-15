@@ -16,6 +16,7 @@ import {useState} from 'react'
 // import StateComponent from './StateComponent'
 
 function App() {
+  
   const [schedule, setSchedule] = useState([])
   // setSchedule varje gång schemat ändras, börjar tomt
   // schedule ska bli en array/json med all info schemat behöver
