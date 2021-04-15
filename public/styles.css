@@ -30,7 +30,7 @@ p {
 }
 body {
   /* font-size: larger; */
-  font-family: "roboto";
+  font-family: "Open Sans";
 }
 
 /* HEADERN */
@@ -64,13 +64,13 @@ body {
   display: flex;
   background-color: #c5c5c5;
   padding-top: 16px;
-  width: 100%; /*375*/
+  width: 100%; /* 100% funkar inte i ViewSchedule av någon anledning */
   height: 85px;
-  top: 33px;
+  /* top: 33px; */
 }
 .football-column {
   display: flex;
-  width: 50px; height: 50px;
+  width: 55px; height: 50px;
   /* float: left; */
   text-align: center;
   vertical-align: middle;
@@ -202,6 +202,10 @@ input {
   /* margin: 7px; */
 }
 
+.fa-bars {
+  width: 93px;
+}
+
 
 hr{
   background-color: rgb(0, 3, 5);
@@ -209,4 +213,12 @@ hr{
   height: 0px;
   float: left;
   
+}
+
+/* FÖRSÖK TILL ATT LÖSA FOTBOLLSBANNER-BUGGEN */
+.schedule-box {
+  /* display: block; */
+  margin: 10px;
+  margin-left: 14px;
+  margin-right: 80px;
 }

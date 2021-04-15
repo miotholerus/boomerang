@@ -12,8 +12,9 @@ import GroupCreated from './components/GroupCreated';
 import CreateSchedule from './components/CreateSchedule';
 import ViewSchedule from './components/ViewSchedule';
 
-import {useState} from 'react'
-// import StateComponent from './StateComponent'
+import {useState, useEffect} from 'react'
+
+const LOCAL_STORAGE_KEY = "boomerang.schedule";
 
 function App() {
   
@@ -22,7 +23,13 @@ function App() {
   // schedule ska bli en array/json med all info schemat behöver
   // Behövs en Schedule-komponent? En komponent per skjutstillfälle?
 
-  
+  // useEffect(() => {
+
+  // }, [])
+
+  // useEffect(() => {
+  //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(schedule))
+  // }, [schedule])
 
   return (
     <div className="App">
@@ -30,11 +37,11 @@ function App() {
         <Switch>
 
           <Route path="/viewschedule">
-            <ViewSchedule schedule={schedule} />
+            <ViewSchedule KEY={LOCAL_STORAGE_KEY} />
           </Route>
           
           <Route path="/">
-            <CreateSchedule schedule={schedule} setSchedule={setSchedule} />
+            <CreateSchedule KEY={LOCAL_STORAGE_KEY} />
           </Route>
 
         </Switch>
