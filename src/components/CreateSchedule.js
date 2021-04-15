@@ -74,7 +74,9 @@ export default function CreateSchedule({schedule, setSchedule}) {
             <input className="standard-input" placeholder="Välj antal veckor" id="valj-antal-veckor"></input>
 
           </div>
-          {/* <div>
+          
+          
+           <div>
             <p>Tid för aktivitet:</p>
 
             <div className="input-side-by-side">
