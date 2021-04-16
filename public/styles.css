@@ -1,0 +1,224 @@
+﻿
+/*
+h2 - Välkommen till
+h3 - Skapa grupp, Skapa körschema
+h4 - Grupper, Körschema, (Fotbollsgruppen?)
+h5/p - Namn på grupp:
+h1 - Inbjudan är skickad! Grattis!
+*/
+
+/* Applicerat på hela sidan - gör så att t.ex width: 343px; alltid är 343px, oavsett eventuell padding */
+* {
+  box-sizing: border-box;
+}
+p {
+  /* position: absolute; */
+  /* width: 103px; */
+  /* height: 18px; */
+  /* left: 17px; */
+  /* top: 224px; */
+
+  /* font-family: Roboto; */
+  /* font-style: normal; */
+  /* font-weight: normal; */
+  font-size: 15px;
+  line-height: 18px;
+
+  /* identical to box height */
+  /* text-align: center; */
+  letter-spacing: -0.333333px;
+}
+body {
+  /* font-size: larger; */
+  font-family: "Open Sans";
+}
+
+/* HEADERN */
+.header {
+  background-color: #afafaf;
+  padding: 7px;
+  position: absolute;
+  height: 45px;
+  width: 100%;
+  padding-left: 18px;
+}
+/* Header side-by-side-försök */
+.flex {
+  display: flex;
+}
+.left {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  /* justify-content: center; */
+}
+.right {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* SUBHEADER FOTBOLLSGRUPPEN */
+.sub-header-football {
+  display: flex;
+  background-color: #c5c5c5;
+  padding-top: 16px;
+  width: 100%; /* 100% funkar inte i ViewSchedule av någon anledning */
+  height: 85px;
+  /* top: 33px; */
+}
+.football-column {
+  display: flex;
+  width: 55px; height: 50px;
+  /* float: left; */
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  
+  /* margin-top: 7px; */
+}
+.group-column {
+  display: flex;
+  height: 50px;
+
+  align-items: center;
+  
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.333333px;
+}
+
+
+
+/* BOXAR */
+.container {
+  background-color: #c5c5c5;
+  padding: 8px;
+  margin: 7px;
+}
+.group-box {
+  border-radius: 10px;
+}
+.before-create-schedule-box {
+  margin: 33px;
+}
+
+
+
+/* LISTOR */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+li {
+  display: block;
+}
+i.li-user-icon {
+  /* height: 33px; */
+  /* width: 33px; */
+  font-size: 33px;
+}
+
+
+
+.button-v3 {
+  
+  /* top: 50%; */
+  left: 50%;
+  /* -ms-transform: translate(-50%, -50%); */
+  transform: translate(-50%, -0%);
+  position: relative;
+  border: none;
+  margin-bottom: 10px;
+  padding: 16px;
+  border-radius: 33px;
+
+  display: inline-block;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+
+  
+  /* text-align: center; */
+}
+
+
+
+/* SKAPA KÖRSCHEMA-FORMULÄRET */
+.form {
+  border-radius: 10px;
+}
+input {
+  padding-left: 11px;
+  margin-bottom: 10px;
+}
+
+.standard-input {
+  /* position: absolute; */
+  width: 345px;
+  height: 40px;
+  /* left: 19px; */
+  top: 438px;
+  border-radius: 10px;
+  border: 1px;
+  margin-bottom: 10px;
+}
+.option-list {
+  padding-left: 7px;
+  color: #767676;
+
+}
+
+.input-side-by-side {
+  width: 345px;
+}
+.small-input {
+  
+  width: 169px;
+  height: 40px;
+  /* left: 20px; */
+  /* top: 543px; */
+  border-radius: 10px;
+  border: 1px;
+}
+.input-left {
+  margin-right: 4px;
+}
+.input-right {
+  margin-left: 3px;
+}
+
+.page-content {
+  position: absolute;
+  top: 44px;
+}
+
+/* IKONER */
+.fa-futbol {
+  /* width: 100%; */
+  width: 36px;
+  /* margin: 7px; */
+}
+
+.fa-bars {
+  width: 93px;
+}
+
+
+hr{
+  background-color: rgb(0, 3, 5);
+  width: 200px;
+  height: 0px;
+  float: left;
+  
+}
+
+/* FÖRSÖK TILL ATT LÖSA FOTBOLLSBANNER-BUGGEN */
+.schedule-box {
+  /* display: block; */
+  margin: 10px;
+  margin-left: 14px;
+  margin-right: 80px;
+}
