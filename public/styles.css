@@ -31,6 +31,7 @@ p {
 body {
   /* font-size: larger; */
   font-family: "Open Sans";
+  color: #363636;
 }
 
 /* HEADERN */
@@ -41,6 +42,7 @@ body {
   height: 45px;
   width: 100%;
   padding-left: 18px;
+  padding-right: 7px;
 }
 /* Header side-by-side-försök */
 .flex {
@@ -62,7 +64,7 @@ body {
 /* SUBHEADER FOTBOLLSGRUPPEN */
 .sub-header-football {
   display: flex;
-  background-color: #c5c5c5;
+  background-color: #9CD09B;
   padding-top: 16px;
   width: 100%; /* 100% funkar inte i ViewSchedule av någon anledning */
   height: 85px;
@@ -123,8 +125,7 @@ i.li-user-icon {
 
 
 
-.button-v3 {
-  
+.button-v1 {
   /* top: 50%; */
   left: 50%;
   /* -ms-transform: translate(-50%, -50%); */
@@ -139,9 +140,26 @@ i.li-user-icon {
   background-color: white;
   text-decoration: none;
   color: black;
-
-  
   /* text-align: center; */
+}
+
+.button-v2 {
+  background-color: #882E76;
+  color: white;
+  height: 38px;
+
+  padding-left: 6%;
+  padding-right: 6%;
+  
+  border-radius: 10px;
+  border: none;
+
+  left: 50%;
+  transform: translate(-50%, -0%);
+  position: relative;
+  
+  margin-bottom: 18px;
+
 }
 
 
