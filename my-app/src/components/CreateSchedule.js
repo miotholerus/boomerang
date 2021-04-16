@@ -15,7 +15,7 @@ function Football() {
 export default function CreateSchedule({schedule, setSchedule}) {
   
 
-  function saveSchedule(e) {
+   function saveSchedule(e) {
     alert("Kör saveSchedule");
     // const starttid = starttidRef.current.value;
 
@@ -34,12 +34,12 @@ export default function CreateSchedule({schedule, setSchedule}) {
 
   return (
     <div>
-      <i class="fa fa-bars"></i>
+      {/* <i class="fa fa-bars"></i>
             <span class="banner">Boomerang</span>
             <span class="my-account right">Siri</span>
-            <i class="fa fa-user-circle right menu-user-icon"></i>
+            <i class="fa fa-user-circle right menu-user-icon"></i> */}
       
-            <div class="container group-box"/>
+            {/* <div class="container group-box"/>
               <h3>Skapa körschema</h3>
               <label for="destination">Fyll i destination:</label>
               <input type="text" id="destination"></input>
@@ -54,8 +54,8 @@ export default function CreateSchedule({schedule, setSchedule}) {
                 <option value="fredag">Fredag</option>
                 <option value="lördag">Lördag</option>
                 <option value="söndag">Söndag</option>
-              </select>
-              <br/>
+              </select> */}
+              {/* <br/>
               <br/>
               <label for="veckor">Välj antal veckor</label>
               <select>
@@ -69,7 +69,7 @@ export default function CreateSchedule({schedule, setSchedule}) {
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-              </select>
+              </select> */}
               <br/>
               <br/>
               
