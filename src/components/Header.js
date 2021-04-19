@@ -2,7 +2,7 @@
 
 function Logotype() {
   return (
-    <svg width="450" height="93" viewBox="0 0 450 93" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg className="logo header-element header-logo" width="450" height="93" viewBox="0 0 450 93" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <rect width="450" height="93" fill="url(#pattern0)" />
       <defs>
         <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -20,14 +20,14 @@ export default function Header() {
     <div className="header flex">
 
       <div className="left">
-        <i className="fa fa-bars"></i>
+        <i className="fa fa-bars header-element"></i>
         <Logotype/>
         {/* <span className="banner"> Boomerang </span> */}
       </div>
 
       <div className="right">
-        <span className="my-account">Siri </span>
-        <i className="fa fa-user-circle menu-user-icon"></i>
+        <span className="my-account header-element">Siri </span>
+        <i className="fa fa-user-circle menu-user-icon header-element"></i>
       </div>
 
     </div>

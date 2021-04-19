@@ -10,20 +10,23 @@ import FootballBanner from './FootballBanner';
 
 
 
-export default function ViewSchedule({ KEY }) {
+export default function ViewSchedule({ schedule, KEY }) {
     // const schedule = JSON.parse(localStorage.getItem(KEY));
     // console.log(schedule);
 
     function Show() {
-        const starttid = document.getElementById("starttid");
-        const sluttid = document.getElementById("sluttid");
-        const adress = document.getElementById("adress-for-destination");
-        const veckodag = document.getElementById("veckodag");
-        const upprepa = document.getElementById("upprepa");
-        const startdatum = document.getElementById("startdatum");
-        const slutdatum = document.getElementById("slutdatum");
 
-        alert(starttid.value+" "+sluttid.value+" "+adress.value+" "+veckodag.value+" "+upprepa.value+" "+startdatum.value+" "+slutdatum.value);
+        alert(schedule[2].value);
+
+        // const starttid = document.getElementById("starttid");
+        // const sluttid = document.getElementById("sluttid");
+        // const adress = document.getElementById("adress-for-destination");
+        // const veckodag = document.getElementById("veckodag");
+        // const upprepa = document.getElementById("upprepa");
+        // const startdatum = document.getElementById("startdatum");
+        // const slutdatum = document.getElementById("slutdatum");
+
+        // alert(starttid.value+" "+sluttid.value+" "+adress.value+" "+veckodag.value+" "+upprepa.value+" "+startdatum.value+" "+slutdatum.value);
     }
 
     return (

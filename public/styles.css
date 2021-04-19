@@ -30,6 +30,7 @@ p {
 }
 body {
   /* font-size: larger; */
+  /* background-color: #F2F2ED; */
   font-family: "Open Sans";
   color: #363636;
 }
@@ -60,6 +61,29 @@ body {
   align-items: center;
   justify-content: flex-end;
 }
+/* Experiment */
+/* .header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+.header-element {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header-logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+.header-right {
+  float: right;
+} */
 
 /* SUBHEADER FOTBOLLSGRUPPEN */
 .sub-header-football {
@@ -96,7 +120,7 @@ body {
 
 /* BOXAR */
 .container {
-  background-color: #c5c5c5;
+  background-color: #c5c5c5; /*white;*/
   padding: 8px;
   margin: 7px;
 }
@@ -169,6 +193,8 @@ i.li-user-icon {
   border-radius: 10px;
 }
 input {
+  background-color: #F2F2ED;
+  border-color: #DFDFD2;
   padding-left: 11px;
   margin-bottom: 10px;
 }
@@ -193,7 +219,7 @@ input {
   width: 345px;
 }
 .small-input {
-  
+  background-color: #F2F2ED;
   width: 169px;
   height: 40px;
   /* left: 20px; */

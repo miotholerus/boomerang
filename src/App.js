@@ -19,6 +19,7 @@ const LOCAL_STORAGE_KEY = "boomerang.schedule";
 function App() {
   
   const [schedule, setSchedule] = useState([]);
+
   // setSchedule varje gång schemat ändras, börjar tomt
   // schedule ska bli en array/json med all info schemat behöver
   // Behövs en Schedule-komponent? En komponent per skjutstillfälle?
@@ -37,11 +38,11 @@ function App() {
         <Switch>
 
           <Route path="/viewschedule">
-            <ViewSchedule KEY={LOCAL_STORAGE_KEY} />
+            <ViewSchedule schedule={schedule} KEY={LOCAL_STORAGE_KEY} />
           </Route>
           
           <Route path="/">
-            <CreateSchedule KEY={LOCAL_STORAGE_KEY} />
+            <CreateSchedule schedule={schedule} setSchedule={setSchedule} KEY={LOCAL_STORAGE_KEY} />
           </Route>
 
         </Switch>

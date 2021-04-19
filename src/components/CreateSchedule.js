@@ -1,5 +1,5 @@
 ﻿
-import React from 'react'
+import React, {useState} from 'react'
 import Header from './Header'
 import ViewSchedule from './ViewSchedule'
 import {BrowserRouter as Router, Route, Switch, Link, useHistory} from "react-router-dom";
@@ -7,7 +7,7 @@ import FootballBanner from './FootballBanner'
 
 
 
-export default function CreateSchedule({KEY}) {
+export default function CreateSchedule({schedule, setSchedule, KEY}) {
   
   let history = useHistory();
 
@@ -18,6 +18,8 @@ export default function CreateSchedule({KEY}) {
       //alert("Kör saveSchedule");
       // const starttid = starttidRef.current.value;
   
+      // const [starttid, setStarttid] = useState("");
+
       const starttid = document.getElementById("starttid");
       const sluttid = document.getElementById("sluttid");
       const adress = document.getElementById("adress-for-destination");
@@ -32,9 +34,9 @@ export default function CreateSchedule({KEY}) {
   
       const newSchedule = [starttid, sluttid, adress, veckodag, upprepa, startdatum, slutdatum];
       
-      // setSchedule(newSchedule);
+      setSchedule(newSchedule);
 
-      // alert(schedule.adress);
+      //alert(schedule[2].value);
 
       // localStorage.setItem(KEY, JSON.stringify(newSchedule))
   
