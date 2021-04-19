@@ -73,15 +73,15 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
             
             
             <div className="input-side-by-side">
-              <select defaultValue="Veckodag" className="small-input option-list input-left" id="veckodag">
+              <select /*defaultValue="Veckodag"*/ className="small-input option-list input-left" id="veckodag">
                 <option id="option-placeholder" value="" disabled selected>Veckodag</option>
-                <option value="Måndag">Måndag</option>
-                <option value="Tisdag">Tisdag</option>
-                <option value="Onsdag">Onsdag</option>
-                <option value="Torsdag">Torsdag</option>
-                <option value="Fredag">Fredag</option>
-                <option value="Lördag">Lördag</option>
-                <option value="Söndag">Söndag</option>
+                <option value="1">Måndag</option>
+                <option value="2">Tisdag</option>
+                <option value="3">Onsdag</option>
+                <option value="4">Torsdag</option>
+                <option value="5">Fredag</option>
+                <option value="6">Lördag</option>
+                <option value="0">Söndag</option>
               </select>
 
               <select className="small-input option-list input-right" id="upprepa">

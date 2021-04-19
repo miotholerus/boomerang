@@ -2,21 +2,24 @@
 import Header from './Header'
 import RideOccation from './RideOccation'
 import CreateSchedule from './CreateSchedule'
+import {dayOfWeekAsString} from '../App'
 
-
-
-import { BrowserRouter as Router, Route, Switch, Link, useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner';
 
 
 
 export default function ViewSchedule({ schedule, KEY }) {
     // const schedule = JSON.parse(localStorage.getItem(KEY));
-    // console.log(schedule);
+
+    console.log(schedule);
+
+    const startDate = new Date(schedule[5].value);
+    const endDate = new Date(schedule[6].value);
+
+    console.log(dayOfWeekAsString(schedule[3].value));
+
 
     function Show() {
-
-        alert(schedule[2].value);
 
         // const starttid = document.getElementById("starttid");
         // const sluttid = document.getElementById("sluttid");
@@ -42,9 +45,11 @@ export default function ViewSchedule({ schedule, KEY }) {
                 <FootballBanner/>
 
                 <form className="container form schedule-box"><b>Körschema</b>
-                    <div className="scheduleList">Tisdagar, 17:00-19:00, Fyrishovshallen
+                    <div className="scheduleList">{dayOfWeekAsString(schedule[3].value)}ar, {schedule[0].value}-{schedule[1].value}, {schedule[2].value}
+                    <br></br>{schedule[5].value} - {schedule[6].value}
                     <br></br>
-                    <button className="button-v2" onClick={Show}>Visa info</button>
+                    {/* <button className="button-v2" onClick={Show}>Visa info</button> */}
+                    {console.log(new Date().toLocaleString('sv-se', {  weekday: 'long' }))}
                         <table >
                             <tr>
                                 <th>Chaufför</th>
