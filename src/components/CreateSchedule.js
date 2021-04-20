@@ -1,14 +1,14 @@
 ﻿
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import ViewSchedule from './ViewSchedule'
-import {BrowserRouter as Router, Route, Switch, Link, useHistory} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link, useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner'
 
 
 
-export default function CreateSchedule({schedule, setSchedule, KEY}) {
-  
+export default function CreateSchedule({ schedule, setSchedule, KEY }) {
+
   let history = useHistory();
 
   function SaveButton() {
@@ -17,7 +17,7 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
       // spara här
       //alert("Kör saveSchedule");
       // const starttid = starttidRef.current.value;
-  
+
       // const [starttid, setStarttid] = useState("");
 
       const starttid = document.getElementById("starttid");
@@ -28,20 +28,19 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
       const startdatum = document.getElementById("startdatum");
       const slutdatum = document.getElementById("slutdatum");
 
-  
       // if (starttid === '') return;
       // alert(starttid.value+" "+sluttid.value+" "+adress.value+" "+veckodag.value+" "+upprepa.value+" "+startdatum.value+" "+slutdatum.value);
-  
+
       const newSchedule = [starttid, sluttid, adress, veckodag, upprepa, startdatum, slutdatum];
-      
+
       setSchedule(newSchedule);
 
       //alert(schedule[2].value);
 
       // localStorage.setItem(KEY, JSON.stringify(newSchedule))
-  
+
       history.push("/viewschedule")
-      
+
     }
 
     return (
@@ -51,27 +50,27 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
 
   return (
     <div>
-      <Header/>
+      <Header />
       <div className="page-content">
-        <FootballBanner/>
+        <FootballBanner />
 
         <br></br>
         <form className="container form">
-        
+
           <h3>Skapa gruppens körschema</h3>
           <div className="aktivitet">
             <p>Aktivitet</p>
-            
+
             <div className="input-side-by-side">
               <input type="time" className="small-input input-left" placeholder="Starttid kl." id="starttid"></input>
-              
+
               <input type="time" className="small-input input-right" placeholder="Sluttid kl." id="sluttid"></input>
               {/* <button onClick={saveSchedule}>Spara</button> */}
             </div>
 
             <input className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
-            
-            
+
+
             <div className="input-side-by-side">
               <select /*defaultValue="Veckodag"*/ className="small-input option-list input-left" id="veckodag">
                 <option id="option-placeholder" value="" disabled selected>Veckodag</option>
@@ -102,12 +101,12 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
               <input type="date" className="small-input input-right" placeholder="Slutdatum" id="slutdatum"></input>
             </div>
           </div>
-          
-          {/* <div className="skjutsning"> */}
-            {/* <p>Skjutsning</p> */}
 
-            {/* Avancerat, egen komponent? */}
-            {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+          {/* <div className="skjutsning"> */}
+          {/* <p>Skjutsning</p> */}
+
+          {/* Avancerat, egen komponent? */}
+          {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
               <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
               <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
@@ -120,14 +119,14 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
               <option value="op3">Tillfälle 3 | Till aktivitet... | Från aktivitet...</option>
             </select> */}
           {/* </div> */}
-          
+
           {/* <div id="upphamtningslista">
             <h5>Upphämtningslista:</h5>
           </div> */}
           <br></br>
-          
-          <SaveButton/>
-          
+
+          <SaveButton />
+
           {/* <Link to="/viewschedule" className="button-v2" onClick={saveSchedule}>Gå vidare</Link>
 
           <button onClick={saveSchedule} className="button-v2">

@@ -34,12 +34,31 @@ function App() {
   // schedule ska bli en array/json med all info schemat behöver
   // Behövs en Schedule-komponent? En komponent per skjutstillfälle?
 
-  function getRideDates() {
-    const dayOfWeekIndex = schedule[2].value;
-    const startDate = new Date(schedule[5].value);
-    const endDate = new Date(schedule[6].value);
+  // function getRideDates() {
+  //   const dayOfWeekIndex = schedule[3].value;
+  //   const startDate = new Date(schedule[5].value);
+  //   const endDate = new Date(schedule[6].value);
+    
+  //   Date.prototype.addDays = function(days){
+  //     var dat = new Date(this.valueOf())
+  //     dat.setDate(dat.getDate() + days);
+  //     return dat;
+  //   }
+  //   function getDates(startDate, endDate){
+  //     var dateArray = new Array();
+  //     var dateToAdd = startDate;
+  //     while(dateToAdd <= endDate){
+  //       dateArray.push(new Date(dateToAdd))
+  //       dateToAdd = dateToAdd.addDays(1);
+  //     }
+  //     return dateArray;
+  //   }
+  //   var dateArray = getDates(new Date(), (new Date()).addDays(2));
+  //   for ( i = 0; i < dateArray.length; i ++){
+  //     alert (dateArray[i]);
+  //   }
 
-  }
+  // }
   
   
 
