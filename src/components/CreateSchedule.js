@@ -10,6 +10,9 @@ export default function CreateSchedule({ schedule, setSchedule}) {
 
   let history = useHistory();
 
+  // getRideDates() ligger nu i ViewSchedule men kanske bör flyttas hit
+  // eftersom vi behöver körtillfällena för att kunna välja chaufförer
+
   function SaveButton() {
 
     function SaveSchedule(e) {
@@ -19,7 +22,7 @@ export default function CreateSchedule({ schedule, setSchedule}) {
 
       // const [starttid, setStarttid] = useState("");
 
-      const starttid = document.getElementById("starttid");
+      const starttid = document.getElementById("starttid"); // det är mer "korrekt" att använda refs och React-funktionen useRef, men kbry
       const sluttid = document.getElementById("sluttid");
       const adress = document.getElementById("adress-for-destination");
       const veckodag = document.getElementById("veckodag");
