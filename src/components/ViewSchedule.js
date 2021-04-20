@@ -26,19 +26,19 @@ export default function ViewSchedule({ schedule, setSchedule }) {
     const startDate = new Date(schedule[5].value);
     const endDate = new Date(schedule[6].value);
     const dateList = getDates(startDate, endDate);
-    console.log("dateList:")
-    console.log(dateList);
+    // console.log("dateList:")
+    // console.log(dateList);
 
     var rideDates = new Array();
     for (let i = 0; i < dateList.length; i++) {
-      if(dayOfWeekIndex == dateList[i].getDay()){
+      if (dayOfWeekIndex == dateList[i].getDay()) {
         rideDates.push(dateList[i])
 
       }
     }
-    console.log("rideDates:")
-    console.log(rideDates);
-    
+    // console.log("rideDates:")
+    // console.log(rideDates);
+
     function getDates(startDate, endDate) {
       var dateArray = new Array();
       var dateToAdd = startDate;
@@ -52,10 +52,10 @@ export default function ViewSchedule({ schedule, setSchedule }) {
 
     const newSchedule = schedule;
     newSchedule.push(rideDates);
-    console.log(newSchedule);
+    // console.log(newSchedule);
     setSchedule(newSchedule);
-    console.log("schedule:")
-    console.log(schedule);
+    // console.log("schedule:")
+    // console.log(schedule);
 
     // return rideDates;
   }
@@ -83,41 +83,16 @@ export default function ViewSchedule({ schedule, setSchedule }) {
 
             <table >
               <tr>
-                <th>Chaufför</th>
                 <th>Tillfälle</th>
+                <th>Till aktivitet</th>
+                <th>Från aktivitet</th>
               </tr>
             </table>
             <hr></hr><br></br>
             <table>
-              <tr>
-                <td>Siri</td>
-                <td>Tisdag 8 mars</td>
-              </tr>
-
-              <tr>
-                <td>Peter</td>
-                <td>Tisdag 15 mars</td>
-              </tr>
-
-              <tr>
-                <td>Hanna</td>
-                <td>Tisdag 22 mars</td>
-              </tr>
-
-              <tr>
-                <td>Siri</td>
-                <td>Tisdag 29 mars</td>
-              </tr>
-
-              <tr>
-                <td>Peter</td>
-                <td>Tisdag 5 april</td>
-              </tr>
-
-              <tr>
-                <td>Hanna</td>
-                <td>Tisdag 12 april</td>
-              </tr>
+              {schedule[7].map(date => {
+                return <RideOccation key={date.id} date={date} />
+              })}
 
             </table>
 
