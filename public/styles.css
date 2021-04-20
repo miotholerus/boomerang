@@ -30,7 +30,9 @@ p {
 }
 body {
   /* font-size: larger; */
-  font-family: "roboto";
+  /* background-color: #F2F2ED; */
+  font-family: "Open Sans";
+  color: #363636;
 }
 
 /* HEADERN */
@@ -41,6 +43,7 @@ body {
   height: 45px;
   width: 100%;
   padding-left: 18px;
+  padding-right: 7px;
 }
 /* Header side-by-side-försök */
 .flex {
@@ -58,19 +61,42 @@ body {
   align-items: center;
   justify-content: flex-end;
 }
+/* Experiment */
+/* .header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+.header-element {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header-logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+.header-right {
+  float: right;
+} */
 
 /* SUBHEADER FOTBOLLSGRUPPEN */
 .sub-header-football {
   display: flex;
-  background-color: #c5c5c5;
+  background-color: #9CD09B;
   padding-top: 16px;
-  width: 100%; /*375*/
+  width: 100%; /* 100% funkar inte i ViewSchedule av någon anledning */
   height: 85px;
-  top: 33px;
+  /* top: 33px; */
 }
 .football-column {
   display: flex;
-  width: 50px; height: 50px;
+  width: 55px; height: 50px;
   /* float: left; */
   text-align: center;
   vertical-align: middle;
@@ -90,11 +116,13 @@ body {
   letter-spacing: -0.333333px;
 }
 
-
+.page-content {
+  width: 100%;
+}
 
 /* BOXAR */
 .container {
-  background-color: #c5c5c5;
+  background-color: #c5c5c5; /*white;*/
   padding: 8px;
   margin: 7px;
 }
@@ -123,8 +151,7 @@ i.li-user-icon {
 
 
 
-.button-v3 {
-  
+.button-v1 {
   /* top: 50%; */
   left: 50%;
   /* -ms-transform: translate(-50%, -50%); */
@@ -139,9 +166,26 @@ i.li-user-icon {
   background-color: white;
   text-decoration: none;
   color: black;
-
-  
   /* text-align: center; */
+}
+
+.button-v2 {
+  background-color: #882E76;
+  color: white;
+  height: 38px;
+
+  padding-left: 6%;
+  padding-right: 6%;
+  
+  border-radius: 10px;
+  border: none;
+
+  left: 50%;
+  transform: translate(-50%, -0%);
+  position: relative;
+  
+  margin-bottom: 18px;
+
 }
 
 
@@ -151,6 +195,8 @@ i.li-user-icon {
   border-radius: 10px;
 }
 input {
+  background-color: #F2F2ED;
+  border-color: #DFDFD2;
   padding-left: 11px;
   margin-bottom: 10px;
 }
@@ -175,7 +221,7 @@ input {
   width: 345px;
 }
 .small-input {
-  
+  background-color: #F2F2ED;
   width: 169px;
   height: 40px;
   /* left: 20px; */
@@ -202,11 +248,22 @@ input {
   /* margin: 7px; */
 }
 
+.fa-bars {
+  width: 93px;
+}
+
 
 hr{
   background-color: rgb(0, 3, 5);
   width: 200px;
   height: 0px;
   float: left;
+  
+}
+
+/* FÖRSÖK TILL ATT LÖSA FOTBOLLSBANNER-BUGGEN */
+.schedule-box {
+  /* display: block; */
+  margin: 10px;
   
 }

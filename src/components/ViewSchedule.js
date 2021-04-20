@@ -2,23 +2,37 @@
 import Header from './Header'
 import RideOccation from './RideOccation'
 import CreateSchedule from './CreateSchedule'
+import {dayOfWeekAsString} from '../App'
+
+import FootballBanner from './FootballBanner';
 
 
 
-import { BrowserRouter as Router, Route, Switch, Link, useHistory } from "react-router-dom";
+export default function ViewSchedule({ schedule, KEY }) {
+    // const schedule = JSON.parse(localStorage.getItem(KEY));
+
+    console.log(schedule);
+
+    const startDate = new Date(schedule[5].value);
+    const endDate = new Date(schedule[6].value);
+
+    console.log(dayOfWeekAsString(schedule[3].value));
 
 
-function Football() {
+    function Show() {
+
+        // const starttid = document.getElementById("starttid");
+        // const sluttid = document.getElementById("sluttid");
+        // const adress = document.getElementById("adress-for-destination");
+        // const veckodag = document.getElementById("veckodag");
+        // const upprepa = document.getElementById("upprepa");
+        // const startdatum = document.getElementById("startdatum");
+        // const slutdatum = document.getElementById("slutdatum");
+
+        // alert(starttid.value+" "+sluttid.value+" "+adress.value+" "+veckodag.value+" "+upprepa.value+" "+startdatum.value+" "+slutdatum.value);
+    }
+
     return (
-        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="futbol" className="svg-inline--fa fa-futbol fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zm-48 0l-.003-.282-26.064 22.741-62.679-58.5 16.454-84.355 34.303 3.072c-24.889-34.216-60.004-60.089-100.709-73.141l13.651 31.939L256 139l-74.953-41.525 13.651-31.939c-40.631 13.028-75.78 38.87-100.709 73.141l34.565-3.073 16.192 84.355-62.678 58.5-26.064-22.741-.003.282c0 43.015 13.497 83.952 38.472 117.991l7.704-33.897 85.138 10.447 36.301 77.826-29.902 17.786c40.202 13.122 84.29 13.148 124.572 0l-29.902-17.786 36.301-77.826 85.138-10.447 7.704 33.897C442.503 339.952 456 299.015 456 256zm-248.102 69.571l-29.894-91.312L256 177.732l77.996 56.527-29.622 91.312h-96.476z"></path>
-        </svg>
-    )
-}
-
-export default function ViewSchedule({ schedule }) {
-    return (
-
 
         // egentligen bör vi hämta och mappa en lista av occations ur schedule, snarare än direkt över schedule
         // schedule.map(occation => {
@@ -28,19 +42,14 @@ export default function ViewSchedule({ schedule }) {
             <Header />
 
             <div className="page-content">
-                <div className="sub-header-football">
-                    <div className="football-column">
-                        <Football />
-                    </div>
+                <FootballBanner/>
 
-                    <div className="group-column">Fotbollsgruppen<br></br>Peter, Hanna, Siri
-                    </div>
-                </div>
-
-                <form className="container form"><b>Körschema</b>
-                    <div className="scheduleList">Tisdagar, 17:00-19:00, Fyrishovsfallen
-                <br></br>
-
+                <form className="container form schedule-box"><b>Körschema</b>
+                    <div className="scheduleList">{dayOfWeekAsString(schedule[3].value)}ar, {schedule[0].value}-{schedule[1].value}, {schedule[2].value}
+                    <br></br>{schedule[5].value} - {schedule[6].value}
+                    <br></br>
+                    {/* <button className="button-v2" onClick={Show}>Visa info</button> */}
+                    {console.log(new Date().toLocaleString('sv-se', {  weekday: 'long' }))}
                         <table >
                             <tr>
                                 <th>Chaufför</th>
