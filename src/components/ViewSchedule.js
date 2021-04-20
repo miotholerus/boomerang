@@ -81,19 +81,20 @@ export default function ViewSchedule({ schedule, setSchedule }) {
             {/* <button className="button-v2" onClick={()=>getRideDates()}>Visa info</button>  */}
             {console.log(new Date().toLocaleString('sv-se', { weekday: 'long' }))}
 
-            <table >
-              <tr>
-                <th>Tillfälle</th>
-                <th>Till aktivitet</th>
-                <th>Från aktivitet</th>
-              </tr>
-            </table>
-            <hr></hr><br></br>
-            <table>
-              {schedule[7].map(date => {
-                return <RideOccation key={date.id} date={date} />
-              })}
-
+            <table className="schedule-overview-table">
+              <thead>
+                <tr>
+                  <th>Tillfälle:</th>
+                  <th>Till aktivitet:</th>
+                  <th>Från aktivitet:</th>
+                </tr>
+              </thead>
+            
+              <tbody>
+                {schedule[7].map(date => {
+                  return <RideOccation key={date.id} date={date} />
+                })}
+              </tbody>
             </table>
 
           </div>

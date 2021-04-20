@@ -7,7 +7,7 @@ import FootballBanner from './FootballBanner'
 
 
 
-export default function CreateSchedule({ schedule, setSchedule, KEY }) {
+export default function CreateSchedule({ schedule, setSchedule}) {
 
   let history = useHistory();
 
@@ -15,7 +15,7 @@ export default function CreateSchedule({ schedule, setSchedule, KEY }) {
 
     function SaveSchedule(e) {
       // spara här
-      //alert("Kör saveSchedule");
+      // alert("Kör saveSchedule");
       // const starttid = starttidRef.current.value;
 
       // const [starttid, setStarttid] = useState("");

@@ -1,11 +1,7 @@
-import futbol from './futbol-solid.svg';
-import logo from './logo.svg';
-
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link
 } from "react-router-dom";
 
 import GroupCreated from './components/GroupCreated';
@@ -33,32 +29,6 @@ function App() {
   // setSchedule varje gång schemat ändras, börjar tomt
   // schedule ska bli en array/json med all info schemat behöver
   // Behövs en Schedule-komponent? En komponent per skjutstillfälle?
-
-  // function getRideDates() {
-  //   const dayOfWeekIndex = schedule[3].value;
-  //   const startDate = new Date(schedule[5].value);
-  //   const endDate = new Date(schedule[6].value);
-    
-  //   Date.prototype.addDays = function(days){
-  //     var dat = new Date(this.valueOf())
-  //     dat.setDate(dat.getDate() + days);
-  //     return dat;
-  //   }
-  //   function getDates(startDate, endDate){
-  //     var dateArray = new Array();
-  //     var dateToAdd = startDate;
-  //     while(dateToAdd <= endDate){
-  //       dateArray.push(new Date(dateToAdd))
-  //       dateToAdd = dateToAdd.addDays(1);
-  //     }
-  //     return dateArray;
-  //   }
-  //   var dateArray = getDates(new Date(), (new Date()).addDays(2));
-  //   for ( i = 0; i < dateArray.length; i ++){
-  //     alert (dateArray[i]);
-  //   }
-
-  // }
   
   
 
@@ -76,7 +46,7 @@ function App() {
           </Route>
           
           <Route path="/">
-            <CreateSchedule schedule={schedule} setSchedule={setSchedule} KEY={LOCAL_STORAGE_KEY} />
+            <CreateSchedule schedule={schedule} setSchedule={setSchedule} />
           </Route>
 
         </Switch>
