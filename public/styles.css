@@ -116,7 +116,9 @@ body {
   letter-spacing: -0.333333px;
 }
 
-
+.page-content {
+  width: 100%;
+}
 
 /* BOXAR */
 .container {
@@ -263,6 +265,5 @@ hr{
 .schedule-box {
   /* display: block; */
   margin: 10px;
-  margin-left: 14px;
-  margin-right: 80px;
+  
 }

@@ -34,9 +34,14 @@ function App() {
   // schedule ska bli en array/json med all info schemat behöver
   // Behövs en Schedule-komponent? En komponent per skjutstillfälle?
 
-  // useEffect(() => {
-  //   const dayOfWeekNumber = schedule[2]
-  // }, [schedule])
+  function getRideDates() {
+    const dayOfWeekIndex = schedule[2].value;
+    const startDate = new Date(schedule[5].value);
+    const endDate = new Date(schedule[6].value);
+
+  }
+  
+  
 
   // useEffect(() => {
   //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(schedule))
