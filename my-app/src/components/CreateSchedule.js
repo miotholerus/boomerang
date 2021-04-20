@@ -58,7 +58,7 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
         <br></br>
         <form className="container form">
         
-          <h3>Skapa gruppens körschema</h3>
+          <h3>Aktivitet</h3>
           <div className="aktivitet">
             <p>Skapa körschema</p>
 
