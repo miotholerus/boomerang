@@ -1,5 +1,5 @@
 ﻿
-import React from 'react'
+import React, {useState} from 'react'
 import Header from './Header'
 import ViewSchedule from './ViewSchedule'
 import {BrowserRouter as Router, Route, Switch, Link, useHistory} from "react-router-dom";
@@ -7,10 +7,7 @@ import FootballBanner from './FootballBanner'
 
 
 
-
-
-
-export default function CreateSchedule({KEY}) {
+export default function CreateSchedule({schedule, setSchedule, KEY}) {
   
   let history = useHistory();
 
@@ -18,9 +15,11 @@ export default function CreateSchedule({KEY}) {
 
     function SaveSchedule(e) {
       // spara här
-      alert("Kör saveSchedule");
+      //alert("Kör saveSchedule");
       // const starttid = starttidRef.current.value;
   
+      // const [starttid, setStarttid] = useState("");
+
       const starttid = document.getElementById("starttid");
       const sluttid = document.getElementById("sluttid");
       const adress = document.getElementById("adress-for-destination");
@@ -31,13 +30,13 @@ export default function CreateSchedule({KEY}) {
 
   
       // if (starttid === '') return;
-      alert(starttid.value+" "+sluttid.value+" "+adress.value+" "+veckodag.value+" "+upprepa.value+" "+startdatum.value+" "+slutdatum.value);
+      // alert(starttid.value+" "+sluttid.value+" "+adress.value+" "+veckodag.value+" "+upprepa.value+" "+startdatum.value+" "+slutdatum.value);
   
       const newSchedule = [starttid, sluttid, adress, veckodag, upprepa, startdatum, slutdatum];
       
-      // setSchedule(newSchedule);
+      setSchedule(newSchedule);
 
-      // alert(schedule.adress);
+      //alert(schedule[2].value);
 
       // localStorage.setItem(KEY, JSON.stringify(newSchedule))
   
@@ -46,7 +45,7 @@ export default function CreateSchedule({KEY}) {
     }
 
     return (
-      <button type="button" className="button-v3" onClick={SaveSchedule}>Gå vidare</button>
+      <button type="button" className="button-v2" onClick={SaveSchedule}>Gå vidare</button>
     )
   }
 
@@ -101,7 +100,7 @@ export default function CreateSchedule({KEY}) {
           <h3>Skapa gruppens körschema</h3>
           <div className="aktivitet">
             <p>Aktivitet</p>
-
+            
             <div className="input-side-by-side">
               <input type="time" className="small-input input-left" placeholder="Starttid kl." id="starttid"></input>
               
@@ -113,15 +112,15 @@ export default function CreateSchedule({KEY}) {
             
             
             <div className="input-side-by-side">
-              <select defaultValue="Veckodag" className="small-input option-list input-left" id="veckodag">
+              <select /*defaultValue="Veckodag"*/ className="small-input option-list input-left" id="veckodag">
                 <option id="option-placeholder" value="" disabled selected>Veckodag</option>
-                <option value="Måndag">Måndag</option>
-                <option value="Tisdag">Tisdag</option>
-                <option value="Onsdag">Onsdag</option>
-                <option value="Torsdag">Torsdag</option>
-                <option value="Fredag">Fredag</option>
-                <option value="Lördag">Lördag</option>
-                <option value="Söndag">Söndag</option>
+                <option value="1">Måndag</option>
+                <option value="2">Tisdag</option>
+                <option value="3">Onsdag</option>
+                <option value="4">Torsdag</option>
+                <option value="5">Fredag</option>
+                <option value="6">Lördag</option>
+                <option value="0">Söndag</option>
               </select>
 
               <select className="small-input option-list input-right" id="upprepa">
@@ -168,9 +167,9 @@ export default function CreateSchedule({KEY}) {
           
           <SaveButton/>
           
-          {/* <Link to="/viewschedule" className="button-v3" onClick={saveSchedule}>Gå vidare</Link>
+          {/* <Link to="/viewschedule" className="button-v2" onClick={saveSchedule}>Gå vidare</Link>
 
-          <button onClick={saveSchedule} className="button-v3">
+          <button onClick={saveSchedule} className="button-v2">
             Gå vidare
           </button> */}
 
