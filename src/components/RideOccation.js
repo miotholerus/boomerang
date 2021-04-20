@@ -8,7 +8,7 @@ export default function RideOccation({ride}) {
   
   return (
     <tr>
-      <td>{ride.dateString()}</td>
+      <td>{ride.dateAsString()}</td>
       {console.log(date)}
       <td>{ride.driverTo}</td>
       <td>{ride.driverFrom}</td>

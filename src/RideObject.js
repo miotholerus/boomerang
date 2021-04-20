@@ -19,7 +19,7 @@ export default class RideObject {
     //     return this.driverFrom;
     // }
 
-    dateString() {
+    dateAsString() {
         return dayOfWeekAsString(this.date.getDay())+" "+this.date.getDate()+" "+this.date.toLocaleString('sv-se', { month: 'long' })
     }
 
