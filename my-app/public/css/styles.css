@@ -1,34 +1,10 @@
-/*
-h2 - Välkommen till
-h3 - Skapa grupp, Skapa körschema
-h4 - Grupper, Körschema, (Fotbollsgruppen?)
-h5/p - Namn på grupp:
-h1 - Inbjudan är skickad! Grattis!
-*/
 
-/* Applicerat på hela sidan - gör så att t.ex width: 343px; alltid är 343px, oavsett eventuell padding */
-* {
-    box-sizing: border-box;
-  }
   p {
-    /* position: absolute; */
-    /* width: 103px; */
-    /* height: 18px; */
-    /* left: 17px; */
-    /* top: 224px; */
-  
-    /* font-family: Roboto; */
-    /* font-style: normal; */
-    /* font-weight: normal; */
     font-size: 15px;
     line-height: 18px;
-  
-    /* identical to box height */
-    /* text-align: center; */
     letter-spacing: -0.333333px;
   }
   body {
-    /* font-size: larger; */
     font-family: "roboto";
   }
   
@@ -49,11 +25,10 @@ h1 - Inbjudan är skickad! Grattis!
     display: flex;
     width: 50%;
     align-items: center;
-    /* justify-content: center; */
   }
   .right {
     display: flex;
-    width: 50%;
+    width: 45%;
     align-items: center;
     justify-content: flex-end;
   }
@@ -63,20 +38,17 @@ h1 - Inbjudan är skickad! Grattis!
     display: flex;
     background-color: #c5c5c5;
     padding-top: 16px;
-    width: 100%; /*375*/
+    width: 100%; 
     height: 85px;
     top: 33px;
   }
   .football-column {
     display: flex;
     width: 50px; height: 50px;
-    /* float: left; */
     text-align: center;
     vertical-align: middle;
     align-items: center;
     justify-content: center;
-    
-    /* margin-top: 7px; */
   }
   .group-column {
     display: flex;
@@ -95,7 +67,7 @@ h1 - Inbjudan är skickad! Grattis!
   .container {
     background-color: #c5c5c5;
     padding: 8px;
-    margin: 7px;
+    margin: 0px;
   }
   .group-box {
     border-radius: 10px;
@@ -103,8 +75,6 @@ h1 - Inbjudan är skickad! Grattis!
   .before-create-schedule-box {
     margin: 33px;
   }
-  
-  
   
   /* LISTOR */
   ul {
@@ -115,25 +85,19 @@ h1 - Inbjudan är skickad! Grattis!
     display: block;
   }
   i.li-user-icon {
-    /* height: 33px; */
-    /* width: 33px; */
     font-size: 33px;
   }
   
   
   
   .button-v3 {
-    /* top: 50%; */
     left: 50%;
-    /* -ms-transform: translate(-50%, -50%); */
     transform: translate(-50%, -0%);
     position: relative;
     border: none;
     margin-bottom: 10px;
     padding: 16px;
     border-radius: 33px;
-    
-    /* text-align: center; */
   }
   
   
@@ -148,10 +112,8 @@ h1 - Inbjudan är skickad! Grattis!
   }
   
   .standard-input {
-    /* position: absolute; */
     width: 345px;
     height: 40px;
-    /* left: 19px; */
     top: 438px;
     border-radius: 10px;
     border: 1px;
@@ -164,14 +126,11 @@ h1 - Inbjudan är skickad! Grattis!
   }
   
   .input-side-by-side {
-    width: 345px;
+    width: 367px;
   }
   .small-input {
-    
     width: 169px;
     height: 40px;
-    /* left: 20px; */
-    /* top: 543px; */
     border-radius: 10px;
     border: 1px;
   }
@@ -185,11 +144,10 @@ h1 - Inbjudan är skickad! Grattis!
   .page-content {
     position: absolute;
     top: 44px;
+    width: 100%;
   }
   
   /* IKONER */
   .fa-futbol {
-    /* width: 100%; */
     width: 36px;
-    /* margin: 7px; */
   }

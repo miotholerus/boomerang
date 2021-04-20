@@ -46,7 +46,7 @@ export default function ViewSchedule({ schedule, KEY }) {
                 <form className="container form schedule-box"><b>Körschema</b>
                     <div className="scheduleList">{dayOfWeekAsString(schedule[3].value)}ar, {schedule[0].value}-{schedule[1].value}, {schedule[2].value}
                     <br></br>{schedule[5].value} - {schedule[6].value}
-                    <br></br>
+                    <br></br> 
                     {/* <button className="button-v2" onClick={Show}>Visa info</button> */}
                     {console.log(new Date().toLocaleString('sv-se', {  weekday: 'long' }))}
                         <table >
@@ -58,8 +58,8 @@ export default function ViewSchedule({ schedule, KEY }) {
                         <hr></hr><br></br>
                         <table>
                             <tr>
-                                <td>Siri</td>
-                                <td>Tisdag 8 mars</td>
+                                <td>{schedule[7].value}</td>
+                                <td>{dayOfWeekAsString(schedule[3].value)} - {schedule[5].value}</td>
                             </tr>
 
                             <tr>

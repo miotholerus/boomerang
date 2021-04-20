@@ -27,12 +27,12 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
       const upprepa = document.getElementById("upprepa");
       const startdatum = document.getElementById("startdatum");
       const slutdatum = document.getElementById("slutdatum");
-
+      const chaufför = document.getElementById("chaufför")
   
       // if (starttid === '') return;
       // alert(starttid.value+" "+sluttid.value+" "+adress.value+" "+veckodag.value+" "+upprepa.value+" "+startdatum.value+" "+slutdatum.value);
   
-      const newSchedule = [starttid, sluttid, adress, veckodag, upprepa, startdatum, slutdatum];
+      const newSchedule = [starttid, sluttid, adress, veckodag, upprepa, startdatum, slutdatum,chaufför];
       
       setSchedule(newSchedule);
 
@@ -50,46 +50,7 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
   }
 
   return (
-    <div>
-      {/* <i class="fa fa-bars"></i>
-            <span class="banner">Boomerang</span>
-            <span class="my-account right">Siri</span>
-            <i class="fa fa-user-circle right menu-user-icon"></i> */}
-      
-            {/* <div class="container group-box"/>
-              <h3>Skapa körschema</h3>
-              <label for="destination">Fyll i destination:</label>
-              <input type="text" id="destination"></input>
-              <br/>
-              <br/>
-              <label for="dagar">Välj dag för skjutsning</label>
-              <select>
-                <option value="måndag">Måndag</option>
-                <option value="tisdag">Tisdag</option>
-                <option value="onsdag">Onsdag</option>
-                <option value="torsdag">Torsdag</option>
-                <option value="fredag">Fredag</option>
-                <option value="lördag">Lördag</option>
-                <option value="söndag">Söndag</option>
-              </select> */}
-              {/* <br/>
-              <br/>
-              <label for="veckor">Välj antal veckor</label>
-              <select>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select> */}
-              <br/>
-              <br/>
-              
+    <div>         
       <Header/>
       <div className="page-content">
         <FootballBanner/>
@@ -99,7 +60,9 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
         
           <h3>Skapa gruppens körschema</h3>
           <div className="aktivitet">
-            <p>Aktivitet</p>
+            <p>Skapa körschema</p>
+
+            <input className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
             
             <div className="input-side-by-side">
               <input type="time" className="small-input input-left" placeholder="Starttid kl." id="starttid"></input>
@@ -108,7 +71,7 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
               {/* <button onClick={saveSchedule}>Spara</button> */}
             </div>
 
-            <input className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
+            
             
             
             <div className="input-side-by-side">
@@ -139,6 +102,15 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
               <input type="date" className="small-input input-left" placeholder="Startdatum" id="startdatum"></input>
 
               <input type="date" className="small-input input-right" placeholder="Slutdatum" id="slutdatum"></input>
+            </div>
+
+            <div className="driver">
+              <select className="small-input option-list input-left" id="chaufför">
+                <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
+                <option id="option-placeholder" value="Siri">Siri</option>
+                <option id="option-placeholder" value="Peter">Peter</option>
+                <option id="option-placeholder" value="Hanna">Hanna</option>
+              </select>
             </div>
           </div>
           
