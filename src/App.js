@@ -4,7 +4,7 @@ import {
   Switch,
 } from "react-router-dom";
 
-import GroupCreated from './components/GroupCreated';
+// import GroupCreated from './components/GroupCreated';
 import CreateSchedule from './components/CreateSchedule';
 import ViewSchedule from './components/ViewSchedule';
 

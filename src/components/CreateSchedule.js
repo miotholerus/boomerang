@@ -1,7 +1,6 @@
 ﻿
 import React, { useState } from 'react'
 import Header from './Header'
-import ViewSchedule from './ViewSchedule'
 import { BrowserRouter as Router, Route, Switch, Link, useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner'
 

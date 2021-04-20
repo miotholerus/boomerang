@@ -1,11 +1,9 @@
 ﻿import React from 'react'
 import Header from './Header'
 import RideOccation from './RideOccation'
-import CreateSchedule from './CreateSchedule'
 import { dayOfWeekAsString } from '../App'
-
-import FootballBanner from './FootballBanner';
-
+import FootballBanner from './FootballBanner'
+import RideObject from '../RideObject'
 
 
 
@@ -33,11 +31,19 @@ export default function ViewSchedule({ schedule, setSchedule }) {
     for (let i = 0; i < dateList.length; i++) {
       if (dayOfWeekIndex == dateList[i].getDay()) {
         rideDates.push(dateList[i])
-
       }
     }
     // console.log("rideDates:")
     // console.log(rideDates);
+
+    // Skapar RideObjects av alla datum
+    var rideObjects = new Array();
+    for (let i = 0; i < rideDates.length; i++) {
+      const date = rideDates[i];
+      rideObjects.push(new RideObject(date, "Siri", "Peter"))
+      console.log("RideObject "+i+":")
+      console.log(rideObjects[i]);
+    }
 
     function getDates(startDate, endDate) {
       var dateArray = new Array();
@@ -51,8 +57,8 @@ export default function ViewSchedule({ schedule, setSchedule }) {
     }
 
     const newSchedule = schedule;
-    newSchedule.push(rideDates);
-    // console.log(newSchedule);
+    newSchedule.push(rideObjects);
+    console.log(newSchedule);
     setSchedule(newSchedule);
     // console.log("schedule:")
     // console.log(schedule);
@@ -79,7 +85,7 @@ export default function ViewSchedule({ schedule, setSchedule }) {
             <br></br>
             {getRideDates()}
             {/* <button className="button-v2" onClick={()=>getRideDates()}>Visa info</button>  */}
-            {console.log(new Date().toLocaleString('sv-se', { weekday: 'long' }))}
+            {/* {console.log(new Date().toLocaleString('sv-se', { weekday: 'long' }))} */}
 
             <table className="schedule-overview-table">
               <thead>
@@ -91,8 +97,8 @@ export default function ViewSchedule({ schedule, setSchedule }) {
               </thead>
             
               <tbody>
-                {schedule[7].map(date => {
-                  return <RideOccation key={date.id} date={date} />
+                {schedule[7].map(ride => {
+                  return <RideOccation key={ride.id} ride={ride} />
                 })}
               </tbody>
             </table>
