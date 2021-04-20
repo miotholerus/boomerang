@@ -10,7 +10,7 @@ import FootballBanner from './FootballBanner';
 
 
 
-export default function ViewSchedule({ schedule, KEY }) {
+export default function ViewSchedule({ schedule, setSchedule }) {
   // const schedule = JSON.parse(localStorage.getItem(KEY));
 
   // console.log(schedule);
@@ -26,26 +26,38 @@ export default function ViewSchedule({ schedule, KEY }) {
     const startDate = new Date(schedule[5].value);
     const endDate = new Date(schedule[6].value);
     const dateList = getDates(startDate, endDate);
+    console.log("dateList:")
     console.log(dateList);
-    Date.prototype.addDays = function (days) {
-      var dat = new Date(this.valueOf())
-      dat.setDate(dat.getDate() + days);
-      return dat;
+
+    var rideDates = new Array();
+    for (let i = 0; i < dateList.length; i++) {
+      if(dayOfWeekIndex == dateList[i].getDay()){
+        rideDates.push(dateList[i])
+
+      }
     }
+    console.log("rideDates:")
+    console.log(rideDates);
+    
     function getDates(startDate, endDate) {
       var dateArray = new Array();
       var dateToAdd = startDate;
+
       while (dateToAdd <= endDate) {
         dateArray.push(new Date(dateToAdd))
-        dateToAdd = dateToAdd.addDays(1);
+        dateToAdd.setDate(dateToAdd.getDate() + 1);
       }
       return dateArray;
     }
-    // var dateArray = getDates(new Date(), (new Date()).addDays(2));
-    // for (i = 0; i < dateArray.length; i++) {
-    //   alert(dateArray[i]);
-    // }
-  
+
+    const newSchedule = schedule;
+    newSchedule.push(rideDates);
+    console.log(newSchedule);
+    setSchedule(newSchedule);
+    console.log("schedule:")
+    console.log(schedule);
+
+    // return rideDates;
   }
 
 
@@ -65,9 +77,10 @@ export default function ViewSchedule({ schedule, KEY }) {
           <div className="scheduleList">{dayOfWeekAsString(schedule[3].value)}ar, {schedule[0].value}-{schedule[1].value}, {schedule[2].value}
             <br></br>{schedule[5].value} - {schedule[6].value}
             <br></br>
-            <button className="button-v2" onClick={getRideDates}>Visa info</button> 
+            {getRideDates()}
+            {/* <button className="button-v2" onClick={()=>getRideDates()}>Visa info</button>  */}
             {console.log(new Date().toLocaleString('sv-se', { weekday: 'long' }))}
-            
+
             <table >
               <tr>
                 <th>Chaufför</th>

@@ -72,7 +72,7 @@ function App() {
         <Switch>
 
           <Route path="/viewschedule">
-            <ViewSchedule schedule={schedule} KEY={LOCAL_STORAGE_KEY} />
+            <ViewSchedule schedule={schedule} setSchedule={setSchedule} />
           </Route>
           
           <Route path="/">
