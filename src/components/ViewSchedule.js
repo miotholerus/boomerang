@@ -19,54 +19,6 @@ export default function ViewSchedule({ schedule, setSchedule }) {
   // console.log(dayOfWeekAsString(schedule[3].value));
 
 
-  // function getRideDates() {
-  //   const dayOfWeekIndex = schedule[3].value;
-  //   const startDate = new Date(schedule[5].value);
-  //   const endDate = new Date(schedule[6].value);
-  //   const dateList = getDates(startDate, endDate);
-  //   // console.log("dateList:")
-  //   // console.log(dateList);
-
-  //   var rideDates = new Array();
-  //   for (let i = 0; i < dateList.length; i++) {
-  //     if (dayOfWeekIndex == dateList[i].getDay()) {
-  //       rideDates.push(dateList[i])
-  //     }
-  //   }
-  //   // console.log("rideDates:")
-  //   // console.log(rideDates);
-
-  //   // Skapar RideObjects av alla datum
-  //   var rideObjects = new Array();
-  //   for (let i = 0; i < rideDates.length; i++) {
-  //     const date = rideDates[i];
-  //     rideObjects.push(new RideObject(date, "Siri", "Peter"))
-  //     console.log("RideObject "+i+":")
-  //     console.log(rideObjects[i]);
-  //   }
-
-  //   function getDates(startDate, endDate) {
-  //     var dateArray = new Array();
-  //     var dateToAdd = startDate;
-
-  //     while (dateToAdd <= endDate) {
-  //       dateArray.push(new Date(dateToAdd))
-  //       dateToAdd.setDate(dateToAdd.getDate() + 1);
-  //     }
-  //     return dateArray;
-  //   }
-
-  //   const newSchedule = schedule;
-  //   newSchedule.push(rideObjects);
-  //   console.log(newSchedule);
-  //   setSchedule(newSchedule);
-  //   // console.log("schedule:")
-  //   // console.log(schedule);
-
-  //   // return rideDates;
-  // }
-
-
   return (
 
     // egentligen bör vi hämta och mappa en lista av occations ur schedule, snarare än direkt över schedule

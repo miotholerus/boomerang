@@ -11,9 +11,6 @@ export default function CreateSchedule({ schedule, setSchedule}) {
   const [rides, setRides] = useState([]);
   let history = useHistory();
 
-  // getRideDates() ligger nu i ViewSchedule men kanske bör flyttas hit
-  // eftersom vi behöver körtillfällena för att kunna välja chaufförer
-
   function generateDates() {
     console.log("Kör generateDates")
     const dayOfWeekIndex = document.getElementById("veckodag").value;
