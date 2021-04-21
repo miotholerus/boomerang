@@ -68,8 +68,8 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   }
 
   return (
-    <div className="container">
+    //<div className="container">
       <RideEditTable/>
-    </div>
+    //</div>
   )
 }
