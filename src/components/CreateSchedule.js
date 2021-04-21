@@ -1,23 +1,23 @@
 ﻿
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import ViewSchedule from './ViewSchedule'
-import {BrowserRouter as Router, Route, Switch, Link, useHistory} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link, useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner'
 
 
 
-export default function CreateSchedule({schedule, setSchedule, KEY}) {
-  
+export default function CreateSchedule({ schedule, setSchedule}) {
+
   let history = useHistory();
 
   function SaveButton() {
 
     function SaveSchedule(e) {
       // spara här
-      //alert("Kör saveSchedule");
+      // alert("Kör saveSchedule");
       // const starttid = starttidRef.current.value;
-  
+
       // const [starttid, setStarttid] = useState("");
 
       const starttid = document.getElementById("starttid");
@@ -39,9 +39,9 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
       //alert(schedule[2].value);
 
       // localStorage.setItem(KEY, JSON.stringify(newSchedule))
-  
+
       history.push("/viewschedule")
-      
+
     }
 
     return (
@@ -50,10 +50,10 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
   }
 
   return (
-    <div>         
-      <Header/>
+    <div>
+      <Header />
       <div className="page-content">
-        <FootballBanner/>
+        <FootballBanner />
 
         <br></br>
         <form className="container form">
@@ -66,7 +66,7 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
             
             <div className="input-side-by-side">
               <input type="time" className="small-input input-left" placeholder="Starttid kl." id="starttid"></input>
-              
+
               <input type="time" className="small-input input-right" placeholder="Sluttid kl." id="sluttid"></input>
               {/* <button onClick={saveSchedule}>Spara</button> */}
             </div>
@@ -113,12 +113,12 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
               </select>
             </div>
           </div>
-          
-          {/* <div className="skjutsning"> */}
-            {/* <p>Skjutsning</p> */}
 
-            {/* Avancerat, egen komponent? */}
-            {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+          {/* <div className="skjutsning"> */}
+          {/* <p>Skjutsning</p> */}
+
+          {/* Avancerat, egen komponent? */}
+          {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
               <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
               <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
@@ -131,14 +131,14 @@ export default function CreateSchedule({schedule, setSchedule, KEY}) {
               <option value="op3">Tillfälle 3 | Till aktivitet... | Från aktivitet...</option>
             </select> */}
           {/* </div> */}
-          
+
           {/* <div id="upphamtningslista">
             <h5>Upphämtningslista:</h5>
           </div> */}
           <br></br>
-          
-          <SaveButton/>
-          
+
+          <SaveButton />
+
           {/* <Link to="/viewschedule" className="button-v2" onClick={saveSchedule}>Gå vidare</Link>
 
           <button onClick={saveSchedule} className="button-v2">
