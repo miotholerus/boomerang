@@ -1,15 +1,58 @@
 ﻿
 import React, { useState } from 'react'
 import Header from './Header'
-import ViewSchedule from './ViewSchedule'
 import { BrowserRouter as Router, Route, Switch, Link, useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner'
-
+import RideObject from '../RideObject'
 
 
 export default function CreateSchedule({ schedule, setSchedule}) {
 
+  const [rides, setRides] = useState([]);
   let history = useHistory();
+
+  function generateDates() {
+    console.log("Kör generateDates")
+    const dayOfWeekIndex = document.getElementById("veckodag").value;
+    const startDate = new Date(document.getElementById("startdatum").value);
+    const endDate = new Date(document.getElementById("slutdatum").value);
+
+    console.log(dayOfWeekIndex+", "+startDate+", "+endDate);
+
+    const dateList = getDates(startDate, endDate);
+
+    var rideDates = new Array();
+    for (let i = 0; i < dateList.length; i++) {
+      if (dayOfWeekIndex == dateList[i].getDay()) {
+        rideDates.push(dateList[i])
+      }
+    }
+    console.log("rideDates:")
+    console.log(rideDates);
+
+    // Skapar RideObjects av alla datum
+    var rideObjects = new Array();
+    for (let i = 0; i < rideDates.length; i++) {
+      const date = rideDates[i];
+      rideObjects.push(new RideObject(date, "Siri", "Peter"))
+      console.log("RideObject "+i+":")
+      console.log(rideObjects[i]);
+    }
+
+    setRides(rideObjects);
+    console.log(rides);
+    
+    function getDates(startDate, endDate) {
+      var dateArray = new Array();
+      var dateToAdd = startDate;
+
+      while (dateToAdd <= endDate) {
+        dateArray.push(new Date(dateToAdd))
+        dateToAdd.setDate(dateToAdd.getDate() + 1);
+      }
+      return dateArray;
+    }
+  }
 
   function SaveButton() {
 
@@ -20,7 +63,7 @@ export default function CreateSchedule({ schedule, setSchedule}) {
 
       // const [starttid, setStarttid] = useState("");
 
-      const starttid = document.getElementById("starttid");
+      const starttid = document.getElementById("starttid"); // det är mer "korrekt" att använda refs och React-funktionen useRef, men kbry
       const sluttid = document.getElementById("sluttid");
       const adress = document.getElementById("adress-for-destination");
       const veckodag = document.getElementById("veckodag");
@@ -101,7 +144,7 @@ export default function CreateSchedule({ schedule, setSchedule}) {
             <div className="input-side-by-side">
               <input type="date" className="small-input input-left" placeholder="Startdatum" id="startdatum"></input>
 
-              <input type="date" className="small-input input-right" placeholder="Slutdatum" id="slutdatum"></input>
+              <input type="date" className="small-input input-right" onChange={generateDates} placeholder="Slutdatum" id="slutdatum"></input>
             </div>
 
             <div className="driver">
@@ -114,11 +157,11 @@ export default function CreateSchedule({ schedule, setSchedule}) {
             </div>
           </div>
 
-          {/* <div className="skjutsning"> */}
-          {/* <p>Skjutsning</p> */}
+          <div className="skjutsning">
+            <p>Skjutsning</p>
 
-          {/* Avancerat, egen komponent? */}
-          {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+            {/* Avancerat, egen komponent? */}
+            <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
               <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
               <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
@@ -129,14 +172,14 @@ export default function CreateSchedule({ schedule, setSchedule}) {
               <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
               <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
               <option value="op3">Tillfälle 3 | Till aktivitet... | Från aktivitet...</option>
-            </select> */}
-          {/* </div> */}
+            </select>
+          </div>
 
           {/* <div id="upphamtningslista">
             <h5>Upphämtningslista:</h5>
           </div> */}
+          
           <br></br>
-
           <SaveButton />
 
           {/* <Link to="/viewschedule" className="button-v2" onClick={saveSchedule}>Gå vidare</Link>

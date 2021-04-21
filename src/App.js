@@ -4,9 +4,15 @@ import {
   Switch,
 } from "react-router-dom";
 
+<<<<<<< HEAD
 import GroupCreated from './components/GroupCreated'
 import CreateSchedule from './components/CreateSchedule'
 import ViewSchedule from './components/ViewSchedule'
+=======
+// import GroupCreated from './components/GroupCreated';
+import CreateSchedule from './components/CreateSchedule';
+import ViewSchedule from './components/ViewSchedule';
+>>>>>>> mio
 
 import {useState, useEffect} from 'react'
 
