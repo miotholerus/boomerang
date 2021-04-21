@@ -32,9 +32,10 @@ export default function ViewSchedule({ schedule, setSchedule }) {
         <FootballBanner />
 
         <form className="container form schedule-box"><b>Körschema</b>
-          <div className="scheduleList">{dayOfWeekAsString(schedule[3].value)}ar, {schedule[0].value}-{schedule[1].value}, {schedule[2].value}
-            <br></br>{schedule[5].value} - {schedule[6].value}
-            <br></br>
+          <div className="scheduleList">
+            <p>{dayOfWeekAsString(schedule[3])}ar, {schedule[0]}-{schedule[1]}, {schedule[2]}<br></br></p>
+            {schedule[4]} - {schedule[5]}<br></br>
+            
             {/* {getRideDates()} */}
             {/* <button className="button-v2" onClick={()=>getRideDates()}>Visa info</button>  */}
             {/* {console.log(new Date().toLocaleString('sv-se', { weekday: 'long' }))} */}
@@ -49,7 +50,7 @@ export default function ViewSchedule({ schedule, setSchedule }) {
               </thead>
             
               <tbody>
-                {schedule[7].map(ride => {
+                {schedule[6].map(ride => {
                   return <RideOccation key={ride.id} ride={ride} />
                 })}
               </tbody>

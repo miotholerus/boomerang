@@ -6,20 +6,34 @@ import FootballBanner from './FootballBanner'
 import RideObject from '../RideObject'
 
 
-export default function CreateSchedule({ schedule, setSchedule}) {
+export default function CreateSchedule({ schedule, setSchedule }) {
 
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
+  const [address, setAddress] = useState("");
+  const [weekday, setWeekday] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  
   const [rides, setRides] = useState([]);
+
   let history = useHistory();
+
+  function handleEndDateChange(e) {
+    e.preventDefault();
+    setEndDate(e.target.value);
+    generateDates();
+  }
 
   function generateDates() {
     console.log("Kör generateDates")
-    const dayOfWeekIndex = document.getElementById("veckodag").value;
-    const startDate = new Date(document.getElementById("startdatum").value);
-    const endDate = new Date(document.getElementById("slutdatum").value);
+    const dayOfWeekIndex = weekday;
+    const startDateDate = new Date(startDate);
+    const endDateDate = new Date(endDate);
 
-    console.log(dayOfWeekIndex+", "+startDate+", "+endDate);
+    console.log(dayOfWeekIndex+", "+startDateDate+", "+endDateDate);
 
-    const dateList = getDates(startDate, endDate);
+    const dateList = getDates(startDateDate, endDateDate);
 
     var rideDates = new Array();
     for (let i = 0; i < dateList.length; i++) {
@@ -52,6 +66,7 @@ export default function CreateSchedule({ schedule, setSchedule}) {
       }
       return dateArray;
     }
+
   }
 
   function SaveButton() {
@@ -63,18 +78,18 @@ export default function CreateSchedule({ schedule, setSchedule}) {
 
       // const [starttid, setStarttid] = useState("");
 
-      const starttid = document.getElementById("starttid"); // det är mer "korrekt" att använda refs och React-funktionen useRef, men kbry
-      const sluttid = document.getElementById("sluttid");
-      const adress = document.getElementById("adress-for-destination");
-      const veckodag = document.getElementById("veckodag");
-      const upprepa = document.getElementById("upprepa");
-      const startdatum = document.getElementById("startdatum");
-      const slutdatum = document.getElementById("slutdatum");
+      //const starttid = document.getElementById("starttid"); // det är mer "korrekt" att använda refs och React-funktionen useRef, men kbry
+      //const sluttid = document.getElementById("sluttid");
+      //const adress = document.getElementById("adress-for-destination");
+      //const veckodag = document.getElementById("veckodag");
+      //const upprepa = document.getElementById("upprepa");
+      //const startdatum = document.getElementById("startdatum");
+      //const slutdatum = document.getElementById("slutdatum");
 
       // if (starttid === '') return;
       // alert(starttid.value+" "+sluttid.value+" "+adress.value+" "+veckodag.value+" "+upprepa.value+" "+startdatum.value+" "+slutdatum.value);
 
-      const newSchedule = [starttid, sluttid, adress, veckodag, upprepa, startdatum, slutdatum, rides];
+      const newSchedule = [startTime, endTime, address, weekday, startDate, endDate, rides];
       console.log("newSchedule:");
       console.log(newSchedule);
 
@@ -107,17 +122,17 @@ export default function CreateSchedule({ schedule, setSchedule}) {
             <p>Aktivitet</p>
 
             <div className="input-side-by-side">
-              <input type="time" className="small-input input-left" placeholder="Starttid kl." id="starttid"></input>
+              <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
 
-              <input type="time" className="small-input input-right" placeholder="Sluttid kl." id="sluttid"></input>
+              <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} className="small-input input-right" id="sluttid"></input>
               {/* <button onClick={saveSchedule}>Spara</button> */}
             </div>
 
-            <input className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
+            <input value={address} onChange={e=>setAddress(e.target.value)} className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
 
 
             <div className="input-side-by-side">
-              <select /*defaultValue="Veckodag"*/ className="small-input option-list input-left" id="veckodag">
+              <select value={weekday} onChange={e=>setWeekday(e.target.value)} /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" id="veckodag">
                 <option id="option-placeholder" value="" disabled selected>Veckodag</option>
                 <option value="1">Måndag</option>
                 <option value="2">Tisdag</option>
@@ -128,12 +143,12 @@ export default function CreateSchedule({ schedule, setSchedule}) {
                 <option value="0">Söndag</option>
               </select>
 
-              <select className="small-input option-list input-right" id="upprepa">
+              {/* <select className="small-input option-list input-right" id="upprepa">
                 <option id="option-placeholder" value="" disabled selected>Upprepa</option>
                 <option value="upprepa-inte">Upprepa inte</option>
                 <option value="varje-dag">Varje dag</option>
                 <option value="varje-vecka">Varje vecka</option>
-              </select>
+              </select> */}
             </div>
           </div>
 
@@ -141,9 +156,9 @@ export default function CreateSchedule({ schedule, setSchedule}) {
             <p>Schema</p>
 
             <div className="input-side-by-side">
-              <input type="date" className="small-input input-left" placeholder="Startdatum" id="startdatum"></input>
+              <input value={startDate} onChange={e=>setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
 
-              <input type="date" className="small-input input-right" onChange={generateDates} placeholder="Slutdatum" id="slutdatum"></input>
+              <input value={endDate} onChange={e=>handleEndDateChange(e)} type="date" className="small-input input-right" id="slutdatum"></input>
             </div>
           </div>
 
