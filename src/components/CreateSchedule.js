@@ -3,9 +3,10 @@ import Header from './Header'
 import { useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner'
 import RideObject from '../RideObject'
+import ChooseDrivers from './ChooseDrivers';
 
 
-export default function CreateSchedule({ schedule, setSchedule }) {
+export default function CreateSchedule({ schedule, setSchedule, members }) {
   let history = useHistory();
   
   // Uppdateras varje gång input ändras
@@ -23,6 +24,13 @@ export default function CreateSchedule({ schedule, setSchedule }) {
     generateDates();
   }, [weekday, startDate, endDate]);
 
+  function ShowChooseDrivers() {
+    if (rides.length > 0) {
+      return (<ChooseDrivers rides={rides} members={members}/>)
+    } else {
+      return null
+    }
+  }
 
   function generateDates() {
     console.log("Kör generateDates")
@@ -142,7 +150,8 @@ export default function CreateSchedule({ schedule, setSchedule }) {
             <p>Skjutsning</p>
 
             {/* Avancerat, egen komponent? */}
-            <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+            {<ShowChooseDrivers/>}
+            {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
               <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
               <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
@@ -153,7 +162,7 @@ export default function CreateSchedule({ schedule, setSchedule }) {
               <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
               <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
               <option value="op3">Tillfälle 3 | Till aktivitet... | Från aktivitet...</option>
-            </select>
+            </select> */}
           </div>
 
           {/* <div id="upphamtningslista">

@@ -22,6 +22,7 @@ export function dayOfWeekAsString(dayIndex) {
 
 function App() {
   
+  const [members, setMembers] = useState(["Siri", "Peter", "Hanna"]);
   const [schedule, setSchedule] = useState([]);
 
   return (
@@ -30,11 +31,11 @@ function App() {
         <Switch>
 
           <Route path="/viewschedule">
-            <ViewSchedule schedule={schedule} setSchedule={setSchedule} />
+            <ViewSchedule schedule={schedule} />
           </Route>
           
           <Route path="/">
-            <CreateSchedule schedule={schedule} setSchedule={setSchedule} />
+            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} />
           </Route>
 
         </Switch>
