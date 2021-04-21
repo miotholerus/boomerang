@@ -10,8 +10,6 @@ import ViewSchedule from './components/ViewSchedule';
 
 import {useState, useEffect} from 'react'
 
-const LOCAL_STORAGE_KEY = "boomerang.schedule";
-
 /**
 * Hittade på stackoverflow - funktion som konverterar veckodagens nummer (date.getDay()) till veckonamnet.
 *
@@ -25,16 +23,6 @@ export function dayOfWeekAsString(dayIndex) {
 function App() {
   
   const [schedule, setSchedule] = useState([]);
-  
-  // setSchedule varje gång schemat ändras, börjar tomt
-  // schedule ska bli en array/json med all info schemat behöver
-  // Behövs en Schedule-komponent? En komponent per skjutstillfälle?
-  
-  
-
-  // useEffect(() => {
-  //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(schedule))
-  // }, [schedule])
 
   return (
     <div className="App">
@@ -51,10 +39,7 @@ function App() {
 
         </Switch>
         
-        {/* <GroupCreated /> */}
-      
-        
-      
+        {/* <GroupCreated /> */}      
         
       </Router>
     </div>

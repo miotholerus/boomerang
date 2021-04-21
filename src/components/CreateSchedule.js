@@ -1,13 +1,14 @@
-﻿
-import React, { useState } from 'react'
+﻿import React, { useState, useEffect } from 'react'
 import Header from './Header'
-import { BrowserRouter as Router, Route, Switch, Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner'
 import RideObject from '../RideObject'
 
 
 export default function CreateSchedule({ schedule, setSchedule }) {
-
+  let history = useHistory();
+  
+  // Uppdateras varje gång input ändras
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   const [address, setAddress] = useState("");
@@ -15,46 +16,46 @@ export default function CreateSchedule({ schedule, setSchedule }) {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   
+  // Uppdateras varje gång veckodag, startdatum eller slutdatum ändras via useEffect!
   const [rides, setRides] = useState([]);
 
-  let history = useHistory();
-
-  function handleEndDateChange(e) {
-    e.preventDefault();
-    setEndDate(e.target.value);
+  useEffect(() => {
     generateDates();
-  }
+  }, [weekday, startDate, endDate]);
+
 
   function generateDates() {
     console.log("Kör generateDates")
-    const dayOfWeekIndex = weekday;
-    const startDateDate = new Date(startDate);
-    const endDateDate = new Date(endDate);
+    
+    const dayOfWeekIndex = weekday; console.log("dayOfWeekIndex: "+dayOfWeekIndex);
+    const startDateDate = new Date(startDate); console.log("startDateDate: "+startDateDate);
+    const endDateDate = new Date(endDate); console.log("endDateDate: "+endDateDate);
 
-    console.log(dayOfWeekIndex+", "+startDateDate+", "+endDateDate);
-
+    // Skapar en lista av alla datum mellan startDate och endDate
     const dateList = getDates(startDateDate, endDateDate);
 
+    // Plockar ut alla datum av angiven veckodag och lägger i en ny lista
     var rideDates = new Array();
     for (let i = 0; i < dateList.length; i++) {
-      if (dayOfWeekIndex == dateList[i].getDay()) {
-        rideDates.push(dateList[i])
+      const date = dateList[i];
+
+      if (dayOfWeekIndex == date.getDay()) {
+        rideDates.push(date)
       }
     }
     console.log("rideDates:")
     console.log(rideDates);
 
-    // Skapar RideObjects av alla datum
+    // Skapar RideObjects av alla datum och lägger i en tredje lista
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
       const date = rideDates[i];
       rideObjects.push(new RideObject(date, "Siri", "Peter"))
-      console.log("RideObject "+i+":")
-      console.log(rideObjects[i]);
     }
 
+    // rides (statevariabel) blir listan av RideObjects
     setRides(rideObjects);
-    console.log(rides);
+    console.log("rides: "+rides);
     
     function getDates(startDate, endDate) {
       var dateArray = new Array();
@@ -64,43 +65,20 @@ export default function CreateSchedule({ schedule, setSchedule }) {
         dateArray.push(new Date(dateToAdd))
         dateToAdd.setDate(dateToAdd.getDate() + 1);
       }
+
       return dateArray;
     }
-
   }
 
   function SaveButton() {
 
     function SaveSchedule(e) {
-      // spara här
-      // alert("Kör saveSchedule");
-      // const starttid = starttidRef.current.value;
-
-      // const [starttid, setStarttid] = useState("");
-
-      //const starttid = document.getElementById("starttid"); // det är mer "korrekt" att använda refs och React-funktionen useRef, men kbry
-      //const sluttid = document.getElementById("sluttid");
-      //const adress = document.getElementById("adress-for-destination");
-      //const veckodag = document.getElementById("veckodag");
-      //const upprepa = document.getElementById("upprepa");
-      //const startdatum = document.getElementById("startdatum");
-      //const slutdatum = document.getElementById("slutdatum");
-
-      // if (starttid === '') return;
-      // alert(starttid.value+" "+sluttid.value+" "+adress.value+" "+veckodag.value+" "+upprepa.value+" "+startdatum.value+" "+slutdatum.value);
-
       const newSchedule = [startTime, endTime, address, weekday, startDate, endDate, rides];
-      console.log("newSchedule:");
-      console.log(newSchedule);
 
       setSchedule(newSchedule);
-
-      //alert(schedule[2].value);
-
-      // localStorage.setItem(KEY, JSON.stringify(newSchedule))
+      console.log("schedule after Save: "+schedule)
 
       history.push("/viewschedule")
-
     }
 
     return (
@@ -125,11 +103,9 @@ export default function CreateSchedule({ schedule, setSchedule }) {
               <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
 
               <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} className="small-input input-right" id="sluttid"></input>
-              {/* <button onClick={saveSchedule}>Spara</button> */}
             </div>
 
             <input value={address} onChange={e=>setAddress(e.target.value)} className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
-
 
             <div className="input-side-by-side">
               <select value={weekday} onChange={e=>setWeekday(e.target.value)} /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" id="veckodag">
@@ -158,7 +134,7 @@ export default function CreateSchedule({ schedule, setSchedule }) {
             <div className="input-side-by-side">
               <input value={startDate} onChange={e=>setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
 
-              <input value={endDate} onChange={e=>handleEndDateChange(e)} type="date" className="small-input input-right" id="slutdatum"></input>
+              <input value={endDate} onChange={e=>setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
             </div>
           </div>
 
@@ -186,12 +162,6 @@ export default function CreateSchedule({ schedule, setSchedule }) {
           
           <br></br>
           <SaveButton />
-
-          {/* <Link to="/viewschedule" className="button-v2" onClick={saveSchedule}>Gå vidare</Link>
-
-          <button onClick={saveSchedule} className="button-v2">
-            Gå vidare
-          </button> */}
 
         </form>
       </div>
