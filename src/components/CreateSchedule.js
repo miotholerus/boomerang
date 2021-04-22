@@ -137,8 +137,9 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
               </select> */}
             </div>
           </div>
-
+              
           <div className="schema">
+           
             <p>Schema</p>
 
             <div className="input-side-by-side">
@@ -148,12 +149,12 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
             </div>
 
             <div className="driver">
-              <select className="small-input option-list input-left" id="chaufför">
+              {/* <select className="small-input option-list input-left" id="chaufför">
                 <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
                 <option id="option-placeholder" value="Siri">Siri</option>
                 <option id="option-placeholder" value="Peter">Peter</option>
                 <option id="option-placeholder" value="Hanna">Hanna</option>
-              </select>
+              </select> */}
             </div>
           </div>
 
@@ -182,7 +183,6 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
           
           <br></br>
           <SaveButton />
-
         </form>
       </div>
     </div>

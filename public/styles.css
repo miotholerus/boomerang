@@ -1,36 +1,9 @@
-﻿
-/*
-h2 - Välkommen till
-h3 - Skapa grupp, Skapa körschema
-h4 - Grupper, Körschema, (Fotbollsgruppen?)
-h5/p - Namn på grupp:
-h1 - Inbjudan är skickad! Grattis!
-*/
-
-/* Applicerat på hela sidan - gör så att t.ex width: 343px; alltid är 343px, oavsett eventuell padding */
-* {
-  box-sizing: border-box;
-}
-p {
-  /* position: absolute; */
-  /* width: 103px; */
-  /* height: 18px; */
-  /* left: 17px; */
-  /* top: 224px; */
-
-  /* font-family: Roboto; */
-  /* font-style: normal; */
-  /* font-weight: normal; */
+﻿p {
   font-size: 15px;
   line-height: 18px;
-
-  /* identical to box height */
-  /* text-align: center; */
   letter-spacing: -0.333333px;
 }
 body {
-  /* font-size: larger; */
-  /* background-color: #F2F2ED; */
   font-family: "Open Sans";
   color: #363636;
 }
@@ -53,7 +26,7 @@ body {
   display: flex;
   width: 50%;
   align-items: center;
-  /* justify-content: center; */
+
 }
 .right {
   display: flex;
@@ -61,69 +34,42 @@ body {
   align-items: center;
   justify-content: flex-end;
 }
-/* Experiment */
-/* .header {
-  overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 20px 10px;
-}
-.header-element {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
-.header-logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-.header-right {
-  float: right;
-} */
+
 
 /* SUBHEADER FOTBOLLSGRUPPEN */
 .sub-header-football {
   display: flex;
   background-color: #9CD09B;
   padding-top: 16px;
-  width: 100%;
   height: 85px;
-  /* top: 33px; */
+  
+ 
 }
 .football-column {
   display: flex;
   width: 55px; height: 50px;
-  /* float: left; */
+ 
   text-align: center;
   vertical-align: middle;
   align-items: center; 
   justify-content: center;
   
-  /* margin-top: 7px; */
+  
 }
 .group-column {
   display: flex;
   height: 50px;
-
   align-items: center;
-  
   font-size: 15px;
   line-height: 18px;
   letter-spacing: -0.333333px;
 }
 
-.page-content {
-  width: 100%;
-}
 
 /* BOXAR */
 .container {
-  background-color: #c5c5c5; /*white;*/
-  padding: 8px;
+  background-color:black; /*white;*/
+  padding: 5px;
   margin: 7px;
 }
 .group-box {
@@ -144,31 +90,25 @@ li {
   display: block;
 }
 i.li-user-icon {
-  /* height: 33px; */
-  /* width: 33px; */
+
   font-size: 33px;
 }
 
 
 
 .button-v1 {
-  /* top: 50%; */
   left: 50%;
-  /* -ms-transform: translate(-50%, -50%); */
   transform: translate(-50%, -0%);
   position: relative;
   border: none;
   margin-bottom: 10px;
   padding: 16px;
   border-radius: 33px;
-
   display: inline-block;
   background-color: white;
   text-decoration: none;
   color: black;
-  /* text-align: center; */
 }
-
 .button-v2 {
   background-color: #882E76;
   color: white;
@@ -200,12 +140,9 @@ input {
   padding-left: 11px;
   margin-bottom: 10px;
 }
-
 .standard-input {
-  /* position: absolute; */
   width: 345px;
   height: 40px;
-  /* left: 19px; */
   top: 438px;
   border-radius: 10px;
   border: 1px;
@@ -216,7 +153,6 @@ input {
   color: #767676;
 
 }
-
 .input-side-by-side {
   width: 345px;
 }
@@ -224,8 +160,6 @@ input {
   background-color: #F2F2ED;
   width: 169px;
   height: 40px;
-  /* left: 20px; */
-  /* top: 543px; */
   border-radius: 10px;
   border: 1px;
 }
@@ -236,23 +170,21 @@ input {
   margin-left: 3px;
 }
 
+
 .page-content {
   position: absolute;
-  top: 44px;
+  top: 48px;
+  width: 100%;
+  background-color: aqua;
 }
 
 /* IKONER */
 .fa-futbol {
-  /* width: 100%; */
   width: 36px;
-  /* margin: 7px; */
 }
-
 .fa-bars {
   width: 93px;
 }
-
-
 hr{
   background-color: rgb(0, 3, 5);
   width: 200px;
@@ -260,13 +192,10 @@ hr{
   float: left;
   
 }
-
 /* FÖRSÖK TILL ATT LÖSA FOTBOLLSBANNER-BUGGEN */
 .schedule-box {
-  /* display: block; */
   margin: 10px;
 }
-
 /* TABELL KÖRSCHEMA (ÖVERSIKT) */
 /* .schedule-overview-table {
 
