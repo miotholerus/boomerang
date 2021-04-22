@@ -102,19 +102,17 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
         <br></br>
         <form className="container form">
-        
-          <h3>Aktivitet</h3>
-          <div className="aktivitet">
-            <p>Skapa körschema</p>
-
-            <input className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
+          <h3>Skapa gruppens körchema</h3>
+          <br></br>
+            <div className="aktivitet">
+            <h4>Aktivitet</h4>
             
             <div className="input-side-by-side">
               <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
 
               <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} className="small-input input-right" id="sluttid"></input>
             </div>
-
+             
             <input value={address} onChange={e=>setAddress(e.target.value)} className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
 
             <div className="input-side-by-side">
@@ -140,7 +138,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
               
           <div className="schema">
            
-            <p>Schema</p>
+            <h4>Schema</h4>
 
             <div className="input-side-by-side">
               <input value={startDate} onChange={e=>setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
@@ -159,7 +157,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
           </div>
 
           <div className="skjutsning">
-            <p>Skjutsning</p>
+            <h4>Skjutsning</h4>
 
             {/* Avancerat, egen komponent? */}
             {<ShowChooseDrivers/>}

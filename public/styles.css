@@ -10,7 +10,7 @@ body {
 
 /* HEADERN */
 .header {
-  background-color: #afafaf;
+  background-color: white;
   padding: 7px;
   position: absolute;
   height: 45px;
@@ -30,7 +30,7 @@ body {
 }
 .right {
   display: flex;
-  width: 50%;
+  width: 45%;
   align-items: center;
   justify-content: flex-end;
 }
@@ -41,7 +41,7 @@ body {
   display: flex;
   background-color: #9CD09B;
   padding-top: 16px;
-  height: 85px;
+  height: 70px;
   
  
 }
@@ -68,7 +68,7 @@ body {
 
 /* BOXAR */
 .container {
-  background-color:black; /*white;*/
+  background-color: white; /*white;*/
   padding: 5px;
   margin: 7px;
 }
@@ -135,6 +135,7 @@ i.li-user-icon {
   border-radius: 10px;
 }
 input {
+  border-style: solid;
   background-color: #F2F2ED;
   border-color: #DFDFD2;
   padding-left: 11px;
@@ -147,6 +148,8 @@ input {
   border-radius: 10px;
   border: 1px;
   margin-bottom: 10px;
+  border-style: solid;
+  border-color: #DFDFD2;
 }
 .option-list {
   padding-left: 7px;
@@ -154,20 +157,26 @@ input {
 
 }
 .input-side-by-side {
-  width: 345px;
+  display: flex;
+  width: 340px;
+  color: #363636;
 }
 .small-input {
-  background-color: #F2F2ED;
-  width: 169px;
+  background-color: white;
+  width: 165px;
   height: 40px;
   border-radius: 10px;
   border: 1px;
+  border-color:  #DFDFD2;
+  border-style: solid;
 }
 .input-left {
   margin-right: 4px;
+  
 }
 .input-right {
   margin-left: 3px;
+  padding: 0px;
 }
 
 
@@ -175,7 +184,6 @@ input {
   position: absolute;
   top: 48px;
   width: 100%;
-  background-color: aqua;
 }
 
 /* IKONER */
@@ -202,4 +210,10 @@ hr{
 } */
 th {
   text-align: left;
+}
+.h3{
+  color: #363636;
+}
+.h4{
+  color: #363636;
 }
