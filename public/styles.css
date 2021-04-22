@@ -176,14 +176,15 @@ h4 {
   background-color: #ffffff; /*#c5c5c5;*/
   padding: 10px;
   margin: 8px;
-  
+  border-radius: 8px;
   margin-bottom: 30px;
 }
 .group-box {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .before-create-schedule-box {
   margin: 33px;
+  border-radius: 0px;
 }
 
 
@@ -237,7 +238,7 @@ i.li-user-icon {
   transform: translate(-50%, -0%);
   position: relative;
   
-  margin-bottom: 18px;
+  margin-bottom: 30px;
 
 }
 
@@ -273,6 +274,7 @@ input {
   margin-bottom: 20px;
   padding-right: 4px;
   border: solid #DFDFD2;
+  border-width: thin;
 }
 .option-list {
   background-color: #F2F2ED;
@@ -295,6 +297,7 @@ input {
   border-radius: 4px;
   border: 1px;
   border: solid #DFDFD2;
+  border-width: thin;
 }
 .input-left {
   margin-right: 10px;
@@ -341,8 +344,9 @@ hr{
 /* CHOOSE DRIVERS BOX */
 .choose-drivers-box {
   display: flex;
+  justify-content: center;
+  align-items: center;
   /* box-shadow: 5px 5px; */
-  
 }
 table {
   border-collapse: separate;
@@ -352,4 +356,8 @@ table {
 }
 th {
   text-align: left;
+}
+select.driver {
+  border-style: none;
+  font-size: 15px;
 }
