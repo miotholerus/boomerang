@@ -7,6 +7,10 @@ export default class RideObject {
         this.driverFrom = driverFrom;
     }
 
+    dateAsString() {
+        return dayOfWeekAsString(this.date.getDay())+" "+this.date.getDate()+" "+this.date.toLocaleString('sv-se', { month: 'long' })
+    }
+    
     // Getters tycks inte behövas, bara att kalla på t.ex rideObject.date
     // (men så här skulle de se ut)
     // get date() {
@@ -19,9 +23,7 @@ export default class RideObject {
     //     return this.driverFrom;
     // }
 
-    dateAsString() {
-        return dayOfWeekAsString(this.date.getDay())+" "+this.date.getDate()+" "+this.date.toLocaleString('sv-se', { month: 'long' })
-    }
+    
 
     // Setters funkar inte än så länge :C
     // Tror att annoteringarna "bestämmer" vilken datatyp som ska vara på respektive attribut

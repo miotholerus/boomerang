@@ -25,5 +25,24 @@
                 "franaktivitet": "Hanna"
             }
         ]
+    },
+    
+    {
+        "id": "SAMPLE",
+        "namn": "Siri",
+        "barn": "Sara",
+        "adress": "Semmelvägen 4"
+    },
+    {
+        "id": "SAMPLE",
+        "namn": "Peter",
+        "barn": "Per",
+        "adress": "Prästgatan 50"
+    },
+    {
+        "id": "SAMPLE",
+        "namn": "Hanna",
+        "barn": "Hugo",
+        "adress": "Havsstigen 12"
     }
 ]
