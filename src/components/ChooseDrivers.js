@@ -2,7 +2,7 @@
 
 export default function ChooseDrivers({rides, setRides, schedule, setSchedule, members}) {
   
-  function RideEditRow({ride}) {
+  function RideEditRow({index, ride}) {
     const [driverTo, setDriverTo] = useState("");
     const [driverFrom, setDriverFrom] = useState("");
 
@@ -16,7 +16,9 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
 
     return (
       <tr>
-        <td>{ride.dateAsString()}</td>
+        <td>
+          {ride.dateAsString()}
+        </td>
         <td>
           <select value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
             {members.map(member => {
@@ -32,39 +34,51 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
           </select>
         </td>
       </tr>
-      
     )
   }
 
-  // function ForEachRide() {
-  //   for (let i = 0; i < rides.length; i++) {
-  //     return (
-  //       <RideEditRow key={i} ride={rides[i]}/>
-  //     )
-  //   }
-  // }
-  
-  function RideEditTable() {
+  function ForEachRide() {
+    var index = 0;
+    const returnElements = rides.map(ride => {
+      //id++;
+      return (
+        <RideEditRow index={index++} ride={ride}/>
+      )
+    })
 
     return (
+      <>{returnElements}</>
+    )
+
+    // for (let i = 0; i < rides.length; i++) {
+    //   return (
+    //     <RideEditRow key={i} ride={rides[i]}/>
+    //     // Hmmm funkar inte pga kan bara returnera en grej...
+    //     // Hur får vi in körtillfällets rides-index?
+    //     // Index behövs för att kunna uppdatera rides på rätt index (tror jag)
+    //   )
+    // }
+  }
+  
+  function RideEditTable() {
+    return (
       <table className="choose-driver">
-        
-          <tr>
-            <th>Tillfälle:</th>
-            <th>Till aktivitet:</th>
-            <th>Från aktivitet:</th>
-          </tr>
-      
-        {/* På något sätt fånga upp detta och uppdatera rides... */}
+  
+        <tr>
+          <th>Tillfälle:</th>
+          <th>Till aktivitet:</th>
+          <th>Från aktivitet:</th>
+        </tr>
+    
         {/* <ForEachRide/> */}
+        {/* På något sätt fånga upp detta och uppdatera rides... */}
         {rides.map(ride => {
           return (
             <RideEditRow key={ride.id} ride={ride}/>
           )
         })}
       </table>
-    )
-    
+    ) 
   }
 
   return (
