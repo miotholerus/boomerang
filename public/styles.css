@@ -75,6 +75,18 @@ body {
   font-size: 18px;
   /* margin-left: 101px; */
 }
+
+h3{
+  font-size: 25px;
+  padding-left: 15px;
+}
+
+.changesizeofbr{
+  display: block;
+  margin-bottom: 2px;
+  font-size:2px;
+  line-height: 2px;
+}
 /* Experiment */
 /* .header {
   overflow: hidden;

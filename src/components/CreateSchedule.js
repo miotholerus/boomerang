@@ -100,12 +100,13 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       <div className="page-content">
         <FootballBanner />
 
-        <br></br>
+        <h3 className="skapagruppenskörschema">Skapa gruppens körschema</h3>
+        <br className="changesizeofbr"></br>
+
         <form className="container-a form">
 
-          <h3>Skapa gruppens körschema</h3>
           <div className="aktivitet">
-            <p>Aktivitet</p>
+            <h4>Aktivitet</h4>
 
             <div className="input-side-by-side">
               <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
@@ -135,9 +136,13 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
               </select> */}
             {/* </div> */}
           </div>
+          </form>
+          
+          <br className="changesizeofbr"></br>
 
+          <form className="container-a form">
           <div className="schema">
-            <p>Schema</p>
+            <h4>Schema</h4>
 
             <div className="input-side-by-side">
               <input value={startDate} onChange={e=>setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
@@ -145,9 +150,13 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
               <input value={endDate} onChange={e=>setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
             </div>
           </div>
+          </form>
 
+          <br className="changesizeofbr"></br>
+          
+          <form className="container-a form">
           <div className="skjutsning">
-            <p>Skjutsning</p>
+            <h4>Skjutsning</h4>
 
             {/* Avancerat, egen komponent? */}
             {<ShowChooseDrivers/>}
@@ -169,7 +178,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
             <h5>Upphämtningslista:</h5>
           </div> */}
           
-          <br></br>
+          <br className="changesizeofbr"></br>
           <SaveButton />
 
         </form>
