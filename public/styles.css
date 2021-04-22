@@ -1,8 +1,8 @@
 ﻿
 /*
 h2 - Välkommen till
-h3 - Skapa grupp, Skapa körschema
-h4 - Grupper, Körschema, (Fotbollsgruppen?)
+h3 - Skapa gruppens körschema
+h4 - Aktivitet, Schema, Skjutsning
 h5/p - Namn på grupp:
 h1 - Inbjudan är skickad! Grattis!
 */
@@ -79,7 +79,25 @@ body {
 
 h3{
   font-size: 25px;
+  
+  margin-top: 1.2em;
+  margin-bottom: 0.2em;
+}
+h4 {
+  font-size: 18px;
+  margin-top: 0.5em;
+  margin-bottom: 0.7em;
+
+  margin-left: 0.2em;
+}
+
+/* KÖRSCHEMA (ÖVERSIKT) */
+.overview-info {
+  margin-left: 0.1em;
+}
+.loose-text-field {
   padding-left: 15px;
+  margin-bottom: 0.8em;
 }
 
 .changesizeofbr{
@@ -116,31 +134,37 @@ h3{
 .sub-header-football {
   display: flex;
   background-color: #9CD09B;
-  padding-top: 16px;
+  /* padding-top: 16px; */
+  align-items: center; 
+  
   width: 100%;
   height: 85px;
-  /* top: 33px; */
 }
 .football-column {
   display: flex;
-  width: 55px; height: 50px;
-  /* float: left; */
+  width: 60px; height: 50px;
+  
   text-align: center;
   vertical-align: middle;
   align-items: center; 
   justify-content: center;
   
-  /* margin-top: 7px; */
 }
 .group-column {
   display: flex;
   height: 50px;
 
   align-items: center;
+  padding-top: 0.4em;
+  padding-left: 0.4em;
+  /* flex-direction: column; */
   
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: -0.333333px;
+  /* font-size: 15px; */
+  line-height: 20px;
+  /* letter-spacing: -0.333333px; */
+}
+#members {
+  font-weight: normal;
 }
 
 .page-content {
@@ -150,8 +174,10 @@ h3{
 /* BOXAR */
 .container-a {
   background-color: #ffffff; /*#c5c5c5;*/
-  padding: 8px;
-  margin: 7px;
+  padding: 10px;
+  margin: 8px;
+  
+  margin-bottom: 30px;
 }
 .group-box {
   border-radius: 10px;
@@ -201,10 +227,10 @@ i.li-user-icon {
   color: white;
   height: 38px;
 
-  padding-left: 6%;
-  padding-right: 6%;
+  padding-left: 8%;
+  padding-right: 8%;
   
-  border-radius: 10px;
+  border-radius: 19px;
   border: none;
 
   left: 50%;
@@ -218,27 +244,34 @@ i.li-user-icon {
 
 
 /* SKAPA KÖRSCHEMA-FORMULÄRET */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #000;
+}
 .form {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 input {
+  font-size: 15px;
   background-color: #F2F2ED;
   /*DFDFD2*/
   
   border-width: 1px;
   padding-left: 11px;
-  margin-bottom: 10px;
+  padding-right: 4px;
+  margin-bottom: 20px;
 }
 
 .standard-input {
   /* position: absolute; */
-  width: 345px;
+  width: 339px;
   height: 40px;
   /* left: 19px; */
+  font-size: 16px;
   top: 438px;
-  border-radius: 10px;
+  border-radius: 4px;
   border: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding-right: 4px;
   border: solid #DFDFD2;
 }
 .option-list {
@@ -249,8 +282,9 @@ input {
 }
 
 .input-side-by-side {
-  width: 345px;
-  
+  width: 339px;
+  display: flex;
+  justify-content: space-between;
 }
 .small-input {
   background-color: #F2F2ED;
@@ -258,15 +292,15 @@ input {
   height: 40px;
   /* left: 20px; */
   /* top: 543px; */
-  border-radius: 10px;
+  border-radius: 4px;
   border: 1px;
   border: solid #DFDFD2;
 }
 .input-left {
-  margin-right: 4px;
+  margin-right: 10px;
 }
 .input-right {
-  margin-left: 3px;
+  margin-left: 10px;
 }
 
 .page-content {
@@ -308,17 +342,14 @@ hr{
 .choose-drivers-box {
   display: flex;
   /* box-shadow: 5px 5px; */
-}
-
-/* TABELL KÖRSCHEMA (ÖVERSIKT) */
-/* .schedule-overview {
   
-} */
+}
 table {
   border-collapse: separate;
-  border-spacing: 0px 15px;
+  border-spacing: 0px 13px;
+  table-layout: fixed;
+  width: 100%;
 }
 th {
   text-align: left;
 }
-
