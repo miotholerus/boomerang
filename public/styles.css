@@ -37,13 +37,12 @@ body {
 
 /* HEADERN */
 .header {
-  background-color: #afafaf;
-  padding: 7px;
+  background-color: #ffffff;
   position: absolute;
   height: 45px;
   width: 100%;
-  padding-left: 18px;
-  padding-right: 7px;
+  /* padding-left: 18px;
+  padding-right: 7px; */
 }
 /* Header side-by-side-försök */
 .flex {
@@ -53,13 +52,28 @@ body {
   display: flex;
   width: 50%;
   align-items: center;
-  /* justify-content: center; */
+   /* justify-content: center; */
 }
 .right {
   display: flex;
   width: 50%;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 10px;
+  /* padding-right: 10px; */
+}
+
+.header-element{
+  font-size: 150%;
+  text-indent: 10px;
+  color: #363636;
+  /* margin-left: 11px; */
+}
+
+.my-account{
+  color: #363636;
+  font-size: 18px;
+  /* margin-left: 101px; */
 }
 /* Experiment */
 /* .header {
@@ -249,7 +263,12 @@ input {
 }
 
 .fa-bars {
-  width: 93px;
+  /* width: 93px; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 50%;
 }
 
 
