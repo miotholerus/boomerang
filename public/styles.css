@@ -30,7 +30,7 @@ p {
 }
 body {
   /* font-size: larger; */
-  /* background-color: #F2F2ED; */
+  background-color: #F2F2ED;
   font-family: "Open Sans";
   color: #363636;
 }
@@ -122,7 +122,7 @@ body {
 
 /* BOXAR */
 .container-a {
-  background-color: /*#ffffff;*/ #c5c5c5;
+  background-color: #ffffff; /*#c5c5c5;*/
   padding: 8px;
   margin: 7px;
 }
@@ -196,7 +196,9 @@ i.li-user-icon {
 }
 input {
   background-color: #F2F2ED;
-  border-color: #DFDFD2;
+  /*DFDFD2*/
+  
+  border-width: 1px;
   padding-left: 11px;
   margin-bottom: 10px;
 }
@@ -210,6 +212,7 @@ input {
   border-radius: 10px;
   border: 1px;
   margin-bottom: 10px;
+  border: solid #DFDFD2;
 }
 .option-list {
   background-color: #F2F2ED;
@@ -220,6 +223,7 @@ input {
 
 .input-side-by-side {
   width: 345px;
+  
 }
 .small-input {
   background-color: #F2F2ED;
@@ -229,6 +233,7 @@ input {
   /* top: 543px; */
   border-radius: 10px;
   border: 1px;
+  border: solid #DFDFD2;
 }
 .input-left {
   margin-right: 4px;
