@@ -14,7 +14,7 @@ export default function ViewSchedule({ schedule }) {
       <div className="page-content">
         <FootballBanner />
 
-        <form className="container form schedule-box"><b>Körschema</b>
+        <div className="container-a form schedule-box"><b>Körschema</b>
           <div className="scheduleList">
             <p>{dayOfWeekAsString(schedule[3])}ar, {schedule[0]}-{schedule[1]}, {schedule[2]}<br></br></p>
             {/* {schedule[4]} - {schedule[5]}<br></br> */}
@@ -37,7 +37,7 @@ export default function ViewSchedule({ schedule }) {
 
           </div>
 
-        </form>
+        </div>
       </div>
     </div>
   )

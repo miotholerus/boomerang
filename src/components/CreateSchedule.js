@@ -101,7 +101,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <FootballBanner />
 
         <br></br>
-        <form className="container form">
+        <form className="container-a form">
 
           <h3>Skapa gruppens körschema</h3>
           <div className="aktivitet">
@@ -115,7 +115,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
             <input value={address} onChange={e=>setAddress(e.target.value)} className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
 
-            <div className="input-side-by-side">
+            {/* <div className="input-side-by-side"> */}
               <select value={weekday} onChange={e=>setWeekday(e.target.value)} /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" id="veckodag">
                 <option id="option-placeholder" value="" disabled selected>Veckodag</option>
                 <option value="1">Måndag</option>
@@ -133,7 +133,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
                 <option value="varje-dag">Varje dag</option>
                 <option value="varje-vecka">Varje vecka</option>
               </select> */}
-            </div>
+            {/* </div> */}
           </div>
 
           <div className="schema">
