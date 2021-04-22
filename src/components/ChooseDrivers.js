@@ -18,7 +18,7 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
     return (
       <tr>
         <td>
-          {index+" "+ride.dateAsString()}
+          {ride.dateAsStringShort()}
         </td>
         <td>
           <select value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
@@ -83,8 +83,8 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   }
 
   return (
-    //<div className="container-a">
+    <div className="choose-drivers-box">
       <RideEditTable/>
-    //</div>
+    </div>
   )
 }

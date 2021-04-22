@@ -10,6 +10,7 @@ h1 - Inbjudan är skickad! Grattis!
 /* Applicerat på hela sidan - gör så att t.ex width: 343px; alltid är 343px, oavsett eventuell padding */
 * {
   box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
 }
 p {
   /* position: absolute; */
@@ -31,8 +32,8 @@ p {
 body {
   /* font-size: larger; */
   background-color: #F2F2ED;
-  font-family: "Open Sans";
   color: #363636;
+  
 }
 
 /* HEADERN */
@@ -303,10 +304,21 @@ hr{
   margin: 10px;
 } */
 
-/* TABELL KÖRSCHEMA (ÖVERSIKT) */
-/* .schedule-overview-table {
+/* CHOOSE DRIVERS BOX */
+.choose-drivers-box {
+  display: flex;
+  /* box-shadow: 5px 5px; */
+}
 
+/* TABELL KÖRSCHEMA (ÖVERSIKT) */
+/* .schedule-overview {
+  
 } */
+table {
+  border-collapse: separate;
+  border-spacing: 0px 15px;
+}
 th {
   text-align: left;
 }
+
