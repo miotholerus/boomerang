@@ -121,8 +121,8 @@ body {
 }
 
 /* BOXAR */
-.container {
-  background-color: #c5c5c5; /*white;*/
+.container-a {
+  background-color: /*#ffffff;*/ #c5c5c5;
   padding: 8px;
   margin: 7px;
 }
@@ -212,9 +212,10 @@ input {
   margin-bottom: 10px;
 }
 .option-list {
+  background-color: #F2F2ED;
   padding-left: 7px;
-  color: #767676;
-
+  padding-right: 7px;
+  /* color: #767676; */
 }
 
 .input-side-by-side {
@@ -262,10 +263,9 @@ hr{
 }
 
 /* FÖRSÖK TILL ATT LÖSA FOTBOLLSBANNER-BUGGEN */
-.schedule-box {
-  /* display: block; */
+/* .schedule-box {
   margin: 10px;
-}
+} */
 
 /* TABELL KÖRSCHEMA (ÖVERSIKT) */
 /* .schedule-overview-table {

@@ -3,11 +3,12 @@
 export default function ChooseDrivers({rides, setRides, schedule, setSchedule, members}) {
   
   function RideEditRow({index, ride}) {
-    const [driverTo, setDriverTo] = useState("");
-    const [driverFrom, setDriverFrom] = useState("");
+    const [driverTo, setDriverTo] = useState("Siri");
+    const [driverFrom, setDriverFrom] = useState("Siri");
 
     useEffect(() => {
       ride.driverTo = driverTo;
+      console.log("ride "+index+" driverTo: "+rides[index].driverTo)
     }, [driverTo])
 
     useEffect(() => {
@@ -17,7 +18,7 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
     return (
       <tr>
         <td>
-          {ride.dateAsString()}
+          {index+" "+ride.dateAsString()}
         </td>
         <td>
           <select value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
@@ -70,19 +71,19 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
           <th>Från aktivitet:</th>
         </tr>
     
-        {/* <ForEachRide/> */}
+        <ForEachRide/>
         {/* På något sätt fånga upp detta och uppdatera rides... */}
-        {rides.map(ride => {
+        {/* {rides.map(ride => {
           return (
             <RideEditRow key={ride.id} ride={ride}/>
           )
-        })}
+        })} */}
       </table>
     ) 
   }
 
   return (
-    //<div className="container">
+    //<div className="container-a">
       <RideEditTable/>
     //</div>
   )
