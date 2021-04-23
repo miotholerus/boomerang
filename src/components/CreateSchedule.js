@@ -109,10 +109,10 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
           <div className="aktivitet">
             <h4>Aktivitet</h4>
-
-            <div className="input-side-by-side">
+            <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div>
+            <div className="input-side-by-side">  
               <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
-
+              
               <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} className="small-input input-right" id="sluttid"></input>
             </div>
 
@@ -145,8 +145,9 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <form className="container-a form">
           <div className="schema">
             <h4>Schema</h4>
-
+            <div >&nbsp;Startdatum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div>
             <div className="input-side-by-side">
+
               <input value={startDate} onChange={e => setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
 
               <input value={endDate} onChange={e => setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
