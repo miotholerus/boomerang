@@ -42,15 +42,13 @@ body {
   position: absolute;
   height: 45px;
   width: 100%;
-  
   /* padding-left: 18px;
   padding-right: 7px; */
 }
 /* Header side-by-side-försök */
 .flex {
+  
   display: flex;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 .left {
   display: flex;
@@ -71,7 +69,6 @@ body {
   font-size: 150%;
   text-indent: 10px;
   color: #363636;
-  padding-top: 5px;
   /* margin-left: 11px; */
 }
 
@@ -320,6 +317,7 @@ input {
   /* width: 100%; */
   width: 36px;
   /* margin: 7px; */
+  margin-left: 2px;
 }
 
 .fa-bars {
@@ -329,6 +327,7 @@ input {
   margin-right: auto;
   margin-top: 10px;
   width: 50%;
+  margin-left: 8px;
 }
 
 
