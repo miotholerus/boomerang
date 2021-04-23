@@ -44,6 +44,7 @@ body {
 }
 /* Header side-by-side-försök */
 .flex {
+  
   display: flex;
 }
 .left {
@@ -283,6 +284,8 @@ input {
 /* IKONER */
 .fa-futbol {
   width: 36px;
+  /* margin: 7px; */
+  margin-left: 2px;
 }
 .fa-bars {
   /* width: 93px; */
@@ -291,6 +294,7 @@ input {
   margin-right: auto;
   margin-top: 10px;
   width: 50%;
+  margin-left: 8px;
 }
 hr{
   background-color: rgb(0, 3, 5);

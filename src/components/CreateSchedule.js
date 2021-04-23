@@ -28,15 +28,14 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     if (rides.length > 0) {
       return (<ChooseDrivers rides={rides} members={members} />)
     } else {
-      // return (
-      //   <>
-          
-      //     <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
-      //       <option id="option-placeholder" value="" disabled selected>Upphämtning/avlämning</option>
-      //     </select>
-      //   </>
-      // )
-      return null
+      return (
+        <>
+          <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+            <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
+          </select>
+        </>
+      )
+      // return null
     }
   }
 
@@ -117,12 +116,11 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
           <div className="container-a aktivitet">
             <h4>Aktivitet</h4>
-
-            <div className="input-side-by-side">
+            <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div>
+            <div className="input-side-by-side">  
+              <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
               
-              <input type="time"  value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
-
-              <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)}  className="small-input input-right" id="sluttid"></input>
+              <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} className="small-input input-right" id="sluttid"></input>
             </div>
 
             <input value={address} onChange={e => setAddress(e.target.value)} className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
@@ -154,8 +152,9 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <form className="form">
           <div className="container-a schema">
             <h4>Schema</h4>
-
+            <div >&nbsp;Startdatum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div>
             <div className="input-side-by-side">
+
               <input value={startDate} onChange={e => setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
 
               <input value={endDate} onChange={e => setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
