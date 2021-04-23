@@ -29,9 +29,12 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       return (<ChooseDrivers rides={rides} members={members} />)
     } else {
       // return (
-      // <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
-      //   <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
-      // </select>
+      //   <>
+          
+      //     <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+      //       <option id="option-placeholder" value="" disabled selected>Upphämtning/avlämning</option>
+      //     </select>
+      //   </>
       // )
       return null
     }
@@ -164,7 +167,9 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <form className="form">
           <div className="container-a skjutsning">
             <h4>Skjutsning</h4>
-
+              {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+            <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
+          </select> */}
             {/* Avancerat, egen komponent? */}
             
             {/* {<select className="standard-input option-list input-left" id="ordning-for-chaufforer">
