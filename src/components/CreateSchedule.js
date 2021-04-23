@@ -109,14 +109,14 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <FootballBanner />
 
         <div className="loose-text-field">
-          <h3 className="skapagruppenskörschema">Skapa gruppens körschema</h3>
+          <h2 className="skapagruppenskörschema">Skapa gruppens körschema</h2>
           <br className="changesizeofbr"></br>
         </div>
 
         <form className="form">
 
-          <div className="container-a aktivitet">
-            <h4>Aktivitet</h4>
+          <div className="box-a aktivitet">
+            <h3>Aktivitet</h3>
             
             {/* <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div> */}
             <div className="input-side-by-side">
@@ -164,8 +164,8 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <br className="changesizeofbr"></br>
 
         <form className="form">
-          <div className="container-a schema">
-            <h4>Schema</h4>
+          <div className="box-a schema">
+            <h3>Schema</h3>
             {/* <div>&nbsp;Startdatum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div> */}
             <div className="input-side-by-side">
               <div>
@@ -183,8 +183,8 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <br className="changesizeofbr"></br>
 
         <form className="form">
-          <div className="container-a skjutsning">
-            <h4>Skjutsning</h4>
+          <div className="box-a skjutsning">
+            <h3>Skjutsning</h3>
               {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
             <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
           </select> */}

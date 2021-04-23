@@ -23,7 +23,7 @@ export function dayOfWeekAsString(dayIndex) {
 function App() {
   
   const [members, setMembers] = useState(["Siri", "Peter", "Hanna"]);
-  const [schedule, setSchedule] = useState([]);
+  const [schedule, setSchedule] = useState(["","","","","","",[]]);
 
   return (
     <div className="App">

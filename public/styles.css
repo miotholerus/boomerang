@@ -13,27 +13,18 @@ h1 - Inbjudan är skickad! Grattis!
   font-family: 'Nunito', sans-serif;
 }
 p {
-  /* position: absolute; */
-  /* width: 103px; */
-  /* height: 18px; */
-  /* left: 17px; */
-  /* top: 224px; */
-
-  /* font-family: Roboto; */
-  /* font-style: normal; */
-  /* font-weight: normal; */
-  font-size: 15px;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  font-size: 16px;
   line-height: 18px;
 
-  /* identical to box height */
-  /* text-align: center; */
   letter-spacing: -0.333333px;
 }
 body {
   /* font-size: larger; */
   background-color: #F2F2ED;
-  color: #363636;
-  
+  /* color: #363636; */
+  color: black;
 }
 
 /* HEADERN */
@@ -78,18 +69,18 @@ body {
   /* margin-left: 101px; */
 }
 
-h3{
+h2{
   font-size: 25px;
   
   margin-top: 1.2em;
   margin-bottom: 0.2em;
 }
-h4 {
+h3 {
   font-size: 18px;
   margin-top: 0.5em;
   margin-bottom: 0.7em;
 
-  margin-left: 0.2em;
+  /* margin-left: 0.2em; */
 }
 
 /* KÖRSCHEMA (ÖVERSIKT) */
@@ -154,15 +145,15 @@ h4 {
 .group-column {
   display: flex;
   height: 50px;
-
+  
   align-items: center;
   padding-top: 0.4em;
   padding-left: 0.4em;
-  /* flex-direction: column; */
   
-  /* font-size: 15px; */
+  margin-left: 0.2em;
+  
   line-height: 20px;
-  /* letter-spacing: -0.333333px; */
+  
 }
 #members {
   font-weight: normal;
@@ -173,7 +164,7 @@ h4 {
 }
 
 /* BOXAR */
-.container-a {
+.box-a {
   background-color: #ffffff; /*#c5c5c5;*/
   padding: 10px;
   margin: 8px;
@@ -193,10 +184,10 @@ h4 {
 /* LISTOR */
 ul {
   list-style-type: none;
-  padding-left: 0;
+  /* padding-left: 0; */
 }
 li {
-  display: block;
+  /* display: block; */
 }
 i.li-user-icon {
   /* height: 33px; */
@@ -315,20 +306,6 @@ input {
   margin-left: 10px;
 }
 
-/* Create a two-column layout */
-/* .column {
-  float: left;
-  width: 50%;
-  padding: 5px;
-} */
-
-/* Clearfix (clear floats) */
-/* .row::after {
-  content: "";
-  clear: both;
-  display: table;
-} */
-
 
 
 .page-content {
@@ -363,11 +340,6 @@ hr{
   
 }
 
-/* FÖRSÖK TILL ATT LÖSA FOTBOLLSBANNER-BUGGEN */
-/* .schedule-box {
-  margin: 10px;
-} */
-
 /* CHOOSE DRIVERS BOX */
 .choose-drivers-box {
   display: flex;
@@ -375,7 +347,7 @@ hr{
   align-items: center;
   /* box-shadow: 5px 5px; */
 }
-table {
+table.even {
   border-collapse: separate;
   border-spacing: 0px 13px;
   table-layout: fixed;
@@ -387,4 +359,50 @@ th {
 select.driver {
   border-style: none;
   font-size: 15px;
+}
+
+.schedule-box {
+  background-color: #ffffff; /*#c5c5c5;*/
+  padding: 22px;
+  margin: 8px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  
+  border-left: solid #EDB946;
+  border-width: 11px;
+  
+}
+.schedule-box ul {
+  /* display: flex;
+  flex-direction: column; */
+  /* list-style-type: disc; */
+  padding-left: 21px;
+}
+.schedule-box table {
+  /* background-color: #882E76; */
+  margin-bottom: 0.8em;
+}
+
+td.time {
+  /* width: 50%; */
+  text-align: right;
+  
+}
+.schedule-box i { /* ska eg vara en ikon ingen h1:a */
+  margin-top: 0;
+  margin-bottom: 0.1em;
+  margin-right: 0.1em;
+  font-size: 28px;
+}
+
+.schedule-box tr::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  font-size: 28px;
+  color: #363636; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  
+  padding-top: 0.1em;
 }

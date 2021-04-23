@@ -63,7 +63,7 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   
   function RideEditTable() {
     return (
-      <table className="choose-driver">
+      <table className="even choose-driver">
   
         <tr>
           <th>Tillfälle:</th>
