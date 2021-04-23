@@ -28,6 +28,14 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     if (rides.length > 0) {
       return (<ChooseDrivers rides={rides} members={members} />)
     } else {
+      // return (
+      //   <>
+          
+      //     <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+      //       <option id="option-placeholder" value="" disabled selected>Upphämtning/avlämning</option>
+      //     </select>
+      //   </>
+      // )
       return null
     }
   }
@@ -105,9 +113,9 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
           <br className="changesizeofbr"></br>
         </div>
 
-        <form className="container-a form">
+        <form className="form">
 
-          <div className="aktivitet">
+          <div className="container-a aktivitet">
             <h4>Aktivitet</h4>
             <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div>
             <div className="input-side-by-side">  
@@ -142,8 +150,8 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
         <br className="changesizeofbr"></br>
 
-        <form className="container-a form">
-          <div className="schema">
+        <form className="form">
+          <div className="container-a schema">
             <h4>Schema</h4>
             <div >&nbsp;Startdatum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div>
             <div className="input-side-by-side">
@@ -157,24 +165,18 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
         <br className="changesizeofbr"></br>
 
-        <form className="container-a form">
-          <div className="skjutsning">
+        <form className="form">
+          <div className="container-a skjutsning">
             <h4>Skjutsning</h4>
-
+              {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+            <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
+          </select> */}
             {/* Avancerat, egen komponent? */}
-            {<ShowChooseDrivers />}
-            {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+            
+            {/* {<select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
-              <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
-              <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
-              <option value="op3">Tillfälle 3 | Till aktivitet... | Från aktivitet...</option>
-            </select>
-            <select className="standard-input option-list input-left" id="upphamtning-avlamning">
-              <option id="option-placeholder" value="" disabled selected>Upphämtning/avlämning</option>
-              <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
-              <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
-              <option value="op3">Tillfälle 3 | Till aktivitet... | Från aktivitet...</option>
-            </select> */}
+            </select>} */}
+            {<ShowChooseDrivers />}
           </div>
 
           {/* <div id="upphamtningslista">
@@ -183,7 +185,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
           <br className="changesizeofbr"></br>
           <SaveButton />
-
+          
         </form>
       </div>
     </div>

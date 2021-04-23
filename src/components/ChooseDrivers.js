@@ -21,14 +21,14 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
           {ride.dateAsStringShort()}
         </td>
         <td>
-          <select value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
+          <select className="driver" value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
             {members.map(member => {
               return <option value={member}>{member}</option>
             })}
           </select>
         </td>
         <td>
-          <select value={driverFrom} onChange={e=>setDriverFrom(e.target.value)}>
+          <select className="driver" value={driverFrom} onChange={e=>setDriverFrom(e.target.value)}>
             {members.map(member => {
               return <option value={member}>{member}</option>
             })}
