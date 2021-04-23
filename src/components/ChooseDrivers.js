@@ -3,11 +3,12 @@
 export default function ChooseDrivers({rides, setRides, schedule, setSchedule, members}) {
   
   function RideEditRow({index, ride}) {
-    const [driverTo, setDriverTo] = useState("");
-    const [driverFrom, setDriverFrom] = useState("");
+    const [driverTo, setDriverTo] = useState("Siri");
+    const [driverFrom, setDriverFrom] = useState("Siri");
 
     useEffect(() => {
       ride.driverTo = driverTo;
+      console.log("ride "+index+" driverTo: "+rides[index].driverTo)
     }, [driverTo])
 
     useEffect(() => {
@@ -17,17 +18,17 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
     return (
       <tr>
         <td>
-          {ride.dateAsString()}
+          {ride.dateAsStringShort()}
         </td>
         <td>
-          <select value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
+          <select className="driver" value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
             {members.map(member => {
               return <option value={member}>{member}</option>
             })}
           </select>
         </td>
         <td>
-          <select value={driverFrom} onChange={e=>setDriverFrom(e.target.value)}>
+          <select className="driver" value={driverFrom} onChange={e=>setDriverFrom(e.target.value)}>
             {members.map(member => {
               return <option value={member}>{member}</option>
             })}
@@ -70,20 +71,20 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
           <th>Från aktivitet:</th>
         </tr>
     
-        {/* <ForEachRide/> */}
+        <ForEachRide/>
         {/* På något sätt fånga upp detta och uppdatera rides... */}
-        {rides.map(ride => {
+        {/* {rides.map(ride => {
           return (
             <RideEditRow key={ride.id} ride={ride}/>
           )
-        })}
+        })} */}
       </table>
     ) 
   }
 
   return (
-    //<div className="container">
+    <div className="choose-drivers-box">
       <RideEditTable/>
-    //</div>
+    </div>
   )
 }

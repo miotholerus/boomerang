@@ -1,22 +1,46 @@
-﻿p {
+﻿﻿
+/*
+h2 - Välkommen till
+h3 - Skapa gruppens körschema
+h4 - Aktivitet, Schema, Skjutsning
+h5/p - Namn på grupp:
+h1 - Inbjudan är skickad! Grattis!
+*/
+
+/* Applicerat på hela sidan - gör så att t.ex width: 343px; alltid är 343px, oavsett eventuell padding */
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+p {
+  /* position: absolute; */
+  /* width: 103px; */
+  /* height: 18px; */
+  /* left: 17px; */
+  /* top: 224px; */
+
+  /* font-family: Roboto; */
+  /* font-style: normal; */
+  /* font-weight: normal; */
   font-size: 15px;
   line-height: 18px;
   letter-spacing: -0.333333px;
 }
 body {
-  font-family: "Open Sans";
+  /* font-size: larger; */
+  background-color: #F2F2ED;
   color: #363636;
+  
 }
 
 /* HEADERN */
 .header {
-  background-color: white;
-  padding: 0px;
+  background-color: #ffffff;
   position: absolute;
   height: 50px;
   width: 100%;
-  padding-left: 0px;
-  padding-right: 0px;
+  /* padding-left: 18px;
+  padding-right: 7px; */
 }
 /* Header side-by-side-försök */
 .flex {
@@ -26,12 +50,58 @@ body {
   display: flex;
   width: 50%;
   align-items: center;
+   /* justify-content: center; */
 }
 .right {
   display: flex;
   width: 45%;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 10px;
+  /* padding-right: 10px; */
+}
+
+.header-element{
+  font-size: 150%;
+  text-indent: 10px;
+  color: #363636;
+  /* margin-left: 11px; */
+}
+
+.my-account{
+  color: #363636;
+  font-size: 18px;
+  /* margin-left: 101px; */
+}
+
+h3{
+  font-size: 25px;
+  
+  margin-top: 1.2em;
+  margin-bottom: 0.2em;
+}
+h4 {
+  font-size: 18px;
+  margin-top: 0.5em;
+  margin-bottom: 0.7em;
+
+  margin-left: 0.2em;
+}
+
+/* KÖRSCHEMA (ÖVERSIKT) */
+.overview-info {
+  margin-left: 0.1em;
+}
+.loose-text-field {
+  padding-left: 15px;
+  margin-bottom: 0.8em;
+}
+
+.changesizeofbr{
+  content: "";
+  margin: 5em;
+  display: block;
+  font-size: 24%;
 }
 
 
@@ -39,43 +109,53 @@ body {
 .sub-header-football {
   display: flex;
   background-color: #9CD09B;
-  padding-top: 6px;
-  height: 65px;
+  /* padding-top: 16px; */
+  align-items: center; 
   
- 
+  width: 100%;
+  height: 85px;
 }
 .football-column {
   display: flex;
-  width: 55px; height: 50px;
- 
+  width: 60px; height: 50px;
+  
   text-align: center;
   vertical-align: middle;
   align-items: center; 
   justify-content: center;
-  
   
 }
 .group-column {
   display: flex;
   height: 50px;
   align-items: center;
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: -0.333333px;
+  padding-top: 0.4em;
+  padding-left: 0.4em;
+  /* flex-direction: column; */
+  
+  /* font-size: 15px; */
+  line-height: 20px;
+  /* letter-spacing: -0.333333px; */
+}
+#members {
+  font-weight: normal;
 }
 
 
 /* BOXAR */
-.container {
-  background-color: white; /*white;*/
-  padding: 5px;
-  margin: 7px;
+.container-a {
+  background-color: #ffffff; /*#c5c5c5;*/
+  padding: 10px;
+  margin: 8px;
+  border-radius: 8px;
+  margin-bottom: 30px;
 }
 .group-box {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .before-create-schedule-box {
   margin: 33px;
+  border-radius: 0px;
 }
 
 
@@ -111,19 +191,20 @@ i.li-user-icon {
 .button-v2 {
   background-color: #882E76;
   color: white;
-  height: 36px;
-  display: inline-block;
-  padding-left: 6%;
-  padding-right: 6%; 
-  border-radius: 10px;
+  height: 38px;
+
+  padding-left: 8%;
+  padding-right: 8%;
+  
+  border-radius: 19px;
   border: none;
   text-align: center;
   text-decoration: none;
   left: 50%;
   transform: translate(-50%, -0%);
   position: relative;
-  font-size: 20px;
-  margin-bottom: 18px;
+  
+  margin-bottom: 30px;
 
 }
 .button-v2:hover{
@@ -133,52 +214,63 @@ i.li-user-icon {
 
 
 /* SKAPA KÖRSCHEMA-FORMULÄRET */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #000;
+}
 .form {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 input {
-  border-style: solid;
+  font-size: 15px;
   background-color: #F2F2ED;
-  border-color: #DFDFD2;
+  /*DFDFD2*/
+  
+  border-width: 1px;
   padding-left: 11px;
-  margin-bottom: 10px;
+  padding-right: 4px;
+  margin-bottom: 20px;
 }
 .standard-input {
-  width: 345px;
+  /* position: absolute; */
+  width: 339px;
   height: 40px;
+  /* left: 19px; */
+  font-size: 16px;
   top: 438px;
-  border-radius: 10px;
+  border-radius: 4px;
   border: 1px;
-  margin-bottom: 10px;
-  border-style: solid;
-  border-color: #DFDFD2;
+  margin-bottom: 20px;
+  padding-right: 4px;
+  border: solid #DFDFD2;
+  border-width: thin;
 }
 .option-list {
+  background-color: #F2F2ED;
   padding-left: 7px;
-  color: #767676;
-
+  padding-right: 7px;
+  /* color: #767676; */
 }
 .input-side-by-side {
+  width: 339px;
   display: flex;
-  width: 340px;
-  color: #363636;
+  justify-content: space-between;
 }
 .small-input {
   background-color: white;
   width: 165px;
   height: 40px;
-  border-radius: 10px;
+  /* left: 20px; */
+  /* top: 543px; */
+  border-radius: 4px;
   border: 1px;
-  border-color:  #DFDFD2;
-  border-style: solid;
+  border: solid #DFDFD2;
+  border-width: thin;
 }
 .input-left {
-  margin-right: 4px;
-  
+  margin-right: 10px;
 }
 .input-right {
-  margin-left: 3px;
-  
+  margin-left: 10px;
 }
 
 
@@ -193,10 +285,12 @@ input {
   width: 36px;
 }
 .fa-bars {
-  width: 93px;
-  height: 15;
-  padding-left: 20px;
-  
+  /* width: 93px; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 50%;
 }
 hr{
   background-color: rgb(0, 3, 5);
@@ -206,19 +300,27 @@ hr{
   
 }
 /* FÖRSÖK TILL ATT LÖSA FOTBOLLSBANNER-BUGGEN */
-.schedule-box {
+/* .schedule-box {
   margin: 10px;
-}
-/* TABELL KÖRSCHEMA (ÖVERSIKT) */
-/* .schedule-overview-table {
-
 } */
+
+/* CHOOSE DRIVERS BOX */
+.choose-drivers-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 5px 5px; */
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0px 13px;
+  table-layout: fixed;
+  width: 100%;
+}
 th {
   text-align: left;
 }
-.h3{
-  color: #363636;
-}
-.h4{
-  color: #363636;
+select.driver {
+  border-style: none;
+  font-size: 15px;
 }

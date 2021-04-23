@@ -10,7 +10,13 @@ export default class RideObject {
     dateAsString() {
         return dayOfWeekAsString(this.date.getDay())+" "+this.date.getDate()+" "+this.date.toLocaleString('sv-se', { month: 'long' })
     }
-    
+
+    dateAsStringShort() {
+        let weekday = this.date.toLocaleString('sv-se', { weekday: 'short' });
+        weekday = weekday.substring(0, 1).toUpperCase()+weekday.substring(1);
+        return weekday+" "+this.date.getDate()+" "+this.date.toLocaleString('sv-se', { month: 'long' })
+    }
+
     // Getters tycks inte behövas, bara att kalla på t.ex rideObject.date
     // (men så här skulle de se ut)
     // get date() {
