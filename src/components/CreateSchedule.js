@@ -108,6 +108,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
             <h4>Aktivitet</h4>
             
             <div className="input-side-by-side">
+              
               <input type="time"  value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
 
               <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)}  className="small-input input-right" id="sluttid"></input>

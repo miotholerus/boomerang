@@ -23,8 +23,8 @@ export default function ViewSchedule({ schedule }) {
               <thead>
                 <tr>
                   <th>Tillfälle:</th>
-                  <th>Till aktivitet:</th>
-                  <th>Från aktivitet:</th>
+                  <th>Till:</th>
+                  <th>Från:</th>
                 </tr>
               </thead>
             
