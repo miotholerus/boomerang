@@ -1,10 +1,10 @@
 ﻿import React, {useState, useEffect} from 'react'
 import ScheduleBox from './ScheduleBox'
 
-export default function DetailedSchedule({schedule}) {
-  const [origin, setOrigin] = useState("Lerbäcksgränd 18"); // "59.26078347858798,18.02139952888256" "Lerbäcksgränd 18, 124 66 Bandhagen"
-  const [destination, setDestination] = useState("Sergelgatan 1"); // "59.28772349484027,18.058070840530874" "Sockenvägen 290, 122 63 Enskede"
-  const [data, setData] = useState({
+export default function DetailedSchedule({schedule, members}) {
+  const destinationFromSchedule = schedule[2];
+  const addressFromMember = members[0].address; // schedule[]
+  const exampleData = {
     "destination_addresses": [
       "Sockenvägen 290, 122 63 Enskede, Sweden"
     ],
@@ -29,12 +29,18 @@ export default function DetailedSchedule({schedule}) {
       }
     ],
     "status": "OK"
-  });
+  }
+
+  const [origin, setOrigin] = useState(addressFromMember);
+  const [destination, setDestination] = useState(destinationFromSchedule);
+  const [data, setData] = useState(exampleData);
   const [seconds, setSeconds] = useState(0);
 
   const url = `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${origin}&destinations=${destination}&key=bp6pjpgmaCcdxjtccQlnDpjTPEUqk`;
 
   useEffect(() => {
+    console.log(origin);
+    console.log(destination);
     console.log(data.rows[0].elements[0].duration.value)
     setSeconds(data.rows[0].elements[0].duration.value)
   }, [data])
@@ -61,7 +67,7 @@ export default function DetailedSchedule({schedule}) {
         </div>
       </form>
 
-      <ScheduleBox/>
+      <ScheduleBox seconds={seconds} members={members}/>
     </div>
   )
 }

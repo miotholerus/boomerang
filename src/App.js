@@ -41,24 +41,8 @@ function App() {
     }
   ]);
   
-  /*
-  {
-    "name": "Alba",
-    "child": "Anna",
-    "address": "Uddeholmsvägen 239"
-  },
-  {
-    "name": "Berit",
-    "child": "Blenda",
-    "address": "Årdalavägen 133"
-  },
-  {
-    "name": "Chris",
-    "child": "Charlie",
-    "address": "Lerbäcksgränd 18"
-  }
-  */
-  const [schedule, setSchedule] = useState(["00:00","00:00","Sergelgatan 1","0","","",[]]);
+  //                                   index:  0        1            2          3         4             5       6
+  const [schedule, setSchedule] = useState(["00:00", "00:00", "Sergelgatan 1", "0", "0000-00-00", "0000-00-00", [] ]);
 
   return (
     <div className="App">
@@ -69,7 +53,7 @@ function App() {
         <Switch>
 
           <Route path="/viewschedule">
-            <ViewSchedule schedule={schedule} />
+            <ViewSchedule schedule={schedule} members={members} />
           </Route>
           
           <Route path="/">

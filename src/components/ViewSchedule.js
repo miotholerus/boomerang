@@ -7,7 +7,7 @@ import ScheduleBox from './ScheduleBox';
 import DetailedSchedule from './DetailedSchedule'
 
 
-export default function ViewSchedule({ schedule }) {
+export default function ViewSchedule({ schedule, members }) {
 
   return (
     <div>
@@ -46,7 +46,7 @@ export default function ViewSchedule({ schedule }) {
           </div>
         </div>
         
-        <DetailedSchedule schedule={schedule}/>
+        <DetailedSchedule schedule={schedule} members={members} />
         
         
       </div>
