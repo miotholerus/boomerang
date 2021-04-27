@@ -4,6 +4,7 @@ import RideOccation from './RideOccation'
 import { dayOfWeekAsString } from '../App'
 import FootballBanner from './FootballBanner'
 import ScheduleBox from './ScheduleBox';
+import DetailedSchedule from './DetailedSchedule'
 
 
 export default function ViewSchedule({ schedule }) {
@@ -45,7 +46,7 @@ export default function ViewSchedule({ schedule }) {
           </div>
         </div>
         
-        <ScheduleBox/>
+        <DetailedSchedule schedule={schedule}/>
         
         
       </div>

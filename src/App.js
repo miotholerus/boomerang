@@ -23,15 +23,49 @@ export function dayOfWeekAsString(dayIndex) {
 
 function App() {
   
-  const [members, setMembers] = useState(["Siri", "Peter", "Hanna"]);
-  const [schedule, setSchedule] = useState(["","","","","","",[]]);
+  const [members, setMembers] = useState([
+    {
+      "name": "Alba",
+      "child": "Anna",
+      "address": "Uddeholmsvägen 239"
+    },
+    {
+      "name": "Berit",
+      "child": "Blenda",
+      "address": "Årdalavägen 133"
+    },
+    {
+      "name": "Chris",
+      "child": "Charlie",
+      "address": "Lerbäcksgränd 18"
+    }
+  ]);
+  
+  /*
+  {
+    "name": "Alba",
+    "child": "Anna",
+    "address": "Uddeholmsvägen 239"
+  },
+  {
+    "name": "Berit",
+    "child": "Blenda",
+    "address": "Årdalavägen 133"
+  },
+  {
+    "name": "Chris",
+    "child": "Charlie",
+    "address": "Lerbäcksgränd 18"
+  }
+  */
+  const [schedule, setSchedule] = useState(["00:00","00:00","Sergelgatan 1","0","","",[]]);
 
   return (
     <div className="App">
       
-      <TestAPI/>
+      {/* <TestAPI/> */}
 
-      {/* <Router>
+      <Router>
         <Switch>
 
           <Route path="/viewschedule">
@@ -44,7 +78,7 @@ function App() {
 
         </Switch>
         
-      </Router> */}
+      </Router>
       
       {/* <GroupCreated /> */}
 
