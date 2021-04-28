@@ -66,13 +66,13 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
       const date = rideDates[i];
-      const driverToDefault = {"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"};
-      console.log("driverToDefatult: ", driverToDefault);
-      const driverFromDefault = {"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"};
-      console.log("driverFromDefault: ", driverFromDefault);
+      const driverToDefault = {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"};
+      console.log("driverToDefatult: ", driverToDefault); // Dessa funkar
+      const driverFromDefault = {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"};
+      console.log("driverFromDefault: ", driverFromDefault); // Dessa funkar
       
       const newRideObject = new RideObject(date, driverToDefault, driverFromDefault);
-      console.log("newRideObject:", newRideObject);
+      console.log("NEW RIDE OBJECT:", newRideObject); // Här är driverTo och driverFrom undefined :))))
 
       rideObjects.push(newRideObject);
     }

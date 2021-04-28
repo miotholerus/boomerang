@@ -13,8 +13,8 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   function RideEditRow({index, ride}) {
     console.log("RideEditRow, ride:", ride);
 
-    const [driverTo, setDriverTo] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
-    const [driverFrom, setDriverFrom] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
+    const [driverTo, setDriverTo] = useState({"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
+    const [driverFrom, setDriverFrom] = useState({"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
     const[driverIdTo,setDriverIdTo] = useState([]);
     const [driverIdFrom, setDriverIdFrom] = useState([]);
 
