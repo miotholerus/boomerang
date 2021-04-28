@@ -17,7 +17,6 @@ p {
   margin-bottom: 0.2em;
   font-size: 16px;
   line-height: 18px;
-
   letter-spacing: -0.333333px;
 }
 body {
@@ -31,7 +30,7 @@ body {
 .header {
   background-color: #ffffff;
   position: absolute;
-  height: 45px;
+  height: 50px;
   width: 100%;
   /* padding-left: 18px;
   padding-right: 7px; */
@@ -49,7 +48,7 @@ body {
 }
 .right {
   display: flex;
-  width: 50%;
+  width: 45%;
   align-items: center;
   justify-content: flex-end;
   margin-right: 10px;
@@ -98,29 +97,7 @@ h3 {
   display: block;
   font-size: 24%;
 }
-/* Experiment */
-/* .header {
-  overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 20px 10px;
-}
-.header-element {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
-.header-logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-.header-right {
-  float: right;
-} */
+
 
 /* SUBHEADER FOTBOLLSGRUPPEN */
 .sub-header-football {
@@ -159,9 +136,6 @@ h3 {
   font-weight: normal;
 }
 
-.page-content {
-  width: 100%;
-}
 
 /* BOXAR */
 .box-a {
@@ -190,31 +164,25 @@ li {
   /* display: block; */
 }
 i.li-user-icon {
-  /* height: 33px; */
-  /* width: 33px; */
+
   font-size: 33px;
 }
 
 
 
 .button-v1 {
-  /* top: 50%; */
   left: 50%;
-  /* -ms-transform: translate(-50%, -50%); */
   transform: translate(-50%, -0%);
   position: relative;
   border: none;
   margin-bottom: 10px;
   padding: 16px;
   border-radius: 33px;
-
   display: inline-block;
   background-color: white;
   text-decoration: none;
   color: black;
-  /* text-align: center; */
 }
-
 .button-v2 {
   background-color: #882E76;
   color: white;
@@ -225,13 +193,17 @@ i.li-user-icon {
   
   border-radius: 19px;
   border: none;
-
+  text-align: center;
+  text-decoration: none;
   left: 50%;
   transform: translate(-50%, -0%);
   position: relative;
   
   margin-bottom: 30px;
 
+}
+.button-v2:hover{
+  background-color: #363636;
 }
 
 
@@ -261,7 +233,6 @@ input {
   padding-right: 4px;
   margin-bottom: 20px;
 }
-
 .standard-input {
   /* position: absolute; */
   width: 339px;
@@ -282,7 +253,6 @@ input {
   padding-right: 7px;
   /* color: #767676; */
 }
-
 .input-side-by-side {
   width: 339px;
   display: flex;
@@ -307,20 +277,18 @@ input {
 }
 
 
-
 .page-content {
   position: absolute;
-  top: 44px;
+  top: 48px;
+  width: 100%;
 }
 
 /* IKONER */
 .fa-futbol {
-  /* width: 100%; */
   width: 36px;
   /* margin: 7px; */
   margin-left: 2px;
 }
-
 .fa-bars {
   /* width: 93px; */
   display: block;
@@ -330,8 +298,6 @@ input {
   width: 50%;
   margin-left: 8px;
 }
-
-
 hr{
   background-color: rgb(0, 3, 5);
   width: 200px;
