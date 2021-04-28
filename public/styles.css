@@ -384,7 +384,7 @@ select.driver {
 }
 
 
-.schedule-box i { /* ska eg vara en ikon ingen h1:a */
+.alt-user-logo { /* ska eg vara en ikon ingen h1:a */
   margin-top: 0;
   margin-bottom: 0.1em;
   margin-right: 0.1em;

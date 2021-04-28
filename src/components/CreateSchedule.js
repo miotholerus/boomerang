@@ -28,15 +28,15 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     if (rides.length > 0) {
       return (<ChooseDrivers rides={rides} members={members} />)
     } else {
-      return (
-        <div>
-          <label for="ordning-for-chaufforer">&nbsp;Välj ordning för chaufförer</label>
-          <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
-            <option id="option-placeholder" value="" disabled selected>{/* Välj ordning för chaufförer */}</option>
-          </select>
-        </div>
-      )
-      // return null
+      // return (
+      //   <div>
+      //     <label for="ordning-for-chaufforer">&nbsp;Välj ordning för chaufförer</label>
+      //     <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+      //       <option id="option-placeholder" value="" disabled selected>{/* Välj ordning för chaufförer */}</option>
+      //     </select>
+      //   </div>
+      // )
+      return null
     }
   }
 
