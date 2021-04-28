@@ -10,6 +10,9 @@ import ViewSchedule from './components/ViewSchedule';
 
 import {useState, useEffect} from 'react'
 
+import React from 'react'
+
+
 /**
 * Hittade på stackoverflow - funktion som konverterar veckodagens nummer (date.getDay()) till veckonamnet.
 *
@@ -29,6 +32,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route>
+            <ApiTest/>
+          </Route>
 
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} />
