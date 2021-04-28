@@ -2,7 +2,17 @@
 
 export default function ChooseDrivers({rides, setRides, schedule, setSchedule, members}) {
   
+  console.log("Kör ChooseDrivers, rides:", rides);
+
+  const [rides2, setRides2] = useState(rides);
+
+  useEffect(() => {
+    setRides(rides2);
+  }, [rides2])
+
   function RideEditRow({index, ride}) {
+    console.log("RideEditRow, ride:", ride);
+
     const [driverTo, setDriverTo] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
     const [driverFrom, setDriverFrom] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
     const[driverIdTo,setDriverIdTo] = useState([]);
@@ -14,16 +24,19 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
 
     useEffect(() => {
       setDriverFrom(members[driverIdFrom])
-    },[driverFrom])
+    },[driverIdFrom])
 
     useEffect(() => {
-      ride.driverTo = driverTo;
-      console.log("ride "+index+" driverTo: "+rides[index].driverTo)
+      rides2[index].driverTo = driverTo;
+      console.log("ride "+index+" driverTo: ", rides2[index].driverTo)
     }, [driverTo])
 
     useEffect(() => {
-      ride.driverFrom = driverFrom;
+      rides2[index].driverFrom = driverFrom;
+      console.log("ride "+index+" driverFrom: ", rides2[index].driverTo)
     }, [driverFrom])
+
+    
 
     return (
       <tr>
@@ -31,14 +44,14 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
           {ride.dateAsStringShort()}
         </td>
         <td>
-          <select className="driver" value={driverIdTo} onChange={e=>setDriverIdTo(e.target.value)}>
+          <select className="driver" /*value={driverIdTo}*/ onChange={e=>setDriverIdTo(e.target.value)}>
             {members.map(member => {
               return <option value={member.id}>{member.name}</option>
             })}
           </select>
         </td>
         <td>
-          <select className="driver" value={driverIdFrom} onChange={e=>setDriverIdFrom(e.target.value)}>
+          <select className="driver" /*value={driverIdFrom}*/ onChange={e=>setDriverIdFrom(e.target.value)}>
             {members.map(member => {
               return <option value={member.id}>{member.name}</option>
             })}
@@ -49,8 +62,10 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   }
 
   function ForEachRide() {
+    console.log("Kör ForEachRide, rides:",)
+
     var index = 0;
-    const returnElements = rides.map(ride => {
+    const returnElements = rides2.map(ride => {
       //id++;
       return (
         <RideEditRow index={index++} ride={ride}/>
@@ -72,6 +87,8 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   }
   
   function RideEditTable() {
+    console.log("Kör RideEditTable, rides:", rides);
+
     return (
       <table className="even choose-driver">
   

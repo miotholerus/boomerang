@@ -41,11 +41,11 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
   }
 
   function generateDates() {
-    console.log("Kör generateDates")
+    console.log("1. Kör generateDates")
 
-    const dayOfWeekIndex = weekday; console.log("dayOfWeekIndex: " + dayOfWeekIndex);
-    const startDateDate = new Date(startDate); console.log("startDateDate: " + startDateDate);
-    const endDateDate = new Date(endDate); console.log("endDateDate: " + endDateDate);
+    const dayOfWeekIndex = weekday; // console.log("dayOfWeekIndex: " + dayOfWeekIndex);
+    const startDateDate = new Date(startDate); // console.log("startDateDate: " + startDateDate);
+    const endDateDate = new Date(endDate); // console.log("endDateDate: " + endDateDate);
 
     // Skapar en lista av alla datum mellan startDate och endDate
     const dateList = getDates(startDateDate, endDateDate);
@@ -59,19 +59,27 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         rideDates.push(date)
       }
     }
-    console.log("rideDates:")
-    console.log(rideDates);
+    // console.log("2. rideDates:")
+    // console.log(rideDates);
 
     // Skapar RideObjects av alla datum och lägger i en tredje lista
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
       const date = rideDates[i];
-      rideObjects.push(new RideObject(date, "Siri", "Peter"))
+      const driverToDefault = {"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"};
+      console.log("driverToDefatult: ", driverToDefault);
+      const driverFromDefault = {"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"};
+      console.log("driverFromDefault: ", driverFromDefault);
+      
+      const newRideObject = new RideObject(date, driverToDefault, driverFromDefault);
+      console.log("newRideObject:", newRideObject);
+
+      rideObjects.push(newRideObject);
     }
 
     // rides (statevariabel) blir listan av RideObjects
     setRides(rideObjects);
-    console.log("rides: " + rides);
+    console.log("3. rides:", rides);
 
     function getDates(startDate, endDate) {
       var dateArray = new Array();
@@ -92,7 +100,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       const newSchedule = [startTime, endTime, address, weekday, startDate, endDate, rides];
 
       setSchedule(newSchedule);
-      console.log("schedule after Save: " + schedule)
+      console.log("schedule after Save: ", schedule)
 
       history.push("/viewschedule")
     }
@@ -202,7 +210,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
             {/* {<select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
             </select>} */}
-            {<ShowChooseDrivers />}
+            {rides.length && <ChooseDrivers rides={rides} setRides={setRides} members={members} />/*<ShowChooseDrivers />*/}
           </div>
 
           {/* <div id="upphamtningslista">
