@@ -9,6 +9,9 @@ import DetailedSchedule from './DetailedSchedule'
 
 export default function ViewSchedule({ schedule, members }) {
 
+  console.log("Kör ViewSchedule, schedule:")
+  console.log(schedule)
+
   return (
     <div>
       <Header />
