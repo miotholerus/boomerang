@@ -8,7 +8,7 @@ import DetailedSchedule from './DetailedSchedule'
 import ChooseDrivers from './ChooseDrivers'
 
 
-export default function ViewSchedule({ schedule, members, driverTo, driverFrom }) {
+export default function ViewSchedule({ schedule, members }) {
 
   return (
     <div>

@@ -9,21 +9,23 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
     const [driverIdFrom, setDriverIdFrom] = useState([]);
 
     useEffect(() => {
-      setDriverTo(members[driverIdTo])
+      setDriverTo(members[driverIdTo]) 
     },[driverIdTo])
 
     useEffect(() => {
-      setDriverFrom(members[driverIdFrom])
-    },[driverFrom])
+      setDriverFrom(members[driverIdFrom]) 
+    },[driverIdFrom])
 
     useEffect(() => {
-      ride.driverTo = driverTo;
+      rides[index].driverTo = driverTo;
       console.log("ride "+index+" driverTo: "+rides[index].driverTo)
     }, [driverTo])
 
     useEffect(() => {
-      ride.driverFrom = driverFrom;
+      rides[index].driverFrom = driverFrom;
+      console.log("ride: "+index+ "driverFrom:"+rides[index].driverFrom)
     }, [driverFrom])
+
 
     return (
       <tr>
@@ -38,7 +40,7 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
           </select>
         </td>
         <td>
-          <select className="driver" value={driverIdFrom} onChange={e=>setDriverIdFrom(e.target.value)}>
+          <select className="driver"  value={driverIdFrom} onChange={e=>setDriverIdFrom(e.target.value)}>
             {members.map(member => {
               return <option value={member.id}>{member.name}</option>
             })}

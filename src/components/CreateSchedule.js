@@ -202,7 +202,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
             {/* {<select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
             </select>} */}
-            {<ShowChooseDrivers />}
+            {rides.length &&<ChooseDrivers rides={rides} members={members}/>}
           </div>
 
           {/* <div id="upphamtningslista">
