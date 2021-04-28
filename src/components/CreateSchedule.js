@@ -177,6 +177,15 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
                 <input value={endDate} onChange={e => setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
               </div>
             </div>
+
+            <div className="driver">
+              {/* <select className="small-input option-list input-left" id="chaufför">
+                <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
+                <option id="option-placeholder" value="Siri">Siri</option>
+                <option id="option-placeholder" value="Peter">Peter</option>
+                <option id="option-placeholder" value="Hanna">Hanna</option>
+              </select> */}
+            </div>
           </div>
         </form>
 

@@ -1,6 +1,7 @@
 ﻿import React, {useState, useEffect} from 'react'
 import ScheduleBox from './ScheduleBox'
 
+
 export default function DetailedSchedule({schedule, members}) {
   const destinationFromSchedule = schedule[2];
   const addressFromMember = members[0].address; // ska senare hämtas direkt från schedule-rideobjecten
