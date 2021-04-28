@@ -41,7 +41,7 @@ export default function ViewSchedule({ schedule, members, driverTo, driverFrom }
               </thead>
             
               <tbody>
-                {schedule[6].map(ride => {
+                {schedule[6].map(ride => { // schedule.rideObjects.map
                   return <RideOccation key={ride.id} ride={ride} />
                 })}
                 

@@ -2,6 +2,8 @@
 
 export default function RideOccation({ride}) {
 
+  console.log("ride i RideOccation:", ride)
+
   return (
     <tr>
       <td>{ride.dateAsStringShort()}</td>
