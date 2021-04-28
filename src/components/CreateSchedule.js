@@ -26,7 +26,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
   function ShowChooseDrivers() {
     if (rides.length > 0) {
-      return (<ChooseDrivers rides={rides} members={members} />)
+      return (<ChooseDrivers rides={rides} setRides={setRides} members={members} />)
     } else {
       // return (
       //   <div>
@@ -67,7 +67,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     for (let i = 0; i < rideDates.length; i++) {
       const date = rideDates[i];
 
-      const newRideObject = new RideObject(date, "Siri", "Peter");
+      const newRideObject = new RideObject(date, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
       console.log("NEW RIDE OBJECT:", newRideObject); // Här är driverTo och driverFrom undefined :))))
 
       rideObjects.push(newRideObject);
