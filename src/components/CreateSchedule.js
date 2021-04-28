@@ -66,7 +66,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
       const date = rideDates[i];
-      rideObjects.push(new RideObject(date, "Siri", "Peter"))
+      rideObjects.push(new RideObject(date, {"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}))
     }
 
     // rides (statevariabel) blir listan av RideObjects

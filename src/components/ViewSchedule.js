@@ -10,6 +10,9 @@ import ChooseDrivers from './ChooseDrivers'
 
 export default function ViewSchedule({ schedule, members, driverTo, driverFrom }) {
 
+  console.log("Kör ViewSchedule, schedule:")
+  console.log(schedule)
+
   return (
     <div>
       <Header />
