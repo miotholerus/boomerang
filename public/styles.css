@@ -1,8 +1,8 @@
 ﻿
 /*
 h2 - Välkommen till
-h3 - Skapa grupp, Skapa körschema
-h4 - Grupper, Körschema, (Fotbollsgruppen?)
+h3 - Skapa gruppens körschema
+h4 - Aktivitet, Schema, Skjutsning
 h5/p - Namn på grupp:
 h1 - Inbjudan är skickad! Grattis!
 */
@@ -10,56 +10,93 @@ h1 - Inbjudan är skickad! Grattis!
 /* Applicerat på hela sidan - gör så att t.ex width: 343px; alltid är 343px, oavsett eventuell padding */
 * {
   box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
 }
 p {
-  /* position: absolute; */
-  /* width: 103px; */
-  /* height: 18px; */
-  /* left: 17px; */
-  /* top: 224px; */
-
-  /* font-family: Roboto; */
-  /* font-style: normal; */
-  /* font-weight: normal; */
-  font-size: 15px;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  font-size: 16px;
   line-height: 18px;
 
-  /* identical to box height */
-  /* text-align: center; */
   letter-spacing: -0.333333px;
 }
 body {
   /* font-size: larger; */
-  /* background-color: #F2F2ED; */
-  font-family: "Open Sans";
-  color: #363636;
+  background-color: #F2F2ED;
+  /* color: #363636; */
+  color: black;
 }
 
 /* HEADERN */
 .header {
-  background-color: #afafaf;
-  padding: 7px;
+  background-color: #ffffff;
   position: absolute;
   height: 45px;
   width: 100%;
-  padding-left: 18px;
-  padding-right: 7px;
+  /* padding-left: 18px;
+  padding-right: 7px; */
 }
 /* Header side-by-side-försök */
 .flex {
+  
   display: flex;
 }
 .left {
   display: flex;
   width: 50%;
   align-items: center;
-  /* justify-content: center; */
+   /* justify-content: center; */
 }
 .right {
   display: flex;
   width: 50%;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 10px;
+  /* padding-right: 10px; */
+}
+
+.header-element{
+  font-size: 150%;
+  text-indent: 10px;
+  color: #363636;
+  /* margin-left: 11px; */
+}
+
+.my-account{
+  color: #363636;
+  font-size: 18px;
+  /* margin-left: 101px; */
+}
+
+h2{
+  font-size: 25px;
+  
+  margin-top: 1.2em;
+  margin-bottom: 0.2em;
+}
+h3 {
+  font-size: 18px;
+  margin-top: 0.5em;
+  margin-bottom: 0.7em;
+
+  /* margin-left: 0.2em; */
+}
+
+/* KÖRSCHEMA (ÖVERSIKT) */
+.overview-info {
+  margin-left: 0.1em;
+}
+.loose-text-field {
+  padding-left: 15px;
+  margin-bottom: 0.8em;
+}
+
+.changesizeofbr{
+  content: "";
+  margin: 5em;
+  display: block;
+  font-size: 24%;
 }
 /* Experiment */
 /* .header {
@@ -89,31 +126,37 @@ body {
 .sub-header-football {
   display: flex;
   background-color: #9CD09B;
-  padding-top: 16px;
+  /* padding-top: 16px; */
+  align-items: center; 
+  
   width: 100%;
   height: 85px;
-  /* top: 33px; */
 }
 .football-column {
   display: flex;
-  width: 55px; height: 50px;
-  /* float: left; */
+  width: 60px; height: 50px;
+  
   text-align: center;
   vertical-align: middle;
   align-items: center; 
   justify-content: center;
   
-  /* margin-top: 7px; */
 }
 .group-column {
   display: flex;
   height: 50px;
-
-  align-items: center;
   
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: -0.333333px;
+  align-items: center;
+  padding-top: 0.4em;
+  padding-left: 0.4em;
+  
+  margin-left: 0.2em;
+  
+  line-height: 20px;
+  
+}
+#members {
+  font-weight: normal;
 }
 
 .page-content {
@@ -121,16 +164,19 @@ body {
 }
 
 /* BOXAR */
-.container {
-  background-color: #c5c5c5; /*white;*/
-  padding: 8px;
-  margin: 7px;
+.box-a {
+  background-color: #ffffff; /*#c5c5c5;*/
+  padding: 10px;
+  margin: 8px;
+  border-radius: 8px;
+  margin-bottom: 30px;
 }
 .group-box {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .before-create-schedule-box {
   margin: 33px;
+  border-radius: 0px;
 }
 
 
@@ -138,10 +184,10 @@ body {
 /* LISTOR */
 ul {
   list-style-type: none;
-  padding-left: 0;
+  /* padding-left: 0; */
 }
 li {
-  display: block;
+  /* display: block; */
 }
 i.li-user-icon {
   /* height: 33px; */
@@ -172,69 +218,95 @@ i.li-user-icon {
 .button-v2 {
   background-color: #882E76;
   color: white;
-  height: 38px;
+  height: 43px;
 
-  padding-left: 6%;
-  padding-right: 6%;
+  padding-left: 32px;
+  padding-right: 32px;
   
-  border-radius: 10px;
+  border-radius: 19px;
   border: none;
 
   left: 50%;
   transform: translate(-50%, -0%);
   position: relative;
   
-  margin-bottom: 18px;
+  margin-bottom: 30px;
 
 }
 
 
 
 /* SKAPA KÖRSCHEMA-FORMULÄRET */
+/* input, label{
+  display: block;
+} */
+/* .label::after {
+  content: "\a";
+  white-space: pre;
+} */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #000;
+}
 .form {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 input {
+  font-size: 15px;
   background-color: #F2F2ED;
-  border-color: #DFDFD2;
+  /*DFDFD2*/
+  
+  border-width: 1px;
   padding-left: 11px;
-  margin-bottom: 10px;
+  padding-right: 4px;
+  margin-bottom: 20px;
 }
 
 .standard-input {
   /* position: absolute; */
-  width: 345px;
+  width: 339px;
   height: 40px;
   /* left: 19px; */
+  font-size: 16px;
   top: 438px;
-  border-radius: 10px;
+  border-radius: 4px;
   border: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding-right: 4px;
+  border: solid #DFDFD2;
+  border-width: thin;
 }
 .option-list {
+  background-color: #F2F2ED;
   padding-left: 7px;
-  color: #767676;
-
+  padding-right: 7px;
+  /* color: #767676; */
 }
 
 .input-side-by-side {
-  width: 345px;
+  width: 339px;
+  display: flex;
+  justify-content: space-between;
 }
 .small-input {
   background-color: #F2F2ED;
-  width: 169px;
+  width: 159px;
   height: 40px;
   /* left: 20px; */
   /* top: 543px; */
-  border-radius: 10px;
+  border-radius: 4px;
   border: 1px;
+  border: solid #DFDFD2;
+  border-width: thin;
 }
 .input-left {
-  margin-right: 4px;
+  margin-right: 10px;
 }
 .input-right {
-  margin-left: 3px;
+  margin-left: 10px;
 }
+
+
 
 .page-content {
   position: absolute;
@@ -246,10 +318,17 @@ input {
   /* width: 100%; */
   width: 36px;
   /* margin: 7px; */
+  margin-left: 2px;
 }
 
 .fa-bars {
-  width: 93px;
+  /* width: 93px; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 50%;
+  margin-left: 8px;
 }
 
 
@@ -261,16 +340,114 @@ hr{
   
 }
 
-/* FÖRSÖK TILL ATT LÖSA FOTBOLLSBANNER-BUGGEN */
-.schedule-box {
-  /* display: block; */
-  margin: 10px;
+/* CHOOSE DRIVERS BOX */
+.choose-drivers-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 5px 5px; */
 }
-
-/* TABELL KÖRSCHEMA (ÖVERSIKT) */
-/* .schedule-overview-table {
-
-} */
+table.even {
+  border-collapse: separate;
+  border-spacing: 0px 13px;
+  table-layout: fixed;
+  width: 100%;
+}
 th {
   text-align: left;
+}
+select.driver {
+  border-style: none;
+  font-size: 15px;
+}
+
+.schedule-box {
+  background-color: #ffffff; /*#c5c5c5;*/
+  padding: 22px;
+  margin: 8px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  
+  border-left: solid #EDB946;
+  border-width: 11px;
+}
+
+.schedule-box ul {
+  /* display: flex;
+  flex-direction: column; */
+  /* list-style-type: disc; */
+  padding-left: 21px;
+}
+.schedule-box table {
+  /* background-color: #882E76; */
+  margin-bottom: 0.8em;
+}
+
+
+.alt-user-logo { /* ska eg vara en ikon ingen h1:a */
+  margin-top: 0;
+  margin-bottom: 0.1em;
+  margin-right: 0.1em;
+  font-size: 28px;
+}
+
+.schedule-box tr::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  font-size: 28px;
+  color: #363636; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  
+  padding-top: 0.1em;
+}
+
+/* Skugga till välja-förare-ruta:
+-webkit-box-shadow: 3px 6px 13px -3px #000000; 
+box-shadow: 3px 6px 13px -3px #000000; */
+
+.schedule-box2 {
+  background-color: #ffffff; /*#c5c5c5;*/
+  padding: 22px;
+  margin: 8px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  
+  border-left: solid #F2B3B6;
+  ;
+  border-width: 11px;
+}
+.schedule-box2 ul {
+  /* display: flex;
+  flex-direction: column; */
+  /* list-style-type: disc; */
+  padding-left: 21px;
+}
+.schedule-box2 table {
+  /* background-color: #882E76; */
+  margin-bottom: 0.8em;
+}
+
+td.time {
+  width: 50%; 
+  text-align: right;
+}
+.schedule-box2 i { /* ska eg vara en ikon ingen h1:a */
+  margin-top: 0;
+  margin-bottom: 0.1em;
+  margin-right: 0.1em;
+  font-size: 28px;
+}
+
+.schedule-box2 tr::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  font-size: 28px;
+  color: #363636; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  
+  padding-top: 0.1em;
 }

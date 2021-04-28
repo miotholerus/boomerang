@@ -8,7 +8,7 @@ import ChooseDrivers from './ChooseDrivers';
 
 export default function CreateSchedule({ schedule, setSchedule, members }) {
   let history = useHistory();
-  
+
   // Uppdateras varje gång input ändras
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
@@ -16,7 +16,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
   const [weekday, setWeekday] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  
+
   // Uppdateras varje gång veckodag, startdatum eller slutdatum ändras via useEffect!
   const [rides, setRides] = useState([]);
 
@@ -26,18 +26,26 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
   function ShowChooseDrivers() {
     if (rides.length > 0) {
-      return (<ChooseDrivers rides={rides} members={members}/>)
+      return (<ChooseDrivers rides={rides} members={members} />)
     } else {
+      // return (
+      //   <div>
+      //     <label for="ordning-for-chaufforer">&nbsp;Välj ordning för chaufförer</label>
+      //     <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+      //       <option id="option-placeholder" value="" disabled selected>{/* Välj ordning för chaufförer */}</option>
+      //     </select>
+      //   </div>
+      // )
       return null
     }
   }
 
   function generateDates() {
     console.log("Kör generateDates")
-    
-    const dayOfWeekIndex = weekday; console.log("dayOfWeekIndex: "+dayOfWeekIndex);
-    const startDateDate = new Date(startDate); console.log("startDateDate: "+startDateDate);
-    const endDateDate = new Date(endDate); console.log("endDateDate: "+endDateDate);
+
+    const dayOfWeekIndex = weekday; console.log("dayOfWeekIndex: " + dayOfWeekIndex);
+    const startDateDate = new Date(startDate); console.log("startDateDate: " + startDateDate);
+    const endDateDate = new Date(endDate); console.log("endDateDate: " + endDateDate);
 
     // Skapar en lista av alla datum mellan startDate och endDate
     const dateList = getDates(startDateDate, endDateDate);
@@ -63,8 +71,8 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
     // rides (statevariabel) blir listan av RideObjects
     setRides(rideObjects);
-    console.log("rides: "+rides);
-    
+    console.log("rides: " + rides);
+
     function getDates(startDate, endDate) {
       var dateArray = new Array();
       var dateToAdd = startDate;
@@ -84,13 +92,13 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       const newSchedule = [startTime, endTime, address, weekday, startDate, endDate, rides];
 
       setSchedule(newSchedule);
-      console.log("schedule after Save: "+schedule)
+      console.log("schedule after Save: " + schedule)
 
       history.push("/viewschedule")
     }
 
     return (
-      <button type="button" className="button-v2" onClick={SaveSchedule}>Gå vidare</button>
+      <button type="button" className="button-v2" onClick={SaveSchedule}>SPARA KÖRSCHEMA</button>
     )
   }
 
@@ -100,24 +108,39 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       <div className="page-content">
         <FootballBanner />
 
-        <br></br>
-        <form className="container form">
+        <div className="loose-text-field">
+          <h2 className="skapagruppenskörschema">Skapa gruppens körschema</h2>
+          <br className="changesizeofbr"></br>
+        </div>
 
-          <h3>Skapa gruppens körschema</h3>
-          <div className="aktivitet">
-            <p>Aktivitet</p>
+        <form className="form">
 
+          <div className="box-a aktivitet">
+            <h3>Aktivitet</h3>
+            
+            {/* <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div> */}
             <div className="input-side-by-side">
-              <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
+              <div className="input-column">
+                <label for="starttid" className="input-left">&nbsp;Starttid</label>
+                <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
+              </div>
 
-              <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} className="small-input input-right" id="sluttid"></input>
+              <div className="input-column">
+                <label for="sluttid" className="input-right">&nbsp;Sluttid</label>
+                <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} className="small-input input-right" id="sluttid"></input>
+              </div>
             </div>
 
-            <input value={address} onChange={e=>setAddress(e.target.value)} className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
+            <div>
+              <label for="adress-for-destination">&nbsp;Adress för destination</label>
+              <input value={address} onChange={e => setAddress(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
+            </div>
 
-            <div className="input-side-by-side">
-              <select value={weekday} onChange={e=>setWeekday(e.target.value)} /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" id="veckodag">
-                <option id="option-placeholder" value="" disabled selected>Veckodag</option>
+            {/* <div className="input-side-by-side"> */}
+            <div>
+              <label for="veckodag">&nbsp;Veckodag</label>
+              <select value={weekday} onChange={e => setWeekday(e.target.value)} /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" id="veckodag">
+                <option id="option-placeholder" value="" disabled selected>{/*Ej vald*/}</option>
                 <option value="1">Måndag</option>
                 <option value="2">Tisdag</option>
                 <option value="3">Onsdag</option>
@@ -126,52 +149,60 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
                 <option value="6">Lördag</option>
                 <option value="0">Söndag</option>
               </select>
+            </div>
 
-              {/* <select className="small-input option-list input-right" id="upprepa">
+            {/* <select className="small-input option-list input-right" id="upprepa">
                 <option id="option-placeholder" value="" disabled selected>Upprepa</option>
                 <option value="upprepa-inte">Upprepa inte</option>
                 <option value="varje-dag">Varje dag</option>
                 <option value="varje-vecka">Varje vecka</option>
               </select> */}
-            </div>
+            {/* </div> */}
           </div>
+        </form>
 
-          <div className="schema">
-            <p>Schema</p>
+        <br className="changesizeofbr"></br>
 
+        <form className="form">
+          <div className="box-a schema">
+            <h3>Schema</h3>
+            {/* <div>&nbsp;Startdatum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div> */}
             <div className="input-side-by-side">
-              <input value={startDate} onChange={e=>setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
-
-              <input value={endDate} onChange={e=>setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
+              <div>
+                <label for="startdatum" className="input-left">&nbsp;Startdatum</label>
+                <input value={startDate} onChange={e => setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
+              </div>
+              <div>
+                <label for="slutdatum" className="input-right">&nbsp;Slutdatum</label>
+                <input value={endDate} onChange={e => setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
+              </div>
             </div>
           </div>
+        </form>
 
-          <div className="skjutsning">
-            <p>Skjutsning</p>
+        <br className="changesizeofbr"></br>
 
+        <form className="form">
+          <div className="box-a skjutsning">
+            <h3>Skjutsning</h3>
+              {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+            <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
+          </select> */}
             {/* Avancerat, egen komponent? */}
-            {<ShowChooseDrivers/>}
-            {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+            
+            {/* {<select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
-              <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
-              <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
-              <option value="op3">Tillfälle 3 | Till aktivitet... | Från aktivitet...</option>
-            </select>
-            <select className="standard-input option-list input-left" id="upphamtning-avlamning">
-              <option id="option-placeholder" value="" disabled selected>Upphämtning/avlämning</option>
-              <option value="op1">Tillfälle 1 | Till aktivitet... | Från aktivitet...</option>
-              <option value="op2">Tillfälle 2 | Till aktivitet... | Från aktivitet...</option>
-              <option value="op3">Tillfälle 3 | Till aktivitet... | Från aktivitet...</option>
-            </select> */}
+            </select>} */}
+            {<ShowChooseDrivers />}
           </div>
 
           {/* <div id="upphamtningslista">
             <h5>Upphämtningslista:</h5>
           </div> */}
-          
-          <br></br>
-          <SaveButton />
 
+          <br className="changesizeofbr"></br>
+          <SaveButton />
+          
         </form>
       </div>
     </div>

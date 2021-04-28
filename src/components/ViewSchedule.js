@@ -3,9 +3,11 @@ import Header from './Header'
 import RideOccation from './RideOccation'
 import { dayOfWeekAsString } from '../App'
 import FootballBanner from './FootballBanner'
+import ScheduleBox from './ScheduleBox';
+import DetailedSchedule from './DetailedSchedule'
 
 
-export default function ViewSchedule({ schedule }) {
+export default function ViewSchedule({ schedule, members }) {
 
   return (
     <div>
@@ -14,17 +16,23 @@ export default function ViewSchedule({ schedule }) {
       <div className="page-content">
         <FootballBanner />
 
-        <form className="container form schedule-box"><b>Körschema</b>
+        <div className="loose-text-field">
+        <h2>Översikt körschema</h2>
+          <span class="overview-info">{dayOfWeekAsString(schedule[3])}ar, {schedule[0]}-{schedule[1]}, {schedule[2]}<br></br></span>
+        </div>
+        
+
+        <div className="box-a form">
           <div className="scheduleList">
-            <p>{dayOfWeekAsString(schedule[3])}ar, {schedule[0]}-{schedule[1]}, {schedule[2]}<br></br></p>
+            
             {/* {schedule[4]} - {schedule[5]}<br></br> */}
 
-            <table className="schedule-overview-table">
+            <table className="even schedule-overview-table">
               <thead>
                 <tr>
                   <th>Tillfälle:</th>
-                  <th>Till aktivitet:</th>
-                  <th>Från aktivitet:</th>
+                  <th>Till:</th>
+                  <th>Från:</th>
                 </tr>
               </thead>
             
@@ -36,8 +44,11 @@ export default function ViewSchedule({ schedule }) {
             </table>
 
           </div>
-
-        </form>
+        </div>
+        
+        <DetailedSchedule schedule={schedule} members={members} />
+        
+        
       </div>
     </div>
   )

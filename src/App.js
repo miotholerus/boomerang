@@ -9,6 +9,7 @@ import CreateSchedule from './components/CreateSchedule';
 import ViewSchedule from './components/ViewSchedule';
 
 import {useState, useEffect} from 'react'
+import TestAPI from "./components/TestAPI";
 
 import React from 'react'
 
@@ -25,11 +26,32 @@ export function dayOfWeekAsString(dayIndex) {
 
 function App() {
   
-  const [members, setMembers] = useState(["Siri", "Peter", "Hanna"]);
-  const [schedule, setSchedule] = useState([]);
+  const [members, setMembers] = useState([
+    {
+      "name": "Alba",
+      "child": "Anna",
+      "address": "Uddeholmsvägen 239"
+    },
+    {
+      "name": "Berit",
+      "child": "Blenda",
+      "address": "Årdalavägen 133"
+    },
+    {
+      "name": "Chris",
+      "child": "Charlie",
+      "address": "Lerbäcksgränd 18"
+    }
+  ]);
+  
+  //                                   index:  0        1            2          3         4             5       6
+  const [schedule, setSchedule] = useState(["00:00", "00:00", "Sergelgatan 1", "0", "0000-00-00", "0000-00-00", [] ]);
 
   return (
     <div className="App">
+      
+      {/* <TestAPI/> */}
+
       <Router>
         <Switch>
           <Route>
@@ -37,7 +59,7 @@ function App() {
           </Route>
 
           <Route path="/viewschedule">
-            <ViewSchedule schedule={schedule} />
+            <ViewSchedule schedule={schedule} members={members} />
           </Route>
           
           <Route path="/">
@@ -46,9 +68,10 @@ function App() {
 
         </Switch>
         
-        {/* <GroupCreated /> */}      
-        
       </Router>
+      
+      {/* <GroupCreated /> */}
+
     </div>
   );
 }

@@ -3,11 +3,12 @@
 export default function ChooseDrivers({rides, setRides, schedule, setSchedule, members}) {
   
   function RideEditRow({index, ride}) {
-    const [driverTo, setDriverTo] = useState("");
-    const [driverFrom, setDriverFrom] = useState("");
+    const [driverTo, setDriverTo] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
+    const [driverFrom, setDriverFrom] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
 
     useEffect(() => {
       ride.driverTo = driverTo;
+      console.log("ride "+index+" driverTo: "+rides[index].driverTo)
     }, [driverTo])
 
     useEffect(() => {
@@ -17,19 +18,19 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
     return (
       <tr>
         <td>
-          {ride.dateAsString()}
+          {ride.dateAsStringShort()}
         </td>
         <td>
-          <select value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
+          <select className="driver" value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
             {members.map(member => {
-              return <option value={member}>{member}</option>
+              return <option value={member}>{member.name}</option>
             })}
           </select>
         </td>
         <td>
-          <select value={driverFrom} onChange={e=>setDriverFrom(e.target.value)}>
+          <select className="driver" value={driverFrom} onChange={e=>setDriverFrom(e.target.value)}>
             {members.map(member => {
-              return <option value={member}>{member}</option>
+              return <option value={member}>{member.name}</option>
             })}
           </select>
         </td>
@@ -62,7 +63,7 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   
   function RideEditTable() {
     return (
-      <table className="choose-driver">
+      <table className="even choose-driver">
   
         <tr>
           <th>Tillfälle:</th>
@@ -70,20 +71,20 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
           <th>Från aktivitet:</th>
         </tr>
     
-        {/* <ForEachRide/> */}
+        <ForEachRide/>
         {/* På något sätt fånga upp detta och uppdatera rides... */}
-        {rides.map(ride => {
+        {/* {rides.map(ride => {
           return (
             <RideEditRow key={ride.id} ride={ride}/>
           )
-        })}
+        })} */}
       </table>
     ) 
   }
 
   return (
-    //<div className="container">
+    <div className="choose-drivers-box">
       <RideEditTable/>
-    //</div>
+    </div>
   )
 }

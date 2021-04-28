@@ -7,7 +7,7 @@ export default function GroupCreated() {
       <Header />
       <div className="page-content">
         <br></br><br></br>
-        <div className="container group-box">
+        <div className="box-a group-box">
           <p>Namn på grupp:</p>
           <h4>Fotbollsgruppen</h4>
           <ul>
@@ -29,7 +29,7 @@ export default function GroupCreated() {
           </ul>
         </div>
         <br></br>
-        <div className="container before-create-schedule-box">
+        <div className="box-a before-create-schedule-box">
           <p>Vill du skapa körschema?</p>
           <p><a href="">Hoppa över</a></p>
           <button className="button-v2" id="create-schedule">Skapa körschema</button>
