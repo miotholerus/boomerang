@@ -57,13 +57,10 @@ function App() {
   return (
     <div className="App">
       
-      {/* <TestAPI/> */}
+       {/* <TestAPI/>  */}
 
       <Router>
         <Switch>
-          <Route>
-            <ApiTest/>
-          </Route>
 
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />

@@ -5,6 +5,16 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   function RideEditRow({index, ride}) {
     const [driverTo, setDriverTo] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
     const [driverFrom, setDriverFrom] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
+    const[driverIdTo,setDriverIdTo] = useState([]);
+    const [driverIdFrom, setDriverIdFrom] = useState([]);
+
+    useEffect(() => {
+      setDriverTo(members[driverIdTo])
+    },[driverIdTo])
+
+    useEffect(() => {
+      setDriverFrom(members[driverIdFrom])
+    },[driverFrom])
 
     useEffect(() => {
       ride.driverTo = driverTo;
@@ -21,16 +31,16 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
           {ride.dateAsStringShort()}
         </td>
         <td>
-          <select className="driver" value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
+          <select className="driver" value={driverIdTo} onChange={e=>setDriverIdTo(e.target.value)}>
             {members.map(member => {
-              return <option value={member}>{member.name}</option>
+              return <option value={member.id}>{member.name}</option>
             })}
           </select>
         </td>
         <td>
-          <select className="driver" value={driverFrom} onChange={e=>setDriverFrom(e.target.value)}>
+          <select className="driver" value={driverIdFrom} onChange={e=>setDriverIdFrom(e.target.value)}>
             {members.map(member => {
-              return <option value={member}>{member.name}</option>
+              return <option value={member.id}>{member.name}</option>
             })}
           </select>
         </td>

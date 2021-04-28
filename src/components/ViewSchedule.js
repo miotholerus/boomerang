@@ -5,9 +5,10 @@ import { dayOfWeekAsString } from '../App'
 import FootballBanner from './FootballBanner'
 import ScheduleBox from './ScheduleBox';
 import DetailedSchedule from './DetailedSchedule'
+import ChooseDrivers from './ChooseDrivers'
 
 
-export default function ViewSchedule({ schedule, members }) {
+export default function ViewSchedule({ schedule, members, driverTo, driverFrom }) {
 
   return (
     <div>
@@ -40,6 +41,7 @@ export default function ViewSchedule({ schedule, members }) {
                 {schedule[6].map(ride => {
                   return <RideOccation key={ride.id} ride={ride} />
                 })}
+                
               </tbody>
             </table>
 
