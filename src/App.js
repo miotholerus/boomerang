@@ -45,7 +45,7 @@ function App() {
     }
   ]);
   
-  // Schemat med grundvärden inlaggt (för att det inte ska krascha när vi testar saker och man inte angett
+  // Schemat med grundvärden inlaggt (för att det inte ska krascha när vi testar saker och man inte har fyllt i formuläret)
   //                                   index:  0        1            2          3         4             5       6
   const [schedule, setSchedule] = useState(["00:00", "00:00", "Sergelgatan 1", "0", "0000-00-00", "0000-00-00", [] ]);
   // 0 - starttid
