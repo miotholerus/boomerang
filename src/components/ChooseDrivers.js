@@ -8,7 +8,7 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
 
     useEffect(() => {
       ride.driverTo = driverTo;
-      console.log("ride "+index+" driverTo: "+rides[index].driverTo)
+      console.log("ride "+index+" driverTo: ", rides[index].driverTo)
     }, [driverTo])
 
     useEffect(() => {

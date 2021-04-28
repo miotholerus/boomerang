@@ -66,12 +66,17 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
       const date = rideDates[i];
-      rideObjects.push(new RideObject(date, "Siri", "Peter"))
+
+      const newRideObject = new RideObject(date, "Siri", "Peter");
+      console.log("NEW RIDE OBJECT:", newRideObject); // Här är driverTo och driverFrom undefined :))))
+
+      rideObjects.push(newRideObject);
+      
     }
 
     // rides (statevariabel) blir listan av RideObjects
     setRides(rideObjects);
-    console.log("rides: " + rides);
+    console.log("rides: ", rides);
 
     function getDates(startDate, endDate) {
       var dateArray = new Array();
