@@ -7,6 +7,8 @@ export default function DetailedSchedule({schedule, members}) {
   // schedule[6] = lista av rideobjects
   // schedule[6][0] = första rideobjectet i listan
   // schedule[6][0].driverTo.address = rideobjectets förares adress
+  const startTime = schedule[0];
+
   const exampleData = {
     "destination_addresses": [
       "Sockenvägen 290, 122 63 Enskede, Sweden"
@@ -34,18 +36,24 @@ export default function DetailedSchedule({schedule, members}) {
     "status": "OK"
   } // exempeldata för att det inte ska krascha när vi testar
 
-  const [origin, setOrigin] = useState(addressFromMember); // kommer ej behövas sen, det är samma sak som addressFromMember
-  const [destination, setDestination] = useState(destinationFromSchedule); // kommer ej behövas sen, det är samma sak som destinationFromSchedule
+  const [origin, setOrigin] = useState(addressFromMember); // samma sak som addressFromMember
+  const [destination, setDestination] = useState(destinationFromSchedule); // samma sak som destinationFromSchedule
   const [data, setData] = useState(exampleData); // den riktiga datan efter att man kört API:n (kommer behöva köras för varje delresa)
   const [seconds, setSeconds] = useState(0); // sekunderna från datan, ska dras av från klockslagen
 
   const url = `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${origin}&destinations=${destination}&key=bp6pjpgmaCcdxjtccQlnDpjTPEUqk`;
+
+  
+
 
   useEffect(() => {
     console.log(origin);
     console.log(destination);
     console.log(data.rows[0].elements[0].duration.value)
     setSeconds(data.rows[0].elements[0].duration.value) // seconds laddas från json-data
+
+    console.log(startTime);
+
   }, [data])
 
   const submitForm = (event) => {
