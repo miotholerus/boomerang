@@ -61,10 +61,7 @@ function App() {
 
       <Router>
         <Switch>
-          <Route>
-            <ApiTest/>
-          </Route>
-
+         
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />
           </Route>
