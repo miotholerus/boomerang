@@ -28,14 +28,15 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     if (rides.length > 0) {
       return (<ChooseDrivers rides={rides} members={members} />)
     } else {
-      return (
-        <>
-          <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
-            <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
-          </select>
-        </>
-      )
-      // return null
+      // return (
+      //   <div>
+      //     <label for="ordning-for-chaufforer">&nbsp;Välj ordning för chaufförer</label>
+      //     <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+      //       <option id="option-placeholder" value="" disabled selected>{/* Välj ordning för chaufförer */}</option>
+      //     </select>
+      //   </div>
+      // )
+      return null
     }
   }
 
@@ -108,34 +109,47 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <FootballBanner />
 
         <div className="loose-text-field">
-          <h3 className="skapagruppenskörschema">Skapa gruppens körschema</h3>
+          <h2 className="skapagruppenskörschema">Skapa gruppens körschema</h2>
           <br className="changesizeofbr"></br>
         </div>
 
         <form className="form">
 
-          <div className="container-a aktivitet">
-            <h4>Aktivitet</h4>
-            <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div>
-            <div className="input-side-by-side">  
-              <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
-              
-              <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} className="small-input input-right" id="sluttid"></input>
+          <div className="box-a aktivitet">
+            <h3>Aktivitet</h3>
+            
+            {/* <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div> */}
+            <div className="input-side-by-side">
+              <div className="input-column">
+                <label for="starttid" className="input-left">&nbsp;Starttid</label>
+                <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
+              </div>
+
+              <div className="input-column">
+                <label for="sluttid" className="input-right">&nbsp;Sluttid</label>
+                <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} className="small-input input-right" id="sluttid"></input>
+              </div>
             </div>
 
-            <input value={address} onChange={e => setAddress(e.target.value)} className="standard-input" placeholder="Fyll i adress för destination" id="adress-for-destination"></input>
+            <div>
+              <label for="adress-for-destination">&nbsp;Adress för destination</label>
+              <input value={address} onChange={e => setAddress(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
+            </div>
 
             {/* <div className="input-side-by-side"> */}
-            <select value={weekday} onChange={e => setWeekday(e.target.value)} /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" id="veckodag">
-              <option id="option-placeholder" value="" disabled selected>Veckodag</option>
-              <option value="1">Måndag</option>
-              <option value="2">Tisdag</option>
-              <option value="3">Onsdag</option>
-              <option value="4">Torsdag</option>
-              <option value="5">Fredag</option>
-              <option value="6">Lördag</option>
-              <option value="0">Söndag</option>
-            </select>
+            <div>
+              <label for="veckodag">&nbsp;Veckodag</label>
+              <select value={weekday} onChange={e => setWeekday(e.target.value)} /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" id="veckodag">
+                <option id="option-placeholder" value="" disabled selected>{/*Ej vald*/}</option>
+                <option value="1">Måndag</option>
+                <option value="2">Tisdag</option>
+                <option value="3">Onsdag</option>
+                <option value="4">Torsdag</option>
+                <option value="5">Fredag</option>
+                <option value="6">Lördag</option>
+                <option value="0">Söndag</option>
+              </select>
+            </div>
 
             {/* <select className="small-input option-list input-right" id="upprepa">
                 <option id="option-placeholder" value="" disabled selected>Upprepa</option>
@@ -150,14 +164,18 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <br className="changesizeofbr"></br>
 
         <form className="form">
-          <div className="container-a schema">
-            <h4>Schema</h4>
-            <div >&nbsp;Startdatum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div>
+          <div className="box-a schema">
+            <h3>Schema</h3>
+            {/* <div>&nbsp;Startdatum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div> */}
             <div className="input-side-by-side">
-
-              <input value={startDate} onChange={e => setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
-
-              <input value={endDate} onChange={e => setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
+              <div>
+                <label for="startdatum" className="input-left">&nbsp;Startdatum</label>
+                <input value={startDate} onChange={e => setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
+              </div>
+              <div>
+                <label for="slutdatum" className="input-right">&nbsp;Slutdatum</label>
+                <input value={endDate} onChange={e => setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
+              </div>
             </div>
 
             <div className="driver">
@@ -174,8 +192,8 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <br className="changesizeofbr"></br>
 
         <form className="form">
-          <div className="container-a skjutsning">
-            <h4>Skjutsning</h4>
+          <div className="box-a skjutsning">
+            <h3>Skjutsning</h3>
               {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
             <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
           </select> */}

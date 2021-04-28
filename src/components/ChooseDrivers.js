@@ -3,8 +3,8 @@
 export default function ChooseDrivers({rides, setRides, schedule, setSchedule, members}) {
   
   function RideEditRow({index, ride}) {
-    const [driverTo, setDriverTo] = useState("Siri");
-    const [driverFrom, setDriverFrom] = useState("Siri");
+    const [driverTo, setDriverTo] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
+    const [driverFrom, setDriverFrom] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
 
     useEffect(() => {
       ride.driverTo = driverTo;
@@ -23,14 +23,14 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
         <td>
           <select className="driver" value={driverTo} onChange={e=>setDriverTo(e.target.value)}>
             {members.map(member => {
-              return <option value={member}>{member}</option>
+              return <option value={member}>{member.name}</option>
             })}
           </select>
         </td>
         <td>
           <select className="driver" value={driverFrom} onChange={e=>setDriverFrom(e.target.value)}>
             {members.map(member => {
-              return <option value={member}>{member}</option>
+              return <option value={member}>{member.name}</option>
             })}
           </select>
         </td>
@@ -63,7 +63,7 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   
   function RideEditTable() {
     return (
-      <table className="choose-driver">
+      <table className="even choose-driver">
   
         <tr>
           <th>Tillfälle:</th>
