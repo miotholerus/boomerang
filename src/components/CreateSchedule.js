@@ -6,7 +6,7 @@ import RideObject from '../RideObject'
 import ChooseDrivers from './ChooseDrivers';
 
 
-export default function CreateSchedule({ schedule, setSchedule, members }) {
+export default function CreateSchedule({ schedule, setSchedule, altSchedule, setAltSchedule, members }) {
   let history = useHistory();
 
   // Uppdateras varje gång input ändras
@@ -26,16 +26,8 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
   function ShowChooseDrivers() {
     if (rides.length > 0) {
-      return (<ChooseDrivers rides={rides} members={members} />)
+      return (<ChooseDrivers rides={rides} setRides={setRides} members={members} />)
     } else {
-      // return (
-      //   <div>
-      //     <label for="ordning-for-chaufforer">&nbsp;Välj ordning för chaufförer</label>
-      //     <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
-      //       <option id="option-placeholder" value="" disabled selected>{/* Välj ordning för chaufförer */}</option>
-      //     </select>
-      //   </div>
-      // )
       return null
     }
   }
@@ -66,20 +58,17 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
       const date = rideDates[i];
-      const driverToDefault = {"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"};
-      console.log("driverToDefatult: ", driverToDefault);
-      const driverFromDefault = {"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"};
-      console.log("driverFromDefault: ", driverFromDefault);
-      
-      const newRideObject = new RideObject(date, driverToDefault, driverFromDefault);
-      console.log("newRideObject:", newRideObject);
+
+      const newRideObject = new RideObject(date, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
+      console.log("NEW RIDE OBJECT:", newRideObject); // Här är driverTo och driverFrom undefined :))))
 
       rideObjects.push(newRideObject);
+      
     }
 
     // rides (statevariabel) blir listan av RideObjects
     setRides(rideObjects);
-    console.log("3. rides:", rides);
+    console.log("rides: ", rides);
 
     function getDates(startDate, endDate) {
       var dateArray = new Array();
@@ -96,17 +85,39 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
   function SaveButton() {
 
-    function SaveSchedule(e) {
+    function saveSchedule(e) {
+
+      const startHours = startTime.substring(0, 2);
+      const startMinutes = startTime.substring(3);
+
+      const ridesWithTimes = rides.map(ride => {
+        ride.date.setHours(startHours, startMinutes);
+      })
+
       const newSchedule = [startTime, endTime, address, weekday, startDate, endDate, rides];
 
-      setSchedule(newSchedule);
-      console.log("schedule after Save: ", schedule)
+      const newAltSchedule = {
+        "id": 0,
+        "startTime": startTime,
+        "endTime": endTime,
+        "destination": address,
+        "weekday": weekday,
+        "startDate": startDate,
+        "endDate": endDate,
+        "rides": rides
+      }
 
-      history.push("/viewschedule")
+      setSchedule(newSchedule);
+      console.log("schedule after Save: ", schedule);
+
+      setAltSchedule(newAltSchedule);
+      console.log("altSchedule after Save: ", altSchedule);
+
+      history.push("/viewschedule");
     }
 
     return (
-      <button type="button" className="button-v2" onClick={SaveSchedule}>SPARA KÖRSCHEMA</button>
+      <button type="button" className="button-v2" onClick={saveSchedule}>SPARA KÖRSCHEMA</button>
     )
   }
 
