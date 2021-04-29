@@ -1,48 +1,73 @@
 ﻿[
     {
-        "id": "SAMPLE",
-        "starttid": "17:00",
-        "sluttid": "19:00",
-        "adress-for-destination": "Fyrishovshallen, Solvägen 21",
-        "veckodag": "tisdag",
-        "upprepa": "varje-vecka",
-        "startdatum": "2021-04-13",
-        "slutdatum": "2021-05-23",
-        "ordning-for-chaufforer": [
+        "id": 0,
+        "startTime": "17:00",
+        "endTime": "19:00",
+        "destination": "Sockenvägen 290",
+        "weekday": 2,
+        "startDate": "2021-04-06",
+        "endDate": "2021-04-20",
+        "rides": [
             {
-                "tillfalle": "Tis 8 mars",
-                "tillaktivitet": "Siri",
-                "franaktivitet": "Siri"
+                "rideTo": {
+                    "dateTime": "2021-04-06 17:00:00",
+                    "driver": {
+                        "id": 0,
+                        "name": "Alba",
+                        "child": "Anna",
+                        "address": "Uddeholmsvägen 239"
+                    }
+                },
+                "rideFrom": {
+                    "dateTime": "2021-04-06 19:00:00",
+                    "driver": {
+                        "id": 0,
+                        "name": "Alba",
+                        "child": "Anna",
+                        "address": "Uddeholmsvägen 239"
+                    }
+                }
             },
             {
-                "tillfalle": "Tis 15 mars",
-                "tillaktivitet": "Peter",
-                "franaktivitet": "Peter"
+                "rideTo": {
+                    "dateTime": "2021-04-13 17:00:00",
+                    "driver": {
+                        "id": 1,
+                        "name": "Berit",
+                        "child": "Blenda",
+                        "address": "Årdalavägen 133"
+                    }
+                },
+                "rideFrom": {
+                    "dateTime": "2021-04-13 19:00:00",
+                    "driver": {
+                        "id": 1,
+                        "name": "Berit",
+                        "child": "Blenda",
+                        "address": "Årdalavägen 133"
+                    }
+                }
             },
             {
-                "tillfalle": "Tis 22 mars",
-                "tillaktivitet": "Hanna",
-                "franaktivitet": "Hanna"
+                "rideTo": {
+                    "dateTime": "2021-04-20 17:00:00",
+                    "driver": {
+                        "id": 2,
+                        "name": "Chris",
+                        "child": "Charlie",
+                        "address": "Lerbäcksgränd 18"
+                    }
+                },
+                "rideFrom": {
+                    "dateTime": "2021-04-20 19:00:00",
+                    "driver": {
+                        "id": 2,
+                        "name": "Chris",
+                        "child": "Charlie",
+                        "address": "Lerbäcksgränd 18"
+                    }
+                }
             }
         ]
-    },
-    
-    {
-        "id": "SAMPLE",
-        "namn": "Siri",
-        "barn": "Sara",
-        "adress": "Semmelvägen 4"
-    },
-    {
-        "id": "SAMPLE",
-        "namn": "Peter",
-        "barn": "Per",
-        "adress": "Prästgatan 50"
-    },
-    {
-        "id": "SAMPLE",
-        "namn": "Hanna",
-        "barn": "Hugo",
-        "adress": "Havsstigen 12"
     }
 ]

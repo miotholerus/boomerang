@@ -8,13 +8,10 @@ import DetailedSchedule from './DetailedSchedule'
 import ChooseDrivers from './ChooseDrivers'
 
 
-export default function ViewSchedule({ schedule, members, driverTo, driverFrom }) {
+export default function ViewSchedule({ schedule, altSchedule, members, driverTo, driverFrom }) {
 
-  console.log("Kör ViewSchedule, schedule:")
-  console.log(schedule)
-
-  console.log("Kör ViewSchedule, schedule:")
-  console.log(schedule)
+  console.log("Kör ViewSchedule, schedule:", schedule)
+  console.log("altSchedule:", altSchedule)
 
   return (
     <div>
@@ -25,7 +22,7 @@ export default function ViewSchedule({ schedule, members, driverTo, driverFrom }
 
         <div className="loose-text-field">
         <h2>Översikt körschema</h2>
-          <span class="overview-info">{dayOfWeekAsString(schedule[3])}ar, {schedule[0]}-{schedule[1]}, {schedule[2]}<br></br></span>
+          <span class="overview-info">{dayOfWeekAsString(altSchedule.weekday)}ar, {altSchedule.startTime}-{altSchedule.endTime}, {altSchedule.destination}<br></br></span>
         </div>
         
 
@@ -44,7 +41,7 @@ export default function ViewSchedule({ schedule, members, driverTo, driverFrom }
               </thead>
             
               <tbody>
-                {schedule[6].map(ride => { // schedule.rideObjects.map
+                {altSchedule.rides.map(ride => {
                   return <RideOccation key={ride.id} ride={ride} />
                 })}
                 
@@ -54,7 +51,7 @@ export default function ViewSchedule({ schedule, members, driverTo, driverFrom }
           </div>
         </div>
         
-        <DetailedSchedule schedule={schedule} members={members} />
+        <DetailedSchedule schedule={schedule} altSchedule={altSchedule} members={members} />
         
         
       </div>
