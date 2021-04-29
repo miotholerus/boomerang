@@ -52,24 +52,24 @@ export default function DetailedSchedule({ schedule, altSchedule, members }) {
   useState(() => {
     console.log("Kör useState [] en gång");
 
-    //timeAtDestination = addMinutes(altSchedule.rides[0].date, -5); // date-objekt
-    //console.log("timeAtDestination: ", timeAtDestination.toString());
+    timeAtDestination = addMinutes(altSchedule.rides[0].date, -5); // date-objekt
+    console.log("timeAtDestination: ", timeAtDestination.toString());
 
-    // fetch(url)
-    //   .then(responseFromAPI =>
-    //     responseFromAPI.json()
-    //       .then(apiData => {
-    //         console.log(apiData)
-    //         setData(apiData)
-    //         console.log(origin);
-    //         console.log(destination);
-    //         console.log(data.rows[0].elements[0].duration.value)
-    //         setSeconds(data.rows[0].elements[0].duration.value)
-    //       }).then(then => {
-    //         timeToStart = addSeconds(timeAtDestination, -seconds);
-    //         console.log("timeToStart efter första automatiska API-anropet: ", timeToStart);
-    //       })
-    //   );
+    fetch(url)
+      .then(responseFromAPI =>
+        responseFromAPI.json()
+          .then(apiData => {
+            console.log(apiData)
+            setData(apiData)
+            console.log(origin);
+            console.log(destination);
+            console.log(data.rows[0].elements[0].duration.value)
+            setSeconds(data.rows[0].elements[0].duration.value)
+          }).then(then => {
+            timeToStart = addSeconds(timeAtDestination, -seconds);
+            console.log("timeToStart efter första automatiska API-anropet: ", timeToStart);
+          })
+      );
 
   }, [])
 

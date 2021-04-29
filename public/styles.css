@@ -403,9 +403,14 @@ box-shadow: 3px 6px 13px -3px #000000; */
 }
 
 td.time {
-  width: 50%; 
+  /* width: 50%;  */
   text-align: right;
 }
+td.name {
+  width: 80%; 
+  /* text-align: right; */
+}
+
 .schedule-box2 i { /* ska eg vara en ikon ingen h1:a */
   margin-top: 0;
   margin-bottom: 0.1em;

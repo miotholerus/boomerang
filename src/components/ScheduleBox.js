@@ -21,7 +21,7 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
             <table>
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo"/></td>
-                <td><p>{members[0].name}s barn {members[0].child}</p><p>{members[0].address}</p></td>
+                <td className="name"><p>{members[0].name}s barn {members[0].child}</p><p>{members[0].address}</p></td>
                 <td className="time">16:30</td>
               </tr>
             </table>
@@ -30,7 +30,7 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
             <table>
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo"/></td>
-                <td><p>{members[1].name}s barn {members[1].child}</p><p>{members[1].address}</p></td>
+                <td className="name"><p>{members[1].name}s barn {members[1].child}</p><p>{members[1].address}</p></td>
                 <td className="time">16:40</td>
               </tr>
             </table>
@@ -39,7 +39,7 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
             <table>
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo"/></td>
-                <td><p>{members[2].name}s barn {members[2].child}</p><p>{members[2].address}</p></td>
+                <td className="name"><p>{members[2].name}s barn {members[2].child}</p><p>{members[2].address}</p></td>
                 <td className="time">16:50</td>
               </tr>
             </table>

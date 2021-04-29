@@ -3,6 +3,7 @@ import React, { useState, usRef, useEffect } from 'react'
 
 export default function TestAPI() {
   
+  const []
   
   const url = `https://www.mapquestapi.com/directions/v2/routematrix?key=Kr8qYQFLlQ0XjbF6hGWyyTprB5x4fEPU`;
   
@@ -10,10 +11,10 @@ export default function TestAPI() {
   const submitForm = async (event) => {
     event.preventDefault();
 
-    const locA = "Uddeholmsvägen 239, 12241 Enskede, SWEDEN";
-    const locB = "Årdalavägen 133, 12432 Bandhagen, SWEDEN";
-    const locC = "Lerbäcksgränd 18, 12466 Bandhagen, Sweden";
-    const locD = "Sockenvägen 290, 12040 Enskede, SWEDEN";
+    const locA = "59.28093793567633, 18.046790156144745"; //  Uddeholmsvägen 239, 12241 Enskede, SWEDEN
+    const locB = "59.272215063170705, 18.037266160912903"; // Årdalavägen 133, 12432 Bandhagen, SWEDEN
+    const locC = "59.26093702587597, 18.021367342650105"; // Lerbäcksgränd 18, 12466 Bandhagen, Sweden
+    const locD = "59.287761851370426, 18.05808156963875"; // Sockenvägen 290, 12040 Enskede, SWEDEN
 
     const requestBodyAtoB = {
       "locations": [
@@ -66,7 +67,7 @@ export default function TestAPI() {
     })
     const dataCtoD = await responseCtoD.json()
 
-    console.log(dataCtoD)    
+    console.log(dataCtoD)
 
   }
 
