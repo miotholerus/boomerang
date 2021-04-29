@@ -12,13 +12,13 @@ h1 - Inbjudan är skickad! Grattis!
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
 }
-p {
+/* p {
   margin-top: 0.2em;
   margin-bottom: 0.2em;
-  font-size: 16px;
+  font-size: 11px;
   line-height: 18px;
   letter-spacing: -0.333333px;
-}
+}  */
 body {
   /* font-size: larger; */
   background-color: #F2F2ED;
@@ -42,28 +42,30 @@ body {
 }
 .left {
   display: flex;
-  width: 50%;
+  width: 57%;
   align-items: center;
+  padding-left: 15px;
    /* justify-content: center; */
 }
 .right {
   display: flex;
-  width: 45%;
+  width: 25%;
   align-items: center;
   justify-content: flex-end;
   margin-right: 10px;
-  /* padding-right: 10px; */
+  padding-right: 10px;
 }
 
 .header-element{
   font-size: 150%;
   text-indent: 10px;
   color: #363636;
+  padding-right: 10px;
   /* margin-left: 11px; */
 }
 
 .my-account{
-  color: #363636;
+  color: #882E76;
   font-size: 18px;
   /* margin-left: 101px; */
 }
@@ -357,17 +359,17 @@ select.driver {
   font-size: 28px;
 }
 
-.schedule-box tr::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+/* .schedule-box tr::before {
+  content: "\2022";  Add content: \2022 is the CSS Code/unicode for a bullet
   font-size: 28px;
-  color: #363636; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  color: #363636; Change the color
+  font-weight: bold; If you want it to be bold
+  display: inline-block; Needed to add space between the bullet and the text
+  width: 1em; Also needed for space (tweak if needed)
+  margin-left: -1em; Also needed for space (tweak if needed)
   
   padding-top: 0.1em;
-}
+} */
 
 /* Skugga till välja-förare-ruta:
 -webkit-box-shadow: 3px 6px 13px -3px #000000; 
@@ -415,4 +417,24 @@ td.time {
   margin-left: -1em; /* Also needed for space (tweak if needed) */
   
   padding-top: 0.1em;
+}
+
+.skapagruppenskörschema{
+  font-size: 140%;
+}
+
+.hamburgarmeny{
+  padding-left: 15px;
+  padding-top: 10px; 
+  display: flex;
+  width: 90%;
+  align-items: center;
+}
+
+td.name{
+  width: 80%;
+  
+}
+.address{
+  /* font-size: 10px; */
 }
