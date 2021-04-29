@@ -73,7 +73,6 @@ function App() {
 
       <Router>
         <Switch>
-
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} altSchedule={altSchedule} members={members} />
           </Route>
