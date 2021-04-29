@@ -25,10 +25,12 @@ export default function ViewSchedule({ schedule, altSchedule, members, driverTo,
           <span class="overview-info">{dayOfWeekAsString(altSchedule.weekday)}ar, {altSchedule.startTime}-{altSchedule.endTime}, {altSchedule.destination}<br></br></span>
         </div>
         
+        <br className="changesizeofbr"></br>
+        <p></p>
 
         <div className="box-a form">
           <div className="scheduleList">
-            
+            <p>Skjutsning till/från aktivitet</p>
             {/* {schedule[4]} - {schedule[5]}<br></br> */}
 
             <table className="even schedule-overview-table">

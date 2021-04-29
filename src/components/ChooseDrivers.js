@@ -99,8 +99,8 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   
         <tr>
           <th>Tillfälle:</th>
-          <th>Till aktivitet:</th>
-          <th>Från aktivitet:</th>
+          <th>Till:</th>
+          <th>Från:</th>
         </tr>
     
         <ForEachRide/>
