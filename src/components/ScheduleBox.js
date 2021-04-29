@@ -21,7 +21,7 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
             <table>
               <tr>
                 <td><AltUserLogo className="alt-user-logo"/></td>
-                <td><p>Siris barn Sara</p><p>Semmelvägen 4</p></td>
+                <td className="name"><p >Siris barn Sara</p><p>Semmelvägen 4</p></td>
                 <td className="time">16:30</td>
               </tr>
             </table>
@@ -30,7 +30,7 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
             <table>
               <tr>
                 <td><AltUserLogo className="alt-user-logo"/></td>
-                <td><p>Hannas barn Hugo</p><p>Havsstigen 12</p></td>
+                <td className="name"><p >Hannas barn Hugo</p><p>Havsstigen 12</p></td>
                 <td className="time">16:40</td>
               </tr>
             </table>
@@ -39,7 +39,7 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
             <table>
               <tr>
                 <td><AltUserLogo className="alt-user-logo"/></td>
-                <td><p>Peters barn Per</p><p>Prästgatan 50</p></td>
+                <td className="name"><p >Peters barn Per</p><p className="adress">Prästgatan 50</p></td>
                 <td className="time">16:50</td>
               </tr>
             </table>
