@@ -49,14 +49,14 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
 
       <div className="schedule-box2">
         <h3>Avlämning från aktivitet</h3>
-        <p>Chaufför: Siri</p>
+        <p>Chaufför: {members[2].name}</p>
         <br></br>
         <ul>
           <li>
             <table>
               <tr>
-                <td><AltUserLogo className="alt-user-logo" /></td>
-                <td><p>Petets barn Per</p><p>Prästgatan 50</p></td>
+                <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
+                <td className="name"><p>{members[0].name}s barn {members[0].child}</p><p>{members[0].address}</p></td>
                 <td className="time">19:20</td>
               </tr>
             </table>
@@ -64,8 +64,8 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
           <li>
             <table>
               <tr>
-                <td><AltUserLogo className="alt-user-logo" /></td>
-                <td><p>Hannas barn Hugo</p><p>Havsstigen 12</p></td>
+                <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
+                <td className="name"><p>{members[1].name}s barn {members[1].child}</p><p>{members[1].address}</p></td>
                 <td className="time">19:30</td>
               </tr>
             </table>
@@ -73,8 +73,8 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
           <li>
             <table>
               <tr>
-                <td><AltUserLogo className="alt-user-logo" /></td>
-                <td><p>Siris barn Sara</p><p>Semmelvägen 4</p></td>
+                <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
+                <td className="name"><p>{members[2].name}s barn {members[2].child}</p><p>{members[2].address}</p></td>
                 <td className="time">19:40</td>
               </tr>
             </table>
