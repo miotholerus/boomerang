@@ -135,7 +135,7 @@ export default function CreateSchedule({ schedule, setSchedule, altSchedule, set
         <form className="form">
 
           <div className="box-a aktivitet">
-            <h3>Aktivitet</h3>
+            <h3>&nbsp;Aktivitet</h3>
             
             {/* <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div> */}
             <div className="input-side-by-side">
@@ -184,7 +184,7 @@ export default function CreateSchedule({ schedule, setSchedule, altSchedule, set
 
         <form className="form">
           <div className="box-a schema">
-            <h3>Schema</h3>
+            <h3>&nbsp;Schema</h3>
             {/* <div>&nbsp;Startdatum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div> */}
             <div className="input-side-by-side">
               <div>
@@ -212,7 +212,7 @@ export default function CreateSchedule({ schedule, setSchedule, altSchedule, set
 
         <form className="form">
           <div className="box-a skjutsning">
-            <h3>Skjutsning</h3>
+            <h3>&nbsp;Skjutsning</h3>
               {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
             <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
           </select> */}
@@ -221,7 +221,7 @@ export default function CreateSchedule({ schedule, setSchedule, altSchedule, set
             {/* {<select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
             </select>} */}
-            {rides.length && <ChooseDrivers rides={rides} setRides={setRides} members={members} />/*<ShowChooseDrivers />*/}
+            {rides.length ? <ChooseDrivers rides={rides} setRides={setRides} members={members}/> : null /*<ShowChooseDrivers />*/}
           </div>
 
           {/* <div id="upphamtningslista">

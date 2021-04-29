@@ -18,8 +18,8 @@ export default function FootballBanner() {
           <Football />
         </div>
         <div className="group-column">
-          <h3>Fotbollsgruppen<br></br>
-          <span id="members">Peter, Hanna, Siri</span></h3>
+          <h4>Fotbollsgruppen<br></br>
+          <p id="members">Alba, Berit, Chris</p></h4>
         </div>
       </div>
     </div>

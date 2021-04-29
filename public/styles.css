@@ -12,13 +12,13 @@ h1 - Inbjudan är skickad! Grattis!
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
 }
-/* p {
+p {
   margin-top: 0.2em;
   margin-bottom: 0.2em;
-  font-size: 11px;
-  line-height: 18px;
+  /*font-size: 11px;*/
+  /*line-height: 18px;*/
   letter-spacing: -0.333333px;
-}  */
+}
 body {
   /* font-size: larger; */
   background-color: #F2F2ED;
@@ -52,21 +52,21 @@ body {
   width: 25%;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 10px;
-  padding-right: 10px;
+  margin-right: 0.5em;
+  padding-right: 0.5em;
 }
 
 .header-element{
   font-size: 150%;
-  text-indent: 10px;
+  /* text-indent: 10px; */
   color: #363636;
-  padding-right: 10px;
+  padding-right: 6px;
   /* margin-left: 11px; */
 }
 
 .my-account{
   color: #882E76;
-  font-size: 18px;
+  font-size: 5vw;
   /* margin-left: 101px; */
 }
 
@@ -78,10 +78,13 @@ h2{
 }
 h3 {
   font-size: 18px;
-  margin-top: 0.5em;
+  margin-top: 0.3em;
   margin-bottom: 0.7em;
-
-  /* margin-left: 0.2em; */
+}
+h4 {
+  font-size: 16px;
+  margin-top: 0.2em;
+  margin-bottom: 0.7em;
 }
 
 /* KÖRSCHEMA (ÖVERSIKT) */
@@ -89,7 +92,7 @@ h3 {
   margin-left: 0.1em;
 }
 .loose-text-field {
-  padding-left: 15px;
+  padding-left: 6vw;
   margin-bottom: 0.8em;
 }
 
@@ -104,16 +107,16 @@ h3 {
 /* SUBHEADER FOTBOLLSGRUPPEN */
 .sub-header-football {
   display: flex;
-  background-color: #9CD09B;
+  background-color: #85B093;
   /* padding-top: 16px; */
   align-items: center; 
   
   width: 100%;
-  height: 85px;
+  height: 24vw;
 }
 .football-column {
   display: flex;
-  width: 60px; height: 50px;
+  width: 62px; height: 50px;
   
   text-align: center;
   vertical-align: middle;
@@ -232,6 +235,14 @@ input {
   padding-left: 11px;
   padding-right: 4px;
   margin-bottom: 20px;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0pt 1pt #882E76;
+}
+.standard-input:focus {
+  outline: none;
+  box-shadow: 0 0 0pt 1pt #882E76;
 }
 .standard-input {
   /* position: absolute; */
@@ -428,8 +439,10 @@ td.name {
 }
 
 .hamburgarmeny{
-  padding-left: 15px;
-  padding-top: 10px; 
+  /* padding-left: 15px; */
+  /* padding-top: 10px;  */
+  padding: 0.5em;
+  padding-left: 1em;
   display: flex;
   width: 90%;
   align-items: center;
