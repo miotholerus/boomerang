@@ -387,46 +387,40 @@ box-shadow: 3px 6px 13px -3px #000000; */
   /* margin-bottom: 30px; */
   border-radius: 8px;
   border-left: solid #F2B3B6;
-  ;
   border-width: 11px;
 }
 .schedule-box2 ul {
   /* display: flex;
   flex-direction: column; */
   /* list-style-type: disc; */
-  padding-left: 21px;
+  padding-left: 0px;
 }
 .schedule-box2 table {
   /* background-color: #882E76; */
   margin-bottom: 0.8em;
 }
+.schedule-box2 td.icon {
+  padding-right: 20px;
+}
+.schedule-box td.time {
+  width: 116px;
+  padding-right: 0px;
+}
 
-td.time {
+/* td.time {
   /* width: 50%;  */
-  text-align: right;
+  /* text-align: right;
 }
 td.name {
-  width: 80%; 
+  width: 80%;  */
   /* text-align: right; */
-}
+/* } */
 
 .schedule-box2 i { /* ska eg vara en ikon ingen h1:a */
   margin-top: 0;
   margin-bottom: 0.1em;
   margin-right: 0.1em;
   font-size: 28px;
-}
-
-.schedule-box2 tr::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  font-size: 28px;
-  color: #363636; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
-  
-  padding-top: 0.1em;
 }
 
 .skapagruppenskörschema{
