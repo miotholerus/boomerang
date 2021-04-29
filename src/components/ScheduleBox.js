@@ -1,6 +1,6 @@
 ﻿import React from 'react'
 
-export default function ScheduleBox({ rideObject, seconds, members }) {
+export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, altSchedule, members }) {
   function AltUserLogo() {
     return (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,6 +12,10 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
 
   return (
     <div>
+      <div className="loose-text-field">
+      <h4>{altSchedule.rides[0].dateAsStringShort()}</h4>  
+      </div>
+      
       <div className="schedule-box">
         <h3>Upphämtning till aktivitet</h3>
         <p>Chaufför: {members[0].name}</p>
@@ -22,7 +26,7 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo"/></td>
                 <td className="name"><p>{members[0].name}s barn {members[0].child}</p><p>{members[0].address}</p></td>
-                <td className="time">16:30</td>
+                <td className="time">{timeAtA}</td>
               </tr>
             </table>
           </li>
@@ -31,7 +35,7 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo"/></td>
                 <td className="name"><p>{members[1].name}s barn {members[1].child}</p><p>{members[1].address}</p></td>
-                <td className="time">16:40</td>
+                <td className="time">{timeAtB}</td>
               </tr>
             </table>
           </li>
@@ -40,7 +44,7 @@ export default function ScheduleBox({ rideObject, seconds, members }) {
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo"/></td>
                 <td className="name"><p>{members[2].name}s barn {members[2].child}</p><p>{members[2].address}</p></td>
-                <td className="time">16:50</td>
+                <td className="time">{timeAtC}</td>
               </tr>
             </table>
           </li>
