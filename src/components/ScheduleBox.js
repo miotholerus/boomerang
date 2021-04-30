@@ -96,7 +96,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, altSch
                   </svg>
                 </td>
                 <td className="name"><p>Enskede Rackethall</p><p>{altSchedule.destination}</p></td>
-                <td className="time">19:10</td>
+                <td className="time">16:10</td>
               </tr>
             </table>
           </li>
@@ -105,7 +105,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, altSch
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
                 <td className="name"><p>{members[2].name}s barn {members[2].child}</p><p>{members[2].address}</p></td>
-                <td className="time">19:20</td>
+                <td className="time">16:20</td>
               </tr>
             </table>
           </li>
@@ -114,7 +114,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, altSch
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
                 <td className="name"><p>{members[1].name}s barn {members[1].child}</p><p>{members[1].address}</p></td>
-                <td className="time">19:30</td>
+                <td className="time">16:30</td>
               </tr>
             </table>
           </li>
@@ -123,7 +123,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, altSch
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
                 <td className="name"><p>{members[0].name}s barn {members[0].child}</p><p>{members[0].address}</p></td>
-                <td className="time">19:40</td>
+                <td className="time">16:40</td>
               </tr>
             </table>
           </li>
