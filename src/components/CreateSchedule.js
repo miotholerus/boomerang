@@ -50,8 +50,9 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
       const date = rideDates[i];
+      const dateCopy = new Date(date);
 
-      const newRideObject = new RideObject(date, date, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
+      const newRideObject = new RideObject(date, dateCopy, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
       console.log("NEW RIDE OBJECT:", newRideObject); // Här är driverTo och driverFrom undefined :))))
 
       rideObjects.push(newRideObject);
@@ -80,16 +81,18 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     function saveSchedule(e) {
 
       const startHours = startTime.substring(0, 2);
+      console.log("startHours:", startHours)
       const startMinutes = startTime.substring(3);
-      rides.map(ride => {
-        ride.dateTimeStart.setHours(startHours, startMinutes);
-      })
-
       const endHours = endTime.substring(0, 2);
       const endMinutes = endTime.substring(3);
       rides.map(ride => {
-        ride.dateTimeStart.setHours(endHours, endMinutes);
+        ride.dateTimeStart.setHours(startHours, startMinutes);
+        console.log(ride.dateTimeStart.toLocaleTimeString());
+        ride.dateTimeEnd.setHours(endHours, endMinutes);
+        console.log(ride.dateTimeStart.toLocaleTimeString());
       })
+
+      rides.forEach(ride => console.log(ride))
 
       const newSchedule = {
         "id": 0,

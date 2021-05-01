@@ -18,6 +18,7 @@ export default function DetailedSchedule({ schedule, members }) {
   }
 
   var startTime = new Date(schedule.rides[0].dateTimeStart);
+  console.log("startTime", startTime);
 
   var margin = 5*60;
   

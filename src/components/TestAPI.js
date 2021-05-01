@@ -35,7 +35,8 @@ export default function TestAPI() {
     const requestBodyAtoB = {
       "locations": [
         locA,
-        locB
+        locB,
+        locC
       ]
     }
     const responseAtoB = await fetch(url, {
