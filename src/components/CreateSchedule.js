@@ -6,7 +6,7 @@ import RideObject from '../RideObject'
 import ChooseDrivers from './ChooseDrivers';
 
 
-export default function CreateSchedule({ schedule, setSchedule, altSchedule, setAltSchedule, members }) {
+export default function CreateSchedule({ schedule, setSchedule, members }) {
   let history = useHistory();
 
   // Uppdateras varje gång input ändras
@@ -23,14 +23,6 @@ export default function CreateSchedule({ schedule, setSchedule, altSchedule, set
   useEffect(() => {
     generateDates();
   }, [weekday, startDate, endDate]);
-
-  function ShowChooseDrivers() {
-    if (rides.length > 0) {
-      return (<ChooseDrivers rides={rides} setRides={setRides} members={members} />)
-    } else {
-      return null
-    }
-  }
 
   function generateDates() {
     console.log("1. Kör generateDates")
@@ -59,7 +51,7 @@ export default function CreateSchedule({ schedule, setSchedule, altSchedule, set
     for (let i = 0; i < rideDates.length; i++) {
       const date = rideDates[i];
 
-      const newRideObject = new RideObject(date, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
+      const newRideObject = new RideObject(date, date, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
       console.log("NEW RIDE OBJECT:", newRideObject); // Här är driverTo och driverFrom undefined :))))
 
       rideObjects.push(newRideObject);
@@ -89,14 +81,17 @@ export default function CreateSchedule({ schedule, setSchedule, altSchedule, set
 
       const startHours = startTime.substring(0, 2);
       const startMinutes = startTime.substring(3);
-
-      const ridesWithTimes = rides.map(ride => {
-        ride.date.setHours(startHours, startMinutes);
+      rides.map(ride => {
+        ride.dateTimeStart.setHours(startHours, startMinutes);
       })
 
-      const newSchedule = [startTime, endTime, address, weekday, startDate, endDate, rides];
+      const endHours = endTime.substring(0, 2);
+      const endMinutes = endTime.substring(3);
+      rides.map(ride => {
+        ride.dateTimeStart.setHours(endHours, endMinutes);
+      })
 
-      const newAltSchedule = {
+      const newSchedule = {
         "id": 0,
         "startTime": startTime,
         "endTime": endTime,
@@ -109,9 +104,6 @@ export default function CreateSchedule({ schedule, setSchedule, altSchedule, set
 
       setSchedule(newSchedule);
       console.log("schedule after Save: ", schedule);
-
-      setAltSchedule(newAltSchedule);
-      console.log("altSchedule after Save: ", altSchedule);
 
       history.push("/viewschedule");
     }

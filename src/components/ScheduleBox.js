@@ -1,6 +1,6 @@
 ﻿import React from 'react'
 
-export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, altSchedule, members }) {
+export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedule, members }) {
   function AltUserLogo() {
     return (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -13,7 +13,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, altSch
   return (
     <div>
       <div className="loose-text-field">
-        <h4>{altSchedule.rides[0].dateAsStringShort()}</h4>
+        <h4>{schedule.rides[0].dateAsStringShort()}</h4>
       </div>
 
       <div className="schedule-box">
@@ -65,7 +65,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, altSch
                     </defs>
                   </svg>
                 </td>
-                <td className="name"><p>Enskede Rackethall</p><p>{altSchedule.destination}</p></td>
+                <td className="name"><p>Enskede Rackethall</p><p>{schedule.destination}</p></td>
                 <td className="time">{timeAtD}</td>
               </tr>
             </table>
@@ -95,7 +95,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, altSch
                     </defs>
                   </svg>
                 </td>
-                <td className="name"><p>Enskede Rackethall</p><p>{altSchedule.destination}</p></td>
+                <td className="name"><p>Enskede Rackethall</p><p>{schedule.destination}</p></td>
                 <td className="time">16:10</td>
               </tr>
             </table>

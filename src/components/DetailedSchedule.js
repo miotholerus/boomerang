@@ -2,7 +2,7 @@
 import ScheduleBox from './ScheduleBox'
 
 
-export default function DetailedSchedule({ schedule, altSchedule, members }) {
+export default function DetailedSchedule({ schedule, members }) {
   // const destinationFromSchedule = altSchedule.destination // tidigare schedule[2]
   // const addressFromMember = members[0].address; // ska senare hämtas direkt från schedule-rideobjecten
 
@@ -17,7 +17,7 @@ export default function DetailedSchedule({ schedule, altSchedule, members }) {
     return new Date(dateTime.getTime() + seconds * 1000);
   }
 
-  var startTime = new Date(altSchedule.rides[0].date);
+  var startTime = new Date(schedule.rides[0].dateTimeStart);
 
   var margin = 5*60;
   
@@ -149,7 +149,7 @@ export default function DetailedSchedule({ schedule, altSchedule, members }) {
         </div>
       </form> */}
 
-      <ScheduleBox timeAtA={timeAtA} timeAtB={timeAtB} timeAtC={timeAtC} timeAtD={timeAtD} altSchedule={altSchedule} members={members} />
+      <ScheduleBox timeAtA={timeAtA} timeAtB={timeAtB} timeAtC={timeAtC} timeAtD={timeAtD} schedule={schedule} members={members} />
     </div>
   )
 }
