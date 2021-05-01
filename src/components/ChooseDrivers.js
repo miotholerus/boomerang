@@ -1,6 +1,6 @@
 ﻿import React, {useState, useEffect, useRef} from 'react'
 
-export default function ChooseDrivers({rides, setRides, schedule, setSchedule, members}) {
+export default function ChooseDrivers({rides, setRides, members}) {
 
   console.log("Kör ChooseDrivers, rides", rides);
 
