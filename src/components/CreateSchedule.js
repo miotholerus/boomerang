@@ -13,7 +13,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
   // Uppdateras varje gång input ändras
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
-  const [address, setAddress] = useState("");
+  const [destination, setDestination] = useState("");
   const [weekday, setWeekday] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -100,7 +100,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         "id": 0,
         "startTime": startTime,
         "endTime": endTime,
-        "destination": address,
+        "destination": destination,
         "weekday": weekday,
         "startDate": startDate,
         "endDate": endDate,
@@ -149,7 +149,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
             <div>
               <label for="adress-for-destination">&nbsp;Adress för destination</label>
-              <input value={address} onChange={e => setAddress(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
+              <input value={destination} onChange={e => setDestination(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
             </div>
 
             {/* <div className="input-side-by-side"> */}
