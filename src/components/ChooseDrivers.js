@@ -16,6 +16,7 @@ export default function ChooseDrivers({rides, setRides, members}) {
 
   function RideEditRow({index, ride}) {
 
+    // useRef hook istället
     const driverToRef = useRef();
     const driverFromRef = useRef();
 

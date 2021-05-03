@@ -48,6 +48,7 @@ function App() {
     }
   ]);
   
+  // Schemat refaktorerat till json efter Jonatans input
   const [schedule, setSchedule] = useState(
     {
       "id": 0,
