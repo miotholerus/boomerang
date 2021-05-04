@@ -8,7 +8,7 @@ import DetailedSchedule from './DetailedSchedule'
 import ChooseDrivers from './ChooseDrivers'
 
 
-export default function ViewSchedule({ schedule, members, }) {
+export default function ViewSchedule({ schedule, members }) {
 
   // console.log("Kör ViewSchedule, schedule:", schedule)
   console.log("schedule:", schedule)
