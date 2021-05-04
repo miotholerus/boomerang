@@ -7,8 +7,9 @@ import {
 // import GroupCreated from './components/GroupCreated';
 import CreateSchedule from './components/CreateSchedule';
 import ViewSchedule from './components/ViewSchedule';
+import CreateGroup from './components/CreateGroup';
 
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import TestAPI from "./components/TestAPI";
 
 import React from 'react'
@@ -25,7 +26,7 @@ export function dayOfWeekAsString(dayIndex) {
 }
 
 function App() {
-  
+
   // Medlemslistan för tillfället, en array av json-element:
   const [members, setMembers] = useState([
     {
@@ -47,7 +48,7 @@ function App() {
       "address": "Lerbäcksgränd 18"
     }
   ]);
-  
+
   const [schedule, setSchedule] = useState(
     {
       "id": 0,
@@ -64,23 +65,27 @@ function App() {
 
   return (
     <div className="App">
-      
+
       {/* <TestAPI/>  */}
 
       <Router>
         <Switch>
+          <Route path="/creategroup">
+            <CreateGroup />
+          </Route>
+
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />
           </Route>
-          
+
           <Route path="/">
             <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} />
           </Route>
 
         </Switch>
-        
+
       </Router>
-      
+
       {/* <GroupCreated /> */}
 
     </div>
