@@ -11,21 +11,26 @@ export default function TestDatabase() {
 
   
   function createMember() {
-    const membersRef = firebase.database().ref("Members");
+    const usersRef = firebase.database().ref("Users");
   
-    const member = {
+    const user = {
       firstName,
       lastName,
       child,
       address,
     }
   
-    membersRef.push(member); // lägger till i listan över members
-  }  
+    usersRef.push(user); // lägger till i listan över users
+  }
 
   return (
     <form>
-      <label for="first-name">Förnamn</label><br></br>
+      <p>
+        Sida för att testa lägga in användare i databasen.
+        De som läggs in kan senare användas för att hämta användare när vi bjuder in medlemmar till en grupp.
+      </p>
+
+      <label htmlFor="first-name">Förnamn</label><br></br>
       <input type="text" id="first-name" onChange={e => setFirstName(e.target.value)} value={firstName}/><br></br>
       
       <label for="last-name">Efternamn</label><br></br>
