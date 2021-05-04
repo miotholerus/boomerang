@@ -10,6 +10,7 @@ import ViewSchedule from './components/ViewSchedule';
 
 import {useState, useEffect} from 'react'
 import TestAPI from "./components/TestAPI";
+import TestDatabase from "./components/TestDatabase";
 
 import React from 'react'
 
@@ -67,8 +68,9 @@ function App() {
     <div className="App">
       
       {/* <TestAPI/>  */}
+      <TestDatabase/>
 
-      <Router>
+      {/* <Router>
         <Switch>
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />
@@ -80,7 +82,7 @@ function App() {
 
         </Switch>
         
-      </Router>
+      </Router> */}
       
       {/* <GroupCreated /> */}
 
