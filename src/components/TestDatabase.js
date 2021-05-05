@@ -14,7 +14,7 @@ export default function TestDatabase() {
     e.preventDefault();
     console.log("Kör createMember");
 
-    const membersRef = firebase.database().ref("Members");
+    const usersRef = firebase.database().ref("Members");
 
     const user = {
       firstName,
