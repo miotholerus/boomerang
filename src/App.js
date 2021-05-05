@@ -68,9 +68,9 @@ function App() {
     <div className="App">
       
       {/* <TestAPI/>  */}
-      {/* <TestDatabase/> */}
+      <TestDatabase/>
 
-      <Router>
+      {/* <Router>
         <Switch>
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />
@@ -82,7 +82,7 @@ function App() {
 
         </Switch>
         
-      </Router>
+      </Router> */}
       
       {/* <GroupCreated /> */}
 
