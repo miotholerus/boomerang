@@ -68,13 +68,20 @@ function App() {
   return (
     <div className="App">
 
-      {/* <TestAPI/>  */}
-      <TestDatabase/>
+      
 
-      {/* <Router>
+      <Router>
         <Switch>
           <Route path="/creategroup">
             <CreateGroup />
+          </Route>
+
+          <Route path="/testdatabase">
+            <TestDatabase/>
+          </Route>
+
+          <Route path="/testapi">
+            <TestAPI/>
           </Route>
 
           <Route path="/viewschedule">
@@ -87,7 +94,7 @@ function App() {
 
         </Switch>
         
-      </Router> */}
+      </Router>
       
       {/* <GroupCreated /> */}
 
