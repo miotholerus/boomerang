@@ -14,6 +14,7 @@ import TestAPI from "./components/TestAPI";
 import TestDatabase from "./components/TestDatabase";
 
 import React from 'react'
+import MinaSidor from "./components/MinaSidor";
 
 
 /**
@@ -67,8 +68,9 @@ function App() {
 
   return (
     <div className="App">
-
-      
+      <MinaSidor/>
+      {/* <TestAPI/>  */}
+      {/* <TestDatabase/> */}
 
       <Router>
         <Switch>
@@ -89,7 +91,7 @@ function App() {
           </Route>
 
           <Route path="/">
-            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} />
+            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members}  />
           </Route>
 
         </Switch>
