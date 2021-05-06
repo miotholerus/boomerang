@@ -470,7 +470,7 @@ td.name{
   border-radius: 8px;
 }
 .text{
-  margin-left: 4px;
+  margin-left: 10px;
   font-family: Nunito;
   font-size: 16px;
   font-style: normal;
@@ -484,7 +484,7 @@ td.name{
   justify-content: center;
   width: 280px;
   height: 44px;
-  margin-left: 4px;
+  margin-left: 10px;
   background-color: #F2F2ED;
   display: block;
 }
@@ -494,7 +494,7 @@ td.name{
   justify-content: center;
   width: 280px;
   height: 168.68px;
-  margin-left: 4px;
+  margin-left: 10px;
   background-color: #F2F2ED;
   display: block;
 }
