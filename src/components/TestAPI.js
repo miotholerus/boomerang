@@ -26,10 +26,10 @@ export default function TestAPI() {
   const submitForm = async (event) => {
     event.preventDefault();
 
-    const locA = "59.28093793567633, 18.046790156144745"; //  "Uddeholmsvägen 239, 12241 Enskede, SWEDEN";
-    const locB = "59.272215063170705, 18.037266160912903"; // "Årdalavägen 133, 12432 Bandhagen, SWEDEN";
-    const locC = "59.26093702587597, 18.021367342650105"; // "Lerbäcksgränd 18, 12466 Bandhagen, SWEDEN";
-    const locD = "59.287761851370426, 18.05808156963875"; // "Sockenvägen 290, 12040 Enskede, SWEDEN";
+    const locA = "Uddeholmsvägen 239, 12241 Stockholm, SWEDEN"; // "59.28093793567633, 18.046790156144745"; //
+    const locB = "Årdalavägen 133, 12432 Stockholm, SWEDEN"; // "59.272215063170705, 18.037266160912903"; //
+    const locC = "Lerbäcksgränd 18, 12466 Stockholm, SWEDEN"; // "59.26093702587597, 18.021367342650105"; //
+    const locD = "Sockenvägen 290, 12040 Stockholm, SWEDEN"; // "59.287761851370426, 18.05808156963875"; //
 
 
     const requestBodyAtoB = {
@@ -118,3 +118,109 @@ export default function TestAPI() {
     </form>
   )
 }
+
+/*
+{
+    "allToAll": false,
+    "distance": [
+        0,
+        1.834,
+        3.74
+    ],
+    "locations": [
+        {
+            "dragPoint": false,
+            "displayLatLng": {
+                "lng": 18.04679,
+                "lat": 59.280938
+            },
+            "adminArea4": "",
+            "adminArea5": "Stockholm",
+            "postalCode": "12241",
+            "adminArea1": "SE",
+            "adminArea3": "Stockholms län",
+            "type": "s",
+            "sideOfStreet": "N",
+            "geocodeQualityCode": "P1AAA",
+            "adminArea4Type": "County",
+            "linkId": 0,
+            "street": "239 Uddeholmsvägen",
+            "adminArea5Type": "City",
+            "geocodeQuality": "POINT",
+            "adminArea1Type": "Country",
+            "adminArea3Type": "State",
+            "latLng": {
+                "lng": 18.04679,
+                "lat": 59.280938
+            }
+        },
+        {
+            "dragPoint": false,
+            "displayLatLng": {
+                "lng": 18.037266,
+                "lat": 59.272215
+            },
+            "adminArea4": "",
+            "adminArea5": "Stockholm",
+            "postalCode": "12432",
+            "adminArea1": "SE",
+            "adminArea3": "Stockholms län",
+            "type": "s",
+            "sideOfStreet": "N",
+            "geocodeQualityCode": "P1AAA",
+            "adminArea4Type": "County",
+            "linkId": 0,
+            "street": "131 Årdalavägen",
+            "adminArea5Type": "City",
+            "geocodeQuality": "POINT",
+            "adminArea1Type": "Country",
+            "adminArea3Type": "State",
+            "latLng": {
+                "lng": 18.037266,
+                "lat": 59.272215
+            }
+        },
+        {
+            "dragPoint": false,
+            "displayLatLng": {
+                "lng": 18.021367,
+                "lat": 59.260937
+            },
+            "adminArea4": "",
+            "adminArea5": "Stockholm",
+            "postalCode": "12465",
+            "adminArea1": "SE",
+            "adminArea3": "Stockholms län",
+            "type": "s",
+            "sideOfStreet": "N",
+            "geocodeQualityCode": "B1AAA",
+            "adminArea4Type": "County",
+            "linkId": 0,
+            "street": "Lerbäcksgränd",
+            "adminArea5Type": "City",
+            "geocodeQuality": "STREET",
+            "adminArea1Type": "Country",
+            "adminArea3Type": "State",
+            "latLng": {
+                "lng": 18.021367,
+                "lat": 59.260937
+            }
+        }
+    ],
+    "time": [
+        0,
+        345,
+        520
+    ],
+    "manyToOne": false,
+    "info": {
+        "statuscode": 0,
+        "copyright": {
+            "imageAltText": "© 2021 MapQuest, Inc.",
+            "imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+            "text": "© 2021 MapQuest, Inc."
+        },
+        "messages": []
+    }
+}
+*/

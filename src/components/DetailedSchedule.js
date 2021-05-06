@@ -60,10 +60,10 @@ export default function DetailedSchedule({ schedule, members }) {
   
       console.log("TEST API");
   
-      const locA = "59.28093793567633, 18.046790156144745"; //  "Uddeholmsvägen 239, 12241 Enskede, SWEDEN";
-      const locB = "59.272215063170705, 18.037266160912903"; // "Årdalavägen 133, 12432 Bandhagen, SWEDEN";
-      const locC = "59.26093702587597, 18.021367342650105"; // "Lerbäcksgränd 18, 12466 Bandhagen, SWEDEN";
-      const locD = "59.287761851370426, 18.05808156963875"; // "Sockenvägen 290, 12040 Enskede, SWEDEN";
+      const locA = "Uddeholmsvägen 239, 12241 Stockholm, SWEDEN"; // "59.28093793567633, 18.046790156144745"; //
+      const locB = "Årdalavägen 133, 12432 Stockholm, SWEDEN"; // "59.272215063170705, 18.037266160912903"; //
+      const locC = "Lerbäcksgränd 18, 12466 Stockholm, SWEDEN"; // "59.26093702587597, 18.021367342650105"; //
+      const locD = "Sockenvägen 290, 12040 Stockholm, SWEDEN"; // "59.287761851370426, 18.05808156963875"; //
   
       const requestBodyAtoB = {
         "locations": [
