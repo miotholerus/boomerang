@@ -466,9 +466,9 @@ td.name{
 }
 .tagg1{
   position: absolute;
-  width: 305px;
+  width: 300px;
   height: 38px;
-  left: 25px;
+  left: 10px;
   top: 155px;
   border-radius: 8px 8px 0px 0px;
   background-color: #85b093;
@@ -481,9 +481,9 @@ td.name{
 }
 .tagg2{
   position: absolute;
-  width: 305px;
+  width: 300px;
   height: 38px;
-  left: 25px;
+  left: 10px;
   top: 340px;
   border-radius: 8px 8px 0px 0px;
   background-color: #85b093;
@@ -497,18 +497,18 @@ td.name{
 }
 .infoskjuts{
   position: absolute;
-  width: 305px;
+  width: 300px;
   height: 115px;
-  left: 25px;
+  left: 10px;
   top: 195px;
   border-radius: 8px;
   background-color: #ffffff;
 }
 .infogrupp{
   position: absolute;
-  width: 305px;
+  width: 300px;
   height: 155px;
-  left: 25px;
+  left: 10px;
   top: 380px;
   border-radius: 8px;
   background-color: #ffffff;
@@ -516,11 +516,16 @@ td.name{
 .button-grupp{
   position: absolute;
   width: 185px;
-  height: 45,05px;
+  height: 45px;
   left: 50px;
   top: 85px;
   background-color: #882E76;
   color: #ffffff;
   display: flex;
   border-radius: 19px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  
 }
