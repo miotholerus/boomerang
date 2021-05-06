@@ -14,6 +14,7 @@ import TestAPI from "./components/TestAPI";
 import TestDatabase from "./components/TestDatabase";
 
 import React from 'react'
+import MinaSidor from "./components/MinaSidor";
 
 
 /**
@@ -67,27 +68,39 @@ function App() {
 
   return (
     <div className="App">
-
+      
       {/* <TestAPI/>  */}
       {/* <TestDatabase/> */}
 
-       <Router>
+      <Router>
         <Switch>
           <Route path="/creategroup">
             <CreateGroup />
+          </Route>
+
+          <Route path="/testdatabase">
+            <TestDatabase/>
+          </Route>
+
+          <Route path="/testapi">
+            <TestAPI/>
           </Route>
 
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />
           </Route>
 
+          <Route path="/createschedule">
+            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members}  />
+          </Route>
+
           <Route path="/">
-            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} />
+            <MinaSidor/>
           </Route>
 
         </Switch>
         
-      </Router> 
+      </Router>
       
       {/* <GroupCreated /> */}
 
