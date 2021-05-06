@@ -4,10 +4,12 @@ import { useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner'
 import RideObject from '../RideObject'
 import ChooseDrivers from './ChooseDrivers';
-
+import {useForm}  from 'react-hook-form';
 
 export default function CreateSchedule({ schedule, setSchedule, members }) {
   let history = useHistory();
+ 
+  
 
   // Uppdateras varje gång input ändras
   const [startTime, setStartTime] = useState("");
@@ -19,10 +21,12 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
   // Uppdateras varje gång veckodag, startdatum eller slutdatum ändras via useEffect!
   const [rides, setRides] = useState([]);
-
+  
   useEffect(() => {
     generateDates();
   }, [weekday, startDate, endDate]);
+
+ 
 
   function ShowChooseDrivers() {
     if (rides.length > 0) {
@@ -39,14 +43,14 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       return null
     }
   }
-
+  
   function generateDates() {
     console.log("Kör generateDates")
 
     const dayOfWeekIndex = weekday; console.log("dayOfWeekIndex: " + dayOfWeekIndex);
     const startDateDate = new Date(startDate); console.log("startDateDate: " + startDateDate);
     const endDateDate = new Date(endDate); console.log("endDateDate: " + endDateDate);
-
+   
     // Skapar en lista av alla datum mellan startDate och endDate
     const dateList = getDates(startDateDate, endDateDate);
 
@@ -58,7 +62,9 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       if (dayOfWeekIndex == date.getDay()) {
         rideDates.push(date)
       }
+
     }
+    
     console.log("rideDates:")
     console.log(rideDates);
 
@@ -84,6 +90,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
       return dateArray;
     }
+    
   }
 
   function SaveButton() {
@@ -95,12 +102,14 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       console.log("schedule after Save: " + schedule)
 
       history.push("/viewschedule")
+
     }
 
     return (
       <button type="button" className="button-v2" onClick={SaveSchedule}>SPARA KÖRSCHEMA</button>
     )
   }
+ 
 
   return (
     <div>
@@ -127,19 +136,33 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
               <div className="input-column">
                 <label for="sluttid" className="input-right">&nbsp;Sluttid</label>
-                <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} className="small-input input-right" id="sluttid"></input>
+                <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} 
+                className="small-input input-right" 
+                id="sluttid"></input>
               </div>
             </div>
 
-            <div>
-              <label for="adress-for-destination">&nbsp;Adress för destination</label>
-              <input value={address} onChange={e => setAddress(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
+            <div onSubmit={handleSubmit(onSubmit)}>
+              <label>Ange adress</label>
+              <input 
+              value={address} 
+              onChange={e => setAddress(e.target.value)} 
+              className="standard-input"/>
             </div>
+            
 
             {/* <div className="input-side-by-side"> */}
             <div>
               <label for="veckodag">&nbsp;Veckodag</label>
-              <select value={weekday} onChange={e => setWeekday(e.target.value)} /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" id="veckodag">
+              <select value={weekday} onChange={e => setWeekday(e.target.value)} 
+              /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" 
+              id="veckodag"
+              innerRef={register("veckodag",{
+                required:"Du måste välja dag"
+                
+              })}
+              >
+
                 <option id="option-placeholder" value="" disabled selected>{/*Ej vald*/}</option>
                 <option value="1">Måndag</option>
                 <option value="2">Tisdag</option>
@@ -166,18 +189,16 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <form className="form">
           <div className="box-a schema">
             <h3>Schema</h3>
-            {/* <div>&nbsp;Startdatum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div> */}
             <div className="input-side-by-side">
               <div>
-                <label for="startdatum" className="input-left">&nbsp;Startdatum</label>
+                <label for="startdatum" id="startdate" className="input-left">&nbsp;Startdatum</label>
                 <input value={startDate} onChange={e => setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
               </div>
               <div>
-                <label for="slutdatum" className="input-right">&nbsp;Slutdatum</label>
+                <label for="slutdatum" id="enddate" className="input-right">&nbsp;Slutdatum</label>
                 <input value={endDate} onChange={e => setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
               </div>
             </div>
-
             <div className="driver">
               {/* <select className="small-input option-list input-left" id="chaufför">
                 <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>

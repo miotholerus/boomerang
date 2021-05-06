@@ -7,7 +7,6 @@ import {
 // import GroupCreated from './components/GroupCreated';
 import CreateSchedule from './components/CreateSchedule';
 import ViewSchedule from './components/ViewSchedule';
-
 import {useState, useEffect} from 'react'
 import TestAPI from "./components/TestAPI";
 
@@ -67,7 +66,7 @@ function App() {
           </Route>
           
           <Route path="/">
-            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} />
+            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members}  />
           </Route>
 
         </Switch>

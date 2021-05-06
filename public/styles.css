@@ -417,3 +417,10 @@ td.time {
   
   padding-top: 0.1em;
 }
+.errorMessage{
+  color: #bf1650;
+}
+.errorMessage::before{
+  display: inline;
+  content: "⚠ ";
+}
