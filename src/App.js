@@ -11,6 +11,7 @@ import CreateGroup from './components/CreateGroup';
 
 import { useState, useEffect } from 'react'
 import TestAPI from "./components/TestAPI";
+import TestDatabase from "./components/TestDatabase";
 
 import React from 'react'
 
@@ -48,7 +49,8 @@ function App() {
       "address": "Lerbäcksgränd 18"
     }
   ]);
-
+  
+  // Schemat refaktorerat till json efter Jonatans input
   const [schedule, setSchedule] = useState(
     {
       "id": 0,
@@ -67,8 +69,9 @@ function App() {
     <div className="App">
 
       {/* <TestAPI/>  */}
+      <TestDatabase/>
 
-      <Router>
+      {/* <Router>
         <Switch>
           <Route path="/creategroup">
             <CreateGroup />
@@ -83,9 +86,9 @@ function App() {
           </Route>
 
         </Switch>
-
-      </Router>
-
+        
+      </Router> */}
+      
       {/* <GroupCreated /> */}
 
     </div>

@@ -7,12 +7,13 @@ import ChooseDrivers from './ChooseDrivers';
 
 
 export default function CreateSchedule({ schedule, setSchedule, members }) {
+  // "history" 
   let history = useHistory();
 
   // Uppdateras varje gång input ändras
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
-  const [address, setAddress] = useState("");
+  const [destination, setDestination] = useState("");
   const [weekday, setWeekday] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -43,17 +44,18 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         rideDates.push(date)
       }
     }
-    // console.log("2. rideDates:")
-    // console.log(rideDates);
+  
 
-    // Skapar RideObjects av alla datum och lägger i en tredje lista
+    // Skapar RideObjects av alla datum och lägger i en tredje lista.
+    // (TODO) Vi kanske bör byta klass/objekt till json för lättare lagring
+    // (Se arrayen rides (rad 10-71) i sampleschedule.json)
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
-      const date = rideDates[i];
-      const dateCopy = new Date(date);
+      // Två datumobjekt av samma datum läggs till i varje ride - får senare olika klockslag
+      const dateTimeStart = rideDates[i];
+      const dateTimeEnd = new Date(dateTimeStart);
 
-      const newRideObject = new RideObject(date, dateCopy, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
-      console.log("NEW RIDE OBJECT:", newRideObject); // Här är driverTo och driverFrom undefined :))))
+      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
 
       rideObjects.push(newRideObject);
       
@@ -62,7 +64,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     // rides (statevariabel) blir listan av RideObjects
     setRides(rideObjects);
     console.log("rides: ", rides);
-
+    
     function getDates(startDate, endDate) {
       var dateArray = new Array();
       var dateToAdd = startDate;
@@ -98,7 +100,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         "id": 0,
         "startTime": startTime,
         "endTime": endTime,
-        "destination": address,
+        "destination": destination,
         "weekday": weekday,
         "startDate": startDate,
         "endDate": endDate,
@@ -147,7 +149,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
             <div>
               <label for="adress-for-destination">&nbsp;Adress för destination</label>
-              <input value={address} onChange={e => setAddress(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
+              <input value={destination} onChange={e => setDestination(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
             </div>
 
             {/* <div className="input-side-by-side"> */}
