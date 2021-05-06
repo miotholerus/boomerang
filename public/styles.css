@@ -29,7 +29,6 @@ body {
 /* HEADERN */
 .header {
   background-color: #ffffff;
-  position: absolute;
   height: 50px;
   width: 100%;
   /* padding-left: 18px;
@@ -191,10 +190,8 @@ i.li-user-icon {
   background-color: #882E76;
   color: white;
   height: 43px;
-
   padding-left: 32px;
   padding-right: 32px;
-  
   border-radius: 19px;
   border: none;
   text-align: center;
@@ -202,9 +199,7 @@ i.li-user-icon {
   left: 50%;
   transform: translate(-50%, -0%);
   position: relative;
-  
   margin-bottom: 30px;
-
 }
 .button-v2:hover{
   background-color: #363636;
@@ -294,8 +289,6 @@ input:focus {
 
 
 .page-content {
-  position: absolute;
-  top: 48px;
   width: 100%;
 }
 
@@ -546,6 +539,7 @@ td.name{
   font-size: 18px;
   line-height: 25px;
   letter-spacing: -0.333333px;
+  padding: 8px 14px;
 }
 .tagg2{
   position: absolute;
@@ -561,6 +555,7 @@ td.name{
   font-size: 18px;
   line-height: 25px;
   letter-spacing: -0.333333px;
+  padding: 8px 14px;
 
 }
 .infoskjuts{
@@ -569,8 +564,9 @@ td.name{
   height: 115px;
   left: 10px;
   top: 195px;
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
   background-color: #ffffff;
+  padding: 8px 14px;
 }
 .infogrupp{
   position: absolute;
@@ -578,8 +574,9 @@ td.name{
   height: 155px;
   left: 10px;
   top: 380px;
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
   background-color: #ffffff;
+  padding: 8px 14px;
 }
 .button-grupp{
   position: absolute;
@@ -594,12 +591,14 @@ td.name{
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-weight: bold; 
+  /* font-weight: bold;  */
+  text-decoration: none;
+  font-size: 14px;
 }
 .addmore{
   border: 0px;
   background-color: #FFFFFF;
-  margin-left: 154px;
+  margin-left: 144px;
   margin-bottom: 20px;
   color: #882E76;
   text-decoration: underline 2px;

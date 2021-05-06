@@ -15,6 +15,7 @@ import TestDatabase from "./components/TestDatabase";
 
 import React from 'react'
 import MinaSidor from "./components/MinaSidor";
+import Header from "./components/Header";
 
 
 /**
@@ -69,6 +70,8 @@ function App() {
   return (
     <div className="App">
       
+      <Header/>
+
       {/* <TestAPI/>  */}
       {/* <TestDatabase/> */}
 

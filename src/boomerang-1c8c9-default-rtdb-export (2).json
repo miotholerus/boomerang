@@ -1,5 +1,5 @@
 {
-  "Groups": {
+  "groups": {
     "SAMPLE": {
       "members": {
         "-MZx86sFPDFcssm1azWn": {
@@ -19,7 +19,7 @@
       "title": "Badmintongruppen"
     }
   },
-  "Users": {
+  "users": {
     "-MZx86sFPDFcssm1azWn": {
       "child": "Anna",
       "email": "albacrud@gmail.com",

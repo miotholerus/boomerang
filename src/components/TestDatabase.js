@@ -11,7 +11,7 @@ export default function TestDatabase() {
   const [userList, setUserList] = useState([]);
 
   useEffect(() => {
-    const usersRef = firebase.database().ref("Users");
+    const usersRef = firebase.database().ref("users");
 
     usersRef.on("value", snapshot => {
       console.log(snapshot.val());

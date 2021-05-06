@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function MinaSidor() {
     return (
         <div>
-            <Header/>
+            {/* <Header/> */}
             <h3 className="topline">Mina Sidor</h3>
             <label className="tagg1">Skjutsningar</label>
             <div className="infoskjuts">
@@ -13,7 +13,7 @@ export default function MinaSidor() {
             <label className="tagg2">Grupper</label>
             <div className="infogrupp">
                 <p>Du är inte med i någon grupp än. Skapa en ny grupp och ett nytt körschema.</p>
-                <Link className="button-v2" to='/creategroup'>Skapa ny grupp</Link>
+                <Link className="button-grupp" to='/creategroup'>SKAPA NY GRUPP</Link>
                 </div>
             
         </div>
