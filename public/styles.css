@@ -259,7 +259,7 @@ input:focus {
   margin-left: 2px;
   
   padding-right: 4px;
-  border: solid #DFDFD2;
+  border: solid #D7D7C8;
   border-width: thin;
   
 }
@@ -482,10 +482,11 @@ td.name{
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-content: space-around;
   width: 280px;
   height: 44px;
   margin-left: 10px;
-  background-color: #F2F2ED;
+  background-color: #EAEAE1;
   display: block;
 }
 .messagetext{
@@ -495,7 +496,7 @@ td.name{
   width: 280px;
   height: 168.68px;
   margin-left: 10px;
-  background-color: #F2F2ED;
+  background-color: #EAEAE1;
   display: block;
 }
 .leftcorner{
@@ -593,6 +594,14 @@ td.name{
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  
+  font-weight: bold; 
+}
+.addmore{
+  border: 0px;
+  background-color: #FFFFFF;
+  margin-left: 154px;
+  margin-bottom: 20px;
+  color: #882E76;
+  text-decoration: underline 2px;
+  font-size: 16px;
 }
