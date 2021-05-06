@@ -68,7 +68,7 @@ function App() {
 
   return (
     <div className="App">
-      <MinaSidor/>
+      
       {/* <TestAPI/>  */}
       {/* <TestDatabase/> */}
 
@@ -90,8 +90,12 @@ function App() {
             <ViewSchedule schedule={schedule} members={members} />
           </Route>
 
-          <Route path="/">
+          <Route path="/createschedule">
             <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members}  />
+          </Route>
+
+          <Route path="/">
+            <MinaSidor/>
           </Route>
 
         </Switch>
