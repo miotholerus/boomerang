@@ -1,14 +1,17 @@
 ﻿import React from 'react'
 import Header from './Header'
-import RideOccation from './RideOccation'
+
 import { dayOfWeekAsString } from '../App'
 import FootballBanner from './FootballBanner'
-import ScheduleBox from './ScheduleBox';
+
 import DetailedSchedule from './DetailedSchedule'
 import ChooseDrivers from './ChooseDrivers'
 
 
 export default function ViewSchedule({ schedule, members }) {
+
+  // console.log("Kör ViewSchedule, schedule:", schedule)
+  console.log("schedule:", schedule)
 
   return (
     <div>
@@ -18,14 +21,16 @@ export default function ViewSchedule({ schedule, members }) {
         <FootballBanner />
 
         <div className="loose-text-field">
-        <h2>Översikt körschema</h2>
-          <span class="overview-info">{dayOfWeekAsString(schedule[3])}ar, {schedule[0]}-{schedule[1]}, {schedule[2]}<br></br></span>
+          <h2>Översikt körschema</h2>
+          <p class="overview-info">{dayOfWeekAsString(schedule.weekday)}ar, {schedule.startTime}-{schedule.endTime}, {schedule.destination}<br></br></p>
         </div>
-        
+
+        <br className="changesizeofbr"></br>
+        <p></p>
 
         <div className="box-a form">
           <div className="scheduleList">
-            
+            <p>Skjutsning till/från aktivitet</p>
             {/* {schedule[4]} - {schedule[5]}<br></br> */}
 
             <table className="even schedule-overview-table">
@@ -36,21 +41,28 @@ export default function ViewSchedule({ schedule, members }) {
                   <th>Från:</th>
                 </tr>
               </thead>
-            
+
               <tbody>
-                {schedule[6].map(ride => {
-                  return <RideOccation key={ride.id} ride={ride} />
+                {schedule.rides.map(ride => {
+                  return (
+                    <tr>
+                      <td>{ride.dateAsStringShort()}</td>
+                      <td>{ride.driverTo.name}</td>
+                      <td>{ride.driverFrom.name}</td>
+                    </tr>
+                  )
+                  // <RideOccation key={ride.id} ride={ride} />
                 })}
-                
+
               </tbody>
             </table>
 
           </div>
         </div>
-        
+
         <DetailedSchedule schedule={schedule} members={members} />
-        
-        
+
+
       </div>
     </div>
   )

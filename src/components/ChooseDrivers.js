@@ -1,30 +1,52 @@
-﻿import React, {useState, useEffect} from 'react'
+﻿import React, {useState, useEffect, useRef} from 'react'
 
-export default function ChooseDrivers({rides, setRides, schedule, setSchedule, members}) {
+export default function ChooseDrivers({rides, setRides, members}) {
+
+  console.log("Kör ChooseDrivers, rides", rides);
+
+  var rides2 = rides;
   
+  // NYTT FÖRSÖK: ändra direkt i rides/schedule utan att gå via driverTo/driverFrom? Funkade!!
+  useEffect(() => {
+    console.log("Kör useEffect [rides2], rides: ", rides);
+    console.log("rides2: ", rides2);
+    setRides(rides2);
+    console.log("efter setRides, rides: ", rides);
+  }, [rides2])
+
   function RideEditRow({index, ride}) {
-    const [driverTo, setDriverTo] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
-    const [driverFrom, setDriverFrom] = useState({"name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
-    const[driverIdTo,setDriverIdTo] = useState([]);
-    const [driverIdFrom, setDriverIdFrom] = useState([]);
 
-    useEffect(() => {
-      setDriverTo(members[driverIdTo]) 
-    },[driverIdTo])
+    // useRef hook istället
+    const driverToRef = useRef();
+    const driverFromRef = useRef();
 
-    useEffect(() => {
-      setDriverFrom(members[driverIdFrom]) 
-    },[driverIdFrom])
+    function handleChangeDriverTo(e) {
+      e.preventDefault();
 
-    useEffect(() => {
-      rides[index].driverTo = driverTo;
-      console.log("ride "+index+" driverTo: "+rides[index].driverTo)
-    }, [driverTo])
+      const newDriverToId = driverToRef.current.value;
+      console.log("newDriverToId: ", newDriverToId);
+      
+      rides2[index].driverTo = members[newDriverToId];
+      console.log("rides2[index].driverTo: ", rides2[index].driverTo);
 
-    useEffect(() => {
-      rides[index].driverFrom = driverFrom;
-      console.log("ride: "+index+ "driverFrom:"+rides[index].driverFrom)
-    }, [driverFrom])
+    }
+
+    function handleChangeDriverFrom(e) {
+      e.preventDefault();
+
+      const newDriverFromId = driverFromRef.current.value;
+      console.log("newDriverFromId: ", newDriverFromId);
+      
+      rides2[index].driverFrom = members[newDriverFromId];
+      console.log("rides2[index].driverFrom: ", rides2[index].driverFrom);
+
+    }
+
+    const returnOptions = members.map(member => {
+      return <option value={member.id}>{member.name}</option>
+    })
+
+    
 
 
     return (
@@ -33,17 +55,13 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
           {ride.dateAsStringShort()}
         </td>
         <td>
-          <select className="driver" value={driverIdTo} onChange={e=>setDriverIdTo(e.target.value)}>
-            {members.map(member => {
-              return <option value={member.id}>{member.name}</option>
-            })}
+          <select className="driver" /*value={driverTo.id}*/ onChange={handleChangeDriverTo/*e=>setDriverIdTo(e.target.value)*/} ref={driverToRef} >
+            {returnOptions}
           </select>
         </td>
         <td>
-          <select className="driver"  value={driverIdFrom} onChange={e=>setDriverIdFrom(e.target.value)}>
-            {members.map(member => {
-              return <option value={member.id}>{member.name}</option>
-            })}
+          <select className="driver" /*value={driverFrom.id}*/ onChange={handleChangeDriverFrom} ref={driverFromRef} /*onChange={e=>setDriverIdFrom(e.target.value)}*/>
+            {returnOptions}
           </select>
         </td>
       </tr>
@@ -51,8 +69,10 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   }
 
   function ForEachRide() {
+    console.log("Kör ForEachRide, rides:",)
+
     var index = 0;
-    const returnElements = rides.map(ride => {
+    const returnElements = rides2.map(ride => {
       //id++;
       return (
         <RideEditRow index={index++} ride={ride}/>
@@ -74,13 +94,15 @@ export default function ChooseDrivers({rides, setRides, schedule, setSchedule, m
   }
   
   function RideEditTable() {
+    console.log("Kör RideEditTable, rides:", rides);
+
     return (
       <table className="even choose-driver">
   
         <tr>
           <th>Tillfälle:</th>
-          <th>Till aktivitet:</th>
-          <th>Från aktivitet:</th>
+          <th>Till:</th>
+          <th>Från:</th>
         </tr>
     
         <ForEachRide/>

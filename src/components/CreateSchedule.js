@@ -7,6 +7,7 @@ import ChooseDrivers from './ChooseDrivers';
 import {useForm}  from 'react-hook-form';
 
 export default function CreateSchedule({ schedule, setSchedule, members }) {
+  // "history" 
   let history = useHistory();
  
   
@@ -14,7 +15,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
   // Uppdateras varje gång input ändras
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
-  const [address, setAddress] = useState("");
+  const [destination, setDestination] = useState("");
   const [weekday, setWeekday] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -26,31 +27,13 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     generateDates();
   }, [weekday, startDate, endDate]);
 
- 
-
-  function ShowChooseDrivers() {
-    if (rides.length > 0) {
-      return (<ChooseDrivers rides={rides} members={members} />)
-    } else {
-      // return (
-      //   <div>
-      //     <label for="ordning-for-chaufforer">&nbsp;Välj ordning för chaufförer</label>
-      //     <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
-      //       <option id="option-placeholder" value="" disabled selected>{/* Välj ordning för chaufförer */}</option>
-      //     </select>
-      //   </div>
-      // )
-      return null
-    }
-  }
-  
   function generateDates() {
-    console.log("Kör generateDates")
+    console.log("1. Kör generateDates")
 
-    const dayOfWeekIndex = weekday; console.log("dayOfWeekIndex: " + dayOfWeekIndex);
-    const startDateDate = new Date(startDate); console.log("startDateDate: " + startDateDate);
-    const endDateDate = new Date(endDate); console.log("endDateDate: " + endDateDate);
-   
+    const dayOfWeekIndex = weekday; // console.log("dayOfWeekIndex: " + dayOfWeekIndex);
+    const startDateDate = new Date(startDate); // console.log("startDateDate: " + startDateDate);
+    const endDateDate = new Date(endDate); // console.log("endDateDate: " + endDateDate);
+
     // Skapar en lista av alla datum mellan startDate och endDate
     const dateList = getDates(startDateDate, endDateDate);
 
@@ -64,21 +47,27 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       }
 
     }
-    
-    console.log("rideDates:")
-    console.log(rideDates);
+  
 
-    // Skapar RideObjects av alla datum och lägger i en tredje lista
+    // Skapar RideObjects av alla datum och lägger i en tredje lista.
+    // (TODO) Vi kanske bör byta klass/objekt till json för lättare lagring
+    // (Se arrayen rides (rad 10-71) i sampleschedule.json)
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
-      const date = rideDates[i];
-      rideObjects.push(new RideObject(date, "Siri", "Peter"))
+      // Två datumobjekt av samma datum läggs till i varje ride - får senare olika klockslag
+      const dateTimeStart = rideDates[i];
+      const dateTimeEnd = new Date(dateTimeStart);
+
+      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
+
+      rideObjects.push(newRideObject);
+      
     }
 
     // rides (statevariabel) blir listan av RideObjects
     setRides(rideObjects);
-    console.log("rides: " + rides);
-
+    console.log("rides: ", rides);
+    
     function getDates(startDate, endDate) {
       var dateArray = new Array();
       var dateToAdd = startDate;
@@ -95,18 +84,41 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
   function SaveButton() {
 
-    function SaveSchedule(e) {
-      const newSchedule = [startTime, endTime, address, weekday, startDate, endDate, rides];
+    function saveSchedule(e) {
+
+      const startHours = startTime.substring(0, 2);
+      console.log("startHours:", startHours)
+      const startMinutes = startTime.substring(3);
+      const endHours = endTime.substring(0, 2);
+      const endMinutes = endTime.substring(3);
+      rides.map(ride => {
+        ride.dateTimeStart.setHours(startHours, startMinutes);
+        console.log(ride.dateTimeStart.toLocaleTimeString());
+        ride.dateTimeEnd.setHours(endHours, endMinutes);
+        console.log(ride.dateTimeStart.toLocaleTimeString());
+      })
+
+      rides.forEach(ride => console.log(ride))
+
+      const newSchedule = {
+        "id": 0,
+        "startTime": startTime,
+        "endTime": endTime,
+        "destination": destination,
+        "weekday": weekday,
+        "startDate": startDate,
+        "endDate": endDate,
+        "rides": rides
+      }
 
       setSchedule(newSchedule);
-      console.log("schedule after Save: " + schedule)
+      console.log("schedule after Save: ", schedule);
 
-      history.push("/viewschedule")
-
+      history.push("/viewschedule");
     }
 
     return (
-      <button type="button" className="button-v2" onClick={SaveSchedule}>SPARA KÖRSCHEMA</button>
+      <button type="button" className="button-v2" onClick={saveSchedule}>SPARA KÖRSCHEMA</button>
     )
   }
  
@@ -125,7 +137,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <form className="form">
 
           <div className="box-a aktivitet">
-            <h3>Aktivitet</h3>
+            <h3>&nbsp;Aktivitet</h3>
             
             {/* <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div> */}
             <div className="input-side-by-side">
@@ -142,12 +154,9 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
               </div>
             </div>
 
-            <div onSubmit={handleSubmit(onSubmit)}>
-              <label>Ange adress</label>
-              <input 
-              value={address} 
-              onChange={e => setAddress(e.target.value)} 
-              className="standard-input"/>
+            <div>
+              <label for="adress-for-destination">&nbsp;Adress för destination</label>
+              <input value={destination} onChange={e => setDestination(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
             </div>
             
 
@@ -188,7 +197,8 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
         <form className="form">
           <div className="box-a schema">
-            <h3>Schema</h3>
+            <h3>&nbsp;Schema</h3>
+            {/* <div>&nbsp;Startdatum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div> */}
             <div className="input-side-by-side">
               <div>
                 <label for="startdatum" id="startdate" className="input-left">&nbsp;Startdatum</label>
@@ -214,7 +224,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
         <form className="form">
           <div className="box-a skjutsning">
-            <h3>Skjutsning</h3>
+            <h3>&nbsp;Skjutsning</h3>
               {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
             <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
           </select> */}
@@ -223,7 +233,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
             {/* {<select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
             </select>} */}
-            {rides.length &&<ChooseDrivers rides={rides} members={members}/>}
+            {rides.length ? <ChooseDrivers rides={rides} setRides={setRides} members={members}/> : null /*<ShowChooseDrivers />*/}
           </div>
 
           {/* <div id="upphamtningslista">

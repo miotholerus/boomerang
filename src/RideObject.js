@@ -1,20 +1,24 @@
 ﻿import {dayOfWeekAsString} from './App'
 
 export default class RideObject {
-    constructor(date, driverTo, driverFrom) {
-        this.date = date;
+    constructor(dateTimeStart, dateTimeEnd, driverTo, driverFrom) {
+        this.dateTimeStart = dateTimeStart;
+        this.dateTimeEnd = dateTimeEnd;
         this.driverTo = driverTo;
         this.driverFrom = driverFrom;
     }
 
     dateAsString() {
-        return dayOfWeekAsString(this.date.getDay())+" "+this.date.getDate()+" "+this.date.toLocaleString('sv-se', { month: 'long' })
+        let weekday = this.dateTimeStart.toLocaleString('sv-se', { weekday: 'long' });
+        weekday = weekday.substring(0, 1).toUpperCase()+weekday.substring(1);
+        return weekday+" "+this.dateTimeStart.getDate()+" "+this.dateTimeStart.toLocaleString('sv-se', { month: 'long' });
+        //return dayOfWeekAsString(this.date.getDay())+" "+this.date.getDate()+" "+this.date.toLocaleString('sv-se', { month: 'long' })
     }
 
     dateAsStringShort() {
-        let weekday = this.date.toLocaleString('sv-se', { weekday: 'short' });
+        let weekday = this.dateTimeStart.toLocaleString('sv-se', { weekday: 'short' });
         weekday = weekday.substring(0, 1).toUpperCase()+weekday.substring(1);
-        return weekday+" "+this.date.getDate()+" "+this.date.toLocaleString('sv-se', { month: 'long' })
+        return weekday+" "+this.dateTimeStart.getDate()+" "+this.dateTimeStart.toLocaleString('sv-se', { month: 'long' });
     }
 
     // Getters tycks inte behövas, bara att kalla på t.ex rideObject.date
@@ -37,7 +41,7 @@ export default class RideObject {
      * @param {Date} date
      */
     set setDate(date) {
-        this.date = date;
+        this.dateTimeStart = date;
     }
     /**
      * @param {any} driverTo

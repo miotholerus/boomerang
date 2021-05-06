@@ -1,4 +1,4 @@
-﻿﻿
+﻿
 /*
 h2 - Välkommen till
 h3 - Skapa gruppens körschema
@@ -16,7 +16,7 @@ p {
   margin-top: 0.2em;
   margin-bottom: 0.2em;
   font-size: 16px;
-  line-height: 18px;
+  /*line-height: 18px;*/
   letter-spacing: -0.333333px;
 }
 body {
@@ -42,52 +42,58 @@ body {
 }
 .left {
   display: flex;
-  width: 50%;
+  width: 57%;
   align-items: center;
+  padding-left: 15px;
    /* justify-content: center; */
 }
 .right {
   display: flex;
-  width: 45%;
+  width: 25%;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 10px;
-  /* padding-right: 10px; */
+  margin-right: 0.5em;
+  padding-right: 0.5em;
 }
 
 .header-element{
   font-size: 150%;
-  text-indent: 10px;
+  /* text-indent: 10px; */
   color: #363636;
+  padding-right: 6px;
   /* margin-left: 11px; */
 }
 
 .my-account{
-  color: #363636;
-  font-size: 18px;
+  color: #882E76;
+  font-size: 5vw;
   /* margin-left: 101px; */
 }
 
 h2{
-  font-size: 25px;
+  font-size: 7vw; /*24px */
   
   margin-top: 1.2em;
   margin-bottom: 0.2em;
 }
 h3 {
-  font-size: 18px;
-  margin-top: 0.5em;
+  font-size: 5.5vw; /* 18px */
+  margin-top: 0.3em;
   margin-bottom: 0.7em;
-
-  /* margin-left: 0.2em; */
+}
+h4 {
+  font-size: 16px;
+  margin-top: 0.2em;
+  margin-bottom: 0.7em;
 }
 
 /* KÖRSCHEMA (ÖVERSIKT) */
 .overview-info {
+  font-size: 15px;
   margin-left: 0.1em;
 }
 .loose-text-field {
-  padding-left: 15px;
+  padding-left: 6vw;
   margin-bottom: 0.8em;
 }
 
@@ -102,16 +108,16 @@ h3 {
 /* SUBHEADER FOTBOLLSGRUPPEN */
 .sub-header-football {
   display: flex;
-  background-color: #9CD09B;
+  background-color: #85B093;
   /* padding-top: 16px; */
   align-items: center; 
   
   width: 100%;
-  height: 85px;
+  height: 24vw;
 }
 .football-column {
   display: flex;
-  width: 60px; height: 50px;
+  width: 62px; height: 50px;
   
   text-align: center;
   vertical-align: middle;
@@ -160,9 +166,7 @@ ul {
   list-style-type: none;
   /* padding-left: 0; */
 }
-li {
-  /* display: block; */
-}
+
 i.li-user-icon {
 
   font-size: 33px;
@@ -232,20 +236,32 @@ input {
   padding-left: 11px;
   padding-right: 4px;
   margin-bottom: 20px;
+  margin-left: 2px;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0pt 1pt #882E76;
+}
+.standard-input:focus {
+  outline: none;
+  box-shadow: 0 0 0pt 1pt #882E76;
 }
 .standard-input {
   /* position: absolute; */
-  width: 339px;
-  height: 40px;
+  width: 88vw; /*280px;*/
+  height: 34px;
   /* left: 19px; */
   font-size: 16px;
   top: 438px;
   border-radius: 4px;
   border: 1px;
   margin-bottom: 20px;
+  margin-left: 2px;
+  
   padding-right: 4px;
   border: solid #DFDFD2;
   border-width: thin;
+  
 }
 .option-list {
   background-color: #F2F2ED;
@@ -254,14 +270,14 @@ input {
   /* color: #767676; */
 }
 .input-side-by-side {
-  width: 339px;
+  width: 90vw; /*287px;*/
   display: flex;
   justify-content: space-between;
 }
 .small-input {
   background-color: #F2F2ED;
-  width: 159px;
-  height: 40px;
+  width: 42vw; /*134px;*/
+  height: 34px;
   /* left: 20px; */
   /* top: 543px; */
   border-radius: 4px;
@@ -269,12 +285,12 @@ input {
   border: solid #DFDFD2;
   border-width: thin;
 }
-.input-left {
-  margin-right: 10px;
+/* .input-left {
+  margin-right: 1px;
 }
 .input-right {
-  margin-left: 10px;
-}
+  margin-left: 1px;
+} */
 
 
 .page-content {
@@ -329,9 +345,9 @@ select.driver {
 
 .schedule-box {
   background-color: #ffffff; /*#c5c5c5;*/
-  padding: 22px;
+  padding: 16px;
   margin: 8px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   border-radius: 8px;
   
   border-left: solid #EDB946;
@@ -342,32 +358,39 @@ select.driver {
   /* display: flex;
   flex-direction: column; */
   /* list-style-type: disc; */
-  padding-left: 21px;
+  padding-left: 0px;
 }
 .schedule-box table {
   /* background-color: #882E76; */
   margin-bottom: 0.8em;
 }
+.schedule-box td.icon {
+  padding-right: 14px;
+}
+.schedule-box td.time {
+  width: 116px;
+  padding-right: 0px;
+}
 
 
-.alt-user-logo { /* ska eg vara en ikon ingen h1:a */
+.alt-user-logo {
   margin-top: 0;
   margin-bottom: 0.1em;
-  margin-right: 0.1em;
+  margin-right: 1em;
   font-size: 28px;
 }
 
-.schedule-box tr::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+/* .schedule-box tr::before {
+  content: "\2022";  
   font-size: 28px;
-  color: #363636; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  color: #363636; 
+  font-weight: bold; 
+  display: inline-block; Needed to add space between the bullet and the text
+  width: 1em; 
+  margin-left: -1em; 
   
   padding-top: 0.1em;
-}
+} */
 
 /* Skugga till välja-förare-ruta:
 -webkit-box-shadow: 3px 6px 13px -3px #000000; 
@@ -375,30 +398,40 @@ box-shadow: 3px 6px 13px -3px #000000; */
 
 .schedule-box2 {
   background-color: #ffffff; /*#c5c5c5;*/
-  padding: 22px;
+  padding: 16px;
   margin: 8px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   border-radius: 8px;
-  
   border-left: solid #F2B3B6;
-  ;
   border-width: 11px;
 }
 .schedule-box2 ul {
   /* display: flex;
   flex-direction: column; */
   /* list-style-type: disc; */
-  padding-left: 21px;
+  padding-left: 0px;
 }
 .schedule-box2 table {
   /* background-color: #882E76; */
   margin-bottom: 0.8em;
 }
-
-td.time {
-  width: 50%; 
-  text-align: right;
+.schedule-box2 td.icon {
+  padding-right: 14px;
 }
+.schedule-box td.time {
+  width: 116px;
+  padding-right: 0px;
+}
+
+/* td.time {
+  /* width: 50%;  */
+  /* text-align: right;
+}
+td.name {
+  width: 80%;  */
+  /* text-align: right; */
+/* } */
+
 .schedule-box2 i { /* ska eg vara en ikon ingen h1:a */
   margin-top: 0;
   margin-bottom: 0.1em;
@@ -406,21 +439,21 @@ td.time {
   font-size: 28px;
 }
 
-.schedule-box2 tr::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  font-size: 28px;
-  color: #363636; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+.skapagruppenskörschema{
+  font-size: 140%;
+}
+
+.hamburgarmeny{
+  /* padding-left: 15px; */
+  /* padding-top: 10px;  */
+  padding: 0.5em;
+  padding-left: 1em;
+  display: flex;
+  width: 90%;
+  align-items: center;
+}
+
+td.name{
+  width: 80%;
   
-  padding-top: 0.1em;
-}
-.errorMessage{
-  color: #bf1650;
-}
-.errorMessage::before{
-  display: inline;
-  content: "⚠ ";
 }

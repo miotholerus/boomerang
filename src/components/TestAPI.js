@@ -2,127 +2,118 @@ import React, { useState, usRef, useEffect } from 'react'
 
 
 export default function TestAPI() {
-  const [origin, setOrigin] = useState(""); // "59.26078347858798,18.02139952888256" "Lerbäcksgränd 18, 124 66 Bandhagen"
-  const [destination, setDestination] = useState(""); // "59.28772349484027,18.058070840530874" "Sockenvägen 290, 122 63 Enskede"
-  const [data, setData] = useState({
-    "destination_addresses": [
-      "Sockenvägen 290, 122 63 Enskede, Sweden"
-    ],
-    "origin_addresses": [
-      "Uddeholmsvägen 239, 122 41 Enskede, Sweden"
-    ],
-    "rows": [
-      {
-        "elements": [
-          {
-            "distance": {
-              "text": "1.7 km",
-              "value": 1701
-            },
-            "duration": {
-              "text": "4 min",
-              "value": 246
-            },
-            "status": "OK"
-          }
-        ]
-      }
-    ],
-    "status": "OK"
-  });
-  const [seconds, setSeconds] = useState(0);
+  
+  const [timeAtoB, setTimeAtoB] = useState(0);
+  const [timeBtoC, setTimeBtoC] = useState(0);
+  const [timeCtoD, setTimeCtoD] = useState(0);
 
-  const url = `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${origin}&destinations=${destination}&key=bp6pjpgmaCcdxjtccQlnDpjTPEUqk`;
-
-  useEffect(() => {
-    setSeconds(data.rows[0].elements[0].duration.value)
-  }, [data])
-
-  const submitForm = (event) => {
-    event.preventDefault();
-
-    fetch(url)
-      .then(responseFromAPI =>
-        responseFromAPI.json()
-          .then(apiData => {
-            console.log(apiData)
-            setData(apiData)
-          })
-      );
+  var addSeconds = function (dateTime, seconds) {
+    return new Date(dateTime.getTime() + seconds * 1000);
   }
 
-  // Response:
-  // {
-  //   "destination_addresses": [
-  //     "Sockenvägen 290, 122 63 Enskede, Sweden"
-  //   ],
-  //   "origin_addresses": [
-  //     "Uddeholmsvägen 239, 122 41 Enskede, Sweden"
-  //   ],
-  //   "rows": [
-  //     {
-  //       "elements": [
-  //         {
-  //           "distance": {
-  //             "text": "1.7 km",
-  //             "value": 1701
-  //           },
-  //           "duration": {
-  //             "text": "4 min",
-  //             "value": 246
-  //           },
-  //           "status": "OK"
-  //         }
-  //       ]
-  //     }
-  //   ],
-  //   "status": "OK"
-  // }
+  var startTime = new Date(new Date("2021-04-29").setHours(17, 0));
 
-  // const loadResponse = async () => {
-  //   fetch(url)
-  //     .then(responseFromAPI =>
-  //       responseFromAPI.json()
-  //         .then(data =>
-  //           alert(JSON.stringify(data))
-  //         )
-  //     );
-  // }
-
-  // useEffect(() => {
-  //   loadResponse
-  // }, [run])
-
-  // const submitForm = (event) => {
-  //   event.preventDefault();
-
-  //   setRun(true)
-  // }
+  var margin = 5*60;
   
-  // const submitForm = async (event) => {
-  //   event.preventDefault();
+  var timeAtA = addSeconds(startTime, -(timeAtoB + margin + timeBtoC + margin + timeCtoD + margin)).toLocaleTimeString('sv-se')//.substring(0, 5);
+  var timeAtB = addSeconds(startTime, -(timeBtoC + margin + timeCtoD + margin)).toLocaleTimeString('sv-se');
+  var timeAtC = addSeconds(startTime, -(timeCtoD + margin)).toLocaleTimeString('sv-se');
+  var timeAtD = addSeconds(startTime, -margin).toLocaleTimeString('sv-se');//.substring(0, 5);
 
-  //   const data = await fetch(url)
-  //     .then(responseFromAPI =>
-  //       responseFromAPI.json()
-  //         // .then(data =>
-  //         //   alert(JSON.stringify(data))
-  //         // )
-  //     );
-  // }
+  const url = `https://www.mapquestapi.com/directions/v2/routematrix?key=Kr8qYQFLlQ0XjbF6hGWyyTprB5x4fEPU`;
+  
+
+  const submitForm = async (event) => {
+    event.preventDefault();
+
+    const locA = "59.28093793567633, 18.046790156144745"; //  "Uddeholmsvägen 239, 12241 Enskede, SWEDEN";
+    const locB = "59.272215063170705, 18.037266160912903"; // "Årdalavägen 133, 12432 Bandhagen, SWEDEN";
+    const locC = "59.26093702587597, 18.021367342650105"; // "Lerbäcksgränd 18, 12466 Bandhagen, SWEDEN";
+    const locD = "59.287761851370426, 18.05808156963875"; // "Sockenvägen 290, 12040 Enskede, SWEDEN";
+
+
+    const requestBodyAtoB = {
+      "locations": [
+        locA,
+        locB,
+        locC
+      ]
+    }
+    const responseAtoB = await fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(requestBodyAtoB)
+    })
+    const dataAtoB = await responseAtoB.json()
+
+    console.log(dataAtoB);
+
+    setTimeAtoB(dataAtoB.time[1]);
+
+
+
+    const requestBodyBtoC = {
+      "locations": [
+        locB,
+        locC
+      ]
+    }
+    const responseBtoC = await fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(requestBodyBtoC)
+    })
+    const dataBtoC = await responseBtoC.json()
+
+    console.log(dataBtoC)
+    
+    setTimeBtoC(dataBtoC.time[1]);
+
+
+    
+    const requestBodyCtoD = {
+      "locations": [
+        locC,
+        locD
+      ]
+    }
+    const responseCtoD = await fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(requestBodyCtoD)
+    })
+    const dataCtoD = await responseCtoD.json()
+
+    console.log(dataCtoD)
+
+    setTimeCtoD(dataCtoD.time[1]);
+
+    
+  }
 
   return (
     <form onSubmit={(event) => submitForm(event)}>
       <div>
-        <label for="origin">Från: </label>
-        <input type="text" id="origin" value={origin} onChange={(event) => setOrigin(event.target.value)} />
+        <input type="submit" id="submitbutton" value="Test API" />
       </div>
       <div>
-        <label for="destination">Till: </label>
-        <input type="text" id="destination" value={destination} onChange={(event) => setDestination(event.target.value)} />
-      </div>
-      <div>
-        <input type="submit" id="submitbutton" value="Send" />
+        Starttid aktivitet: {startTime.toLocaleTimeString("sv-se")}<br></br>
+        Marginal: {margin/60} min<br></br><br></br>
+
+        A till B: {timeAtoB} sek ({timeAtoB/60} min)<br></br>
+        B till C: {timeBtoC} sek ({timeBtoC/60} min)<br></br>
+        C till D: {timeCtoD} sek ({timeCtoD/60} min)<br></br><br></br>
+        
+        A kl. {timeAtA}<br></br>
+        B kl. {timeAtB}<br></br>
+        C kl. {timeAtC}<br></br>
+        D kl. {timeAtD}
       </div>
     </form>
   )
