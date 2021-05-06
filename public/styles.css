@@ -482,10 +482,11 @@ td.name{
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-content: space-around;
   width: 280px;
   height: 44px;
   margin-left: 10px;
-  background-color: #F2F2ED;
+  background-color: #EAEAE1;
   display: block;
 }
 .messagetext{
@@ -495,7 +496,7 @@ td.name{
   width: 280px;
   height: 168.68px;
   margin-left: 10px;
-  background-color: #F2F2ED;
+  background-color: #EAEAE1;
   display: block;
 }
 .leftcorner{
