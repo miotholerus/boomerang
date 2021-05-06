@@ -594,6 +594,14 @@ td.name{
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  
+  font-weight: bold; 
+}
+.addmore{
+  border: 0px;
+  background-color: #FFFFFF;
+  margin-left: 154px;
+  margin-bottom: 20px;
+  color: #882E76;
+  text-decoration: underline 2px;
+  font-size: 16px;
 }
