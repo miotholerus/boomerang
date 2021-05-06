@@ -36,15 +36,15 @@ body {
 }
 /* Header side-by-side-försök */
 .flex {
-  
   display: flex;
+
 }
 .left {
   display: flex;
   width: 57%;
   align-items: center;
-  padding-left: 15px;
-   /* justify-content: center; */
+  /* padding-left: 15px; */
+  justify-content: center;
 }
 .right {
   display: flex;
@@ -64,7 +64,7 @@ body {
 }
 
 .my-account{
-  color: #882E76;
+  /* color: #882E76; */
   font-size: 5vw;
   /* margin-left: 101px; */
 }
@@ -218,11 +218,12 @@ i.li-user-icon {
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #000;
+  font-style: italic;
 }
 .form {
   border-radius: 8px;
 }
-input {
+input, textarea {
   font-size: 15px;
   background-color: #F2F2ED;
   /*DFDFD2*/
@@ -416,14 +417,9 @@ box-shadow: 3px 6px 13px -3px #000000; */
   padding-right: 0px;
 }
 
-/* td.time {
-  /* width: 50%;  */
-  /* text-align: right;
+td {
+  letter-spacing: -0.333333px;
 }
-td.name {
-  width: 80%;  */
-  /* text-align: right; */
-/* } */
 
 .schedule-box2 i { /* ska eg vara en ikon ingen h1:a */
   margin-top: 0;
@@ -477,7 +473,7 @@ td.name{
   justify-content: center;
   justify-content: space-around;
   width: 280px;
-  height: 44px;
+  height: 34px;
   margin-left: 10px;
   background-color: #EAEAE1;
   display: block;
@@ -491,6 +487,9 @@ td.name{
   margin-left: 10px;
   background-color: #EAEAE1;
   display: block;
+  
+  padding-top: 5px;
+  font-style: italic;
 }
 .leftcorner{
   display: flex;
