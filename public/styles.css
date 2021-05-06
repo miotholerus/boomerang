@@ -457,3 +457,70 @@ td.name{
   width: 80%;
   
 }
+.topline{
+  position: absolute;
+  top: 100px;
+  left: 25px;
+  width: 239px;
+  height: 38px;
+}
+.tagg1{
+  position: absolute;
+  width: 305px;
+  height: 38px;
+  left: 25px;
+  top: 155px;
+  border-radius: 8px 8px 0px 0px;
+  background-color: #85b093;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.333333px;
+}
+.tagg2{
+  position: absolute;
+  width: 305px;
+  height: 38px;
+  left: 25px;
+  top: 340px;
+  border-radius: 8px 8px 0px 0px;
+  background-color: #85b093;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.333333px;
+
+}
+.infoskjuts{
+  position: absolute;
+  width: 305px;
+  height: 115px;
+  left: 25px;
+  top: 195px;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+.infogrupp{
+  position: absolute;
+  width: 305px;
+  height: 155px;
+  left: 25px;
+  top: 380px;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+.button-grupp{
+  position: absolute;
+  width: 185px;
+  height: 45,05px;
+  left: 50px;
+  top: 85px;
+  background-color: #882E76;
+  color: #ffffff;
+  display: flex;
+  border-radius: 19px;
+}

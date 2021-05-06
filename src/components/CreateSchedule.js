@@ -165,12 +165,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
               <label for="veckodag">&nbsp;Veckodag</label>
               <select value={weekday} onChange={e => setWeekday(e.target.value)} 
               /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" 
-              id="veckodag"
-              innerRef={register("veckodag",{
-                required:"Du måste välja dag"
-                
-              })}
-              >
+              id="veckodag">
 
                 <option id="option-placeholder" value="" disabled selected>{/*Ej vald*/}</option>
                 <option value="1">Måndag</option>

@@ -12,6 +12,7 @@ import TestAPI from "./components/TestAPI";
 import TestDatabase from "./components/TestDatabase";
 
 import React from 'react'
+import MinaSidor from "./components/MinaSidor";
 
 
 /**
@@ -65,9 +66,9 @@ function App() {
 
   return (
     <div className="App">
-      
+      <MinaSidor/>
       {/* <TestAPI/>  */}
-      <TestDatabase/>
+      {/* <TestDatabase/> */}
 
       {/* <Router>
         <Switch>
