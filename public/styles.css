@@ -580,20 +580,8 @@ td.name{
 }
 .topline_2{
   position: absolute;
-  width: 185px;
-  height: 45px;
-  left: 50px;
-  top: 85px;
-  background-color: #882E76;
-  color: #ffffff;
-  display: flex;
-  border-radius: 19px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  /* font-weight: bold;  */
-  text-decoration: none;
-  font-size: 14px;
+  top: 538px;
+  left: 10px;
 }
 .addmore{
   border: 0px;
@@ -603,6 +591,38 @@ td.name{
   color: #882E76;
   text-decoration: underline 2px;
   font-size: 16px;
+}
+ol.how_to{
+  position: absolute;
+  width:300px ;
+  height: 150px;
+  left: 10px;
+  top: 570px;
+  counter-reset: item;
+  list-style-type: none;
+  list-style-position: inside;
+  
+}
+ol.how_to li{
+  position: relative;
+  padding-left: 10px;
+  margin: 15px;
+  font-weight: bold;
+}
+ol.how_to li::before{
+  font-size: 2em;;
+  line-height: 25px;
+  width: 25px;
+  color: #85B093;
+  height: 25px;
+  content: counter(item)" ";
+  counter-increment: item;
+  position: absolute;
+  left: -25%;
+  text-align: center;
+  
+  
+
 }
 
 
