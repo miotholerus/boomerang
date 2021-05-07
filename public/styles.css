@@ -523,28 +523,31 @@ td.name{
 ol.how_to{
   position: absolute;
   width:300px ;
-  height: 300px;
+  height: 150px;
   left: 10px;
-  top: 555px;
+  top: 570px;
   counter-reset: item;
   list-style-type: none;
   list-style-position: inside;
+  
 }
 ol.how_to li{
   position: relative;
   padding-left: 10px;
+  margin: 15px;
 }
 ol.how_to li::before{
-  font-size: 8em;
+  font-size: 2em;;
   line-height: 25px;
-  vertical-align: middle;
   width: 25px;
   color: #85B093;
-  text-align: center;
   height: 25px;
   content: counter(item)" ";
   counter-increment: item;
   position: absolute;
+  left: -25%;
+  text-align: center;
+
   
 }
 
