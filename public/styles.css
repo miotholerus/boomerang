@@ -535,6 +535,7 @@ ol.how_to li{
   position: relative;
   padding-left: 10px;
   margin: 15px;
+  font-weight: bold;
 }
 ol.how_to li::before{
   font-size: 2em;;
@@ -547,8 +548,9 @@ ol.how_to li::before{
   position: absolute;
   left: -25%;
   text-align: center;
-
   
+  
+
 }
 
 
