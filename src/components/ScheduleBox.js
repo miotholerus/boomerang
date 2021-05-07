@@ -10,7 +10,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
       </div>
 
       <div className="schedule-box">
-        <h3>Upphämtning till aktivitet</h3>
+        <h3>Till aktivitet</h3>
         <p>Chaufför: {members[0].name}</p>
         <br></br>
         <ul>
@@ -67,7 +67,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
       </div>
 
       <div className="schedule-box2">
-        <h3>Avlämning från aktivitet</h3>
+        <h3>Från aktivitet</h3>
         <p>Chaufför: {members[0].name}</p>
         <br></br>
         <ul>
