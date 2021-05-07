@@ -4,13 +4,13 @@ import { useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner'
 import RideObject from '../RideObject'
 import ChooseDrivers from './ChooseDrivers';
-import {useForm}  from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 export default function CreateSchedule({ schedule, setSchedule, members }) {
   // "history" 
   let history = useHistory();
- 
-  
+
+
 
   // Uppdateras varje gång input ändras
   const [startTime, setStartTime] = useState("");
@@ -22,7 +22,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
   // Uppdateras varje gång veckodag, startdatum eller slutdatum ändras via useEffect!
   const [rides, setRides] = useState([]);
-  
+
   useEffect(() => {
     generateDates();
   }, [weekday, startDate, endDate]);
@@ -47,7 +47,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       }
 
     }
-  
+
 
     // Skapar RideObjects av alla datum och lägger i en tredje lista.
     // (TODO) Vi kanske bör byta klass/objekt till json för lättare lagring
@@ -58,16 +58,16 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
       const dateTimeStart = rideDates[i];
       const dateTimeEnd = new Date(dateTimeStart);
 
-      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"}, {"id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239"});
+      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, { "id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239" }, { "id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239" });
 
       rideObjects.push(newRideObject);
-      
+
     }
 
     // rides (statevariabel) blir listan av RideObjects
     setRides(rideObjects);
     console.log("rides: ", rides);
-    
+
     function getDates(startDate, endDate) {
       var dateArray = new Array();
       var dateToAdd = startDate;
@@ -79,53 +79,47 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
       return dateArray;
     }
-    
+
   }
 
-  function SaveButton() {
+  function saveSchedule(e) {
 
-    function saveSchedule(e) {
+    const startHours = startTime.substring(0, 2);
+    console.log("startHours:", startHours)
+    const startMinutes = startTime.substring(3);
+    const endHours = endTime.substring(0, 2);
+    const endMinutes = endTime.substring(3);
+    rides.map(ride => {
+      ride.dateTimeStart.setHours(startHours, startMinutes);
+      console.log(ride.dateTimeStart.toLocaleTimeString());
+      ride.dateTimeEnd.setHours(endHours, endMinutes);
+      console.log(ride.dateTimeStart.toLocaleTimeString());
+    })
 
-      const startHours = startTime.substring(0, 2);
-      console.log("startHours:", startHours)
-      const startMinutes = startTime.substring(3);
-      const endHours = endTime.substring(0, 2);
-      const endMinutes = endTime.substring(3);
-      rides.map(ride => {
-        ride.dateTimeStart.setHours(startHours, startMinutes);
-        console.log(ride.dateTimeStart.toLocaleTimeString());
-        ride.dateTimeEnd.setHours(endHours, endMinutes);
-        console.log(ride.dateTimeStart.toLocaleTimeString());
-      })
+    rides.forEach(ride => console.log(ride))
 
-      rides.forEach(ride => console.log(ride))
-
-      const newSchedule = {
-        "id": 0,
-        "startTime": startTime,
-        "endTime": endTime,
-        "destination": destination,
-        "weekday": weekday,
-        "startDate": startDate,
-        "endDate": endDate,
-        "rides": rides
-      }
-
-      setSchedule(newSchedule);
-      console.log("schedule after Save: ", schedule);
-
-      history.push("/viewschedule");
+    const newSchedule = {
+      "id": 0,
+      "startTime": startTime,
+      "endTime": endTime,
+      "destination": destination,
+      "weekday": weekday,
+      "startDate": startDate,
+      "endDate": endDate,
+      "rides": rides
     }
 
-    return (
-      <button type="button" className="button-v2" onClick={saveSchedule}>SPARA KÖRSCHEMA</button>
-    )
+    setSchedule(newSchedule);
+    console.log("schedule after Save: ", schedule);
+
+    history.push("/viewschedule");
   }
- 
+
+
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="page-content">
         <FootballBanner />
 
@@ -138,7 +132,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
           <div className="box-a aktivitet">
             <h3>&nbsp;Aktivitet</h3>
-            
+
             {/* <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div> */}
             <div className="input-side-by-side">
               <div className="input-column">
@@ -148,9 +142,9 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
               <div className="input-column">
                 <label for="sluttid" className="input-right">&nbsp;Sluttid</label>
-                <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} 
-                className="small-input input-right" 
-                id="sluttid"></input>
+                <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)}
+                  className="small-input input-right"
+                  id="sluttid"></input>
               </div>
             </div>
 
@@ -158,14 +152,14 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
               <label for="adress-for-destination">&nbsp;Adress för destination</label>
               <input value={destination} onChange={e => setDestination(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
             </div>
-            
+
 
             {/* <div className="input-side-by-side"> */}
             <div>
               <label for="veckodag">&nbsp;Veckodag</label>
-              <select value={weekday} onChange={e => setWeekday(e.target.value)} 
-              /*defaultValue="Veckodag"*/ className="standard-input option-list input-left" 
-              id="veckodag">
+              <select value={weekday} onChange={e => setWeekday(e.target.value)}
+              /*defaultValue="Veckodag"*/ className="standard-input option-list input-left"
+                id="veckodag">
 
                 <option id="option-placeholder" value="" disabled selected>{/*Ej vald*/}</option>
                 <option value="1">Måndag</option>
@@ -220,15 +214,15 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <form className="form">
           <div className="box-a skjutsning">
             <h3>&nbsp;Skjutsning</h3>
-              {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
+            {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
             <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
           </select> */}
             {/* Avancerat, egen komponent? */}
-            
+
             {/* {<select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
             </select>} */}
-            {rides.length ? <ChooseDrivers rides={rides} setRides={setRides} members={members}/> : null /*<ShowChooseDrivers />*/}
+            {rides.length ? <ChooseDrivers rides={rides} setRides={setRides} members={members} /> : null /*<ShowChooseDrivers />*/}
           </div>
 
           {/* <div id="upphamtningslista">
@@ -236,8 +230,8 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
           </div> */}
 
           <br className="changesizeofbr"></br>
-          <SaveButton />
-          
+          <button type="button" className="button-v2" onClick={saveSchedule}>SPARA KÖRSCHEMA</button>
+
         </form>
       </div>
     </div>

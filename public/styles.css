@@ -29,7 +29,6 @@ body {
 /* HEADERN */
 .header {
   background-color: #ffffff;
-  position: absolute;
   height: 50px;
   width: 100%;
   /* padding-left: 18px;
@@ -37,15 +36,15 @@ body {
 }
 /* Header side-by-side-försök */
 .flex {
-  
   display: flex;
+
 }
 .left {
   display: flex;
   width: 57%;
   align-items: center;
-  padding-left: 15px;
-   /* justify-content: center; */
+  /* padding-left: 15px; */
+  justify-content: center;
 }
 .right {
   display: flex;
@@ -65,7 +64,7 @@ body {
 }
 
 .my-account{
-  color: #882E76;
+  /* color: #882E76; */
   font-size: 5vw;
   /* margin-left: 101px; */
 }
@@ -117,8 +116,8 @@ h4 {
 }
 .football-column {
   display: flex;
-  width: 62px; height: 50px;
-  
+  width: 62px; 
+  height: 50px;
   text-align: center;
   vertical-align: middle;
   align-items: center; 
@@ -191,10 +190,8 @@ i.li-user-icon {
   background-color: #882E76;
   color: white;
   height: 43px;
-
   padding-left: 32px;
   padding-right: 32px;
-  
   border-radius: 19px;
   border: none;
   text-align: center;
@@ -202,9 +199,7 @@ i.li-user-icon {
   left: 50%;
   transform: translate(-50%, -0%);
   position: relative;
-  
   margin-bottom: 30px;
-
 }
 .button-v2:hover{
   background-color: #363636;
@@ -223,11 +218,12 @@ i.li-user-icon {
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #000;
+  font-style: italic;
 }
 .form {
   border-radius: 8px;
 }
-input {
+input, textarea {
   font-size: 15px;
   background-color: #F2F2ED;
   /*DFDFD2*/
@@ -259,7 +255,7 @@ input:focus {
   margin-left: 2px;
   
   padding-right: 4px;
-  border: solid #DFDFD2;
+  border: solid #D7D7C8;
   border-width: thin;
   
 }
@@ -294,8 +290,6 @@ input:focus {
 
 
 .page-content {
-  position: absolute;
-  top: 48px;
   width: 100%;
 }
 
@@ -423,14 +417,9 @@ box-shadow: 3px 6px 13px -3px #000000; */
   padding-right: 0px;
 }
 
-/* td.time {
-  /* width: 50%;  */
-  /* text-align: right;
+td {
+  letter-spacing: -0.333333px;
 }
-td.name {
-  width: 80%;  */
-  /* text-align: right; */
-/* } */
 
 .schedule-box2 i { /* ska eg vara en ikon ingen h1:a */
   margin-top: 0;
@@ -457,12 +446,84 @@ td.name{
   width: 80%;
   
 }
+
+.blackbackground{
+  border: #363636;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.whitebackground{
+  background: #FFFFFF;
+  border-radius: 8px;
+}
+.text{
+  margin-left: 10px;
+  font-family: Nunito;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.3333333432674408px;
+}
+.creategroupinfo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  width: 280px;
+  height: 34px;
+  margin-left: 10px;
+  background-color: #EAEAE1;
+  display: block;
+}
+.messagetext{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 168.68px;
+  margin-left: 10px;
+  background-color: #EAEAE1;
+  display: block;
+  
+  padding-top: 5px;
+  font-style: italic;
+}
+.leftcorner{
+  display: flex;
+  width: 33%;
+  align-items: center;
+  padding-left: 24px;
+}
+.midel{
+  display: flex;
+  width: 18%; 
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center; 
+  justify-content: center;
+}
+.rightcorner{
+  display: flex;
+  width: 35%;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 0.5em;
+  padding-right: 0.5em;
+}
+.borderradius{
+  border-radius: 4px;
+}
 .topline{
   position: absolute;
-  top: 100px;
-  left: 10px;
+  top: 75px; /* 100px */
+  left: 25px;
   width: 239px;
   height: 38px;
+  font-size: 28px;
 }
 .tagg1{
   position: absolute;
@@ -478,7 +539,7 @@ td.name{
   font-size: 18px;
   line-height: 25px;
   letter-spacing: -0.333333px;
-  text-align: justify;
+  padding: 8px 14px;
 }
 .tagg2{
   position: absolute;
@@ -494,7 +555,7 @@ td.name{
   font-size: 18px;
   line-height: 25px;
   letter-spacing: -0.333333px;
-  text-align:justify;
+  padding: 8px 14px;
 
 }
 .infoskjuts{
@@ -503,8 +564,9 @@ td.name{
   height: 115px;
   left: 10px;
   top: 195px;
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
   background-color: #ffffff;
+  padding: 8px 14px;
 }
 .infogrupp{
   position: absolute;
@@ -512,45 +574,35 @@ td.name{
   height: 155px;
   left: 10px;
   top: 380px;
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
   background-color: #ffffff;
+  padding: 8px 14px;
 }
 .topline_2{
   position: absolute;
-  top: 538px;
-  left: 10px;
-}
-ol.how_to{
-  position: absolute;
-  width:300px ;
-  height: 150px;
-  left: 10px;
-  top: 570px;
-  counter-reset: item;
-  list-style-type: none;
-  list-style-position: inside;
-  
-}
-ol.how_to li{
-  position: relative;
-  padding-left: 10px;
-  margin: 15px;
-  font-weight: bold;
-}
-ol.how_to li::before{
-  font-size: 2em;;
-  line-height: 25px;
-  width: 25px;
-  color: #85B093;
-  height: 25px;
-  content: counter(item)" ";
-  counter-increment: item;
-  position: absolute;
-  left: -25%;
+  width: 185px;
+  height: 45px;
+  left: 50px;
+  top: 85px;
+  background-color: #882E76;
+  color: #ffffff;
+  display: flex;
+  border-radius: 19px;
   text-align: center;
-  
-  
-
+  justify-content: center;
+  align-items: center;
+  /* font-weight: bold;  */
+  text-decoration: none;
+  font-size: 14px;
+}
+.addmore{
+  border: 0px;
+  background-color: #FFFFFF;
+  margin-left: 144px;
+  margin-bottom: 20px;
+  color: #882E76;
+  text-decoration: underline 2px;
+  font-size: 16px;
 }
 
 
