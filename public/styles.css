@@ -29,7 +29,6 @@ body {
 /* HEADERN */
 .header {
   background-color: #ffffff;
-  position: absolute;
   height: 50px;
   width: 100%;
   /* padding-left: 18px;
@@ -37,15 +36,15 @@ body {
 }
 /* Header side-by-side-försök */
 .flex {
-  
   display: flex;
+
 }
 .left {
   display: flex;
   width: 57%;
   align-items: center;
-  padding-left: 15px;
-   /* justify-content: center; */
+  /* padding-left: 15px; */
+  justify-content: center;
 }
 .right {
   display: flex;
@@ -65,7 +64,7 @@ body {
 }
 
 .my-account{
-  color: #882E76;
+  /* color: #882E76; */
   font-size: 5vw;
   /* margin-left: 101px; */
 }
@@ -191,10 +190,8 @@ i.li-user-icon {
   background-color: #882E76;
   color: white;
   height: 43px;
-
   padding-left: 32px;
   padding-right: 32px;
-  
   border-radius: 19px;
   border: none;
   text-align: center;
@@ -202,9 +199,7 @@ i.li-user-icon {
   left: 50%;
   transform: translate(-50%, -0%);
   position: relative;
-  
   margin-bottom: 30px;
-
 }
 .button-v2:hover{
   background-color: #363636;
@@ -223,11 +218,12 @@ i.li-user-icon {
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #000;
+  font-style: italic;
 }
 .form {
   border-radius: 8px;
 }
-input {
+input, textarea {
   font-size: 15px;
   background-color: #F2F2ED;
   /*DFDFD2*/
@@ -259,7 +255,7 @@ input:focus {
   margin-left: 2px;
   
   padding-right: 4px;
-  border: solid #DFDFD2;
+  border: solid #D7D7C8;
   border-width: thin;
   
 }
@@ -294,8 +290,6 @@ input:focus {
 
 
 .page-content {
-  position: absolute;
-  top: 48px;
   width: 100%;
 }
 
@@ -423,14 +417,9 @@ box-shadow: 3px 6px 13px -3px #000000; */
   padding-right: 0px;
 }
 
-/* td.time {
-  /* width: 50%;  */
-  /* text-align: right;
+td {
+  letter-spacing: -0.333333px;
 }
-td.name {
-  width: 80%;  */
-  /* text-align: right; */
-/* } */
 
 .schedule-box2 i { /* ska eg vara en ikon ingen h1:a */
   margin-top: 0;
@@ -482,10 +471,11 @@ td.name{
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-content: space-around;
   width: 280px;
-  height: 44px;
+  height: 34px;
   margin-left: 10px;
-  background-color: #F2F2ED;
+  background-color: #EAEAE1;
   display: block;
 }
 .messagetext{
@@ -495,8 +485,11 @@ td.name{
   width: 280px;
   height: 168.68px;
   margin-left: 10px;
-  background-color: #F2F2ED;
+  background-color: #EAEAE1;
   display: block;
+  
+  padding-top: 5px;
+  font-style: italic;
 }
 .leftcorner{
   display: flex;
@@ -526,10 +519,11 @@ td.name{
 }
 .topline{
   position: absolute;
-  top: 100px;
+  top: 75px; /* 100px */
   left: 25px;
   width: 239px;
   height: 38px;
+  font-size: 28px;
 }
 .tagg1{
   position: absolute;
@@ -545,6 +539,7 @@ td.name{
   font-size: 18px;
   line-height: 25px;
   letter-spacing: -0.333333px;
+  padding: 8px 14px;
 }
 .tagg2{
   position: absolute;
@@ -560,6 +555,7 @@ td.name{
   font-size: 18px;
   line-height: 25px;
   letter-spacing: -0.333333px;
+  padding: 8px 14px;
 
 }
 .infoskjuts{
@@ -568,8 +564,9 @@ td.name{
   height: 115px;
   left: 10px;
   top: 195px;
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
   background-color: #ffffff;
+  padding: 8px 14px;
 }
 .infogrupp{
   position: absolute;
@@ -577,8 +574,9 @@ td.name{
   height: 155px;
   left: 10px;
   top: 380px;
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
   background-color: #ffffff;
+  padding: 8px 14px;
 }
 .button-grupp{
   position: absolute;
@@ -593,6 +591,16 @@ td.name{
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  
+  /* font-weight: bold;  */
+  text-decoration: none;
+  font-size: 14px;
+}
+.addmore{
+  border: 0px;
+  background-color: #FFFFFF;
+  margin-left: 144px;
+  margin-bottom: 20px;
+  color: #882E76;
+  text-decoration: underline 2px;
+  font-size: 16px;
 }

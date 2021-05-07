@@ -15,7 +15,7 @@ export default function ViewSchedule({ schedule, members }) {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
 
       <div className="page-content">
         <FootballBanner />

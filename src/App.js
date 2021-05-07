@@ -1,3 +1,7 @@
+import React from 'react'
+import { useState, useEffect } from 'react'
+import firebase from "firebase/app";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -8,13 +12,11 @@ import {
 import CreateSchedule from './components/CreateSchedule';
 import ViewSchedule from './components/ViewSchedule';
 import CreateGroup from './components/CreateGroup';
+import MinaSidor from "./components/MinaSidor";
+import Header from "./components/Header";
 
-import { useState, useEffect } from 'react'
 import TestAPI from "./components/TestAPI";
 import TestDatabase from "./components/TestDatabase";
-
-import React from 'react'
-import MinaSidor from "./components/MinaSidor";
 
 
 /**
@@ -28,6 +30,20 @@ export function dayOfWeekAsString(dayIndex) {
 }
 
 function App() {
+
+  // Den som är inloggad
+  const [me, setMe] = useState({
+    "child": "Anna",
+    "email": "albacrud@gmail.com",
+    "firstName": "Alba",
+    "lastName": "Andersson",
+    "location": {
+      "address": "Uddeholmsvägen 239",
+      "city": "Stockholm",
+      "country": "SWEDEN",
+      "postalCode": 12241
+    }
+  });
 
   // Medlemslistan för tillfället, en array av json-element:
   const [members, setMembers] = useState([
@@ -65,9 +81,33 @@ function App() {
     }
   )
 
+  const [groups, setGroups] = useState([]); // Till MinaSidor
+
+  useEffect(() => {
+    const db = firebase.database();
+    const query = db.ref("groups")          // SELECT * FROM groups
+      .orderByChild("admin/firstName")      // WHERE admin
+      .equalTo("Alba")                      // = Alba
+      .limitToFirst(1);                     // LIMIT 1;
+
+    query.on("child_added", snap => {
+      // snap.key = "-MZx8..."
+      // snap.val() = elementets innehåll
+      // snap.val().firstName = t.ex "Berit"
+      
+      setGroups(groups => [...groups, snap.val()]);
+      
+
+      console.log(snap.key, snap.val());
+
+    })
+
+  }, [])
 
   return (
     <div className="App">
+      
+      <Header/>
 
       {/* <TestAPI/>  */}
       {/* <TestDatabase/> */}
@@ -75,13 +115,12 @@ function App() {
       <Router>
         <Switch>
           <Route path="/creategroup">
-            <CreateGroup />
+            <CreateGroup groups={groups} setGroups={setGroups} />
           </Route>
 
           <Route path="/testdatabase">
             <TestDatabase/>
           </Route>
-
           <Route path="/testapi">
             <TestAPI/>
           </Route>
@@ -91,11 +130,11 @@ function App() {
           </Route>
 
           <Route path="/createschedule">
-            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members}  />
+            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} />
           </Route>
 
           <Route path="/">
-            <MinaSidor/>
+            <MinaSidor me={me} groups={groups} />
           </Route>
 
         </Switch>

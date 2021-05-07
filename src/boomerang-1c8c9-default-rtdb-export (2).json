@@ -1,0 +1,60 @@
+{
+  "groups": {
+    "SAMPLE": {
+      "members": {
+        "-MZx86sFPDFcssm1azWn": {
+          "child": "Anna",
+          "email": "albacrud@gmail.com",
+          "firstName": "Alba",
+          "lastName": "Andersson",
+          "location": {
+            "address": "Uddeholmsvägen 239",
+            "city": "Stockholm",
+            "country": "SWEDEN",
+            "postalCode": 12241
+          }
+        }
+      },
+      "message": "Hej! Här kommer en inbjudan till skjutsgruppen. Mvh Alba",
+      "title": "Badmintongruppen"
+    }
+  },
+  "users": {
+    "-MZx86sFPDFcssm1azWn": {
+      "child": "Anna",
+      "email": "albacrud@gmail.com",
+      "firstName": "Alba",
+      "lastName": "Andersson",
+      "location": {
+        "address": "Uddeholmsvägen 239",
+        "city": "Stockholm",
+        "country": "SWEDEN",
+        "postalCode": 12241
+      }
+    },
+    "-MZx8kZXnfHQV5MV8BF6": {
+      "child": "Blenda",
+      "email": "beritcrud@gmail.com",
+      "firstName": "Berit",
+      "lastName": "Boman",
+      "location": {
+        "address": "Årdalavägen 133",
+        "city": "Stockholm",
+        "country": "SWEDEN",
+        "postalCode": 12432
+      }
+    },
+    "-MZx8w3jPgJOj4X3ARB-": {
+      "child": "Charlie",
+      "email": "chriscrud@gmail.com",
+      "firstName": "Chris",
+      "lastName": "Carter",
+      "location": {
+        "address": "Lerbäcksgränd 18",
+        "city": "Stockholm",
+        "country": "SWEDEN",
+        "postalCode": 12466
+      }
+    }
+  }
+}
