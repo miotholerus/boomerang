@@ -3,11 +3,14 @@ import Header from './Header'
 import { AiOutlineLeft, AiOutlineClose, AiOutlineUserAdd } from "react-icons/ai"
 import firebase from "firebase/app";
 import AltUserLogo from "./logos/AltUserLogo";
+import { useHistory } from "react-router-dom";
 
 
 export default function CreateGroup() {
 
   const db = firebase.database();
+  
+  let history = useHistory();
 
   const adminName = "Alba"; // Ska hämtas från medlemsregistret
 
@@ -70,6 +73,37 @@ export default function CreateGroup() {
     // console.log(emailList);
   }
 
+  function saveGroup(e) {
+    e.preventDefault();
+
+    const groupsRef = firebase.database().ref("groups");
+
+    const group = {
+      admin: {
+        "child": "Anna",
+        "email": "albacrud@gmail.com",
+        "firstName": "Alba",
+        "lastName": "Andersson",
+        "location": {
+          "address": "Uddeholmsvägen 239",
+          "city": "Stockholm",
+          "country": "SWEDEN",
+          "postalCode": 12241
+        }
+      },
+      title: groupName,
+      message,
+      members: userSnaps.map(user => user.val())
+    }
+
+    groupsRef.push(group); // lägger till i listan över users
+    
+    // Ska visas en popup här
+    alert("Grattis!\nDu har nu skapat en grupp.\nGår tillbaka till Mina sidor.")
+    
+    history.push("/"); // Går tillbaka till Mina sidor
+  }
+
   return (
     <div>
       {/* <Header /> */}
@@ -91,7 +125,7 @@ export default function CreateGroup() {
           <div className="blackbackground">
             <div className="whitebackground">
 
-              <form ><br></br>
+              <form onSubmit={e => saveGroup(e)}><br></br>
                 <p className="text">Namn på grupp:</p> {/* labels till inputfält? Se CreateScehdule hur */}
                 <input type="text" className="creategroupinfo borderradius standard-input" value={groupName} onChange={e => setGroupName(e.target.value)} placeholder="Ex. Badmintongruppen"></input>
 

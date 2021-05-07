@@ -45,7 +45,7 @@ export default function TestDatabase() {
     // });
 
 
-    const usersRef = firebase.database().ref("Users");
+    const usersRef = firebase.database().ref("users");
 
     const user = {
       firstName,

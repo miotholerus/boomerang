@@ -519,10 +519,11 @@ td.name{
 }
 .topline{
   position: absolute;
-  top: 100px;
+  top: 75px; /* 100px */
   left: 25px;
   width: 239px;
   height: 38px;
+  font-size: 28px;
 }
 .tagg1{
   position: absolute;

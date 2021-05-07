@@ -56,8 +56,6 @@ export default function DetailedSchedule({ schedule, members }) {
   useEffect(() => {
     
     const apiRequest = async () => {
-      
-  
       console.log("TEST API");
   
       const locA = "Uddeholmsvägen 239, 12241 Stockholm, SWEDEN"; // "59.28093793567633, 18.046790156144745"; //
@@ -136,6 +134,9 @@ export default function DetailedSchedule({ schedule, members }) {
       //         setData(apiData)
       //       })
       //   );
+
+
+      
     }
     apiRequest();
   }, [])
