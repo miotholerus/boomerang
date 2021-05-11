@@ -28,7 +28,7 @@ export default function MinaSidor({ me, groups }) {
           <div className="infogrupp">
             <p>Du är inte med i någon grupp än. Skapa en ny grupp och ett nytt körschema.</p>
 
-            <Link className="button-v2" to='/creategroup'>SKAPA NY GRUPP</Link>
+            <Link className="button-grupp" to='/creategroup'>SKAPA NY GRUPP</Link>
           </div>
         </>}
         <div>
