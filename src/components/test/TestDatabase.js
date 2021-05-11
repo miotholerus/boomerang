@@ -1,5 +1,5 @@
 ﻿import React, { useState, useEffect } from 'react'
-import firebase from "../util/firebase";
+import firebase from "../../util/firebase";
 
 export default function TestDatabase() {
   // Test add members to database
