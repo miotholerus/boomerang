@@ -204,6 +204,23 @@ i.li-user-icon {
 .button-v2:hover{
   background-color: #363636;
 }
+.button-grupp{
+  position: absolute;
+  width: 185px;
+  height: 45px;
+  left: 50px;
+  top: 85px;
+  background-color: #882E76;
+  color: #ffffff;
+  display: flex;
+  border-radius: 19px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  /* font-weight: bold;  */
+  text-decoration: none;
+  font-size: 14px;
+}
 
 
 
