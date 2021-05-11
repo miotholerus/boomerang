@@ -110,7 +110,7 @@ export default function CreateGroup() {
       <div className="page-content">
         <div>
 
-          <div className="sub-header-football">
+          <div className="sub-header">
             <div className="leftcorner">
               <AiOutlineLeft />
             </div>

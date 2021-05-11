@@ -13,7 +13,7 @@ function Football() {
 export default function FootballBanner() {
   return (
     <div>
-      <div className="sub-header-football">
+      <div className="sub-header">
         <div className="football-column">
           <Football />
         </div>

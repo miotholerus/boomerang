@@ -34,7 +34,7 @@
   }
   
   /* SUBHEADER FOTBOLLSGRUPPEN */
-  .sub-header-football {
+  .sub-header {
     display: flex;
     background-color:  #9CD09B;
     padding-top: 16px;
