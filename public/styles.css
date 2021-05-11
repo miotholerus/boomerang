@@ -595,13 +595,15 @@ td.name{
 ol.how_to{
   position: absolute;
   width:300px ;
-  height: 150px;
+  height: 200px;
   left: 10px;
   top: 570px;
   counter-reset: item;
   list-style-type: none;
   list-style-position: inside;
-  
+  background-image: url('./minasidor.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 ol.how_to li{
   position: relative;
@@ -621,8 +623,22 @@ ol.how_to li::before{
   left: -25%;
   text-align: center;
   
+}
+.start-page{
+  background-image: url('./startpage.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+  height: 300px;
+  margin-top: -7%;
   
-
+}
+.start-page2{
+  background-color: #D0E1D0;
+  height: 100%;
+}
+.start-page_mobile{
+  padding: 25%;
 }
 
 

@@ -17,6 +17,8 @@ import Header from "./components/Header";
 
 import TestAPI from "./components/TestAPI";
 import TestDatabase from "./components/TestDatabase";
+import Startpage from './components/Startpage';
+import Registrera from './components/Registrera';
 
 
 /**
@@ -108,7 +110,7 @@ function App() {
     <div className="App">
       
       <Header/>
-
+      
       {/* <TestAPI/>  */}
       {/* <TestDatabase/> */}
 
@@ -139,9 +141,9 @@ function App() {
 
         </Switch>
         
-      </Router>
+      </Router>  
       
-      {/* <GroupCreated /> */}
+        {/* <GroupCreated /> */}
 
     </div>
   );
