@@ -131,7 +131,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <form className="form">
 
           <div className="box-a aktivitet">
-            <h3>&nbsp;Aktivitet</h3>
+            <h6>&nbsp;Aktivitet</h6>
 
             {/* <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div> */}
             <div className="input-side-by-side">
@@ -186,7 +186,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
         <form className="form">
           <div className="box-a schema">
-            <h3>&nbsp;Schema</h3>
+            <h6>&nbsp;Schema</h6>
             {/* <div>&nbsp;Startdatum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div> */}
             <div className="input-side-by-side">
               <div>
@@ -213,7 +213,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
         <form className="form">
           <div className="box-a skjutsning">
-            <h3>&nbsp;Skjutsning</h3>
+            <h6>&nbsp;Skjutsning</h6>
             {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
             <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
           </select> */}

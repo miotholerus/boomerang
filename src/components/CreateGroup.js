@@ -115,7 +115,7 @@ export default function CreateGroup() {
               <AiOutlineLeft />
             </div>
             <div className="middel">
-              <h4>Skapa grupp</h4>
+              <h6>Skapa grupp</h6> {/* ska eg vara h4, men buggar då */}
             </div>
             <div className="rightcorner">
               <AiOutlineClose />

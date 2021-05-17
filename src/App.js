@@ -15,8 +15,9 @@ import CreateGroup from './components/CreateGroup';
 import MinaSidor from "./components/MinaSidor";
 import Header from "./components/Header";
 
-import TestAPI from "./components/TestAPI";
-import TestDatabase from "./components/TestDatabase";
+import TestAPI from "./components/test/TestAPI";
+import TestDatabase from "./components/test/TestDatabase";
+import TestLogin from './components/test/TestLogin';
 
 
 /**
@@ -124,6 +125,10 @@ function App() {
           <Route path="/testapi">
             <TestAPI/>
           </Route>
+          <Route path="/testlogin">
+            <TestLogin/>
+          </Route>
+          
 
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />
