@@ -9,15 +9,15 @@ export default function MinaSidor({ me, groups }) {
         <h2>Mina sidor</h2>
       </div>
 
-      <h5 className="tagg1">Skjutsningar</h5>
-      <div className="infoskjuts">
+      <h5 className="tagg">Skjutsningar</h5>
+      <div className="infobox">
         <p>Här får du upp alla dina kommande skjutsningar. För att skjutsningar ska visas behöver du gå med i en grupp och skapa ett körschema.</p>
       </div>
 
       {groups.length ?
         <>
-          <h5 className="tagg1">{groups[0].title}</h5>
-          <div className="infoskjuts">
+          <h5 className="tagg">{groups[0].title}</h5>
+          <div className="infobox">
             <p>{me.firstName + ", " + groups[0].members.reduce((m1, m2) => m1.firstName + ", " + m2.firstName)}</p>
 
             <Link className="button-grupp" to='/createschedule'>SKAPA KÖRSCHEMA</Link>
@@ -25,8 +25,8 @@ export default function MinaSidor({ me, groups }) {
         </>
 
         : <>
-          <h5 className="tagg1">Grupper</h5>
-          <div className="infoskjuts">
+          <h5 className="tagg">Grupper</h5>
+          <div className="infobox">
             <p>Du är inte med i någon grupp än. Skapa en ny grupp och ett nytt körschema.</p>
 
             <Link className="button-grupp" to='/creategroup'>SKAPA NY GRUPP</Link>

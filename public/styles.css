@@ -576,8 +576,7 @@ td.name{
   border-radius: 4px;
 }
 
-.tagg1{
-  /* position: absolute; */
+.tagg{
   margin: auto; /* centrerar element */
   width: 95.313vw;
   /* height: 38px; */
@@ -587,25 +586,7 @@ td.name{
   letter-spacing: -0.333333px;
   padding: 8px 14px;
 }
-.tagg2{
-  position: absolute;
-  width: 300px;
-  height: 38px;
-  left: 10px;
-  top: 340px;
-  border-radius: 8px 8px 0px 0px;
-  background-color: #85b093;
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
-  letter-spacing: -0.333333px;
-  padding: 8px 14px;
-
-}
-.infoskjuts{
-  /* position: absolute; */
+.infobox{
   margin: auto; /* centrerar element */
   width: 95.313vw;
   /* height: 115px; */
@@ -614,21 +595,7 @@ td.name{
   padding: 14px;
   margin-bottom: 7.5vw; /*24px;*/
 }
-.infogrupp{
-  position: absolute;
-  width: 300px;
-  height: 155px;
-  left: 10px;
-  top: 380px;
-  border-radius: 0px 0px 8px 8px;
-  background-color: #ffffff;
-  padding: 8px 14px;
-}
-.topline_2{
-  position: absolute;
-  top: 538px;
-  left: 10px;
-}
+
 .addmore{
   border: 0px;
   background-color: #FFFFFF;
