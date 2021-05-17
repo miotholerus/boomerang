@@ -19,6 +19,9 @@ import TestAPI from "./components/test/TestAPI";
 import TestDatabase from "./components/test/TestDatabase";
 import TestLogin from './components/test/TestLogin';
 
+import Startpage from './components/Startpage';
+import Registrera from './components/Registrera';
+
 
 /**
 * Hittade på stackoverflow - funktion som konverterar veckodagens nummer (date.getDay()) till veckonamnet.
@@ -67,7 +70,7 @@ function App() {
       "address": "Lerbäcksgränd 18"
     }
   ]);
-  
+
   // Schemat refaktorerat till json efter Jonatans input
   const [schedule, setSchedule] = useState(
     {
@@ -95,9 +98,9 @@ function App() {
       // snap.key = "-MZx8..."
       // snap.val() = elementets innehåll
       // snap.val().firstName = t.ex "Berit"
-      
+
       setGroups(groups => [...groups, snap.val()]);
-      
+
 
       console.log(snap.key, snap.val());
 
@@ -107,28 +110,36 @@ function App() {
 
   return (
     <div className="App">
-      
-      <Header/>
+
+      <Header />
 
       {/* <TestAPI/>  */}
       {/* <TestDatabase/> */}
 
       <Router>
         <Switch>
+
+          <Route path="/startpage">
+            <Startpage />
+          </Route>
+          <Route path="/registrera">
+            <Registrera />
+          </Route>
+
           <Route path="/creategroup">
             <CreateGroup groups={groups} setGroups={setGroups} />
           </Route>
 
           <Route path="/testdatabase">
-            <TestDatabase/>
+            <TestDatabase />
           </Route>
           <Route path="/testapi">
-            <TestAPI/>
+            <TestAPI />
           </Route>
           <Route path="/testlogin">
-            <TestLogin/>
+            <TestLogin />
           </Route>
-          
+
 
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />
@@ -143,9 +154,9 @@ function App() {
           </Route>
 
         </Switch>
-        
+
       </Router>
-      
+
       {/* <GroupCreated /> */}
 
     </div>
