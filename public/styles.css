@@ -1,30 +1,73 @@
-﻿
-/*
-h2 - Välkommen till
-h3 - Skapa gruppens körschema
-h4 - Aktivitet, Schema, Skjutsning
-h5/p - Namn på grupp:
-h1 - Inbjudan är skickad! Grattis!
-*/
-
-/* Applicerat på hela sidan - gör så att t.ex width: 343px; alltid är 343px, oavsett eventuell padding */
+﻿/* Applicerat på hela sidan - border-box gör så att t.ex width: 343px; alltid är 343px, oavsett eventuell padding */
 * {
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
 }
+
+body {
+  background-color: #F2F2ED;
+  color: black;
+}
+
+/*
+
+******** TEXT ********
+
+Responsiv font-size kalkyl:
+---------------------------------------------------------------------
+Element	| px    | vw/wh		  | Exempel
+--------+-------+-----------+------------------------------------------
+h1      | 42px  | 13.125vw  | Vi skjutsar för framtiden!
+h2		  | 28px	| 8.75vw	  | Mina sidor
+h3		  | 24px	| 7.5vw		  | Inbjudan är skickad!, Så kommer du igång!
+h4		  | 22px	| 6.875vw	  | Skapa grupp, Skapa gruppens körschema
+h5		  | 18px	| 5.625vw	  | Grupper, Tillfälle, Alba
+h6		  | 16px	| 5vw       | Aktivitet, Fotbollsgruppen
+body, p	| 16px	| 5vw		    | Adress för aktivitet
+buttons	| 14px  | 4.375vw   | SKAPA NY GRUPP
+
+*/
+h1 {
+  font-size: 13.125vw;
+}
+h2 {
+  font-size: 8.75vw;
+}
+h3 {
+  font-size: 7.5vw;
+}
+h4 {
+  font-size: 6.875vw;
+}
+h5 {
+  font-size: 5.625vw;
+}
+h6 {
+  font-size: 5vw;
+  margin-top: 0.2em;
+  margin-bottom: 0.7em;
+}
 p {
   margin-top: 0.2em;
   margin-bottom: 0.2em;
-  font-size: 16px;
-  /*line-height: 18px;*/
+  font-size: 5vw; /*16px;*/
   letter-spacing: -0.333333px;
 }
-body {
-  /* font-size: larger; */
-  background-color: #F2F2ED;
-  /* color: #363636; */
-  color: black;
-}
+
+/*
+Responsiva containers/inputfält/knappar:
+----------------------------------------
+Element/class	  | px	  | vw/vh
+----------------+-------+---------------
+all boxes     	| 305px	| 95.313vw	
+.sub-header	    | 74px	| 23.125vw
+input (höjd)	  | 34px	| 10.625vh
+.standard-input	| 280px	| 87.5vw
+.input-side-...	| 280px	| 87.5vw
+.small-input	  | 134px	| 41.875vw
+.button-v2 (h)	| 45px	| 14.063vh
+
+*/
 
 /* HEADERN */
 .header {
@@ -69,22 +112,18 @@ body {
   /* margin-left: 101px; */
 }
 
-h2{
-  font-size: 7vw; /*24px */
-  
+/* h2{
   margin-top: 1.2em;
   margin-bottom: 0.2em;
 }
 h3 {
-  font-size: 5.5vw; /* 18px */
   margin-top: 0.3em;
   margin-bottom: 0.7em;
 }
 h4 {
-  font-size: 16px;
   margin-top: 0.2em;
   margin-bottom: 0.7em;
-}
+} */
 
 /* KÖRSCHEMA (ÖVERSIKT) */
 .overview-info {
@@ -205,11 +244,13 @@ i.li-user-icon {
   background-color: #363636;
 }
 .button-grupp{
-  position: absolute;
+  /* position: absolute; */
+  margin: auto;
+  margin-top: 10vw;
+  margin-bottom: 7vw;
   width: 185px;
   height: 45px;
-  left: 50px;
-  top: 85px;
+  padding: 12px, 30px;
   background-color: #882E76;
   color: #ffffff;
   display: flex;
@@ -217,7 +258,6 @@ i.li-user-icon {
   text-align: center;
   justify-content: center;
   align-items: center;
-  /* font-weight: bold;  */
   text-decoration: none;
   font-size: 14px;
 }
@@ -308,6 +348,7 @@ input:focus {
 
 .page-content {
   width: 100%;
+  
 }
 
 /* IKONER */
@@ -534,27 +575,15 @@ td.name{
 .borderradius{
   border-radius: 4px;
 }
-.topline{
-  position: absolute;
-  top: 75px; /* 100px */
-  left: 25px;
-  width: 239px;
-  height: 38px;
-  font-size: 28px;
-}
+
 .tagg1{
-  position: absolute;
-  width: 300px;
-  height: 38px;
-  left: 10px;
-  top: 155px;
+  /* position: absolute; */
+  margin: auto; /* centrerar element */
+  width: 95.313vw;
+  /* height: 38px; */
   border-radius: 8px 8px 0px 0px;
   background-color: #85b093;
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
+  /* line-height: 25px; */
   letter-spacing: -0.333333px;
   padding: 8px 14px;
 }
@@ -576,14 +605,14 @@ td.name{
 
 }
 .infoskjuts{
-  position: absolute;
-  width: 300px;
-  height: 115px;
-  left: 10px;
-  top: 195px;
+  /* position: absolute; */
+  margin: auto; /* centrerar element */
+  width: 95.313vw;
+  /* height: 115px; */
   border-radius: 0px 0px 8px 8px;
   background-color: #ffffff;
-  padding: 8px 14px;
+  padding: 14px;
+  margin-bottom: 7.5vw; /*24px;*/
 }
 .infogrupp{
   position: absolute;
@@ -610,11 +639,10 @@ td.name{
   font-size: 16px;
 }
 ol.how_to{
-  position: absolute;
+  /* position: absolute; */
   width:300px ;
   height: 150px;
-  left: 10px;
-  top: 570px;
+  
   counter-reset: item;
   list-style-type: none;
   list-style-position: inside;
@@ -623,8 +651,8 @@ ol.how_to{
 ol.how_to li{
   position: relative;
   padding-left: 10px;
-  margin: 15px;
-  font-weight: bold;
+  margin: 25px 15px;
+  font-size: 5.625vw; /*18px;*/
 }
 ol.how_to li::before{
   font-size: 2em;;
@@ -635,11 +663,9 @@ ol.how_to li::before{
   content: counter(item)" ";
   counter-increment: item;
   position: absolute;
-  left: -25%;
+  left: -20%;
   text-align: center;
-  
-  
-
+  font-weight: bold;
 }
 
 
