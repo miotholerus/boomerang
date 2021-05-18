@@ -136,12 +136,12 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
             {/* <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div> */}
             <div className="input-side-by-side">
               <div className="input-column">
-                <label for="starttid" className="input-left">&nbsp;Starttid</label>
+                <label for="starttid" className="input-left">Starttid</label>
                 <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
               </div>
 
               <div className="input-column">
-                <label for="sluttid" className="input-right">&nbsp;Sluttid</label>
+                <label for="sluttid" className="input-right">Sluttid</label>
                 <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)}
                   className="small-input input-right"
                   id="sluttid"></input>
@@ -149,14 +149,14 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
             </div>
 
             <div>
-              <label for="adress-for-destination">&nbsp;Adress för destination</label>
+              <label for="adress-for-destination">Adress för destination</label>
               <input value={destination} onChange={e => setDestination(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
             </div>
 
 
             {/* <div className="input-side-by-side"> */}
             <div>
-              <label for="veckodag">&nbsp;Veckodag</label>
+              <label for="veckodag">Veckodag</label>
               <select value={weekday} onChange={e => setWeekday(e.target.value)}
               /*defaultValue="Veckodag"*/ className="standard-input option-list input-left"
                 id="veckodag">
@@ -190,11 +190,11 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
             {/* <div>&nbsp;Startdatum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div> */}
             <div className="input-side-by-side">
               <div>
-                <label for="startdatum" id="startdate" className="input-left">&nbsp;Startdatum</label>
+                <label for="startdatum" id="startdate" className="input-left">Startdatum</label>
                 <input value={startDate} onChange={e => setStartDate(e.target.value)} type="date" className="small-input input-left" id="startdatum"></input>
               </div>
               <div>
-                <label for="slutdatum" id="enddate" className="input-right">&nbsp;Slutdatum</label>
+                <label for="slutdatum" id="enddate" className="input-right">Slutdatum</label>
                 <input value={endDate} onChange={e => setEndDate(e.target.value)} type="date" className="small-input input-right" id="slutdatum"></input>
               </div>
             </div>

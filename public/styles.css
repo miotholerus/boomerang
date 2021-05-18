@@ -213,32 +213,39 @@ i.li-user-icon {
 
 
 .button-v1 {
-  left: 50%;
+  /* left: 50%;
   transform: translate(-50%, -0%);
-  position: relative;
-  border: none;
-  margin-bottom: 10px;
-  padding: 16px;
+  position: relative; */
+  text-transform: uppercase;
+  border: solid black 0.5vw;
+  width: 26.596vw;
+  height: 6.117vw;
+  line-height: 6.117vw;
+  text-align: center;
+  font-size: 3.191vw;
+  font-weight: bold;
+  /* padding: 0px 16px; */
   border-radius: 33px;
-  display: inline-block;
+  /* display: inline-block; */
   background-color: white;
   text-decoration: none;
   color: black;
 }
 .button-v2 {
+  /* margin: auto; */
   background-color: #882E76;
   color: white;
-  height: 43px;
+  height: 14vw; /*~45px*/
   padding-left: 32px;
   padding-right: 32px;
-  border-radius: 19px;
+  border-radius: 6vw; /*~19px;*/
   border: none;
   text-align: center;
   text-decoration: none;
   left: 50%;
   transform: translate(-50%, -0%);
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 2vw;
 }
 .button-v2:hover{
   background-color: #363636;
@@ -278,6 +285,8 @@ i.li-user-icon {
   font-style: italic;
 }
 .form {
+  /* display: block;
+  width: 100%; */
   border-radius: 8px;
 }
 input, textarea {
@@ -338,12 +347,9 @@ input:focus {
   border: solid #DFDFD2;
   border-width: thin;
 }
-/* .input-left {
-  margin-right: 1px;
+label {
+  padding-left: 1.2vw;
 }
-.input-right {
-  margin-left: 1px;
-} */
 
 
 .page-content {
@@ -608,12 +614,14 @@ td.name{
 ol.how_to{
   /* position: absolute; */
   width:300px ;
-  height: 150px;
+  height: 200px;
   
   counter-reset: item;
   list-style-type: none;
   list-style-position: inside;
-  
+  background-image: url('./minasidor.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 ol.how_to li{
   position: relative;
@@ -633,6 +641,23 @@ ol.how_to li::before{
   left: -20%;
   text-align: center;
   font-weight: bold;
+  
+}
+.start-page{
+  background-image: url('./startpage.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+  height: 300px;
+  margin-top: -7%;
+  
+}
+.start-page2{
+  background-color: #D0E1D0;
+  height: 100%;
+}
+.start-page_mobile{
+  padding: 25%;
 }
 
 

@@ -12,6 +12,7 @@ export default function TestLogin() {
     <Formik
       initialValues={{ email: "", password: "" }}
       onSubmit={(values, { setSubmitting }) => {
+        // HÄR SKRIVER VI VAD SOM HÄNDER VID LOGIN
         console.log("Submitting");
       }}
       validationSchema={Yup.object().shape({
@@ -20,21 +21,6 @@ export default function TestLogin() {
           .required("Ange epostadress"),
         password: Yup.string().required("Ange lösenord")
       })}
-      // validate={values => {
-      //   let errors = {};
-
-      //   if (!values.email) {
-      //     errors.email = "Ange epostadress";
-      //   } else if (!EmailValidator.validate(values.email)) {
-      //     errors.email = "Ogiltigt format";
-      //   }
-
-      //   if (!values.password) {
-      //     errors.password = "Ange lösenord"
-      //   }
-
-      //   return errors;
-      // }}
     >
       {(props) => {
         const {

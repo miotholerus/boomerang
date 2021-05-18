@@ -19,6 +19,10 @@ import TestAPI from "./components/test/TestAPI";
 import TestDatabase from "./components/test/TestDatabase";
 import TestLogin from './components/test/TestLogin';
 
+import Startpage from './components/Startpage';
+import Registrera from './components/Registrera';
+import Login from './components/Login';
+
 
 /**
 * Hittade på stackoverflow - funktion som konverterar veckodagens nummer (date.getDay()) till veckonamnet.
@@ -32,6 +36,10 @@ export function dayOfWeekAsString(dayIndex) {
 
 function App() {
 
+  const [loginStatus, setLoginStatus] = useState(false);
+  
+  const [myId, setMyId] = useState("");
+
   // Den som är inloggad
   const [me, setMe] = useState({
     "child": "Anna",
@@ -43,7 +51,8 @@ function App() {
       "city": "Stockholm",
       "country": "SWEDEN",
       "postalCode": 12241
-    }
+    },
+    "password": "crudcrud"
   });
 
   // Medlemslistan för tillfället, en array av json-element:
@@ -67,7 +76,7 @@ function App() {
       "address": "Lerbäcksgränd 18"
     }
   ]);
-  
+
   // Schemat refaktorerat till json efter Jonatans input
   const [schedule, setSchedule] = useState(
     {
@@ -95,9 +104,9 @@ function App() {
       // snap.key = "-MZx8..."
       // snap.val() = elementets innehåll
       // snap.val().firstName = t.ex "Berit"
-      
+
       setGroups(groups => [...groups, snap.val()]);
-      
+
 
       console.log(snap.key, snap.val());
 
@@ -107,45 +116,49 @@ function App() {
 
   return (
     <div className="App">
-      
-      <Header/>
-
-      {/* <TestAPI/>  */}
-      {/* <TestDatabase/> */}
-
       <Router>
+
+        <Header loginStatus={loginStatus} me={me}/>
+      
         <Switch>
+
+          <Route path="/registrera">
+            <Registrera />
+          </Route>
+          <Route path="/login">
+            <Login loginStatus={loginStatus} setLoginStatus={setLoginStatus} setMe={setMe} />
+          </Route>
+          <Route path="/minasidor">
+            <MinaSidor me={me} groups={groups} />
+          </Route>
           <Route path="/creategroup">
             <CreateGroup groups={groups} setGroups={setGroups} />
           </Route>
-
-          <Route path="/testdatabase">
-            <TestDatabase/>
+          <Route path="/createschedule">
+            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} />
           </Route>
-          <Route path="/testapi">
-            <TestAPI/>
-          </Route>
-          <Route path="/testlogin">
-            <TestLogin/>
-          </Route>
-          
-
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />
           </Route>
 
-          <Route path="/createschedule">
-            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} />
+          <Route path="/testdatabase">
+            <TestDatabase />
           </Route>
-
+          <Route path="/testapi">
+            <TestAPI />
+          </Route>
+          <Route path="/testlogin">
+            <TestLogin />
+          </Route>
+          
           <Route path="/">
-            <MinaSidor me={me} groups={groups} />
+            <Startpage />
           </Route>
 
         </Switch>
-        
+
       </Router>
-      
+
       {/* <GroupCreated /> */}
 
     </div>
