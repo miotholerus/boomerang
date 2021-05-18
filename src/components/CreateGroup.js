@@ -61,16 +61,6 @@ export default function CreateGroup() {
       // setUserList(userList)
 
     });
-
-    // var dbRef = db.ref("users");
-    // dbRef.orderByChild("email").equalTo(inviteEmail).limitToFirst(1).on("child_added", snap => {
-    //   console.log(snap.val());
-    // })
-
-    // Lägger till inviteEmail i emailList
-
-
-    // console.log(emailList);
   }
 
   function saveGroup(e) {
@@ -96,12 +86,12 @@ export default function CreateGroup() {
       members: userSnaps.map(user => user.val())
     }
 
-    groupsRef.push(group); // lägger till i listan över users
+    groupsRef.push(group); // lägger till i listan över groups
     
     // Ska visas en popup här
     alert("Grattis!\nDu har nu skapat en grupp.\nGår tillbaka till Mina sidor.")
     
-    history.push("/"); // Går tillbaka till Mina sidor
+    history.push("/minasidor"); // Går tillbaka till Mina sidor
   }
 
   return (
@@ -145,7 +135,7 @@ export default function CreateGroup() {
                       {emailList.map(email => {
                         console.log(email)
                         return (
-                          <tr>
+                          <tr key={email}>
                             <td>&nbsp;&nbsp;&nbsp;<AltUserLogo /></td>
                             <td>&nbsp;{email}</td>
                           </tr>
