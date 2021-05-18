@@ -1,6 +1,6 @@
-﻿import React, {useState} from 'react'
+﻿import React, { useState } from 'react'
 import firebase from "firebase/app";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function Login(props) {
   let history = useHistory();
@@ -26,21 +26,21 @@ export default function Login(props) {
 
     // Observe the promise, saving the fulfillment in a closure scope.
     var result = promise.then(
-        function(v) {
-            isFulfilled = true;
-            isPending = false;
-            return v; 
-        }, 
-        function(e) {
-            isRejected = true;
-            isPending = false;
-            throw e; 
-        }
+      function (v) {
+        isFulfilled = true;
+        isPending = false;
+        return v;
+      },
+      function (e) {
+        isRejected = true;
+        isPending = false;
+        throw e;
+      }
     );
 
-    result.isFulfilled = function() { return isFulfilled; };
-    result.isPending = function() { return isPending; };
-    result.isRejected = function() { return isRejected; };
+    result.isFulfilled = function () { return isFulfilled; };
+    result.isPending = function () { return isPending; };
+    result.isRejected = function () { return isRejected; };
     return result;
   }
 
@@ -49,49 +49,73 @@ export default function Login(props) {
 
     var keyToLogin;
 
-    console.log(email);
-
-    var result = [];
-
-    var query = db.ref("users")
+    var queryEmail = db.ref("users")
       .orderByChild("email")
       .equalTo(email.toLowerCase())
       .limitToFirst(1)
-      .once("child_added", snap => {
-        keyToLogin = snap.key;
-        console.log(snap.key);
-      }).then(() => {
-        query = db.ref("users/"+keyToLogin)
-        // .orderByChild("password")
-        // .equalTo(password)
-        // .limitToFirst(1)
-        .on("value", snap => {
-          if (snap.exists()) {
-            if (snap.val().password == password) {
-              result.push(snap);
+    // console.log("queryEmail: ", queryEmail);
+
+    queryEmail.on("value", snap => {
+
+      if (snap.exists()) {
+        queryEmail.on("child_added", snap => {
+          
+          keyToLogin = snap.key;
+
+          db.ref("users/" + keyToLogin)
+            .on("value", snap => {
               
-              props.setLoginStatus(true);
-              
-              console.log(snap.val());
-              props.setMe(snap.val());
-              
-              history.push("/minasidor")
-            } else {
-              console.log("Felaktigt lösenord")
-            }
-          }
-        })
-        // .then(() => history.push("/minasidor"))
-      })
+              if (snap.exists()) {
+                
+                if (snap.val().password == password) {
+                  props.setLoginStatus(true);
+
+                  console.log(snap.val());
+                  props.setMe(snap.val());
+
+                  history.push("/minasidor")
+                } else {
+                  console.log("Felaktigt lösenord")
+                }
+              }
+            })
+        }) 
+      } else {
+        console.log("NEJ");
+      }
+    })
     
-    console.log(query);
+
+    // queryEmail.then(() => {
+    //   console.log("queryEmail then", queryEmail);
+    //   db.ref("users/" + keyToLogin)
+    //     .on("value", snap => {
+    //       if (snap.exists()) {
+    //         if (snap.val().password == password) {
+    //           result.push(snap);
+
+    //           props.setLoginStatus(true);
+
+    //           console.log(snap.val());
+    //           props.setMe(snap.val());
+
+    //           history.push("/minasidor")
+    //         } else {
+    //           console.log("Felaktigt lösenord")
+    //         }
+    //       }
+    //     })
+    //   // .then(() => history.push("/minasidor"))
+    // })
+
+    console.log(queryEmail);
     // var querableQuery = MakeQuerablePromise(query);
 
     // console.log("Final fulfilled:", querableQuery.isFulfilled());//true
     // console.log("Final rejected:", querableQuery.isRejected());//false
     // console.log("Final pending:", querableQuery.isPending());//false
   }
-  
+
   return (
     <div className="page-content">
       <div className="loose-text-field">
@@ -104,7 +128,7 @@ export default function Login(props) {
           <input type="text" className="standard-input" id="email"
             value={email} onChange={e => setEmail(e.target.value)}>
           </input>
-          
+
           <label htmlFor="password">Lösenord</label>
           <input type="password" className="standard-input" id="password"
             value={password} onChange={e => setPassword(e.target.value)}>
@@ -113,7 +137,7 @@ export default function Login(props) {
           <button type="submit" className="button-v2">LOGGA IN</button>
         </form>
       </div>
-      
+
     </div>
   )
 }
