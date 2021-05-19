@@ -6,13 +6,13 @@ import AltUserLogo from "./logos/AltUserLogo";
 import { useHistory } from "react-router-dom";
 
 
-export default function CreateGroup() {
+export default function CreateGroup(props) {
 
   const db = firebase.database();
   
   let history = useHistory();
 
-  const adminName = "Alba"; // Ska hämtas från medlemsregistret
+  const adminName = props.me.firstName; // Ska hämtas från medlemsregistret
 
   // Tillfälliga states som uppdateras onChange, och sparas i databasen onSubmit
   const [groupName, setGroupName] = useState("");
@@ -68,25 +68,14 @@ export default function CreateGroup() {
 
     const groupsRef = firebase.database().ref("groups");
 
-    const group = {
-      admin: { // ska bytas till "me"-statet
-        "child": "Anna",
-        "email": "albacrud@gmail.com",
-        "firstName": "Alba",
-        "lastName": "Andersson",
-        "location": {
-          "address": "Uddeholmsvägen 239",
-          "city": "Stockholm",
-          "country": "SWEDEN",
-          "postalCode": 12241
-        }
-      },
+    const newGroup = {
+      admin: props.me,
       title: groupName,
       message,
       members: userSnaps.map(user => user.val())
     }
 
-    groupsRef.push(group); // lägger till i listan över groups
+    groupsRef.push(newGroup); // lägger till i databassamlingen groups
     
     // Ska visas en popup här
     alert("Grattis!\nDu har nu skapat en grupp.\nGår tillbaka till Mina sidor.")
@@ -134,7 +123,6 @@ export default function CreateGroup() {
                   <>
                     <table>
                       {emailList.map(email => {
-                        console.log(email)
                         return (
                           <tr key={email}>
                             <td>&nbsp;&nbsp;&nbsp;<AltUserLogo /></td>
