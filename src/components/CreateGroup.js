@@ -69,7 +69,7 @@ export default function CreateGroup() {
     const groupsRef = firebase.database().ref("groups");
 
     const group = {
-      admin: {
+      admin: { // ska bytas till "me"-statet
         "child": "Anna",
         "email": "albacrud@gmail.com",
         "firstName": "Alba",
