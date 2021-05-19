@@ -28,11 +28,12 @@ export default function Registrera() {
 
   return (
     <div className="page-content">
+      <div ></div>
       <form onSubmit={e => handleCreateAccount(e)} className="register_form">
         
         {/* För- och efternamn - input-side-by-side? */}
         <label for="firstName">Förnamn</label><br></br>
-        <input id="firstName"></input>
+        <input id="firstName" className="standard-input"></input>
         <br></br>
         <label for="lastName">Efternamn</label><br></br>
         <input id="lastName"></input>

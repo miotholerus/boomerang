@@ -15,16 +15,16 @@ export default function Login(props) {
 
     var keyToLogin;
 
-    var queryEmail = db.ref("users")
+    var queryOnEmail = db.ref("users")
       .orderByChild("email")
       .equalTo(email.toLowerCase())
       .limitToFirst(1)
     // console.log("queryEmail: ", queryEmail);
 
-    queryEmail.on("value", snap => {
+    queryOnEmail.on("value", snap => {
 
       if (snap.exists()) {
-        queryEmail.on("child_added", snap => {
+        queryOnEmail.on("child_added", snap => {
           
           keyToLogin = snap.key;
 
@@ -36,8 +36,9 @@ export default function Login(props) {
                 if (snap.val().password == password) {
                   props.setLoginStatus(true);
 
-                  console.log(snap.val());
+                  // console.log(snap.val());
                   props.setMe(snap.val());
+                  props.setMyId(keyToLogin);
 
                   history.push("/minasidor")
                 } else {
@@ -74,7 +75,7 @@ export default function Login(props) {
     //   // .then(() => history.push("/minasidor"))
     // })
 
-    console.log(queryEmail);
+    // console.log(queryEmail);
     // var querableQuery = MakeQuerablePromise(query);
 
     // console.log("Final fulfilled:", querableQuery.isFulfilled());//true
