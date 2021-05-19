@@ -166,14 +166,14 @@ export default function CreateGroup() {
                         </div>
                         <PopupCreateGroup trigger={buttonPopup} setTrigger={setButtonPopup}>
 
-</PopupCreateGroup>
+                        </PopupCreateGroup>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-        
-            
+
+
         </div >
     )
 }
