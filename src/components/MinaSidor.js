@@ -24,8 +24,6 @@ export default function MinaSidor() {
                     {/* <Link className="button-grupp" to='/creategroup'>SKAPA NY GRUPP</Link> */}
                     <button className="button-grupp" onClick={() => setButtonPopup(true)}>SKAPA NY GRUPP</button>
                 </div>
-                
-            
 
             <CreateGroup trigger={buttonPopup} setTrigger={setButtonPopup}>
                 
