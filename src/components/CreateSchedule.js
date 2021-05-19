@@ -123,20 +123,22 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <FootballBanner />
 
         <div className="loose-text-field">
-          <h2 className="skapagruppenskörschema">Skapa gruppens körschema</h2>
+          <h4>Skapa gruppens körschema</h4>
           <br className="changesizeofbr"></br>
         </div>
 
         <form className="form">
 
-          <div className="box-a aktivitet">
+          <div className="box-a aktivitet bottom-margin">
             <h6>&nbsp;Aktivitet</h6>
 
             {/* <div >&nbsp;Starttid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sluttid</div> */}
             <div className="input-side-by-side">
               <div className="input-column">
                 <label for="starttid" className="input-left">Starttid</label>
-                <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} className="small-input input-left" id="starttid"></input>
+                <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)}
+                  className="small-input input-left"
+                  id="starttid"></input>
               </div>
 
               <div className="input-column">
@@ -151,7 +153,6 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
               <label for="adress-for-destination">Adress för destination</label>
               <input value={destination} onChange={e => setDestination(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
             </div>
-
 
             {/* <div className="input-side-by-side"> */}
             <div>
@@ -184,7 +185,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <br className="changesizeofbr"></br>
 
         <form className="form">
-          <div className="box-a schema">
+          <div className="box-a schema bottom-margin">
             <h6>&nbsp;Schema</h6>
             {/* <div>&nbsp;Startdatum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slutdatum</div> */}
             <div className="input-side-by-side">
@@ -211,7 +212,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
         <br className="changesizeofbr"></br>
 
         <form className="form">
-          <div className="box-a skjutsning">
+          <div className="box-a skjutsning bottom-margin">
             <h6>&nbsp;Skjutsning</h6>
             {/* <select className="standard-input option-list input-left" id="ordning-for-chaufforer">
             <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>

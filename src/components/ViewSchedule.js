@@ -21,7 +21,7 @@ export default function ViewSchedule({ schedule, members }) {
         <FootballBanner />
 
         <div className="loose-text-field">
-          <h2>Översikt körschema</h2>
+          <h4>Översikt körschema</h4>
           <p class="overview-info">{dayOfWeekAsString(schedule.weekday)}ar, {schedule.startTime}-{schedule.endTime}, {schedule.destination}<br></br></p>
         </div>
 
@@ -62,6 +62,12 @@ export default function ViewSchedule({ schedule, members }) {
 
         <DetailedSchedule schedule={schedule} members={members} />
 
+        <br/>
+        <div className="button-holder-center loose-text-field">
+          <button className='button-v2'>
+            <b>Skicka ut körschema</b>
+          </button>
+        </div>
 
       </div>
     </div>
