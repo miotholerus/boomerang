@@ -126,6 +126,7 @@ input (höjd)	  | 34px	| 10.625vh
 }
 .loose-text-field {
   padding-left: 6vw;
+  padding-right: 6vw;
   margin-bottom: 0.8em;
 }
 
@@ -140,7 +141,7 @@ input (höjd)	  | 34px	| 10.625vh
 /* SUBHEADER FOTBOLLSGRUPPEN */
 .sub-header {
   display: flex;
-  background-color: #85B093;
+  background-color: #BDEDA6;
   /* padding-top: 16px; */
   align-items: center; 
   
@@ -204,7 +205,12 @@ i.li-user-icon {
 }
 
 
-
+div.button-holder-center {
+  /* margin-bottom: 20px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .button-v1 {
   /* left: 50%;
   transform: translate(-50%, -0%);
@@ -226,40 +232,46 @@ i.li-user-icon {
 }
 .button-v2 {
   /* margin: auto; */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   background-color: #FFC839;
-  color: white;
+  color: black;
   height: 14vw; /*~45px*/
   padding-left: 32px;
   padding-right: 32px;
   border-radius: 6vw; /*~19px;*/
   border: none;
+  
   text-align: center;
   text-decoration: none;
-  left: 50%;
+  /* left: 50%;
   transform: translate(-50%, -0%);
-  position: relative;
-  margin-bottom: 2vw;
+  position: relative; */
+  
+  margin-bottom: 6px;
+  font-weight: bold;
 }
 .button-v2:hover{
   background-color: #363636;
 }
 .button-grupp{
-  /* position: absolute; */
   margin: auto;
-  margin-top: 10vw;
-  margin-bottom: 7vw;
+  margin-top: 30px;
+  margin-bottom: 10px;
   width: 185px;
   height: 45px;
   padding: 12px, 30px;
-  background-color: #882E76;
-  color: #ffffff;
+  background-color: #FFC839;
+  color: black;
   display: flex;
-  border-radius: 19px;
-  text-align: center;
   justify-content: center;
   align-items: center;
+  border-radius: 19px;
+  text-align: center;
   text-decoration: none;
   font-size: 14px;
+  font-weight: bold;
 }
 
 
@@ -293,21 +305,18 @@ input, textarea {
   margin-bottom: 20px;
   margin-left: 2px;
 }
-input:focus {
+input:focus, textarea:focus {
   outline: none;
-  box-shadow: 0 0 0pt 1pt #882E76;
+  box-shadow: 0 0 0pt 1pt #2E702C;
 }
 .standard-input:focus {
   outline: none;
-  box-shadow: 0 0 0pt 1pt #882E76;
+  box-shadow: 0 0 0pt 1pt #2E702C;
 }
 .standard-input {
-  /* position: absolute; */
-  width: 88vw; /*280px;*/
   height: 34px;
-  /* left: 19px; */
-  font-size: 16px;
-  top: 438px;
+  width: 88vw; /*280px;*/
+  
   border-radius: 4px;
   border: 1px;
   margin-bottom: 20px;
@@ -496,8 +505,7 @@ td {
 }
 
 td.name{
-  width: 80%;
-  
+  width: 80%;  
 }
 
 .blackbackground{
@@ -532,16 +540,19 @@ td.name{
   display: block;
 }
 .messagetext{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 280px;
   height: 168.68px;
-  margin-left: 10px;
-  background-color: #EAEAE1;
-  display: block;
+  width: 88vw; /*280px;*/
   
-  padding-top: 5px;
+  border-radius: 4px;
+  border: 1px;
+  margin-bottom: 20px;
+  margin-left: 2px;
+  
+  padding-right: 6px;
+  border: solid #D7D7C8;
+  border-width: thin;
+  
+  padding-top: 6px;
   font-style: italic;
 }
 .leftcorner{
@@ -576,7 +587,7 @@ td.name{
   width: 95.313vw;
   /* height: 38px; */
   border-radius: 8px 8px 0px 0px;
-  background-color: #85b093;
+  background-color: #BDEDA6;
   /* line-height: 25px; */
   letter-spacing: -0.333333px;
   padding: 8px 14px;
@@ -588,15 +599,16 @@ td.name{
   border-radius: 0px 0px 8px 8px;
   background-color: #ffffff;
   padding: 14px;
-  margin-bottom: 7.5vw; /*24px;*/
+  margin-bottom: /*7.5vw;*/ 24px;
 }
 
 .addmore{
+  text-align: end;
   border: 0px;
   background-color: #FFFFFF;
-  margin-left: 144px;
+  margin-left: 41.875vw; /*134px*/
   margin-bottom: 20px;
-  color: #882E76;
+  /* color: #882E76; */
   text-decoration: underline 2px;
   font-size: 16px;
 }

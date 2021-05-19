@@ -112,18 +112,19 @@ export default function CreateGroup() {
             </div>
           </div>
 
-          <div className="blackbackground">
-            <div className="whitebackground">
+          {/* OBS: Det finns redan klasser för vita boxar */}
+          {/* <div className="blackbackground"> */}
+            <div className="box-a">
 
               <form onSubmit={e => saveGroup(e)}><br></br>
-                <p className="text">Namn på grupp:</p> {/* labels till inputfält? Se CreateScehdule hur */}
-                <input type="text" className="creategroupinfo borderradius standard-input" value={groupName} onChange={e => setGroupName(e.target.value)} placeholder="Ex. Badmintongruppen"></input>
+                <label>Namn på grupp:</label> {/* labels till inputfält? Se CreateScehdule hur */}
+                <input type="text" className="standard-input" value={groupName} onChange={e => setGroupName(e.target.value)} placeholder="Ex. Badmintongruppen"></input>
 
-                <p className="text">Meddelandetext:</p>
-                <textarea className="messagetext borderradius standard-input" value={message} onChange={e => setMessage(e.target.value)}></textarea><br></br>
+                <label>Meddelandetext:</label>
+                <textarea className="messagetext" value={message} onChange={e => setMessage(e.target.value)}></textarea><br></br>
 
-                <p className="text">Bjud in med mail eller mobilnr</p>
-                <input type="email" className="creategroupinfo borderradius standard-input" value={inviteEmail} onChange={e => setInviteEmail(e.target.value)}></input>
+                <label>Bjud in med mail eller mobilnr</label>
+                <input type="email" className="standard-input" value={inviteEmail} onChange={e => setInviteEmail(e.target.value)}></input>
 
                 <button type="button" className='addmore' onClick={e => addToList(e)}>
                   <b><AiOutlineUserAdd fontSize="25px" />Lägg till person</b>
@@ -147,15 +148,17 @@ export default function CreateGroup() {
                   : null}
 
                 {emailList.length ?
-                  <button type="submit" className='button-v2'>
-                    <b>SPARA GRUPP</b>
-                  </button>
+                  <div className="button-holder-center">
+                    <button type="submit" className='button-v2'>
+                      <b>SPARA GRUPP</b>
+                    </button>
+                  </div>
                   : null}
 
               </form>
 
             </div>
-          </div>
+          {/* </div> */}
         </div>
 
       </div>
