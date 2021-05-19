@@ -98,7 +98,7 @@ function App() {
     const query = db.ref("groups")          // SELECT * FROM groups
       .orderByChild("admin/firstName")      // WHERE admin
       .equalTo("Alba")                      // = Alba
-      .limitToFirst(1);                     // LIMIT 1;
+      // .limitToFirst(1);                     // LIMIT 1;
 
     query.on("child_added", snap => {
       // snap.key = "-MZx8..."

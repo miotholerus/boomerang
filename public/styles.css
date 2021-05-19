@@ -31,13 +31,20 @@ h1 {
   font-size: 13.125vw;
 }
 h2 {
-  font-size: 8.75vw;
+  font-size: 8.75vw; /*min(max(30px, 3vw), 50px);*/
+  /* font-size: clamp(1rem, 2.5vw, 1.5rem); */
+  /* margin-top: 1.2em;
+  margin-bottom: 0.2em; */
 }
 h3 {
   font-size: 7.5vw;
+  /* margin-top: 0.3em;
+  margin-bottom: 0.7em; */
 }
 h4 {
   font-size: 6.875vw;
+  /* margin-top: 0.2em;
+  margin-bottom: 0.7em; */
 }
 h5 {
   font-size: 5.625vw;
@@ -111,19 +118,6 @@ input (höjd)	  | 34px	| 10.625vh
   font-size: 5vw;
   /* margin-left: 101px; */
 }
-
-/* h2{
-  margin-top: 1.2em;
-  margin-bottom: 0.2em;
-}
-h3 {
-  margin-top: 0.3em;
-  margin-bottom: 0.7em;
-}
-h4 {
-  margin-top: 0.2em;
-  margin-bottom: 0.7em;
-} */
 
 /* KÖRSCHEMA (ÖVERSIKT) */
 .overview-info {
@@ -206,7 +200,6 @@ ul {
 }
 
 i.li-user-icon {
-
   font-size: 33px;
 }
 
@@ -233,7 +226,7 @@ i.li-user-icon {
 }
 .button-v2 {
   /* margin: auto; */
-  background-color: #882E76;
+  background-color: #FFC839;
   color: white;
   height: 14vw; /*~45px*/
   padding-left: 32px;
@@ -323,7 +316,6 @@ input:focus {
   padding-right: 4px;
   border: solid #D7D7C8;
   border-width: thin;
-  
 }
 .option-list {
   background-color: #F2F2ED;
@@ -340,8 +332,6 @@ input:focus {
   background-color: #F2F2ED;
   width: 42vw; /*134px;*/
   height: 34px;
-  /* left: 20px; */
-  /* top: 543px; */
   border-radius: 4px;
   border: 1px;
   border: solid #DFDFD2;
@@ -354,7 +344,6 @@ label {
 
 .page-content {
   width: 100%;
-  
 }
 
 /* IKONER */

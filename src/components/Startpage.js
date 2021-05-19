@@ -7,9 +7,9 @@ export default function Startpage() {
             <div className="start-page">
                 <h1>Vi skjutsar för framtiden!</h1>
             
-                <p className="text">Tillsammans bygegr vi broar av möjligheter vilka väver samman tid, transport och föräldrar emellan på ett enkelt och hållbart sätt.</p>
+                <p className="text">Tillsammans bygber vi broar av möjligheter vilka väver samman tid, transport och föräldrar emellan på ett enkelt och hållbart sätt.</p>
                 <br></br>
-                <button className="button-v2">REGISTRERA</button>
+                <Link to="/registrera" className="button-v2">REGISTRERA</Link>
            </div>
            <div className="start-page2">
                <br></br>

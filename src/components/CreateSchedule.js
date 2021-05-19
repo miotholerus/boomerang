@@ -119,7 +119,6 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
   return (
     <div>
-      {/* <Header /> */}
       <div className="page-content">
         <FootballBanner />
 
