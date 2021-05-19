@@ -105,6 +105,11 @@ export default function Login(props) {
           </div>
         </form>
       </div>
+      <div className="loose-text-field">
+        <p>
+          Har du inget konto? <a href="/registrera">Registrera dig här</a>
+        </p>
+      </div>
 
     </div>
   )
