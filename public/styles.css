@@ -127,7 +127,7 @@ input (höjd)	  | 34px	| 10.625vh
 .loose-text-field {
   padding-left: 6vw;
   padding-right: 6vw;
-  margin-bottom: 0.8em;
+  /* margin-bottom: 0.8em; */
 }
 
 .changesizeofbr{
@@ -530,7 +530,6 @@ td.name{
 }
 
 .text{
-  margin-left: 10px;
   font-family: Nunito;
   font-size: 16px;
   font-style: normal;
@@ -644,7 +643,7 @@ ol.how_to li::before{
   
 }
 .start-page2{
-  background-color: #D0E1D0;
+  background-color: #BDEDA6;
   height: 100%;
 }
 .start-page_mobile{
@@ -684,21 +683,15 @@ ol.how_to li::before{
   background-color: #FFFFFF;
   /* margin-left: 41.875vw; 134px */
   margin-bottom: 20px;
-  /* color: #882E76; */
   text-decoration: underline 2px;
   font-size: 14px;
+  margin-left: 10px;
 }
-
-.popup-text{
-  font-family: Nunito;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: -0.3333333432674408px;
+.custum-for-start-page{
+  font-size: 6.875vw;
+  font-weight: bold;
+  margin:0%;
 }
-/*
-
-albacrud@gmail.com
-
-*/
+.linkcolor{
+  color:#000;
+}

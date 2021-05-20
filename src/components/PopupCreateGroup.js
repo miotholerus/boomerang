@@ -41,11 +41,11 @@ export default function PopupCreateGroup(props) {
       <div className="popup-inner1">
         {/* <form><br></br> */}
         <h6>Grattis!</h6>
-        <p className="popup-text">Du har nu skapat en grupp.</p>
-        <p className="popup-text">Vill du skapa körschema?</p>
+        <p className="text">Du har nu skapat en grupp.</p>
+        <p className="text">Vill du skapa körschema?</p>
         <Link className='button-v2' to='/CreateSchedule'>SKAPA KÖRSCHEMA</Link>
         <br></br>
-        <Link className='goback' to='/minasidor'>Tillbaks till Mina sidor</Link>
+        <Link className='goback linkcolor' to='/minasidor'>Tillbaks till Mina sidor</Link>
         {/* </form> */}
         {props.children}
       </div>
