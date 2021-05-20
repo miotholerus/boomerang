@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import firebase from "firebase/app";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 export default function MinaSidor({ me, myGroups, setMyGroups }) {
+  
+  let history = useHistory();
 
   useEffect(() => {
     console.log("Kör useEffect (sätter grupplista)", me);
@@ -21,6 +23,10 @@ export default function MinaSidor({ me, myGroups, setMyGroups }) {
     })
   }, []) // körs vid varje rendering av MinaSidor (tror jag)
 
+  function createScheduleForGroup(group) {
+    
+  }
+
   return (
     <div className="page-content">
       <div className="loose-text-field">
@@ -35,6 +41,7 @@ export default function MinaSidor({ me, myGroups, setMyGroups }) {
       {myGroups.length ? 
         <>
           {myGroups.map(group =>
+            /* För varje grupp printar vi det här elementet */
             <div key={group.toString()}>
               <h5 className="tagg">{group.title}</h5>
               <div className="infobox">
@@ -44,8 +51,9 @@ export default function MinaSidor({ me, myGroups, setMyGroups }) {
                   group.members.reduce((m1, m2) => m1.firstName + ", " + m2.firstName)
                   : group.members[0].firstName)}
                 </p>
-
+                {/* Vi behöver på något vis få med oss rätt grupp till CreateSchedule */}
                 <Link className="button-grupp" to='/createschedule'>SKAPA KÖRSCHEMA</Link>
+                <button className="button-v2" onClick={() => createScheduleForGroup(group)}>Skapa körschema</button>
               </div>
             </div>
           )}

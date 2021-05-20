@@ -6,11 +6,9 @@ import RideObject from '../RideObject'
 import ChooseDrivers from './ChooseDrivers';
 import { useForm } from 'react-hook-form';
 
-export default function CreateSchedule({ schedule, setSchedule, members }) {
-  // "history" 
+export default function CreateSchedule({ schedule, setSchedule, members, setMembers }) {
+
   let history = useHistory();
-
-
 
   // Uppdateras varje gång input ändras
   const [startTime, setStartTime] = useState("");

@@ -1,6 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
-import firebase from "firebase/app";
+import { useState } from 'react'
 
 import {
   BrowserRouter as Router,
@@ -92,7 +91,7 @@ function App() {
     }
   )
 
-  const [myGroups, setMyGroups] = useState([]); // Till MinaSidor
+  const [myGroups, setMyGroups] = useState([]); // Till MinaSidor?
 
   return (
     <div className="App">
@@ -110,7 +109,7 @@ function App() {
             <Login loginStatus={loginStatus} setLoginStatus={setLoginStatus} setMe={setMe} setMyId={setMyId} />
           </Route>
 
-          {/* Nås bara som inloggad */}
+          {/* Nås bara som inloggad - skapa en LoggedIn-komponent för att samla allt? */}
           <Route path="/minasidor">
             <MinaSidor me={me} myGroups={myGroups} setMyGroups={setMyGroups} />
           </Route>
@@ -118,7 +117,7 @@ function App() {
             <CreateGroup me={me} myId={myId} myGroups={myGroups} setMyGroups={setMyGroups} />
           </Route>
           <Route path="/createschedule">
-            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} />
+            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} setMembers={setMembers} />
           </Route>
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />
