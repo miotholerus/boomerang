@@ -656,14 +656,14 @@ ol.how_to li::before{
   top: 0;
   left: 0;
   width: 100%;
-  height: 0vh;
-  background-color: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  background-color: rgba(34, 32, 32, 0.2);
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  border-radius: 5px solid black;
+  /* align-items: center;
+  border-radius: 5px solid black; */
 
 }
 
@@ -679,14 +679,23 @@ ol.how_to li::before{
   border-radius: 5px solid black;
 }
 .goback{
-  text-align: flex-start;
+  text-align: center;
   border: 0px;
   background-color: #FFFFFF;
   /* margin-left: 41.875vw; 134px */
   margin-bottom: 20px;
   /* color: #882E76; */
   text-decoration: underline 2px;
-  font-size: 16px;
+  font-size: 14px;
+}
+
+.popup-text{
+  font-family: Nunito;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.3333333432674408px;
 }
 /*
 
