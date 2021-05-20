@@ -118,7 +118,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
   return (
     <div>
       <div className="page-content">
-        <FootballBanner />
+        <FootballBanner /*props*//>
 
         <div className="loose-text-field">
           <h4>Skapa gruppens körschema</h4>

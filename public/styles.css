@@ -87,7 +87,6 @@ input (höjd)	  | 34px	| 10.625vh
 /* Header side-by-side-försök */
 .flex {
   display: flex;
-
 }
 .left {
   display: flex;
@@ -137,7 +136,6 @@ input (höjd)	  | 34px	| 10.625vh
   font-size: 24%;
 }
 
-
 /* SUBHEADER FOTBOLLSGRUPPEN */
 .sub-header {
   display: flex;
@@ -174,7 +172,6 @@ input (höjd)	  | 34px	| 10.625vh
 #members {
   font-weight: normal;
 }
-
 
 /* BOXAR */
 .box-a {
