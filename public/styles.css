@@ -127,7 +127,7 @@ input (höjd)	  | 34px	| 10.625vh
 .loose-text-field {
   padding-left: 6vw;
   padding-right: 6vw;
-  margin-bottom: 0.8em;
+  /* margin-bottom: 0.8em; */
 }
 
 .changesizeofbr{
@@ -530,7 +530,6 @@ td.name{
 }
 
 .text{
-  margin-left: 10px;
   font-family: Nunito;
   font-size: 16px;
   font-style: normal;
@@ -644,7 +643,7 @@ ol.how_to li::before{
   
 }
 .start-page2{
-  background-color: #D0E1D0;
+  background-color: #BDEDA6;
   height: 100%;
 }
 .start-page_mobile{
@@ -656,14 +655,14 @@ ol.how_to li::before{
   top: 0;
   left: 0;
   width: 100%;
-  height: 0vh;
-  background-color: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  background-color: rgba(34, 32, 32, 0.2);
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  border-radius: 5px solid black;
+  /* align-items: center;
+  border-radius: 5px solid black; */
 
 }
 
@@ -679,17 +678,20 @@ ol.how_to li::before{
   border-radius: 5px solid black;
 }
 .goback{
-  text-align: flex-start;
+  text-align: center;
   border: 0px;
   background-color: #FFFFFF;
   /* margin-left: 41.875vw; 134px */
   margin-bottom: 20px;
-  /* color: #882E76; */
   text-decoration: underline 2px;
-  font-size: 16px;
+  font-size: 14px;
+  margin-left: 10px;
 }
-/*
-
-albacrud@gmail.com
-
-*/
+.custum-for-start-page{
+  font-size: 6.875vw;
+  font-weight: bold;
+  margin:0%;
+}
+.linkcolor{
+  color:#000;
+}
