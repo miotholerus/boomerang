@@ -55,6 +55,8 @@ function App() {
     "password": "crudcrud"
   });
 
+  const [currentGroup, setCurrentGroup] = useState({});
+
   // Medlemslistan för tillfället, en array av json-element:
   const [members, setMembers] = useState([
     {
@@ -111,13 +113,13 @@ function App() {
 
           {/* Nås bara som inloggad - skapa en LoggedIn-komponent för att samla allt? */}
           <Route path="/minasidor">
-            <MinaSidor me={me} myGroups={myGroups} setMyGroups={setMyGroups} />
+            <MinaSidor me={me} myGroups={myGroups} setMyGroups={setMyGroups} setCurrentGroup={setCurrentGroup} />
           </Route>
           <Route path="/creategroup">
             <CreateGroup me={me} myId={myId} myGroups={myGroups} setMyGroups={setMyGroups} />
           </Route>
           <Route path="/createschedule">
-            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} setMembers={setMembers} />
+            <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} setMembers={setMembers} currentGroup={currentGroup} />
           </Route>
           <Route path="/viewschedule">
             <ViewSchedule schedule={schedule} members={members} />

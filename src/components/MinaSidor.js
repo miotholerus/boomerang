@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import firebase from "firebase/app";
 import { Link, useHistory } from 'react-router-dom';
-export default function MinaSidor({ me, myGroups, setMyGroups }) {
+export default function MinaSidor({ me, myGroups, setMyGroups, setCurrentGroup }) {
   
   let history = useHistory();
 
   useEffect(() => {
     console.log("Kör useEffect (sätter grupplista)", me);
+    setMyGroups([]);
 
     const db = firebase.database();
     const query = db.ref("groups")          // SELECT * FROM groups
@@ -24,7 +25,9 @@ export default function MinaSidor({ me, myGroups, setMyGroups }) {
   }, []) // körs vid varje rendering av MinaSidor (tror jag)
 
   function createScheduleForGroup(group) {
-    
+    setCurrentGroup(group);
+
+    history.push("/createschedule");
   }
 
   return (
@@ -52,8 +55,10 @@ export default function MinaSidor({ me, myGroups, setMyGroups }) {
                   : group.members[0].firstName)}
                 </p>
                 {/* Vi behöver på något vis få med oss rätt grupp till CreateSchedule */}
-                <Link className="button-grupp" to='/createschedule'>SKAPA KÖRSCHEMA</Link>
-                <button className="button-v2" onClick={() => createScheduleForGroup(group)}>Skapa körschema</button>
+                {/* <Link className="button-grupp" to='/createschedule'>SKAPA KÖRSCHEMA</Link> */}
+                <div className="button-holder-center">
+                  <button className="button-v2" onClick={() => createScheduleForGroup(group)}>Skapa körschema</button>
+                </div>
               </div>
             </div>
           )}

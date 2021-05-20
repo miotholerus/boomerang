@@ -6,7 +6,7 @@ import RideObject from '../RideObject'
 import ChooseDrivers from './ChooseDrivers';
 import { useForm } from 'react-hook-form';
 
-export default function CreateSchedule({ schedule, setSchedule, members, setMembers }) {
+export default function CreateSchedule({ schedule, setSchedule, members, setMembers, currentGroup }) {
 
   let history = useHistory();
 

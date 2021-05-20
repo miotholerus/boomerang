@@ -63,7 +63,7 @@ export default function CreateGroup(props) {
       members: userSnaps.map(user => user.val())
     }
 
-    // groupsRef.push(newGroup); // lägger till i databassamlingen groups
+    groupsRef.push(newGroup); // lägger till i databassamlingen groups
 
 
   // // Ska visas en popup här
