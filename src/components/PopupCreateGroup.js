@@ -45,7 +45,7 @@ export default function PopupCreateGroup(props) {
         <p className="text">Vill du skapa körschema?</p>
         <Link className='button-v2' to='/CreateSchedule'>SKAPA KÖRSCHEMA</Link>
         <br></br>
-        <Link className='goback' to='/minasidor'>Tillbaks till Mina sidor</Link>
+        <Link className='goback linkcolor' to='/minasidor'>Tillbaks till Mina sidor</Link>
         {/* </form> */}
         {props.children}
       </div>

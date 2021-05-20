@@ -106,8 +106,8 @@ export default function Login(props) {
         </form>
       </div>
       <div className="loose-text-field">
-        <p>
-          Har du inget konto? <a href="/registrera">Registrera dig här</a>
+        <p className="linkcolor">
+          Har du inget konto? <a className="linkcolor" href="/registrera">Registrera dig här</a>
         </p>
       </div>
 
