@@ -1,0 +1,123 @@
+{
+  "groups" : {
+    "-Ma3h_mW-khrc7Nli1Wj" : {
+      "admin" : {
+        "children" : [ {
+            "firstName": "Anna"
+        } ],
+        "email" : "albacrud@gmail.com",
+        "firstName" : "Alba",
+        "lastName" : "Andersson",
+        "location" : {
+          "address" : "Uddeholmsvägen 239",
+          "city" : "Stockholm",
+          "country" : "SWEDEN",
+          "postalCode" : 12241
+        }
+      },
+      "members" : [ {
+        "children" : [ {
+          "firstName": "Charlie"
+        } ],
+        "email" : "chriscrud@gmail.com",
+        "firstName" : "Chris",
+        "lastName" : "Carter",
+        "location" : {
+          "address" : "Lerbäcksgränd 18",
+          "city" : "Stockholm",
+          "country" : "SWEDEN",
+          "postalCode" : 12466
+        },
+        "password" : "crudcrud",
+        "phone" : "0703333333"
+      }, {
+        "children" : [ {
+          "firstName": "Anna"
+        } ],
+        "email" : "albacrud@gmail.com",
+        "firstName" : "Alba",
+        "lastName" : "Andersson",
+        "location" : {
+          "address" : "Uddeholmsvägen 239",
+          "city" : "Stockholm",
+          "country" : "SWEDEN",
+          "postalCode" : 12241
+        },
+        "password" : "crudcrud",
+        "phone" : "0701111111"
+      } ],
+      "message" : "Hej, här är en inbjudan till skjutsgruppen som vi pratade om. Gå med i gruppen så skapar vi ett gemensamt körschema. Du registrerar dig på boomerang.nu\nMvh Berit",
+      "title" : "Badminton"
+    },
+    "SAMPLE" : {
+      "members" : {
+        "-MZx86sFPDFcssm1azWn" : {
+          "children" : [ {
+            "firstName": "Anna"
+          } ],
+          "email" : "albacrud@gmail.com",
+          "firstName" : "Alba",
+          "lastName" : "Andersson",
+          "location" : {
+            "address" : "Uddeholmsvägen 239",
+            "city" : "Stockholm",
+            "country" : "SWEDEN",
+            "postalCode" : 12241
+          }
+        }
+      },
+      "message" : "Hej! Här kommer en inbjudan till skjutsgruppen. Mvh Alba",
+      "title" : "Badmintongruppen"
+    }
+  },
+  "users" : {
+    "-MZx86sFPDFcssm1azWn" : {
+      "children" : [ {
+        "firstName": "Anna"
+      } ],
+      "email" : "albacrud@gmail.com",
+      "firstName" : "Alba",
+      "lastName" : "Andersson",
+      "location" : {
+        "address" : "Uddeholmsvägen 239",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12241
+      },
+      "password" : "crudcrud",
+      "phone" : "0701111111"
+    },
+    "-MZx8kZXnfHQV5MV8BF6" : {
+      "children" : [ {
+        "firstName": "Blenda"
+      } ],
+      "email" : "beritcrud@gmail.com",
+      "firstName" : "Berit",
+      "lastName" : "Boman",
+      "location" : {
+        "address" : "Årdalavägen 133",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12432
+      },
+      "password" : "crudcrud",
+      "phone" : "0702222222"
+    },
+    "-MZx8w3jPgJOj4X3ARB-" : {
+      "children" : [ {
+        "firstName": "Charlie"
+      } ],
+      "email" : "chriscrud@gmail.com",
+      "firstName" : "Chris",
+      "lastName" : "Carter",
+      "location" : {
+        "address" : "Lerbäcksgränd 18",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12466
+      },
+      "password" : "crudcrud",
+      "phone" : "0703333333"
+    }
+  }
+}

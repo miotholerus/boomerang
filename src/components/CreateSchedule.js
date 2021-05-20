@@ -119,7 +119,6 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
   return (
     <div>
-      {/* <Header /> */}
       <div className="page-content">
         <FootballBanner />
 
@@ -230,7 +229,10 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
           </div> */}
 
           <br className="changesizeofbr"></br>
-          <button type="button" className="button-v2" onClick={saveSchedule}>SPARA KÖRSCHEMA</button>
+          <div className="button-holder-center loose-text-field">
+            <button type="button" className="button-v2" onClick={saveSchedule}>SPARA KÖRSCHEMA</button>
+          </div>
+          
 
         </form>
       </div>

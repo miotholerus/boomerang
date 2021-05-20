@@ -20,7 +20,12 @@ export default function MinaSidor({ me, groups }) {
             <div key={group.toString()}>
               <h5 className="tagg">{group.title}</h5>
               <div className="infobox">
-                <p>{me.firstName + ", " + groups[0].members.reduce((m1, m2) => m1.firstName + ", " + m2.firstName)}</p>
+                <p>
+                  {me.firstName + ", "
+                  + (group.members.length > 1 ?
+                  group.members.reduce((m1, m2) => m1.firstName + ", " + m2.firstName)
+                  : group.members[0].firstName)}
+                </p>
 
                 <Link className="button-grupp" to='/createschedule'>SKAPA KÖRSCHEMA</Link>
               </div>
