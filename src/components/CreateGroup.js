@@ -9,7 +9,6 @@ import PopupCreateGroup from './PopupCreateGroup';
 
 export default function CreateGroup(props) {
 
-  const db = firebase.database();
 
   const [buttonPopup, setButtonPopup] = useState(false);
   const db = firebase.database();
