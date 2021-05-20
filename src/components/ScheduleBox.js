@@ -6,7 +6,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
   return (
     <div>
       <div className="loose-text-field">
-        <h4>{schedule.rides[0].dateAsStringShort()}</h4>
+        <h5>{schedule.rides[0].dateAsStringShort()}</h5>
       </div>
 
       <div className="schedule-box">

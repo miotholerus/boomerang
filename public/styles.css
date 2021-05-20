@@ -182,17 +182,30 @@ input (höjd)	  | 34px	| 10.625vh
   padding: 10px;
   margin: 8px;
   border-radius: 8px;
+  margin-bottom: 12px;
+}
+.bottom-margin {
   margin-bottom: 30px;
 }
-.group-box {
-  border-radius: 8px;
+.tagg{
+  margin: auto; /* centrerar element */
+  width: 95.313vw;
+  /* height: 38px; */
+  border-radius: 8px 8px 0px 0px;
+  background-color: #BDEDA6;
+  /* line-height: 25px; */
+  letter-spacing: -0.333333px;
+  padding: 8px 14px;
 }
-.before-create-schedule-box {
-  margin: 33px;
-  border-radius: 0px;
+.infobox{
+  margin: auto; /* centrerar element */
+  width: 95.313vw;
+  /* height: 115px; */
+  border-radius: 0px 0px 8px 8px;
+  background-color: #ffffff;
+  padding: 14px;
+  margin-bottom: /*7.5vw;*/ 24px;
 }
-
-
 
 /* LISTOR */
 ul {
@@ -251,6 +264,8 @@ div.button-holder-center {
   
   margin-bottom: 6px;
   font-weight: bold;
+
+  text-transform: uppercase;
 }
 .button-v2:hover{
   background-color: #363636;
@@ -483,15 +498,11 @@ td {
   letter-spacing: -0.333333px;
 }
 
-.schedule-box2 i { /* ska eg vara en ikon ingen h1:a */
+.schedule-box2 i {
   margin-top: 0;
   margin-bottom: 0.1em;
   margin-right: 0.1em;
   font-size: 28px;
-}
-
-.skapagruppenskörschema{
-  font-size: 140%;
 }
 
 .hamburgarmeny{
@@ -579,26 +590,6 @@ td.name{
 }
 .borderradius{
   border-radius: 4px;
-}
-
-.tagg{
-  margin: auto; /* centrerar element */
-  width: 95.313vw;
-  /* height: 38px; */
-  border-radius: 8px 8px 0px 0px;
-  background-color: #BDEDA6;
-  /* line-height: 25px; */
-  letter-spacing: -0.333333px;
-  padding: 8px 14px;
-}
-.infobox{
-  margin: auto; /* centrerar element */
-  width: 95.313vw;
-  /* height: 115px; */
-  border-radius: 0px 0px 8px 8px;
-  background-color: #ffffff;
-  padding: 14px;
-  margin-bottom: /*7.5vw;*/ 24px;
 }
 
 .addmore{

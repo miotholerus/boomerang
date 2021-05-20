@@ -40,7 +40,7 @@ function App() {
   
   const [myId, setMyId] = useState("");
 
-  // Den som är inloggad
+  // Den som är inloggad (när ingen är inloggad är det Alba)
   const [me, setMe] = useState({
     "child": "Anna",
     "email": "albacrud@gmail.com",
@@ -52,6 +52,7 @@ function App() {
       "country": "SWEDEN",
       "postalCode": 12241
     },
+    "phone": "0701111111",
     "password": "crudcrud"
   });
 
@@ -91,28 +92,7 @@ function App() {
     }
   )
 
-  const [groups, setGroups] = useState([]); // Till MinaSidor
-
-  useEffect(() => {
-    const db = firebase.database();
-    const query = db.ref("groups")          // SELECT * FROM groups
-      .orderByChild("admin/firstName")      // WHERE admin
-      .equalTo("Alba")                      // = Alba
-      // .limitToFirst(1);                     // LIMIT 1;
-
-    query.on("child_added", snap => {
-      // snap.key = "-MZx8..."
-      // snap.val() = elementets innehåll
-      // snap.val().firstName = t.ex "Berit"
-
-      setGroups(groups => [...groups, snap.val()]);
-
-
-      console.log(snap.key, snap.val());
-
-    })
-
-  }, [])
+  const [myGroups, setMyGroups] = useState([]); // Till MinaSidor
 
   return (
     <div className="App">
@@ -122,17 +102,20 @@ function App() {
       
         <Switch>
 
+          {/* Nås bara som utloggad */}
           <Route path="/registrera">
             <Registrera />
           </Route>
           <Route path="/login">
-            <Login loginStatus={loginStatus} setLoginStatus={setLoginStatus} setMe={setMe} />
+            <Login loginStatus={loginStatus} setLoginStatus={setLoginStatus} setMe={setMe} setMyId={setMyId} />
           </Route>
+
+          {/* Nås bara som inloggad */}
           <Route path="/minasidor">
-            <MinaSidor me={me} groups={groups} />
+            <MinaSidor me={me} myGroups={myGroups} setMyGroups={setMyGroups} />
           </Route>
           <Route path="/creategroup">
-            <CreateGroup groups={groups} setGroups={setGroups} />
+            <CreateGroup me={me} myId={myId} myGroups={myGroups} setMyGroups={setMyGroups} />
           </Route>
           <Route path="/createschedule">
             <CreateSchedule schedule={schedule} setSchedule={setSchedule} members={members} />
@@ -141,6 +124,7 @@ function App() {
             <ViewSchedule schedule={schedule} members={members} />
           </Route>
 
+          {/* Testsidor */}
           <Route path="/testdatabase">
             <TestDatabase />
           </Route>
@@ -151,6 +135,7 @@ function App() {
             <TestLogin />
           </Route>
           
+          {/* Nås av alla? */}
           <Route path="/">
             <Startpage />
           </Route>

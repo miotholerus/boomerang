@@ -58,11 +58,6 @@ export default function TestDatabase() {
 
     usersRef.push(user); // lägger till i listan över users
 
-
-
-
-
-
   }
 
   return (
