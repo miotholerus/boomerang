@@ -139,7 +139,7 @@ input (höjd)	  | 34px	| 10.625vh
 
 
 /* SUBHEADER FOTBOLLSGRUPPEN */
-.sub-header-football {
+.sub-header {
   display: flex;
   background-color: #BDEDA6;
   /* padding-top: 16px; */
@@ -525,11 +525,10 @@ td.name{
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
-}
-.whitebackground{
   background: #FFFFFF;
   border-radius: 8px;
 }
+
 .text{
   margin-left: 10px;
   font-family: Nunito;
@@ -652,4 +651,45 @@ ol.how_to li::before{
   padding: 25%;
 }
 
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0vh;
+  background-color: rgba(0, 0, 0, 0.2);
 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px solid black;
+
+}
+
+.popup-inner1 {
+  position: relative;
+  padding: 32px;
+  width: 85%;
+  max-width: 640px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;  
+  margin: 50%;
+  border-radius: 5px solid black;
+}
+.goback{
+  text-align: flex-start;
+  border: 0px;
+  background-color: #FFFFFF;
+  /* margin-left: 41.875vw; 134px */
+  margin-bottom: 20px;
+  /* color: #882E76; */
+  text-decoration: underline 2px;
+  font-size: 16px;
+}
+/*
+
+albacrud@gmail.com
+
+*/
