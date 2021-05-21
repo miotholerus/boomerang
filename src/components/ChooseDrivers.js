@@ -43,7 +43,7 @@ export default function ChooseDrivers({rides, setRides, members}) {
     }
 
     const returnOptions = members.map(member => {
-      return <option value={member.id}>{member.name}</option>
+      return <option value={member.id}>{member.firstName}</option>
     })
 
     

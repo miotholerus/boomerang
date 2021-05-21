@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import Header from './Header'
+import React, { useState } from 'react'
 import { AiOutlineLeft, AiOutlineClose, AiOutlineUserAdd } from "react-icons/ai"
 import firebase from "firebase/app";
 import AltUserLogo from "./logos/AltUserLogo";
@@ -7,15 +6,14 @@ import { useHistory } from "react-router-dom";
 import PopupCreateGroup from './PopupCreateGroup';
 
 
-export default function CreateGroup(props) {
-
+export default function CreateGroup({me, myId}) {
 
   const [buttonPopup, setButtonPopup] = useState(false);
   const db = firebase.database();
 
   let history = useHistory();
 
-  const adminName = props.me.firstName; // Ska hämtas från medlemsregistret
+  const adminName = me.firstName; // Ska hämtas från medlemsregistret
 
   // Tillfälliga states som uppdateras onChange, och sparas i databasen onSubmit
   const [groupName, setGroupName] = useState("");
@@ -57,7 +55,7 @@ export default function CreateGroup(props) {
     const groupsRef = firebase.database().ref("groups");
 
     const newGroup = {
-      admin: props.me,
+      admin: me,
       title: groupName,
       message,
       members: userSnaps.map(user => user.val())

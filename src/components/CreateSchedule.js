@@ -1,12 +1,23 @@
 ﻿import React, { useState, useEffect } from 'react'
-import Header from './Header'
 import { useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner'
 import RideObject from '../RideObject'
 import ChooseDrivers from './ChooseDrivers';
-import { useForm } from 'react-hook-form';
 
 export default function CreateSchedule({ schedule, setSchedule, members, setMembers, currentGroup }) {
+
+  useEffect(() => {
+    // setMembers([]);
+    var memberList = [];
+
+    memberList.push(currentGroup.admin);
+
+    currentGroup.members.map(member => memberList.push(member));
+
+    console.log("memberList: ", memberList);
+
+    setMembers(memberList);
+  }, []);
 
   let history = useHistory();
 
@@ -118,7 +129,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
   return (
     <div>
       <div className="page-content">
-        <FootballBanner /*props*//>
+        <FootballBanner currentGroup={currentGroup} members={members}/>
 
         <div className="loose-text-field">
           <h4>Skapa gruppens körschema</h4>

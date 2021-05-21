@@ -11,9 +11,8 @@ export default function MinaSidor({ me, myGroups, setMyGroups, setCurrentGroup }
 
     const db = firebase.database();
     const query = db.ref("groups")          // SELECT * FROM groups
-      .orderByChild("admin/firstName")      // WHERE admin
-      .equalTo(me.firstName)                // = den inloggades förnamn (bör eg vara id men det finns inte i "me")
-      // .limitToFirst(1);                     // LIMIT 1;
+      .orderByChild("admin/email")          // WHERE admin/email
+      .equalTo(me.email)                    // = den inloggades email
 
     query.on("child_added", snap => {
       // snap.key = "-MZx8..."
@@ -49,10 +48,10 @@ export default function MinaSidor({ me, myGroups, setMyGroups, setCurrentGroup }
               <h5 className="tagg">{group.title}</h5>
               <div className="infobox">
                 <p>
-                  {me.firstName + ", "
-                  + (group.members.length > 1 ?
+                  {me.firstName + ", "+group.members.map(m => m.firstName).join(", ")
+                  /*+ (group.members.length > 1 ?
                   group.members.reduce((m1, m2) => m1.firstName + ", " + m2.firstName)
-                  : group.members[0].firstName)}
+                  : group.members[0].firstName)*/}
                 </p>
                 {/* Vi behöver på något vis få med oss rätt grupp till CreateSchedule */}
                 {/* <Link className="button-grupp" to='/createschedule'>SKAPA KÖRSCHEMA</Link> */}

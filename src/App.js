@@ -55,7 +55,51 @@ function App() {
     "password": "crudcrud"
   });
 
-  const [currentGroup, setCurrentGroup] = useState({});
+  const [currentGroup, setCurrentGroup] = useState({
+    "admin" : {
+      "child" : "Anna",
+      "email" : "albacrud@gmail.com",
+      "firstName" : "Alba",
+      "lastName" : "Andersson",
+      "location" : {
+        "address" : "Uddeholmsvägen 239",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12241
+      },
+      "password" : "crudcrud",
+      "phone" : "0701111111"
+    },
+    "members" : [ {
+      "child" : "Blenda",
+      "email" : "beritcrud@gmail.com",
+      "firstName" : "Berit",
+      "lastName" : "Boman",
+      "location" : {
+        "address" : "Årdalavägen 133",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12432
+      },
+      "password" : "crudcrud",
+      "phone" : "0702222222"
+    }, {
+      "child" : "Charlie",
+      "email" : "chriscrud@gmail.com",
+      "firstName" : "Chris",
+      "lastName" : "Carter",
+      "location" : {
+        "address" : "Lerbäcksgränd 18",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12466
+      },
+      "password" : "crudcrud",
+      "phone" : "0703333333"
+    } ],
+    "message" : "Hej, här är en inbjudan till skjutsgruppen som vi pratade om. Gå med i gruppen så skapar vi ett gemensamt körschema. Du registrerar dig på boomerang.nu\nMvh Alba",
+    "title" : "Exempelgrupp"
+  });
 
   // Medlemslistan för tillfället, en array av json-element:
   const [members, setMembers] = useState([
@@ -118,9 +162,7 @@ function App() {
               setCurrentGroup={setCurrentGroup} />
           </Route>
           <Route path="/creategroup">
-            <CreateGroup
-              me={me} myId={myId}
-              myGroups={myGroups} setMyGroups={setMyGroups} />
+            <CreateGroup me={me} myId={myId} />
           </Route>
           <Route path="/createschedule">
             <CreateSchedule
@@ -129,7 +171,7 @@ function App() {
               currentGroup={currentGroup} />
           </Route>
           <Route path="/viewschedule">
-            <ViewSchedule schedule={schedule} members={members} />
+            <ViewSchedule currentGroup={currentGroup} schedule={schedule} members={members} />
           </Route>
 
           {/* Testsidor */}

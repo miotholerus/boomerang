@@ -19,7 +19,6 @@ export default function Login(props) {
       .orderByChild("email")
       .equalTo(email.toLowerCase())
       .limitToFirst(1)
-    // console.log("queryEmail: ", queryEmail);
 
     queryOnEmail.on("value", snap => {
 
@@ -36,7 +35,6 @@ export default function Login(props) {
                 if (snap.val().password == password) {
                   props.setLoginStatus(true);
 
-                  // console.log(snap.val());
                   props.setMe(snap.val());
                   props.setMyId(keyToLogin);
 
@@ -46,9 +44,9 @@ export default function Login(props) {
                 }
               }
             })
-        }) 
+        })
       } else {
-        console.log("NEJ");
+        console.log("Användaren hittades ej");
       }
     })
     

@@ -1,14 +1,13 @@
 ﻿import React from 'react'
-import Header from './Header'
 
 import { dayOfWeekAsString } from '../App'
 import FootballBanner from './FootballBanner'
 
 import DetailedSchedule from './DetailedSchedule'
-import ChooseDrivers from './ChooseDrivers'
 
 
-export default function ViewSchedule({ schedule, members }) {
+
+export default function ViewSchedule({ currentGroup, schedule, members }) {
 
   // console.log("Kör ViewSchedule, schedule:", schedule)
   console.log("schedule:", schedule)
@@ -18,7 +17,7 @@ export default function ViewSchedule({ schedule, members }) {
       {/* <Header /> */}
 
       <div className="page-content">
-        <FootballBanner />
+        <FootballBanner currentGroup={currentGroup} members={members} />
 
         <div className="loose-text-field">
           <h4>Översikt körschema</h4>
@@ -47,8 +46,8 @@ export default function ViewSchedule({ schedule, members }) {
                   return (
                     <tr>
                       <td>{ride.dateAsStringShort()}</td>
-                      <td>{ride.driverTo.name}</td>
-                      <td>{ride.driverFrom.name}</td>
+                      <td>{ride.driverTo.firstName}</td>
+                      <td>{ride.driverFrom.firstName}</td>
                     </tr>
                   )
                   // <RideOccation key={ride.id} ride={ride} />

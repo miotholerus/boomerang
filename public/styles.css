@@ -308,7 +308,7 @@ div.button-holder-center {
 }
 input, textarea {
   font-size: 15px;
-  background-color: #F2F2ED;
+  background-color: #EAEAE1;
   /*DFDFD2*/
   
   border-width: 1px;
@@ -339,7 +339,7 @@ input:focus, textarea:focus {
   border-width: thin;
 }
 .option-list {
-  background-color: #F2F2ED;
+  /* background-color: #F2F2ED; */
   padding-left: 7px;
   padding-right: 7px;
   /* color: #767676; */
@@ -350,7 +350,7 @@ input:focus, textarea:focus {
   justify-content: space-between;
 }
 .small-input {
-  background-color: #F2F2ED;
+  background-color: #EAEAE1;
   width: 42vw; /*134px;*/
   height: 34px;
   border-radius: 4px;
@@ -527,8 +527,8 @@ td.name{
 }
 
 .text{
-  font-family: Nunito;
-  font-size: 16px;
+  /* font-family: Nunito; */
+  font-size: 17px;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
@@ -635,8 +635,8 @@ ol.how_to li::before{
   background-repeat: no-repeat;
   background-size: cover;
   color: #FFFFFF;
-  height: 300px;
-  margin-top: -7%;
+  height: 316px;
+  margin-top: -9%;
   
 }
 .start-page2{
