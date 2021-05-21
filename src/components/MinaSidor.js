@@ -76,7 +76,7 @@ export default function MinaSidor({ me, myGroups, setMyGroups, setCurrentGroup }
         <h3>&nbsp;&nbsp;Så kommer du igång</h3>
         <ol className="how_to" start="1">
           <li className="info_text">Skapa en ny grupp</li>
-          <li className="info_text">Lägg till medlemar</li>
+          <li className="info_text">Lägg till medlemmar</li>
           <li className="info_text">Skapa ett körschema</li>
         </ol>
       </div>

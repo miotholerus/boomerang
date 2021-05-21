@@ -14,7 +14,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
 
     currentGroup.members.map(member => memberList.push(member));
 
-    console.log("memberList: ", memberList);
+    // console.log("memberList: ", memberList);
 
     setMembers(memberList);
   }, []);
@@ -37,11 +37,11 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
   }, [weekday, startDate, endDate]);
 
   function generateDates() {
-    console.log("1. Kör generateDates")
+    // console.log("Kör generateDates")
 
-    const dayOfWeekIndex = weekday; // console.log("dayOfWeekIndex: " + dayOfWeekIndex);
-    const startDateDate = new Date(startDate); // console.log("startDateDate: " + startDateDate);
-    const endDateDate = new Date(endDate); // console.log("endDateDate: " + endDateDate);
+    const dayOfWeekIndex = weekday;
+    const startDateDate = new Date(startDate);
+    const endDateDate = new Date(endDate);
 
     // Skapar en lista av alla datum mellan startDate och endDate
     const dateList = getDates(startDateDate, endDateDate);
@@ -60,7 +60,6 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
 
     // Skapar RideObjects av alla datum och lägger i en tredje lista.
     // (TODO) Vi kanske bör byta klass/objekt till json för lättare lagring
-    // (Se arrayen rides (rad 10-71) i sampleschedule.json)
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
       // Två datumobjekt av samma datum läggs till i varje ride - får senare olika klockslag
@@ -75,7 +74,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
 
     // rides (statevariabel) blir listan av RideObjects
     setRides(rideObjects);
-    console.log("rides: ", rides);
+    // console.log("rides: ", rides);
 
     function getDates(startDate, endDate) {
       var dateArray = new Array();
@@ -94,15 +93,15 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
   function saveSchedule(e) {
 
     const startHours = startTime.substring(0, 2);
-    console.log("startHours:", startHours)
+    // console.log("startHours:", startHours)
     const startMinutes = startTime.substring(3);
     const endHours = endTime.substring(0, 2);
     const endMinutes = endTime.substring(3);
     rides.map(ride => {
       ride.dateTimeStart.setHours(startHours, startMinutes);
-      console.log(ride.dateTimeStart.toLocaleTimeString());
+      // console.log(ride.dateTimeStart.toLocaleTimeString());
       ride.dateTimeEnd.setHours(endHours, endMinutes);
-      console.log(ride.dateTimeStart.toLocaleTimeString());
+      // console.log(ride.dateTimeStart.toLocaleTimeString());
     })
 
     rides.forEach(ride => console.log(ride))
@@ -119,7 +118,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
     }
 
     setSchedule(newSchedule);
-    console.log("schedule after Save: ", schedule);
+    // console.log("schedule after Save: ", schedule);
 
     history.push("/viewschedule");
   }

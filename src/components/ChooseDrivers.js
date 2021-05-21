@@ -2,17 +2,23 @@
 
 export default function ChooseDrivers({rides, setRides, members}) {
 
-  console.log("Kör ChooseDrivers, rides", rides);
+  // console.log("Kör ChooseDrivers, rides", rides);
 
   var rides2 = rides;
   
   // NYTT FÖRSÖK: ändra direkt i rides/schedule utan att gå via driverTo/driverFrom? Funkade!!
   useEffect(() => {
-    console.log("Kör useEffect [rides2], rides: ", rides);
-    console.log("rides2: ", rides2);
+    // console.log("Kör useEffect [rides2], rides: ", rides);
+    // console.log("rides2: ", rides2);
     setRides(rides2);
-    console.log("efter setRides, rides: ", rides);
+    // console.log("efter setRides, rides: ", rides);
   }, [rides2])
+
+  const ReturnOps = () => {
+    for (let i = 0; i < members.length; i++) {
+      return <option value={i}>{members[i].firstName}</option>
+    }
+  }
 
   function RideEditRow({index, ride}) {
 
@@ -24,10 +30,10 @@ export default function ChooseDrivers({rides, setRides, members}) {
       e.preventDefault();
 
       const newDriverToId = driverToRef.current.value;
-      console.log("newDriverToId: ", newDriverToId);
+      // console.log("newDriverToId: ", newDriverToId);
       
       rides2[index].driverTo = members[newDriverToId];
-      console.log("rides2[index].driverTo: ", rides2[index].driverTo);
+      // console.log("rides2[index].driverTo: ", rides2[index].driverTo);
 
     }
 
@@ -35,10 +41,10 @@ export default function ChooseDrivers({rides, setRides, members}) {
       e.preventDefault();
 
       const newDriverFromId = driverFromRef.current.value;
-      console.log("newDriverFromId: ", newDriverFromId);
+      // console.log("newDriverFromId: ", newDriverFromId);
       
       rides2[index].driverFrom = members[newDriverFromId];
-      console.log("rides2[index].driverFrom: ", rides2[index].driverFrom);
+      // console.log("rides2[index].driverFrom: ", rides2[index].driverFrom);
 
     }
 
@@ -46,12 +52,6 @@ export default function ChooseDrivers({rides, setRides, members}) {
     //   return <option value={member.id}>{member.firstName}</option>
     // })
 
-    const returnOps = () => {
-      for (let i = 0; i < members.length; i++) {
-        return <option value={i}>{members[i].firstName}</option>
-      }
-    }
-    
 
 
     return (
@@ -61,12 +61,12 @@ export default function ChooseDrivers({rides, setRides, members}) {
         </td>
         <td>
           <select className="driver" /*value={driverTo.id}*/ onChange={handleChangeDriverTo/*e=>setDriverIdTo(e.target.value)*/} ref={driverToRef} >
-            {returnOps}
+            <ReturnOps/>
           </select>
         </td>
         <td>
           <select className="driver" /*value={driverFrom.id}*/ onChange={handleChangeDriverFrom} ref={driverFromRef} /*onChange={e=>setDriverIdFrom(e.target.value)}*/>
-            {returnOps}
+            <ReturnOps/>
           </select>
         </td>
       </tr>
@@ -74,7 +74,7 @@ export default function ChooseDrivers({rides, setRides, members}) {
   }
 
   function ForEachRide() {
-    console.log("Kör ForEachRide, rides:",)
+    // console.log("Kör ForEachRide, rides:",)
 
     var index = 0;
     const returnElements = rides2.map(ride => {
@@ -99,7 +99,7 @@ export default function ChooseDrivers({rides, setRides, members}) {
   }
   
   function RideEditTable() {
-    console.log("Kör RideEditTable, rides:", rides);
+    // console.log("Kör RideEditTable, rides:", rides);
 
     return (
       <table className="even choose-driver">
