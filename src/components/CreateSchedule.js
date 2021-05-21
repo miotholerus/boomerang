@@ -4,7 +4,7 @@ import FootballBanner from './FootballBanner'
 import RideObject from '../RideObject'
 import ChooseDrivers from './ChooseDrivers';
 
-export default function CreateSchedule({ schedule, setSchedule, members2, setMembers2, currentGroup }) {
+export default function CreateSchedule({ schedule, setSchedule, members, setMembers, currentGroup }) {
 
   useEffect(() => {
     // setMembers([]);
@@ -16,7 +16,7 @@ export default function CreateSchedule({ schedule, setSchedule, members2, setMem
 
     // console.log("memberList: ", memberList);
 
-    setMembers2(memberList);
+    setMembers(memberList);
   }, []);
 
   let history = useHistory();
@@ -70,7 +70,7 @@ export default function CreateSchedule({ schedule, setSchedule, members2, setMem
 
       // HÄR kan vi generera föreslagen körordning - Hämta från medlemslistan
       
-      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, members2[0], members2[0]);
+      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, members[0], members[0]);
 
       rideObjects.push(newRideObject);
 
@@ -132,7 +132,7 @@ export default function CreateSchedule({ schedule, setSchedule, members2, setMem
   return (
     <div>
       <div className="page-content">
-        <FootballBanner currentGroup={currentGroup} members2={members2}/>
+        <FootballBanner currentGroup={currentGroup} members={members}/>
 
         <div className="loose-text-field">
           <h4>Skapa gruppens körschema</h4>
@@ -234,7 +234,7 @@ export default function CreateSchedule({ schedule, setSchedule, members2, setMem
             {/* {<select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
             </select>} */}
-            {rides.length ? <ChooseDrivers rides={rides} setRides={setRides} members2={members2} /> : null /*<ShowChooseDrivers />*/}
+            {rides.length ? <ChooseDrivers rides={rides} setRides={setRides} members={members} /> : null /*<ShowChooseDrivers />*/}
           </div>
 
           {/* <div id="upphamtningslista">

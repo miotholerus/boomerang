@@ -5,7 +5,7 @@ import FootballBanner from './FootballBanner'
 
 import DetailedSchedule from './DetailedSchedule'
 
-export default function ViewSchedule({ currentGroup, schedule, members2 }) {
+export default function ViewSchedule({ currentGroup, schedule, members }) {
 
   // console.log("Kör ViewSchedule, schedule:", schedule)
   // console.log("schedule:", schedule)
@@ -15,7 +15,7 @@ export default function ViewSchedule({ currentGroup, schedule, members2 }) {
       {/* <Header /> */}
 
       <div className="page-content">
-        <FootballBanner currentGroup={currentGroup} members2={members2} />
+        <FootballBanner currentGroup={currentGroup} members={members} />
 
         <div className="loose-text-field">
           <h4>Översikt körschema</h4>
@@ -57,7 +57,7 @@ export default function ViewSchedule({ currentGroup, schedule, members2 }) {
           </div>
         </div>
 
-        <DetailedSchedule schedule={schedule} members2={members2} />
+        <DetailedSchedule schedule={schedule} members={members} />
 
         <br/>
         <div className="button-holder-center loose-text-field">

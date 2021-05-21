@@ -10,7 +10,7 @@ function Football() {
   )
 }
 
-export default function FootballBanner({currentGroup, members2}) {
+export default function FootballBanner({currentGroup, members}) {
   // const [firstNames, setFirstNames] = useState([]);
   // var firstNames = [];
 
@@ -29,7 +29,7 @@ export default function FootballBanner({currentGroup, members2}) {
         </div>
         <div className="group-column">
           <h4>{currentGroup.title}<br></br>
-          <p id="members">{members2.map(m => m.firstName).join(", ")}</p></h4>
+          <p id="members">{members.map(m => m.firstName).join(", ")}</p></h4>
         </div>
       </div>
     </div>

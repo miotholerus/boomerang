@@ -102,7 +102,7 @@ function App() {
   });
 
   // Medlemslistan för tillfället, en array av json-element:
-  const [members2, setMembers2] = useState([
+  const [members, setMembers] = useState([
     {
       "id": 0,
       "fistName": "Alba",
@@ -167,11 +167,11 @@ function App() {
           <Route path="/createschedule">
             <CreateSchedule
               schedule={schedule} setSchedule={setSchedule}
-              members2={members2} setMembers2={setMembers2}
+              members={members} setMembers={setMembers}
               currentGroup={currentGroup} />
           </Route>
           <Route path="/viewschedule">
-            <ViewSchedule currentGroup={currentGroup} schedule={schedule} members2={members2} />
+            <ViewSchedule currentGroup={currentGroup} schedule={schedule} members={members} />
           </Route>
 
           {/* Testsidor */}

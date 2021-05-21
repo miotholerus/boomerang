@@ -1,8 +1,8 @@
 ﻿import React, {useState, useEffect, useRef} from 'react'
 
-export default function ChooseDrivers({rides, setRides, members2}) {
+export default function ChooseDrivers({rides, setRides, members}) {
 
-  console.log("Kör ChooseDrivers, rides", rides); // funkar nu
+  // console.log("Kör ChooseDrivers, rides", rides);
 
   var rides2 = rides;
   
@@ -13,15 +13,7 @@ export default function ChooseDrivers({rides, setRides, members2}) {
     setRides(rides2);
     // console.log("efter setRides, rides: ", rides);
   }, [rides2])
-
-  const ReturnOps = () => {
-    
-    for (let i = 0; i < members2.length; i++) {
-      console.log("for ["+i+"]", members2[i].firstName);
-      return <option value={i}>{members2[i].firstName}</option>
-    }
-
-  }
+  
 
   function RideEditRow({index, ride}) {
 
@@ -35,7 +27,7 @@ export default function ChooseDrivers({rides, setRides, members2}) {
       const newDriverToId = driverToRef.current.value;
       // console.log("newDriverToId: ", newDriverToId);
       
-      rides2[index].driverTo = members2[newDriverToId];
+      rides2[index].driverTo = members[newDriverToId];
       // console.log("rides2[index].driverTo: ", rides2[index].driverTo);
     }
 
@@ -45,12 +37,12 @@ export default function ChooseDrivers({rides, setRides, members2}) {
       const newDriverFromId = driverFromRef.current.value;
       // console.log("newDriverFromId: ", newDriverFromId);
       
-      rides2[index].driverFrom = members2[newDriverFromId];
+      rides2[index].driverFrom = members[newDriverFromId];
       // console.log("rides2[index].driverFrom: ", rides2[index].driverFrom);
     }
 
     var ix = 0;
-    const options = members2.map(member => {
+    const options = members.map(member => {
       return <option value={ix++}>{member.firstName}</option>
     })
     
