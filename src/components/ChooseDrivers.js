@@ -1,8 +1,8 @@
 ﻿import React, {useState, useEffect, useRef} from 'react'
 
-export default function ChooseDrivers({rides, setRides, members}) {
+export default function ChooseDrivers({rides, setRides, members2}) {
 
-  // console.log("Kör ChooseDrivers, rides", rides);
+  console.log("Kör ChooseDrivers, rides", rides); // funkar nu
 
   var rides2 = rides;
   
@@ -15,9 +15,12 @@ export default function ChooseDrivers({rides, setRides, members}) {
   }, [rides2])
 
   const ReturnOps = () => {
-    for (let i = 0; i < members.length; i++) {
-      return <option value={i}>{members[i].firstName}</option>
+    
+    for (let i = 0; i < members2.length; i++) {
+      console.log("for ["+i+"]", members2[i].firstName);
+      return <option value={i}>{members2[i].firstName}</option>
     }
+
   }
 
   function RideEditRow({index, ride}) {
@@ -32,9 +35,8 @@ export default function ChooseDrivers({rides, setRides, members}) {
       const newDriverToId = driverToRef.current.value;
       // console.log("newDriverToId: ", newDriverToId);
       
-      rides2[index].driverTo = members[newDriverToId];
+      rides2[index].driverTo = members2[newDriverToId];
       // console.log("rides2[index].driverTo: ", rides2[index].driverTo);
-
     }
 
     function handleChangeDriverFrom(e) {
@@ -43,16 +45,15 @@ export default function ChooseDrivers({rides, setRides, members}) {
       const newDriverFromId = driverFromRef.current.value;
       // console.log("newDriverFromId: ", newDriverFromId);
       
-      rides2[index].driverFrom = members[newDriverFromId];
+      rides2[index].driverFrom = members2[newDriverFromId];
       // console.log("rides2[index].driverFrom: ", rides2[index].driverFrom);
-
     }
 
-    // const returnOptions = members.map(member => {
-    //   return <option value={member.id}>{member.firstName}</option>
-    // })
-
-
+    var ix = 0;
+    const options = members2.map(member => {
+      return <option value={ix++}>{member.firstName}</option>
+    })
+    
 
     return (
       <tr>
@@ -60,21 +61,25 @@ export default function ChooseDrivers({rides, setRides, members}) {
           {ride.dateAsStringShort()}
         </td>
         <td>
-          <select className="driver" /*value={driverTo.id}*/ onChange={handleChangeDriverTo/*e=>setDriverIdTo(e.target.value)*/} ref={driverToRef} >
-            <ReturnOps/>
+          <select className="driver" /*value={driverTo.id}*/ onChange={e => handleChangeDriverTo(e)/*e=>setDriverIdTo(e.target.value)*/} ref={driverToRef} >
+            
+            {options}
+
           </select>
         </td>
         <td>
-          <select className="driver" /*value={driverFrom.id}*/ onChange={handleChangeDriverFrom} ref={driverFromRef} /*onChange={e=>setDriverIdFrom(e.target.value)}*/>
-            <ReturnOps/>
+          <select className="driver" /*value={driverFrom.id}*/ onChange={e => handleChangeDriverFrom(e)} ref={driverFromRef} /*onChange={e=>setDriverIdFrom(e.target.value)}*/>
+            
+            {options}
+          
           </select>
         </td>
       </tr>
     )
   }
 
-  function ForEachRide() {
-    // console.log("Kör ForEachRide, rides:",)
+  function ForEachRideOneRow() {
+    console.log("Kör ForEachRideOneRow, rides:", rides, "\nrides2: \n", rides2);
 
     var index = 0;
     const returnElements = rides2.map(ride => {
@@ -98,19 +103,17 @@ export default function ChooseDrivers({rides, setRides, members}) {
     // }
   }
   
-  function RideEditTable() {
-    // console.log("Kör RideEditTable, rides:", rides);
-
-    return (
+  return (
+    <div className="choose-drivers-box">
       <table className="even choose-driver">
-  
+        
         <tr>
           <th>Tillfälle:</th>
           <th>Till:</th>
           <th>Från:</th>
         </tr>
-    
-        <ForEachRide/>
+
+        <ForEachRideOneRow/>
         {/* På något sätt fånga upp detta och uppdatera rides... */}
         {/* {rides.map(ride => {
           return (
@@ -118,12 +121,6 @@ export default function ChooseDrivers({rides, setRides, members}) {
           )
         })} */}
       </table>
-    ) 
-  }
-
-  return (
-    <div className="choose-drivers-box">
-      <RideEditTable/>
     </div>
   )
 }

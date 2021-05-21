@@ -2,7 +2,7 @@
 import ScheduleBox from './ScheduleBox'
 
 
-export default function DetailedSchedule({ schedule, members }) {
+export default function DetailedSchedule({ schedule, members2 }) {
   // const destinationFromSchedule = altSchedule.destination // tidigare schedule[2]
   // const addressFromMember = members[0].address; // ska senare hämtas direkt från schedule-rideobjecten
 
@@ -151,7 +151,7 @@ export default function DetailedSchedule({ schedule, members }) {
         </div>
       </form> */}
 
-      <ScheduleBox timeAtA={timeAtA} timeAtB={timeAtB} timeAtC={timeAtC} timeAtD={timeAtD} schedule={schedule} members={members} />
+      <ScheduleBox timeAtA={timeAtA} timeAtB={timeAtB} timeAtC={timeAtC} timeAtD={timeAtD} schedule={schedule} members2={members2} />
     </div>
   )
 }

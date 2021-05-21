@@ -1,7 +1,7 @@
 ﻿import React from 'react'
 import AltUserLogo from "./logos/AltUserLogo";
 
-export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedule, members }) {  
+export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedule, members2 }) {  
 
   return (
     <div>
@@ -11,14 +11,14 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
 
       <div className="schedule-box">
         <h3>Till aktivitet</h3>
-        <p>Chaufför: {members[0].name}</p>
+        <p>Chaufför: {members2[0].firstNname}</p>
         <br></br>
         <ul>
           <li>
             <table>
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
-                <td className="name"><p>{members[0].name}s barn {members[0].child}</p><p>{members[0].address}</p></td>
+                <td className="name"><p>{members2[0].firstName}s barn {members2[0].child}</p><p>{members2[0].location.address}</p></td>
                 <td className="time">{timeAtA}</td>
               </tr>
             </table>
@@ -27,7 +27,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
             <table>
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
-                <td className="name"><p>{members[1].name}s barn {members[1].child}</p><p>{members[1].address}</p></td>
+                <td className="name"><p>{members2[1].firstName}s barn {members2[1].child}</p><p>{members2[1].location.address}</p></td>
                 <td className="time">{timeAtB}</td>
               </tr>
             </table>
@@ -36,7 +36,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
             <table>
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
-                <td className="name"><p>{members[2].name}s barn {members[2].child}</p><p>{members[2].address}</p></td>
+                <td className="name"><p>{members2[2].firstName}s barn {members2[2].child}</p><p>{members2[2].location.address}</p></td>
                 <td className="time">{timeAtC}</td>
               </tr>
             </table>
@@ -58,7 +58,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
                     </defs>
                   </svg>
                 </td>
-                <td className="name"><p>Enskede Rackethall</p><p>{schedule.destination}</p></td>
+                <td className="name"><p>Plats för aktivitet</p><p>{schedule.destination}</p></td>
                 <td className="time">{timeAtD}</td>
               </tr>
             </table>
@@ -68,7 +68,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
 
       <div className="schedule-box2">
         <h3>Från aktivitet</h3>
-        <p>Chaufför: {members[0].name}</p>
+        <p>Chaufför: {members2[0].firstName}</p>
         <br></br>
         <ul>
           <li>
@@ -88,7 +88,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
                     </defs>
                   </svg>
                 </td>
-                <td className="name"><p>Enskede Rackethall</p><p>{schedule.destination}</p></td>
+                <td className="name"><p>Plats för aktivitet</p><p>{schedule.destination}</p></td>
                 <td className="time">16:10</td>
               </tr>
             </table>
@@ -97,7 +97,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
             <table>
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
-                <td className="name"><p>{members[2].name}s barn {members[2].child}</p><p>{members[2].address}</p></td>
+                <td className="name"><p>{members2[2].firstName}s barn {members2[2].child}</p><p>{members2[2].location.address}</p></td>
                 <td className="time">16:20</td>
               </tr>
             </table>
@@ -106,7 +106,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
             <table>
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
-                <td className="name"><p>{members[1].name}s barn {members[1].child}</p><p>{members[1].address}</p></td>
+                <td className="name"><p>{members2[1].firstName}s barn {members2[1].child}</p><p>{members2[1].location.address}</p></td>
                 <td className="time">16:30</td>
               </tr>
             </table>
@@ -115,7 +115,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
             <table>
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
-                <td className="name"><p>{members[0].name}s barn {members[0].child}</p><p>{members[0].address}</p></td>
+                <td className="name"><p>{members2[0].firstName}s barn {members2[0].child}</p><p>{members2[0].location.address}</p></td>
                 <td className="time">16:40</td>
               </tr>
             </table>

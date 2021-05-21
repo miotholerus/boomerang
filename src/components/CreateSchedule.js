@@ -4,7 +4,7 @@ import FootballBanner from './FootballBanner'
 import RideObject from '../RideObject'
 import ChooseDrivers from './ChooseDrivers';
 
-export default function CreateSchedule({ schedule, setSchedule, members, setMembers, currentGroup }) {
+export default function CreateSchedule({ schedule, setSchedule, members2, setMembers2, currentGroup }) {
 
   useEffect(() => {
     // setMembers([]);
@@ -16,7 +16,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
 
     // console.log("memberList: ", memberList);
 
-    setMembers(memberList);
+    setMembers2(memberList);
   }, []);
 
   let history = useHistory();
@@ -33,11 +33,13 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
   const [rides, setRides] = useState([]);
 
   useEffect(() => {
-    generateDates();
+    
+    if (weekday != "") generateDates();
+
   }, [weekday, startDate, endDate]);
 
   function generateDates() {
-    // console.log("Kör generateDates")
+    console.log("Kör generateDates")
 
     const dayOfWeekIndex = weekday;
     const startDateDate = new Date(startDate);
@@ -66,7 +68,9 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
       const dateTimeStart = rideDates[i];
       const dateTimeEnd = new Date(dateTimeStart);
 
-      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, { "id": 0, "firstName": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239" }, { "id": 0, "firstName": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239" });
+      // HÄR kan vi generera föreslagen körordning - Hämta från medlemslistan
+      
+      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, members2[0], members2[0]);
 
       rideObjects.push(newRideObject);
 
@@ -128,7 +132,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
   return (
     <div>
       <div className="page-content">
-        <FootballBanner currentGroup={currentGroup} members={members}/>
+        <FootballBanner currentGroup={currentGroup} members2={members2}/>
 
         <div className="loose-text-field">
           <h4>Skapa gruppens körschema</h4>
@@ -230,7 +234,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
             {/* {<select className="standard-input option-list input-left" id="ordning-for-chaufforer">
               <option id="option-placeholder" value="" disabled selected>Välj ordning för chaufförer</option>
             </select>} */}
-            {rides.length ? <ChooseDrivers rides={rides} setRides={setRides} members={members} /> : null /*<ShowChooseDrivers />*/}
+            {rides.length ? <ChooseDrivers rides={rides} setRides={setRides} members2={members2} /> : null /*<ShowChooseDrivers />*/}
           </div>
 
           {/* <div id="upphamtningslista">
