@@ -76,6 +76,7 @@ input (höjd)	  | 34px	| 10.625vh
 
 */
 
+
 /* HEADERN */
 .header {
   background-color: #ffffff;
@@ -409,6 +410,7 @@ th {
 select.driver {
   border-style: none;
   font-size: 15px;
+  background-color: white;
 }
 
 .schedule-box {

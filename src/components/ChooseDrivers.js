@@ -42,10 +42,15 @@ export default function ChooseDrivers({rides, setRides, members}) {
 
     }
 
-    const returnOptions = members.map(member => {
-      return <option value={member.id}>{member.firstName}</option>
-    })
+    // const returnOptions = members.map(member => {
+    //   return <option value={member.id}>{member.firstName}</option>
+    // })
 
+    const returnOps = () => {
+      for (let i = 0; i < members.length; i++) {
+        return <option value={i}>{members[i].firstName}</option>
+      }
+    }
     
 
 
@@ -56,12 +61,12 @@ export default function ChooseDrivers({rides, setRides, members}) {
         </td>
         <td>
           <select className="driver" /*value={driverTo.id}*/ onChange={handleChangeDriverTo/*e=>setDriverIdTo(e.target.value)*/} ref={driverToRef} >
-            {returnOptions}
+            {returnOps}
           </select>
         </td>
         <td>
           <select className="driver" /*value={driverFrom.id}*/ onChange={handleChangeDriverFrom} ref={driverFromRef} /*onChange={e=>setDriverIdFrom(e.target.value)}*/>
-            {returnOptions}
+            {returnOps}
           </select>
         </td>
       </tr>

@@ -37,7 +37,7 @@ export default function Header(props) {
 
       <div className="left">
 
-        <Logotype />
+        <Logotype className="lower"/>
       </div>
 
       {props.loginStatus ?

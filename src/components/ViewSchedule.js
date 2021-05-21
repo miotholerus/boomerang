@@ -9,7 +9,7 @@ import DetailedSchedule from './DetailedSchedule'
 
 export default function ViewSchedule({ currentGroup, schedule, members }) {
 
-  // console.log("Kör ViewSchedule, schedule:", schedule)
+  console.log("Kör ViewSchedule, schedule:", schedule)
   console.log("schedule:", schedule)
 
   return (

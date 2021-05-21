@@ -67,7 +67,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
       const dateTimeStart = rideDates[i];
       const dateTimeEnd = new Date(dateTimeStart);
 
-      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, { "id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239" }, { "id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239" });
+      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, { "id": 0, "firstName": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239" }, { "id": 0, "firstName": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239" });
 
       rideObjects.push(newRideObject);
 

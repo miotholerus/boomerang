@@ -105,19 +105,19 @@ function App() {
   const [members, setMembers] = useState([
     {
       "id": 0,
-      "name": "Alba",
+      "fistName": "Alba",
       "child": "Anna",
       "address": "Uddeholmsvägen 239"
     },
     {
       "id": 1,
-      "name": "Berit",
+      "firstName": "Berit",
       "child": "Blenda",
       "address": "Årdalavägen 133"
     },
     {
       "id": 2,
-      "name": "Chris",
+      "firstName": "Chris",
       "child": "Charlie",
       "address": "Lerbäcksgränd 18"
     }
