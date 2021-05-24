@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import PopupCreateGroup from './PopupCreateGroup';
 
 
-export default function CreateGroup({me, myId}) {
+export default function CreateGroup({ me, myId, setCurrentGroup }) {
 
   const [buttonPopup, setButtonPopup] = useState(false);
   const db = firebase.database();
@@ -22,6 +22,7 @@ export default function CreateGroup({me, myId}) {
   // inviteEmail läggs till i listan onClick
   const [emailList, setEmailList] = useState([]);
   const [userSnaps, setUserSnaps] = useState([]);
+
   function addToList(e) {
     e.preventDefault();
     // Tillfällig lösning: söka i medlemsregistret redan här?
@@ -63,70 +64,70 @@ export default function CreateGroup({me, myId}) {
 
     groupsRef.push(newGroup); // lägger till i databassamlingen groups
 
+    setCurrentGroup(newGroup);
 
-  // // Ska visas en popup här
-  // alert("Grattis!\nDu har nu skapat en grupp.\nGår tillbaka till Mina sidor.")
-  setButtonPopup(true);
-  // history.push("/minasidor"); // Går tillbaka till Mina sidor
-}
-return (
-  <div>
-    <div className="page-content">
-      <div>
-        <div className="sub-header">
-          <div className="leftcorner">
-            <AiOutlineLeft />
+    setButtonPopup(true);
+    // history.push("/minasidor"); // Går tillbaka till Mina sidor
+  }
+  
+  return (
+    <div>
+      <div className="page-content">
+        <div>
+          <div className="sub-header">
+            <div className="leftcorner">
+              <AiOutlineLeft />
+            </div>
+            <div className="middel">
+              <h6>Skapa grupp</h6> {/* ska eg vara h4, men buggar då */}
+            </div>
+            <div className="rightcorner">
+              <AiOutlineClose />
+            </div>
           </div>
-          <div className="middel">
-            <h6>Skapa grupp</h6> {/* ska eg vara h4, men buggar då */}
+
+
+          {/* OBS: Det finns redan klasser för vita boxar */}
+          {/* <div className="blackbackground"> */}
+          <div className="box-a">
+            <form onSubmit={e => saveGroup(e)}><br></br>
+              <label>Namn på grupp:</label> {/* labels till inputfält? Se CreateScehdule hur */}
+              <input type="text" className="standard-input" value={groupName} onChange={e => setGroupName(e.target.value)} placeholder="Ex. Badmintongruppen"></input>
+              <label>Meddelandetext:</label>
+              <textarea className="messagetext" value={message} onChange={e => setMessage(e.target.value)}></textarea><br></br>
+              <label>Bjud in med mail eller mobilnr</label>
+              <input type="email" className="standard-input" value={inviteEmail} onChange={e => setInviteEmail(e.target.value)}></input>
+              <button type="button" className='addmore' onClick={e => addToList(e)}>
+                <b><AiOutlineUserAdd fontSize="25px" />Lägg till person</b>
+              </button>
+              {emailList.length ?
+                <>
+                  <table>
+                    {emailList.map(email => {
+                      return (
+                        <tr key={email}>
+                          <td>&nbsp;&nbsp;&nbsp;<AltUserLogo /></td>
+                          <td>&nbsp;{email}</td>
+                        </tr>
+                      )
+                    })}
+                  </table>
+                  <br></br>
+                </>
+                : null}
+              {emailList.length ?
+                <div className="button-holder-center">
+                  <button type="submit" className='button-v2'>
+                    <b>SPARA GRUPP</b>
+                  </button>
+                </div>
+                : null}
+            </form>
           </div>
-          <div className="rightcorner">
-            <AiOutlineClose />
-          </div>
+          {/* </div> */}
         </div>
-
-
-        {/* OBS: Det finns redan klasser för vita boxar */}
-        {/* <div className="blackbackground"> */}
-        <div className="box-a">
-          <form onSubmit={e => saveGroup(e)}><br></br>
-            <label>Namn på grupp:</label> {/* labels till inputfält? Se CreateScehdule hur */}
-            <input type="text" className="standard-input" value={groupName} onChange={e => setGroupName(e.target.value)} placeholder="Ex. Badmintongruppen"></input>
-            <label>Meddelandetext:</label>
-            <textarea className="messagetext" value={message} onChange={e => setMessage(e.target.value)}></textarea><br></br>
-            <label>Bjud in med mail eller mobilnr</label>
-            <input type="email" className="standard-input" value={inviteEmail} onChange={e => setInviteEmail(e.target.value)}></input>
-            <button type="button" className='addmore' onClick={e => addToList(e)}>
-              <b><AiOutlineUserAdd fontSize="25px" />Lägg till person</b>
-            </button>
-            {emailList.length ?
-              <>
-                <table>
-                  {emailList.map(email => {
-                    return (
-                      <tr key={email}>
-                        <td>&nbsp;&nbsp;&nbsp;<AltUserLogo /></td>
-                        <td>&nbsp;{email}</td>
-                      </tr>
-                    )
-                  })}
-                </table>
-                <br></br>
-              </>
-              : null}
-            {emailList.length ?
-              <div className="button-holder-center">
-                <button type="submit" className='button-v2'>
-                  <b>SPARA GRUPP</b>
-                </button>
-              </div>
-              : null}
-          </form>
-        </div>
-        {/* </div> */}
       </div>
-    </div>
-    <PopupCreateGroup trigger={buttonPopup} setTrigger={setButtonPopup}></PopupCreateGroup>
-  </div >
-)
+      <PopupCreateGroup trigger={buttonPopup} setTrigger={setButtonPopup}></PopupCreateGroup>
+    </div >
+  )
 }

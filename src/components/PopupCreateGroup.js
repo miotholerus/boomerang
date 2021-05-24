@@ -9,7 +9,6 @@ import CreateSchedule from './CreateSchedule';
 export default function PopupCreateGroup(props) {
   const db = firebase.database();
 
-
   // Tillfälliga states som uppdateras onChange, och sparas i databasen onSubmit
   const [groupName, setGroupName] = useState("");
   const [message, setMessage] = useState("Exempeltext:\nHej, här är en inbjudan till gruppen (namn) som vi pratade om. Gå med i gruppen så skapar vi ett gemensant körschema. Du registrar dig på boomerang.nu\nMvh (namn)")

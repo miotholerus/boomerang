@@ -162,7 +162,7 @@ function App() {
               setCurrentGroup={setCurrentGroup} />
           </Route>
           <Route path="/creategroup">
-            <CreateGroup me={me} myId={myId} />
+            <CreateGroup me={me} myId={myId} setCurrentGroup={setCurrentGroup} />
           </Route>
           <Route path="/createschedule">
             <CreateSchedule
