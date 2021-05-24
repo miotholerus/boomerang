@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Football() {
   return (
@@ -10,7 +10,17 @@ function Football() {
   )
 }
 
-export default function FootballBanner() {
+export default function FootballBanner({currentGroup, members}) {
+  // const [firstNames, setFirstNames] = useState([]);
+  // var firstNames = [];
+
+  // useEffect(() => {
+  //   console.log("useEffect, FootballBanner", members);
+  //   // membersString = members.reduce((m1, m2) => m1.firstName + ", " + m2.firstName).toString();
+  //   firstNames = members.map(m => m.firstName);
+  //   console.log(firstNames.toString());
+  // }, []);
+
   return (
     <div>
       <div className="sub-header">
@@ -18,8 +28,8 @@ export default function FootballBanner() {
           <Football />
         </div>
         <div className="group-column">
-          <h4>Fotbollsgruppen<br></br>
-          <p id="members">Alba, Berit, Chris</p></h4>
+          <h4>{currentGroup.title}<br></br>
+          <p id="members">{members.map(m => m.firstName).join(", ")}</p></h4>
         </div>
       </div>
     </div>

@@ -76,6 +76,7 @@ input (höjd)	  | 34px	| 10.625vh
 
 */
 
+
 /* HEADERN */
 .header {
   background-color: #ffffff;
@@ -87,7 +88,6 @@ input (höjd)	  | 34px	| 10.625vh
 /* Header side-by-side-försök */
 .flex {
   display: flex;
-
 }
 .left {
   display: flex;
@@ -137,7 +137,6 @@ input (höjd)	  | 34px	| 10.625vh
   font-size: 24%;
 }
 
-
 /* SUBHEADER FOTBOLLSGRUPPEN */
 .sub-header {
   display: flex;
@@ -174,7 +173,6 @@ input (höjd)	  | 34px	| 10.625vh
 #members {
   font-weight: normal;
 }
-
 
 /* BOXAR */
 .box-a {
@@ -311,7 +309,7 @@ div.button-holder-center {
 }
 input, textarea {
   font-size: 15px;
-  background-color: #F2F2ED;
+  background-color: #EAEAE1;
   /*DFDFD2*/
   
   border-width: 1px;
@@ -342,7 +340,7 @@ input:focus, textarea:focus {
   border-width: thin;
 }
 .option-list {
-  background-color: #F2F2ED;
+  /* background-color: #F2F2ED; */
   padding-left: 7px;
   padding-right: 7px;
   /* color: #767676; */
@@ -353,7 +351,7 @@ input:focus, textarea:focus {
   justify-content: space-between;
 }
 .small-input {
-  background-color: #F2F2ED;
+  background-color: #EAEAE1;
   width: 42vw; /*134px;*/
   height: 34px;
   border-radius: 4px;
@@ -409,9 +407,10 @@ table.even {
 th {
   text-align: left;
 }
-select.driver {
+.driver {
   border-style: none;
   font-size: 15px;
+  background-color: white;
 }
 
 .schedule-box {
@@ -530,11 +529,11 @@ td.name{
 }
 
 .text{
-  font-family: Nunito;
-  font-size: 16px;
+  /* font-family: Nunito; */
+  font-size: 5.313vw; /*17px;*/
   font-style: normal;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 6.875vw; /*22px;*/
   letter-spacing: -0.3333333432674408px;
 }
 .creategroupinfo{
@@ -631,16 +630,14 @@ ol.how_to li::before{
   left: -20%;
   text-align: center;
   font-weight: bold;
-  
 }
 .start-page{
   background-image: url('./startpage.png');
   background-repeat: no-repeat;
   background-size: cover;
   color: #FFFFFF;
-  height: 300px;
-  margin-top: -7%;
-  
+  height: 98.750vw; /*316px;*/
+  margin-top: -9%;
 }
 .start-page2{
   background-color: #BDEDA6;

@@ -1,0 +1,120 @@
+{
+  "groups" : {
+    "-Ma5_L9Hs3pA5sq8ULKT" : {
+      "admin" : {
+        "child" : "Sniff",
+        "email" : "hestcrud@gmail.com",
+        "firstName" : "Hest",
+        "lastName" : "Mjau",
+        "location" : {
+          "address" : "Timrågatan 84",
+          "city" : "Vällingby",
+          "country" : "SWEDEN",
+          "postalCode" : "16262"
+        },
+        "password" : "crudcrud",
+        "phone" : "0705555555"
+      },
+      "members" : [ {
+        "child" : "Tooticki",
+        "email" : "miocrud@gmail.com",
+        "firstName" : "Mio",
+        "lastName" : "Tholerus",
+        "location" : {
+          "address" : "Timrågatan 84",
+          "city" : "Vällingby",
+          "country" : "SWEDEN",
+          "postalCode" : "16262"
+        },
+        "password" : "crudcrud",
+        "phone" : "0704444444"
+      }, {
+        "child" : "Blenda",
+        "email" : "beritcrud@gmail.com",
+        "firstName" : "Berit",
+        "lastName" : "Boman",
+        "location" : {
+          "address" : "Årdalavägen 133",
+          "city" : "Stockholm",
+          "country" : "SWEDEN",
+          "postalCode" : 12432
+        },
+        "password" : "crudcrud",
+        "phone" : "0702222222"
+      }, {
+        "child" : "Anna",
+        "email" : "albacrud@gmail.com",
+        "firstName" : "Alba",
+        "lastName" : "Andersson",
+        "location" : {
+          "address" : "Uddeholmsvägen 239",
+          "city" : "Stockholm",
+          "country" : "SWEDEN",
+          "postalCode" : 12241
+        },
+        "password" : "crudcrud",
+        "phone" : "0701111111"
+      } ],
+      "message" : "Hej, här är en inbjudan till skjutsgruppen som vi pratade om. Gå med i gruppen så skapar vi ett gemensamt körschema. Du registrerar dig på boomerang.nu\nMvh Hest",
+      "title" : "Snel grupp"
+    }
+  },
+  "users" : {
+    "-MZx86sFPDFcssm1azWn" : {
+      "child" : "Anna",
+      "email" : "albacrud@gmail.com",
+      "firstName" : "Alba",
+      "lastName" : "Andersson",
+      "location" : {
+        "address" : "Uddeholmsvägen 239",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12241
+      },
+      "password" : "crudcrud",
+      "phone" : "0701111111"
+    },
+    "-MZx8kZXnfHQV5MV8BF6" : {
+      "child" : "Blenda",
+      "email" : "beritcrud@gmail.com",
+      "firstName" : "Berit",
+      "lastName" : "Boman",
+      "location" : {
+        "address" : "Årdalavägen 133",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12432
+      },
+      "password" : "crudcrud",
+      "phone" : "0702222222"
+    },
+    "-MZx8w3jPgJOj4X3ARB-" : {
+      "child" : "Charlie",
+      "email" : "chriscrud@gmail.com",
+      "firstName" : "Chris",
+      "lastName" : "Carter",
+      "location" : {
+        "address" : "Lerbäcksgränd 18",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12466
+      },
+      "password" : "crudcrud",
+      "phone" : "0703333333"
+    },
+    "-Ma7eHteoFXgGyiQ2NJv" : {
+      "child" : "Tooticki",
+      "email" : "miocrud@gmail.com",
+      "firstName" : "Mio",
+      "lastName" : "Tholerus",
+      "location" : {
+        "address" : "Timrågatan 84",
+        "city" : "Vällingby",
+        "country" : "SWEDEN",
+        "postalCode" : "16262"
+      },
+      "password" : "crudcrud",
+      "phone" : "0704444444"
+    }
+  }
+}

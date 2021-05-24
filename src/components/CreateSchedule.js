@@ -1,16 +1,25 @@
 ﻿import React, { useState, useEffect } from 'react'
-import Header from './Header'
 import { useHistory } from "react-router-dom";
 import FootballBanner from './FootballBanner'
 import RideObject from '../RideObject'
 import ChooseDrivers from './ChooseDrivers';
-import { useForm } from 'react-hook-form';
 
-export default function CreateSchedule({ schedule, setSchedule, members }) {
-  // "history" 
+export default function CreateSchedule({ schedule, setSchedule, members, setMembers, currentGroup }) {
+
+  useEffect(() => {
+    // setMembers([]);
+    var memberList = [];
+
+    memberList.push(currentGroup.admin);
+
+    currentGroup.members.map(member => memberList.push(member));
+
+    // console.log("memberList: ", memberList);
+
+    setMembers(memberList);
+  }, []);
+
   let history = useHistory();
-
-
 
   // Uppdateras varje gång input ändras
   const [startTime, setStartTime] = useState("");
@@ -24,15 +33,17 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
   const [rides, setRides] = useState([]);
 
   useEffect(() => {
-    generateDates();
+    
+    if (weekday != "") generateDates();
+
   }, [weekday, startDate, endDate]);
 
   function generateDates() {
-    console.log("1. Kör generateDates")
+    console.log("Kör generateDates")
 
-    const dayOfWeekIndex = weekday; // console.log("dayOfWeekIndex: " + dayOfWeekIndex);
-    const startDateDate = new Date(startDate); // console.log("startDateDate: " + startDateDate);
-    const endDateDate = new Date(endDate); // console.log("endDateDate: " + endDateDate);
+    const dayOfWeekIndex = weekday;
+    const startDateDate = new Date(startDate);
+    const endDateDate = new Date(endDate);
 
     // Skapar en lista av alla datum mellan startDate och endDate
     const dateList = getDates(startDateDate, endDateDate);
@@ -51,14 +62,15 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
     // Skapar RideObjects av alla datum och lägger i en tredje lista.
     // (TODO) Vi kanske bör byta klass/objekt till json för lättare lagring
-    // (Se arrayen rides (rad 10-71) i sampleschedule.json)
     var rideObjects = new Array();
     for (let i = 0; i < rideDates.length; i++) {
       // Två datumobjekt av samma datum läggs till i varje ride - får senare olika klockslag
       const dateTimeStart = rideDates[i];
       const dateTimeEnd = new Date(dateTimeStart);
 
-      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, { "id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239" }, { "id": 0, "name": "Alba", "child": "Anna", "address": "Uddeholmsvägen 239" });
+      // HÄR kan vi generera föreslagen körordning - Hämta från medlemslistan
+      
+      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, members[0], members[0]);
 
       rideObjects.push(newRideObject);
 
@@ -66,7 +78,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
 
     // rides (statevariabel) blir listan av RideObjects
     setRides(rideObjects);
-    console.log("rides: ", rides);
+    // console.log("rides: ", rides);
 
     function getDates(startDate, endDate) {
       var dateArray = new Array();
@@ -85,15 +97,15 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
   function saveSchedule(e) {
 
     const startHours = startTime.substring(0, 2);
-    console.log("startHours:", startHours)
+    // console.log("startHours:", startHours)
     const startMinutes = startTime.substring(3);
     const endHours = endTime.substring(0, 2);
     const endMinutes = endTime.substring(3);
     rides.map(ride => {
       ride.dateTimeStart.setHours(startHours, startMinutes);
-      console.log(ride.dateTimeStart.toLocaleTimeString());
+      // console.log(ride.dateTimeStart.toLocaleTimeString());
       ride.dateTimeEnd.setHours(endHours, endMinutes);
-      console.log(ride.dateTimeStart.toLocaleTimeString());
+      // console.log(ride.dateTimeStart.toLocaleTimeString());
     })
 
     rides.forEach(ride => console.log(ride))
@@ -110,7 +122,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
     }
 
     setSchedule(newSchedule);
-    console.log("schedule after Save: ", schedule);
+    // console.log("schedule after Save: ", schedule);
 
     history.push("/viewschedule");
   }
@@ -120,7 +132,7 @@ export default function CreateSchedule({ schedule, setSchedule, members }) {
   return (
     <div>
       <div className="page-content">
-        <FootballBanner />
+        <FootballBanner currentGroup={currentGroup} members={members}/>
 
         <div className="loose-text-field">
           <h4>Skapa gruppens körschema</h4>
