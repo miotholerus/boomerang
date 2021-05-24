@@ -36,7 +36,6 @@ export default function Header(props) {
       </div>
 
       <div className="left">
-
         <Logotype className="lower"/>
       </div>
 
