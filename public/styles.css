@@ -1,7 +1,7 @@
-﻿/* Applicerat på hela sidan - border-box gör så att t.ex width: 343px; alltid är 343px, oavsett eventuell padding */
-* {
+﻿* {
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
+  /* Applicerat på hela sidan - border-box gör så att t.ex width: 343px; alltid är 343px, oavsett eventuell padding */
 }
 
 body {
@@ -94,9 +94,10 @@ input (höjd)	  | 34px	| 10.625vh
   width: 57%;
   align-items: center;
   /* padding-left: 15px; */
-  justify-content: center;
+  justify-content: flex-start;
   padding-top: 10px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
+  padding-left: 20px;
 }
 .right {
   display: flex;
@@ -111,7 +112,6 @@ input (höjd)	  | 34px	| 10.625vh
   font-size: 150%;
   /* text-indent: 10px; */
   color: #363636;
-  padding-right: 6px;
   /* margin-left: 11px; */
 }
 
@@ -229,7 +229,8 @@ div.button-holder-center {
   transform: translate(-50%, -0%);
   position: relative; */
   text-transform: uppercase;
-  border: solid black 0.5vw;
+  padding-top: 2px;
+  /* border: solid black 0.5vw; */
   width: 26.596vw;
   height: 6.117vw;
   line-height: 6.117vw;
@@ -289,7 +290,7 @@ div.button-holder-center {
   font-weight: bold;
 }
 .create-group{
-  margin-left: 150px;
+  margin-left: 138px;
   margin-top: 30px;
   margin-bottom: 10px;
   width: 185px;
@@ -304,6 +305,17 @@ div.button-holder-center {
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
+}
+.logo-button{
+  background-color: white;
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+  
+  padding-top: 3px;
+  text-align: center;
+  text-decoration: none;
+
 }
 
 
@@ -528,7 +540,7 @@ td {
   /* padding-left: 15px; */
   /* padding-top: 10px;  */
   padding: 0.5em;
-  padding-left: 1em;
+  /* padding-left: 1em; */
   display: flex;
   /* width: 90%; */
   align-items: center;
@@ -652,12 +664,13 @@ ol.how_to li::before{
   font-weight: bold;
 }
 .start-page{
-  background-image: url('./startpage.png');
+  background-image: url('./pexels-amber-faust-3006119.png');
   background-repeat: no-repeat;
   background-size: cover;
   color: #FFFFFF;
   height: 98.750vw; /*316px;*/
-  margin-top: -9%;
+  /* margin-top: -9%; */
+  padding-top: 10px;
 }
 .start-page2{
   background-color: #BDEDA6;
@@ -710,5 +723,11 @@ ol.how_to li::before{
   margin:0%;
 }
 .linkcolor{
+  align-items: center;
   color:#000;
+  text-decoration:solid
+}
+.header-size{
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
