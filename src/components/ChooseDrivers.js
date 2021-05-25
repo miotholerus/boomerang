@@ -22,13 +22,29 @@ export default function ChooseDrivers({rides, setRides, members}) {
     const driverFromRef = useRef();
 
     function handleChangeDriverTo(e) {
-      e.preventDefault();
+      //e.preventDefault();
 
-      const newDriverToId = driverToRef.current.value;
+      const newDriverToId = driverToRef.current.value; // den valda medlemmens id
       // console.log("newDriverToId: ", newDriverToId);
       
       rides2[index].driverTo = members[newDriverToId];
       // console.log("rides2[index].driverTo: ", rides2[index].driverTo);
+
+
+      // Bestämmer körordning
+      let tempArr = [...rides2[index].pickupOrder]; // kopiera members istället?
+      
+      let temp = members[newDriverToId]
+
+      tempArr.splice(newDriverToId, 1);
+
+      console.log("Efter splice, index", index, ", ", rides2[index], "members, ", members); // splajs dödar hela originalobjektet
+
+      tempArr = [temp, ...tempArr];
+
+      rides2[index].pickupOrder = tempArr;
+
+      console.log("pickupOrder", rides2[index].pickupOrder);
     }
 
     function handleChangeDriverFrom(e) {
