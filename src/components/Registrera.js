@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import firebase from "firebase/app";
 import { useHistory } from "react-router-dom";
+import PopupRegister from './PopupRegister'
 
 export default function Registrera() {
 
@@ -24,6 +25,7 @@ export default function Registrera() {
 
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [buttonPopup, setButtonPopup] = useState(false);
 
   // checkboxes send to email + phone
 
@@ -54,10 +56,11 @@ export default function Registrera() {
 
     console.log("ANVÄNDARE SKAPAD");
 
-    alert("Grattis!\nDu kan nu gå till din inkorg "
-    +"och bekräfta registreringen för att kunna logga in.")
+    // alert("Grattis!\nDu kan nu gå till din inkorg "
+    // +"och bekräfta registreringen för att kunna logga in.")
 
-    history.push("/");
+    // history.push("/");
+    setButtonPopup(true);
   }
 
   return (
@@ -112,38 +115,38 @@ export default function Registrera() {
             <div className="input-column">
               <label htmlFor="city" className="input-right">Postort</label>
               <input className="small-input input-right" id="city"
-              value={city} onChange={e => setCity(e.target.value)}></input>
+                value={city} onChange={e => setCity(e.target.value)}></input>
             </div>
           </div>
 
           <div>
             <label htmlFor="phone">Mobilnummer</label>
             <input className="standard-input" id="phone"
-            value={phone} onChange={e => setPhone(e.target.value)}></input>
+              value={phone} onChange={e => setPhone(e.target.value)}></input>
           </div>
 
           <div>
             <label htmlFor="email">E-post</label>
             <input className="standard-input" id="email" type="email"
-            value={email} onChange={e => setEmail(e.target.value)}></input>
+              value={email} onChange={e => setEmail(e.target.value)}></input>
           </div>
 
           <div>
             <label htmlFor="email2">Bekräfta e-post</label>
             <input className="standard-input" id="email2" type="email"
-            value={repeatEmail} onChange={e => setRepeatEmail(e.target.value)}></input>
+              value={repeatEmail} onChange={e => setRepeatEmail(e.target.value)}></input>
           </div>
 
           <div>
             <label htmlFor="password">Lösenord</label>
             <input className="standard-input" type="password" id="password" minLength="8"
-            value={password} onChange={e => setPassword(e.target.value)}></input>
+              value={password} onChange={e => setPassword(e.target.value)}></input>
           </div>
 
           <label htmlFor="password2">Bekräfta lösenord</label><br></br>
           <input className="standard-input" type="password" id="password" minLength="8"
-          value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)}></input>
-          
+            value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)}></input>
+
           <span id="message"></span>
           <div>
             <h6>Skicka meddelanden till</h6>
@@ -161,6 +164,7 @@ export default function Registrera() {
 
         </form>
       </div>
+      <PopupRegister trigger={buttonPopup} setTrigger={setButtonPopup}></PopupRegister>
     </div>
   )
 }

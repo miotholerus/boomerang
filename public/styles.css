@@ -684,7 +684,6 @@ ol.how_to li::before{
 .start-page_mobile{
   padding: 25%;
 }
-
 .popup{
   position: fixed;
   top: 0;
@@ -698,9 +697,7 @@ ol.how_to li::before{
   justify-content: center;
   /* align-items: center;
   border-radius: 5px solid black; */
-
 }
-
 .popup-inner1 {
   position: relative;
   padding: 32px;
@@ -720,7 +717,7 @@ ol.how_to li::before{
   margin-bottom: 20px;
   text-decoration: underline 2px;
   font-size: 14px;
-  margin-left: 10px;
+  margin-left: 40px;
 }
 .custum-for-start-page{
   font-size: 6.875vw;
@@ -735,4 +732,50 @@ ol.how_to li::before{
 .header-size{
   margin-top: 0px;
   margin-bottom: 15px;
+}
+#to-my-pages {
+  text-decoration: none;
+}
+#for-popup{
+  width: 208px;
+}
+#btn-popup-size{
+  margin-left:15px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFC839;
+  color: black;
+  height: 14vw; /*~45px*/
+  border-radius: 6vw; /*~19px;*/
+  border: none;
+  
+  text-align: center;
+  text-decoration: none;
+  /* left: 50%;
+  transform: translate(-50%, -0%);
+  position: relative; */
+  
+  margin-bottom: 6px;
+  font-weight: bold;
+
+  text-transform: uppercase;
+}
+#for-h6-grattis{
+  font-size: 7vw;
+}
+#box{
+  margin-bottom: 220px;
+  border-radius: 8px;
+}
+#btn{
+  margin-left: 60px;
+  margin-top: 20px;
+}
+#btn-margin{
+  width: 140px;
+margin:40px;
 }
