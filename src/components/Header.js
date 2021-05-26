@@ -32,7 +32,7 @@ export default function Header(props) {
       {props.loginStatus ?
         <div className="right">
           <button className="logo-button">
-            <Link to='/minasidor' className="linkcolor" id="to-my-pages">
+            <Link to='/minasidor' className="linkcolor"  id="to-my-pages">
               <span className="my-account header-element"><b>{props.me.firstName}</b> </span>
             </Link>
           </button>
