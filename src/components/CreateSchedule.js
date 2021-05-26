@@ -263,7 +263,8 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
             <button type="button" className="button-v2" onClick={saveSchedule}>SPARA KÖRSCHEMA</button>
           </div>
           
-
+          <div className="fill-out-page-bottom"></div>
+          
         </form>
       </div>
     </div>

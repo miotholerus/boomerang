@@ -20,13 +20,13 @@ export default function Startpage() {
           <h5 className="custum-for-start-page">Spara tid och resurser</h5>
 
           <p className="text">Färre sträckor och tider att passa</p>
-          <br></br>
+          {/* <br/> */}
           <h4 className="custum-for-start-page">Bra för miljön</h4>
           <p className="text">Klimatsmart &#38; ekonomiskt genom färre sträckor och fordon</p>
-          <br></br>
+          {/* <br/> */}
           <h4 className="custum-for-start-page">Gemenskap</h4>
           <p className="text">Socialt - Ökar gemenskap</p>
-          <br></br>
+          <br/>
 
         </div>
 

@@ -67,7 +67,7 @@ export default function Registrera() {
     <div className="page-content">
 
       <div className="loose-text-field">
-        <h4>Registrera</h4>
+        <h2>Registrera</h2>
       </div>
 
       <div className="box-a">

@@ -68,6 +68,8 @@ export default function ViewSchedule({ currentGroup, schedule, members }) {
             <b>Skicka ut körschema</b>
           </button>
         </div>
+        
+        <div className="fill-out-page-bottom"></div>
 
       </div>
       <PopupViewSchedule trigger={buttonPopup} setTrigger={setButtonPopup}></PopupViewSchedule>

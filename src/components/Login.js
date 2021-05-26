@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react'
+﻿import React, { useState, useEffect } from 'react'
 import firebase from "firebase/app";
 import { useHistory } from "react-router-dom";
 
@@ -9,6 +9,12 @@ export default function Login(props) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setError(false);
+
+  }, [email, password])
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,6 +29,8 @@ export default function Login(props) {
     queryOnEmail.on("value", snap => {
 
       if (snap.exists()) {
+        setError(false);
+
         queryOnEmail.on("child_added", snap => {
           
           keyToLogin = snap.key;
@@ -33,6 +41,8 @@ export default function Login(props) {
               if (snap.exists()) {
                 
                 if (snap.val().password == password) {
+                  setError(false);
+
                   props.setLoginStatus(true);
 
                   props.setMe(snap.val());
@@ -41,44 +51,17 @@ export default function Login(props) {
                   history.push("/minasidor")
                 } else {
                   console.log("Felaktigt lösenord")
+                  setError(true);
                 }
               }
             })
         })
       } else {
         console.log("Användaren hittades ej");
+        setError(true);
       }
     })
     
-
-    // queryEmail.then(() => {
-    //   console.log("queryEmail then", queryEmail);
-    //   db.ref("users/" + keyToLogin)
-    //     .on("value", snap => {
-    //       if (snap.exists()) {
-    //         if (snap.val().password == password) {
-    //           result.push(snap);
-
-    //           props.setLoginStatus(true);
-
-    //           console.log(snap.val());
-    //           props.setMe(snap.val());
-
-    //           history.push("/minasidor")
-    //         } else {
-    //           console.log("Felaktigt lösenord")
-    //         }
-    //       }
-    //     })
-    //   // .then(() => history.push("/minasidor"))
-    // })
-
-    // console.log(queryEmail);
-    // var querableQuery = MakeQuerablePromise(query);
-
-    // console.log("Final fulfilled:", querableQuery.isFulfilled());//true
-    // console.log("Final rejected:", querableQuery.isRejected());//false
-    // console.log("Final pending:", querableQuery.isPending());//false
   }
 
   return (
@@ -90,14 +73,15 @@ export default function Login(props) {
       <div className="box-a">
         <form onSubmit={e => handleSubmit(e)}>
           <label htmlFor="email">E-post</label>
-          <input type="text" className="standard-input" id="email"
+          <input type="text" className="standard-input" id="email" required
             value={email} onChange={e => setEmail(e.target.value)}>
           </input>
 
           <label htmlFor="password">Lösenord</label>
-          <input type="password" className="standard-input" id="password"
+          <input type="password" className="standard-input" id="password" required
             value={password} onChange={e => setPassword(e.target.value)}>
           </input>
+          {error ? <div className="error">&nbsp;Felaktig epostadress eller lösenord</div> : null}
           <div className="button-holder-center">
             <button type="submit" className="button-v2">LOGGA IN</button>
           </div>
