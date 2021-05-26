@@ -15,17 +15,17 @@ export default function Startpage() {
       <div className="start-page2">
         <div className="loose-text-field">
           <br></br>
-          <h3 className="header-size">Därför ska du börja samåka med Boomerang</h3>
+          <h2 className="header-size">Därför ska du börja samåka med Boomerang</h2>
 
-          <h4 className="custum-for-start-page">Spara tid och resurser</h4>
+          <h5 className="custum-for-start-page">Spara tid och resurser</h5>
 
           <p className="text">Färre sträckor och tider att passa</p>
           <br></br>
           <h4 className="custum-for-start-page">Bra för miljön</h4>
-          <p className="text">Klimatsmart/ekonomiskt genom färre sträckor och fordon</p>
+          <p className="text">Klimatsmart &#38; ekonomiskt genom färre sträckor och fordon</p>
           <br></br>
           <h4 className="custum-for-start-page">Gemenskap</h4>
-          <p className="text">Socialt- Ökar gemenskap</p>
+          <p className="text">Socialt - Ökar gemenskap</p>
           <br></br>
 
         </div>
