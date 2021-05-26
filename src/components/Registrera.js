@@ -90,7 +90,7 @@ export default function Registrera() {
             <label htmlFor="child">Namn på barn</label>
             <input className="standard-input" id="child"
               value={child} onChange={e => setChild(e.target.value)}></input><br></br>
-            <a href="">Lägg till fler barn</a><br></br>
+            <a className="linkcolor" href="">Lägg till fler barn</a><br></br>
             <br></br>
           </div>
 
