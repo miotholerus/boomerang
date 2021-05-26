@@ -23,6 +23,8 @@ export default function ScheduleBox({ dataAllToAll, ride, schedule, members }) {
   }
 
   var startTime = new Date(ride.dateTimeStart); // DetailedSchedule? rides[0] ist för ride
+  var endTime = new Date(ride.dateTimeEnd)
+
   //console.log("startTime", startTime);
 
   var margin = 5 * 60; // 5 min. DetailedSchedule?
@@ -77,9 +79,9 @@ export default function ScheduleBox({ dataAllToAll, ride, schedule, members }) {
         <p>Chaufför: {ride.driverTo.firstName}</p>
         <br></br>
         <ul>
-          {console.log("ride.pickupOrder i listan", ride.pickupOrder)} 
+          {/* {console.log("ride.pickupOrderTo i listan", ride.pickupOrderTo)}  */}
           {/* Alla medlemmar i ordningen som de ska plockas upp: */}
-          {ride.pickupOrder.map(person => 
+          {ride.pickupOrderTo.map(person => 
             <li>
               <table>
                 <tr>
@@ -118,7 +120,7 @@ export default function ScheduleBox({ dataAllToAll, ride, schedule, members }) {
 
       <div className="schedule-box2">
         <h3>Från aktivitet</h3>
-        <p>Chaufför: {members[0].firstName}</p>
+        <p>Chaufför: {ride.driverFrom.firstName}</p>
         <br></br>
         <ul>
           {/* Plats för aktiviteten: */}
@@ -140,13 +142,23 @@ export default function ScheduleBox({ dataAllToAll, ride, schedule, members }) {
                   </svg>
                 </td>
                 <td className="name"><p>Plats för aktivitet</p><p>{schedule.destination}</p></td>
-                <td className="time">16:10</td>
+                <td className="time">{endTime.toLocaleTimeString('sv-se').substring(0, 5)}</td>
               </tr>
             </table>
           </li>
           {/* Upplockningslistan baklänges: */}
-          {}
-          <li>
+          {ride.pickupOrderFrom.map(person => 
+            <li>
+              <table>
+                <tr>
+                  <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
+                  <td className="name"><p>{person.firstName}s barn {person.child}</p><p>{person.location.address}</p></td>
+                  <td className="time">{addSeconds(endTime, margin+=(10*60)).toLocaleTimeString('sv-se').substring(0, 5)}</td>
+                </tr>
+              </table>
+            </li>
+          )}
+          {/* <li>
             <table>
               <tr>
                 <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
@@ -172,7 +184,7 @@ export default function ScheduleBox({ dataAllToAll, ride, schedule, members }) {
                 <td className="time">16:40</td>
               </tr>
             </table>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

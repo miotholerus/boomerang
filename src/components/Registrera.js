@@ -75,20 +75,20 @@ export default function Registrera() {
           <div className="input-side-by-side">
             <div className="input-column">
               <label htmlFor="firstName" className="input-left">Förnamn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-              <input id="firstName" className="small-input input-left"
+              <input id="firstName" className="small-input input-left" required
                 value={firstName} onChange={e => setFirstName(e.target.value)}></input>
             </div>
 
             <div className="input-column">
               <label htmlFor="lastName" className="input-right">Efternamn</label>
-              <input id="lastName" className="small-input input-right"
+              <input id="lastName" className="small-input input-right" required
                 value={lastName} onChange={e => setLastName(e.target.value)}></input>
             </div>
           </div>
 
           <div>
             <label htmlFor="child">Namn på barn</label>
-            <input className="standard-input" id="child"
+            <input className="standard-input" id="child" required
               value={child} onChange={e => setChild(e.target.value)}></input><br></br>
             <a className="linkcolor" href="">Lägg till fler barn</a><br></br>
             <br></br>
@@ -96,7 +96,7 @@ export default function Registrera() {
 
           <div>
             <label>Adress</label>
-            <input className="standard-input" id="address"
+            <input className="standard-input" id="address" required
               value={address} onChange={e => setAddress(e.target.value)}></input>
           </div>
 
@@ -105,43 +105,43 @@ export default function Registrera() {
           <div className="input-side-by-side">
             <div className="input-column">
               <label htmlFor="postalCode" className="input-left">Postnummer</label>
-              <input className="small-input input-left" id="postalCode"
+              <input className="small-input input-left" id="postalCode" required
                 value={postalCode} onChange={e => setPostalCode(e.target.value)}></input>
             </div>
 
             <div className="input-column">
               <label htmlFor="city" className="input-right">Postort</label>
-              <input className="small-input input-right" id="city"
+              <input className="small-input input-right" id="city" required
               value={city} onChange={e => setCity(e.target.value)}></input>
             </div>
           </div>
 
           <div>
             <label htmlFor="phone">Mobilnummer</label>
-            <input className="standard-input" id="phone"
+            <input className="standard-input" id="phone" required
             value={phone} onChange={e => setPhone(e.target.value)}></input>
           </div>
 
           <div>
             <label htmlFor="email">E-post</label>
-            <input className="standard-input" id="email" type="email"
+            <input className="standard-input" id="email" type="email" required
             value={email} onChange={e => setEmail(e.target.value)}></input>
           </div>
 
           <div>
             <label htmlFor="email2">Bekräfta e-post</label>
-            <input className="standard-input" id="email2" type="email"
+            <input className="standard-input" id="email2" type="email" required
             value={repeatEmail} onChange={e => setRepeatEmail(e.target.value)}></input>
           </div>
 
           <div>
             <label htmlFor="password">Lösenord</label>
-            <input className="standard-input" type="password" id="password" minLength="8"
+            <input className="standard-input" type="password" id="password" minLength="8" required
             value={password} onChange={e => setPassword(e.target.value)}></input>
           </div>
 
           <label htmlFor="password2">Bekräfta lösenord</label><br></br>
-          <input className="standard-input" type="password" id="password" minLength="8"
+          <input className="standard-input" type="password" id="password" minLength="8" required
           value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)}></input>
           
           <span id="message"></span>

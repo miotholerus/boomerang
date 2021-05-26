@@ -32,19 +32,22 @@ export default function ChooseDrivers({rides, setRides, members}) {
 
 
       // Bestämmer körordning
-      let tempArr = [...rides2[index].pickupOrder]; // kopiera members istället?
-      
+      let tempArr = [...members]; // kopiera members istället?
       let temp = members[newDriverToId]
-
       tempArr.splice(newDriverToId, 1);
-
-      console.log("Efter splice, index", index, ", ", rides2[index], "members, ", members); // splajs dödar hela originalobjektet
-
+      // console.log("Efter splice, index", index, ", ", rides2[index], "members, ", members);
       tempArr = [temp, ...tempArr];
+      rides2[index].pickupOrderTo = tempArr;
+      console.log("pickupOrderTo", rides2[index].pickupOrderTo);
 
-      rides2[index].pickupOrder = tempArr;
-
-      console.log("pickupOrder", rides2[index].pickupOrder);
+      // // Bestämmer körordning Backup
+      // let tempArr = [...rides2[index].pickupOrderTo]; // kopiera members istället?
+      // let temp = members[newDriverToId]
+      // tempArr.splice(newDriverToId, 1);
+      // // console.log("Efter splice, index", index, ", ", rides2[index], "members, ", members);
+      // tempArr = [temp, ...tempArr];
+      // rides2[index].pickupOrderTo = tempArr;
+      // console.log("pickupOrderTo", rides2[index].pickupOrderTo);
     }
 
     function handleChangeDriverFrom(e) {
@@ -55,6 +58,19 @@ export default function ChooseDrivers({rides, setRides, members}) {
       
       rides2[index].driverFrom = members[newDriverFromId];
       // console.log("rides2[index].driverFrom: ", rides2[index].driverFrom);
+
+
+      // Bestämmer körordning, ej testat
+      let tempArr = [...members]; // gör en kopia av pickupOrderFrom
+      let temp = members[newDriverFromId]; // temp är rätt medlemmen med rätt index ur medlemslistan
+      tempArr.splice(newDriverFromId, 1); // tar bort medlemmen ur den tillfälliga listan - FEL INDEX - ska vara bakvänt
+      console.log("1. tempArr efter splice, index", index, ", ", tempArr);
+
+      tempArr = [temp, ...tempArr].reverse(); // lägger till föraren SIST i listan
+      console.log("2. tempArr efter att medlemmen lagts till först och sedan vänts", tempArr)
+      
+      rides2[index].pickupOrderFrom = tempArr;
+      console.log("3. pickupOrderFrom", rides2[index].pickupOrderFrom);
     }
 
     var ix = 0;
@@ -87,7 +103,7 @@ export default function ChooseDrivers({rides, setRides, members}) {
   }
 
   function ForEachRideOneRow() {
-    console.log("Kör ForEachRideOneRow, rides:", rides, "\nrides2: \n", rides2);
+    // console.log("Kör ForEachRideOneRow, rides:", rides, "\nrides2: \n", rides2);
 
     var index = 0;
     const returnElements = rides2.map(ride => {

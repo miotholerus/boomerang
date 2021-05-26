@@ -72,7 +72,7 @@ export default function DetailedSchedule({ schedule, members }) {
 
   return (
     <div>
-      {console.log("schedule.rides", schedule.rides)}
+      {/* {console.log("schedule.rides", schedule.rides)} */}
       {schedule.rides.map(ride => {
         
         return <ScheduleBox key={ride} dataAllToAll={dataAllToAll} ride={ride} schedule={schedule} members={members} />

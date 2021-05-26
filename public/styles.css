@@ -118,8 +118,10 @@ input (höjd)	  | 34px	| 10.625vh
 .my-account{
   /* color: #882E76; */
   font-size: 5vw;
+  text-decoration: none;
   /* margin-left: 101px; */
 }
+
 
 /* KÖRSCHEMA (ÖVERSIKT) */
 .overview-info {
@@ -254,7 +256,7 @@ div.button-holder-center {
   height: 14vw; /*~45px*/
   padding-left: 32px;
   padding-right: 32px;
-  border-radius: 6vw; /*~19px;*/
+  border-radius: 10vw; /*~19px;*/
   border: none;
   
   text-align: center;
@@ -283,7 +285,7 @@ div.button-holder-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 19px;
+  border-radius: 10vw;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
@@ -729,9 +731,16 @@ ol.how_to li::before{
 .linkcolor{
   align-items: center;
   color:#000;
-  text-decoration:solid
+  /* text-decoration:solid */
 }
 .header-size{
   margin-top: 5px;
   margin-bottom: 15px;
 }
+#to-my-pages {
+  text-decoration: none;
+}
+/* Formulärsvalidering (blev konstigt) */
+/* :invalid {
+  box-shadow: 0 0 0pt 1pt #A9280B;
+} */

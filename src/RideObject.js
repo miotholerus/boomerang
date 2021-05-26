@@ -1,12 +1,13 @@
 ﻿import {dayOfWeekAsString} from './App'
 
 export default class RideObject {
-    constructor(dateTimeStart, dateTimeEnd, driverTo, driverFrom, pickupOrder) {
+    constructor(dateTimeStart, dateTimeEnd, driverTo, driverFrom, pickupOrderTo, pickupOrderFrom) {
         this.dateTimeStart = dateTimeStart;
         this.dateTimeEnd = dateTimeEnd;
         this.driverTo = driverTo;
         this.driverFrom = driverFrom;
-        this.pickupOrder = pickupOrder;
+        this.pickupOrderTo = pickupOrderTo;
+        this.pickupOrderFrom = pickupOrderFrom;
     }
 
     dateAsString() {
