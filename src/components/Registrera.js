@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import firebase from "firebase/app";
 import { useHistory } from "react-router-dom";
+import PopupRegister from './PopupRegister'
 
 export default function Registrera() {
 
@@ -24,6 +25,7 @@ export default function Registrera() {
 
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [buttonPopup, setButtonPopup] = useState(false);
 
   // checkboxes send to email + phone
 
@@ -54,10 +56,11 @@ export default function Registrera() {
 
     console.log("ANVÄNDARE SKAPAD");
 
-    alert("Grattis!\nDu kan nu gå till din inkorg "
-    +"och bekräfta registreringen för att kunna logga in.")
+    // alert("Grattis!\nDu kan nu gå till din inkorg "
+    // +"och bekräfta registreringen för att kunna logga in.")
 
-    history.push("/");
+    // history.push("/");
+    setButtonPopup(true);
   }
 
   return (
@@ -161,6 +164,7 @@ export default function Registrera() {
 
         </form>
       </div>
+      <PopupRegister trigger={buttonPopup} setTrigger={setButtonPopup}></PopupRegister>
     </div>
   )
 }

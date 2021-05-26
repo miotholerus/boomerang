@@ -98,7 +98,12 @@ export default function CreateGroup({ me, myId, setCurrentGroup }) {
               <label>Bjud in med mail eller mobilnummer</label>
               <input type="email" className="standard-input" value={inviteEmail} onChange={e => setInviteEmail(e.target.value)}></input>
               <button type="button" className='addmore' onClick={e => addToList(e)}>
-                <b><AiOutlineUserAdd fontSize="25px" />Lägg till person</b>
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.6667 1.82617V6.78269" stroke="#363636" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" />
+                  <path d="M14.1667 4.30444H19.1667" stroke="#363636" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" />
+                  <path d="M8.31019 11.0422C10.5926 10.8254 12.3765 8.87373 12.3765 6.43419C12.3765 3.88623 10.3827 1.82617 7.91667 1.82617C5.45062 1.82617 3.45679 3.88623 3.45679 6.43419C3.45679 8.87373 5.24074 10.8254 7.52315 11.0422C3.74537 11.2862 0.833336 14.5118 0.833336 18.6319V19.174H15V18.6319C15 14.5118 12.088 11.2862 8.31019 11.0422ZM4.50618 6.43419C4.50618 4.48256 6.02778 2.91041 7.91667 2.91041C9.80556 2.91041 11.3272 4.48256 11.3272 6.43419C11.3272 8.38582 9.80556 9.95797 7.91667 9.95797C6.02778 9.95797 4.50618 8.38582 4.50618 6.43419ZM1.90895 18.0898C2.14506 14.6473 4.63735 12.1264 7.91667 12.1264C11.196 12.1264 13.6883 14.6473 13.9244 18.0898H1.90895Z" fill="#363636" stroke="#363636" stroke-miterlimit="10" />
+                </svg>
+                <b>Lägg till person</b>
               </button>
               {emailList.length ?
                 <>

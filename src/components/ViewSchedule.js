@@ -1,11 +1,14 @@
-﻿import React from 'react'
+﻿import React, { useState } from 'react'
 
 import { dayOfWeekAsString } from '../App'
 import FootballBanner from './FootballBanner'
 
 import DetailedSchedule from './DetailedSchedule'
+import PopupViewSchedule from './PopupViewSchedule'
+
 
 export default function ViewSchedule({ currentGroup, schedule, members }) {
+  const [buttonPopup, setButtonPopup] = useState(false);
 
   // console.log("Kör ViewSchedule, schedule:", schedule)
   // console.log("schedule:", schedule)
@@ -59,14 +62,16 @@ export default function ViewSchedule({ currentGroup, schedule, members }) {
 
         <DetailedSchedule schedule={schedule} members={members} />
 
-        <br/>
+        <br />
         <div className="button-holder-center loose-text-field">
-          <button className='button-v2'>
+          <button className='button-v2' onClick={() => setButtonPopup(true)}>
             <b>Skicka ut körschema</b>
           </button>
         </div>
 
       </div>
+      <PopupViewSchedule trigger={buttonPopup} setTrigger={setButtonPopup}></PopupViewSchedule>
+
     </div>
   )
 }
