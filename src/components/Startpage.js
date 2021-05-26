@@ -7,7 +7,7 @@ export default function Startpage() {
 
       <div className="start-page loose-text-field">
         <h1 className="header-size">Vi skjutsar för framtiden!</h1>
-        <p className="text">Tillsammans bygger vi broar av möjligheter vilka väver samman tid, transport och föräldrar emellan på ett enkelt och hållbart sätt.</p>
+        <p className="text">Tillsammans hjälps vi åt med skjutsning genom samåkning! Inget barn ska missa en aktivitet för att transport och tid inte finns.</p>
         <br></br>
         <Link to="/registrera" className="button-v2">REGISTRERA</Link>
 
