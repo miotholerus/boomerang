@@ -15,7 +15,7 @@ export default function Startpage() {
       <div className="start-page2">
         <div className="loose-text-field">
           <br></br>
-          <h3>Därför ska du börja samåka med Boomerang</h3>
+          <h3 className="header-size">Därför ska du börja samåka med Boomerang</h3>
 
           <h4 className="custum-for-start-page">Spara tid och resurser</h4>
 

@@ -223,6 +223,7 @@ div.button-holder-center {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 14px;
 }
 .button-v1 {
   /* left: 50%;
@@ -393,6 +394,10 @@ input:focus, textarea:focus {
 }
 label {
   padding-left: 1.2vw;
+}
+#veckodag {
+  font-size: 15px;
+  background-color: #EAEAE1;
 }
 
 
@@ -725,9 +730,9 @@ ol.how_to li::before{
 .linkcolor{
   align-items: center;
   color:#000;
-  text-decoration:solid
+  /* text-decoration:solid */
 }
 .header-size{
-  margin-top: 5px;
+  margin-top: 0px;
   margin-bottom: 15px;
 }
