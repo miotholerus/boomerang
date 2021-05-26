@@ -69,7 +69,7 @@ export default function CreateGroup({ me, myId, setCurrentGroup }) {
     setButtonPopup(true);
     // history.push("/minasidor"); // Går tillbaka till Mina sidor
   }
-  
+
   return (
     <div>
       <div className="page-content">
@@ -95,7 +95,7 @@ export default function CreateGroup({ me, myId, setCurrentGroup }) {
               <input type="text" className="standard-input" value={groupName} onChange={e => setGroupName(e.target.value)} placeholder="Ex. Badmintongruppen"></input>
               <label>Meddelandetext:</label>
               <textarea className="messagetext" value={message} onChange={e => setMessage(e.target.value)}></textarea><br></br>
-              <label>Bjud in med mail eller mobilnr</label>
+              <label>Bjud in med mail eller mobilnummer</label>
               <input type="email" className="standard-input" value={inviteEmail} onChange={e => setInviteEmail(e.target.value)}></input>
               <button type="button" className='addmore' onClick={e => addToList(e)}>
                 <b><AiOutlineUserAdd fontSize="25px" />Lägg till person</b>

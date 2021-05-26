@@ -225,6 +225,7 @@ div.button-holder-center {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 14px;
 }
 .button-v1 {
   /* left: 50%;
@@ -734,7 +735,7 @@ ol.how_to li::before{
   /* text-decoration:solid */
 }
 .header-size{
-  margin-top: 5px;
+  margin-top: 0px;
   margin-bottom: 15px;
 }
 #to-my-pages {
