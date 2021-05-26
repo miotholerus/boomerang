@@ -45,7 +45,7 @@ export default function MinaSidor({ me, myGroups, setMyGroups, setCurrentGroup }
           {myGroups.map(group =>
             /* För varje grupp printar vi det här elementet */
             <div key={group.toString()}>
-              <h5 className="tagg">{group.title}</h5>
+              <h5 className="tagg">{/*GRUPPLOGGA*/ group.title}</h5>
               <div className="infobox">
                 <p>
                   {me.firstName + ", " + group.members.map(m => m.firstName).join(", ")

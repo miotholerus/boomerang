@@ -2,8 +2,9 @@
 
 export default function ChooseDrivers({rides, setRides, members}) {
 
-  // console.log("Kör ChooseDrivers, rides", rides);
-
+  // // GENERERA FÖRESLAGEN KÖRORDNING, EJ KLART
+  // var suggestion = 0;
+  
   var rides2 = rides;
   
   // NYTT FÖRSÖK: ändra direkt i rides/schedule utan att gå via driverTo/driverFrom? Funkade!!
@@ -16,6 +17,9 @@ export default function ChooseDrivers({rides, setRides, members}) {
   
 
   function RideEditRow({index, ride}) {
+
+    // // GENERERA FÖRESLAGEN KÖRORDNING, EJ KLART
+    // if (suggestion > members.length+1) suggestion = 0;
 
     // useRef hook istället
     const driverToRef = useRef();
@@ -40,14 +44,6 @@ export default function ChooseDrivers({rides, setRides, members}) {
       rides2[index].pickupOrderTo = tempArr;
       console.log("pickupOrderTo", rides2[index].pickupOrderTo);
 
-      // // Bestämmer körordning Backup
-      // let tempArr = [...rides2[index].pickupOrderTo]; // kopiera members istället?
-      // let temp = members[newDriverToId]
-      // tempArr.splice(newDriverToId, 1);
-      // // console.log("Efter splice, index", index, ", ", rides2[index], "members, ", members);
-      // tempArr = [temp, ...tempArr];
-      // rides2[index].pickupOrderTo = tempArr;
-      // console.log("pickupOrderTo", rides2[index].pickupOrderTo);
     }
 
     function handleChangeDriverFrom(e) {
@@ -75,9 +71,14 @@ export default function ChooseDrivers({rides, setRides, members}) {
 
     var ix = 0;
     const options = members.map(member => {
+      // // GENERERA FÖRESLAGEN KÖRORDNING, EJ KLART
+      // return (ix == suggestion) ? <option value={ix++} selected>{member.firstName}</option> : <option value={ix++}>{member.firstName}</option>
       return <option value={ix++}>{member.firstName}</option>
     })
     
+    // // GENERERA FÖRESLAGEN KÖRORDNING, EJ KLART
+    // suggestion++;
+
 
     return (
       <tr>

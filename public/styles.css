@@ -152,6 +152,7 @@ input (höjd)	  | 34px	| 10.625vh
   height: 24vw;
 }
 .football-column {
+  margin-left: 2vw;
   display: flex;
   width: 62px; 
   height: 50px;

@@ -62,17 +62,34 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
 
     // Skapar RideObjects av alla datum och lägger i en tredje lista.
     // (TODO) Vi kanske bör byta klass/objekt till json för lättare lagring
+
     var rideObjects = new Array();
-    for (let i = 0; i < rideDates.length; i++) {
+    
+    for (let i = 0, j = 0; i < rideDates.length; i++) {
       // Två datumobjekt av samma datum läggs till i varje ride - får senare olika klockslag
       const dateTimeStart = rideDates[i];
       const dateTimeEnd = new Date(dateTimeStart);
 
-      // HÄR kan vi generera föreslagen körordning - Hämta från medlemslistan
-      
-      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, members[0], members[0], members, [...members].reverse());
 
+
+      // HÄR kan vi generera föreslagen körordning - Hämta från medlemslistan
+      var suggestedPickupOrderTo = [...members];
+      var suggestedPickupOrderFrom = [...members].reverse();
+
+      let temp = members[j]
+      suggestedPickupOrderTo.splice(j, 1);
+      
+      suggestedPickupOrderTo = [temp, ...suggestedPickupOrderTo];
+
+      console.log("Suggested pickupOrder", suggestedPickupOrderTo);
+      
+      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, members[0], members[0], suggestedPickupOrderTo, [...members].reverse());
       rideObjects.push(newRideObject);
+
+
+      j++;
+
+      if (j > members.length) j = 0;
 
     }
 
