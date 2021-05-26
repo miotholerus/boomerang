@@ -70,7 +70,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
 
       // HÄR kan vi generera föreslagen körordning - Hämta från medlemslistan
       
-      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, members[0], members[0]);
+      const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, members[0], members[0], members);
 
       rideObjects.push(newRideObject);
 

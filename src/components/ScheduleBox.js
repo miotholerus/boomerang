@@ -1,46 +1,96 @@
-﻿import React from 'react'
+﻿import React, { useState, useEffect } from 'react'
 import AltUserLogo from "./logos/AltUserLogo";
 
-export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedule, members }) {  
+export default function ScheduleBox({ dataAllToAll, ride, schedule, members }) {
+
+  // Kan det bli problem med states för att den renderas för varje ride?
+
+  const driverTo = ride.driverTo;
+  const driverFrom = ride.driverFrom;
+
+  const [timeAB, setTimeAB] = useState(0);
+  const [timeBC, setTimeBC] = useState(0);
+  const [timeCD, setTimeCD] = useState(0);
+
+  const [travelTimes, setTravelTimes] = useState([]);
+  var timestamps = []; // Tider för alla streckor, kommer bli lika lång som medlemslistan
+
+  var addMinutes = function (dateTime, minutes) {
+    return new Date(dateTime.getTime() + minutes * 60000);
+  }
+  var addSeconds = function (dateTime, seconds) {
+    return new Date(dateTime.getTime() + seconds * 1000);
+  }
+
+  var startTime = new Date(ride.dateTimeStart); // DetailedSchedule? rides[0] ist för ride
+  //console.log("startTime", startTime);
+
+  var margin = 5 * 60; // 5 min. DetailedSchedule?
+
+  var timeAtA = addSeconds(startTime, -(timeAB + margin + timeBC + margin + timeCD + margin)).toLocaleTimeString('sv-se').substring(0, 5);
+  var timeAtB = addSeconds(startTime, -(timeBC + margin + timeCD + margin)).toLocaleTimeString('sv-se').substring(0, 5);
+  var timeAtC = addSeconds(startTime, -(timeCD + margin)).toLocaleTimeString('sv-se').substring(0, 5);
+  var timeAtD = addSeconds(startTime, -margin).toLocaleTimeString('sv-se').substring(0, 5);
+
+
+  
+
+
+
+
+  useEffect(() => {
+
+    const apiRequest = async () => {
+      // console.log("TEST API");
+
+
+      // const locA = `${members[0].location.address}, ${members[0].location.postalCode} ${members[0].location.city}, ${members[0].location.country}`; // "Uddeholmsvägen 239, 12241 Stockholm, SWEDEN"; // "59.28093793567633, 18.046790156144745"; //
+      // const locB = `${members[1].location.address}, ${members[1].location.postalCode} ${members[1].location.city}, ${members[1].location.country}`; // "Årdalavägen 133, 12432 Stockholm, SWEDEN"; // "59.272215063170705, 18.037266160912903"; //
+      // const locC = `${members[2].location.address}, ${members[2].location.postalCode} ${members[2].location.city}, ${members[2].location.country}`; // "Lerbäcksgränd 18, 12466 Stockholm, SWEDEN"; // "59.26093702587597, 18.021367342650105"; //
+      // const locD = `${schedule.destination}, 12040 Stockholm, SWEDEN`; // "Sockenvägen 290, 12040 Stockholm, SWEDEN"; // "59.287761851370426, 18.05808156963875"; //
+
+      // const requestBodyAllToAll = {
+      //   "locations": [
+      //     locA,
+      //     locB,
+      //     locC,
+      //     locD
+      //   ],
+      //   "options": {
+      //     "allToAll": true
+      //   }
+      // }
+
+
+    }
+    apiRequest();
+  }, [])
 
   return (
     <div>
       <div className="loose-text-field">
-        <h5>{schedule.rides[0].dateAsStringShort()}</h5>
+        <h5>{ride.dateAsStringShort()}</h5>
       </div>
 
       <div className="schedule-box">
         <h3>Till aktivitet</h3>
-        <p>Chaufför: {members[0].firstNname}</p>
+        <p>Chaufför: {ride.driverTo.firstName}</p>
         <br></br>
         <ul>
-          <li>
-            <table>
-              <tr>
-                <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
-                <td className="name"><p>{members[0].firstName}s barn {members[0].child}</p><p>{members[0].location.address}</p></td>
-                <td className="time">{timeAtA}</td>
-              </tr>
-            </table>
-          </li>
-          <li>
-            <table>
-              <tr>
-                <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
-                <td className="name"><p>{members[1].firstName}s barn {members[1].child}</p><p>{members[1].location.address}</p></td>
-                <td className="time">{timeAtB}</td>
-              </tr>
-            </table>
-          </li>
-          <li>
-            <table>
-              <tr>
-                <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
-                <td className="name"><p>{members[2].firstName}s barn {members[2].child}</p><p>{members[2].location.address}</p></td>
-                <td className="time">{timeAtC}</td>
-              </tr>
-            </table>
-          </li>
+          {console.log("ride.pickupOrder i listan", ride.pickupOrder)} 
+          {/* Alla medlemmar i ordningen som de ska plockas upp: */}
+          {ride.pickupOrder.map(person => 
+            <li>
+              <table>
+                <tr>
+                  <td className="icon"><AltUserLogo className="alt-user-logo" /></td>
+                  <td className="name"><p>{person.firstName}s barn {person.child}</p><p>{person.location.address}</p></td>
+                  <td className="time">{timeAtA}</td>
+                </tr>
+              </table>
+            </li>
+          )}
+          {/* Plats för aktiviteten: */}
           <li>
             <table>
               <tr>
@@ -71,6 +121,7 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
         <p>Chaufför: {members[0].firstName}</p>
         <br></br>
         <ul>
+          {/* Plats för aktiviteten: */}
           <li>
             <table>
               <tr>
@@ -93,6 +144,8 @@ export default function ScheduleBox({ timeAtA, timeAtB, timeAtC, timeAtD, schedu
               </tr>
             </table>
           </li>
+          {/* Upplockningslistan baklänges: */}
+          {}
           <li>
             <table>
               <tr>

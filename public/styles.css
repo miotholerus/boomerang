@@ -395,6 +395,10 @@ input:focus, textarea:focus {
 label {
   padding-left: 1.2vw;
 }
+#veckodag {
+  font-size: 15px;
+  background-color: #EAEAE1;
+}
 
 
 .page-content {

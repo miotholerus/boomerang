@@ -32,25 +32,29 @@ export default function TestAPI() {
     const locD = "Sockenvägen 290, 12040 Stockholm, SWEDEN"; // "59.287761851370426, 18.05808156963875"; //
 
 
-    const requestBodyAtoB = {
-      "locations": [
-        locA,
-        locB,
-        locC
-      ]
-    }
-    const responseAtoB = await fetch(url, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json"
-      },
-      body: JSON.stringify(requestBodyAtoB)
-    })
-    const dataAtoB = await responseAtoB.json()
+    // const request = {
+    //   "locations": [
+    //     locA,
+    //     locB,
+    //     locC,
+    //     locD
+    //   ],
+    //   "options": {
+    //     "allToAll": true
+    //   }
+    // }
+    // const response = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "content-type": "application/json"
+    //   },
+    //   body: JSON.stringify(request)
+    // })
+    // const data = await response.json()
 
-    console.log(dataAtoB);
+    // console.log(data);
 
-    setTimeAtoB(dataAtoB.time[1]);
+    // setTimeAtoB(data.time[1]);
 
 
 
@@ -75,24 +79,24 @@ export default function TestAPI() {
 
 
     
-    const requestBodyCtoD = {
-      "locations": [
-        locC,
-        locD
-      ]
-    }
-    const responseCtoD = await fetch(url, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json"
-      },
-      body: JSON.stringify(requestBodyCtoD)
-    })
-    const dataCtoD = await responseCtoD.json()
+    // const requestBodyCtoD = {
+    //   "locations": [
+    //     locC,
+    //     locD
+    //   ]
+    // }
+    // const responseCtoD = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "content-type": "application/json"
+    //   },
+    //   body: JSON.stringify(requestBodyCtoD)
+    // })
+    // const dataCtoD = await responseCtoD.json()
 
-    console.log(dataCtoD)
+    // console.log(dataCtoD)
 
-    setTimeCtoD(dataCtoD.time[1]);
+    // setTimeCtoD(dataCtoD.time[1]);
 
     
   }
@@ -106,14 +110,14 @@ export default function TestAPI() {
         Starttid aktivitet: {startTime.toLocaleTimeString("sv-se")}<br></br>
         Marginal: {margin/60} min<br></br><br></br>
 
-        A till B: {timeAtoB} sek ({timeAtoB/60} min)<br></br>
+        {/* A till B: {timeAtoB} sek ({timeAtoB/60} min)<br></br>
         B till C: {timeBtoC} sek ({timeBtoC/60} min)<br></br>
         C till D: {timeCtoD} sek ({timeCtoD/60} min)<br></br><br></br>
         
         A kl. {timeAtA}<br></br>
         B kl. {timeAtB}<br></br>
         C kl. {timeAtC}<br></br>
-        D kl. {timeAtD}
+        D kl. {timeAtD} */}
       </div>
     </form>
   )
