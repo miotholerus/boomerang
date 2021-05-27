@@ -105,21 +105,48 @@ function App() {
   const [members, setMembers] = useState([
     {
       "id": 0,
-      "fistName": "Alba",
-      "child": "Anna",
-      "address": "Uddeholmsvägen 239"
+      "child" : "Anna",
+      "email" : "albacrud@gmail.com",
+      "firstName" : "Alba",
+      "lastName" : "Andersson",
+      "location" : {
+        "address" : "Uddeholmsvägen 239",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12241
+      },
+      "password" : "crudcrud",
+      "phone" : "0701111111"
     },
     {
       "id": 1,
-      "firstName": "Berit",
-      "child": "Blenda",
-      "address": "Årdalavägen 133"
+      "child" : "Blenda",
+      "email" : "beritcrud@gmail.com",
+      "firstName" : "Berit",
+      "lastName" : "Boman",
+      "location" : {
+        "address" : "Årdalavägen 133",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12432
+      },
+      "password" : "crudcrud",
+      "phone" : "0702222222"
     },
     {
       "id": 2,
-      "firstName": "Chris",
-      "child": "Charlie",
-      "address": "Lerbäcksgränd 18"
+      "child" : "Charlie",
+      "email" : "chriscrud@gmail.com",
+      "firstName" : "Chris",
+      "lastName" : "Carter",
+      "location" : {
+        "address" : "Lerbäcksgränd 18",
+        "city" : "Stockholm",
+        "country" : "SWEDEN",
+        "postalCode" : 12466
+      },
+      "password" : "crudcrud",
+      "phone" : "0703333333"
     }
   ]);
 

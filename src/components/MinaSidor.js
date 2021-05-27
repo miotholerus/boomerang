@@ -63,6 +63,7 @@ export default function MinaSidor({ me, myGroups, setMyGroups, setCurrentGroup }
                 </p>
                 {/* Vi behöver på något vis få med oss rätt grupp till CreateSchedule */}
                 {/* <Link className="button-grupp" to='/createschedule'>SKAPA KÖRSCHEMA</Link> */}
+                <br className="changesizeofbr"/>
                 <div className="button-holder-center">
                   <button className="button-v2" onClick={() => createScheduleForGroup(group)}>Skapa körschema</button>
                 </div>

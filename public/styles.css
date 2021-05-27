@@ -693,7 +693,7 @@ ol.how_to li::before{
   font-weight: bold;
 }
 .start-page{
-  background-image: url('./pexels-amber-faust-3006119.png'); /* Mer inzoomad variant: pexels-amber-faust-3006119.png*/
+  background-image: url('./pexels-amber-faust-3006119-2.png'); /* Mer inzoomad variant: pexels-amber-faust-3006119-2.png*/
   background-repeat: no-repeat;
   
   background-size: cover;
@@ -822,4 +822,7 @@ ol.how_to li::before{
 }
 .error {
   color: #A9280B
+}
+#skjutsning-till-från {
+  margin-top: 0.6em;
 }

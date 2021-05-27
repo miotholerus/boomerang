@@ -30,7 +30,7 @@ export default function ViewSchedule({ currentGroup, schedule, members }) {
 
         <div className="box-a form">
           <div className="scheduleList">
-            <p>Skjutsning till/från aktivitet</p>
+            <p id="skjutsning-till-från">Skjutsning till/från aktivitet</p>
             {/* {schedule[4]} - {schedule[5]}<br></br> */}
 
             <table className="even schedule-overview-table">
