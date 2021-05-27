@@ -9,22 +9,22 @@ export default function Registrera() {
 
   let history = useHistory();
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [child, setChild] = useState("");
+  const [firstName, setFirstName] = useState("David");
+  const [lastName, setLastName] = useState("Dahl");
+  const [child, setChild] = useState("Dezi");
   // + lista över barn?
 
-  const [address, setAddress] = useState("");
-  const [postalCode, setPostalCode] = useState("");
+  const [address, setAddress] = useState("Dagövägen 13");
+  const [postalCode, setPostalCode] = useState("12237");
   const [city, setCity] = useState("");
   const country = "SWEDEN";
 
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [repeatEmail, setRepeatEmail] = useState("");
+  const [phone, setPhone] = useState("0734444444");
+  const [email, setEmail] = useState("davidcrud@gmail.com");
+  const [repeatEmail, setRepeatEmail] = useState("davidcrud@gmail.com");
 
-  const [password, setPassword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
+  const [password, setPassword] = useState("crudcrud");
+  const [repeatPassword, setRepeatPassword] = useState("crudcrud");
   const [buttonPopup, setButtonPopup] = useState(false);
 
   // checkboxes send to email + phone

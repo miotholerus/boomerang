@@ -93,11 +93,15 @@ export default function CreateGroup({ me, myId, setCurrentGroup }) {
           <div className="box-a">
             <form onSubmit={e => saveGroup(e)}><br></br>
               <label>Namn på grupp:</label> {/* labels till inputfält? Se CreateScehdule hur */}
-              <input type="text" className="standard-input" value={groupName} onChange={e => setGroupName(e.target.value)} placeholder="Ex. Badmintongruppen"></input>
+              <input type="text" className="standard-input" value={groupName} required
+                onChange={e => setGroupName(e.target.value)} placeholder="Ex. Badmintongruppen"></input>
+              
               <label>Meddelandetext:</label>
               <textarea className="messagetext" value={message} onChange={e => setMessage(e.target.value)}></textarea><br></br>
+              
               <label>Bjud in med mail eller mobilnummer</label>
               <input type="email" className="standard-input" value={inviteEmail} onChange={e => setInviteEmail(e.target.value)}></input>
+              
               <button type="button" className='addmore' onClick={e => addToList(e)}>
                 <svg width="25" height="25" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16.6667 1.82617V6.78269" stroke="#363636" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" />

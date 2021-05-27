@@ -22,18 +22,18 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
   let history = useHistory();
 
   // Uppdateras varje gång input ändras
-  const [startTime, setStartTime] = useState("");
-  const [endTime, setEndTime] = useState("");
-  const [destination, setDestination] = useState("");
+  const [startTime, setStartTime] = useState("18:30");
+  const [endTime, setEndTime] = useState("20:00");
+  const [destination, setDestination] = useState("Sockenvägen 290");
   const [weekday, setWeekday] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [startDate, setStartDate] = useState("2021-06-01");
+  const [endDate, setEndDate] = useState("2021-06-13");
 
   // Uppdateras varje gång veckodag, startdatum eller slutdatum ändras via useEffect!
   const [rides, setRides] = useState([]);
 
   useEffect(() => {
-    
+
     if (weekday != "") generateDates();
 
   }, [weekday, startDate, endDate]);
@@ -64,7 +64,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
     // (TODO) Vi kanske bör byta klass/objekt till json för lättare lagring
 
     var rideObjects = new Array();
-    
+
     for (let i = 0, j = 0; i < rideDates.length; i++) {
       // Två datumobjekt av samma datum läggs till i varje ride - får senare olika klockslag
       const dateTimeStart = rideDates[i];
@@ -78,11 +78,11 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
 
       let temp = members[j]
       suggestedPickupOrderTo.splice(j, 1);
-      
+
       suggestedPickupOrderTo = [temp, ...suggestedPickupOrderTo];
 
       console.log("Suggested pickupOrder", suggestedPickupOrderTo);
-      
+
       const newRideObject = new RideObject(dateTimeStart, dateTimeEnd, members[0], members[0], suggestedPickupOrderTo, [...members].reverse());
       rideObjects.push(newRideObject);
 
@@ -149,7 +149,7 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
   return (
     <div>
       <div className="page-content">
-        <FootballBanner currentGroup={currentGroup} members={members}/>
+        <FootballBanner currentGroup={currentGroup} members={members} />
 
         <div className="loose-text-field">
           <h4>Skapa gruppens körschema</h4>
@@ -167,20 +167,21 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
                 <label for="starttid" className="input-left">Starttid</label>
                 <input type="time" value={startTime} onChange={e => setStartTime(e.target.value)}
                   className="small-input input-left"
-                  id="starttid"></input>
+                  id="starttid" required></input>
               </div>
 
               <div className="input-column">
                 <label for="sluttid" className="input-right">Sluttid</label>
                 <input type="time" value={endTime} onChange={e => setEndTime(e.target.value)}
                   className="small-input input-right"
-                  id="sluttid"></input>
+                  id="sluttid" required></input>
               </div>
             </div>
 
             <div>
               <label for="adress-for-destination">Adress för destination</label>
-              <input value={destination} onChange={e => setDestination(e.target.value)} className="standard-input" /*placeholder="Fyll i adress för destination"*/ id="adress-for-destination"></input>
+              <input value={destination} onChange={e => setDestination(e.target.value)}
+                className="standard-input" id="adress-for-destination" required></input>
             </div>
 
             {/* <div className="input-side-by-side"> */}
@@ -259,12 +260,17 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
           </div> */}
 
           <br className="changesizeofbr"></br>
+          
           <div className="button-holder-center loose-text-field">
-            <button type="button" className="button-v2" onClick={saveSchedule}>SPARA KÖRSCHEMA</button>
+            {rides.length ?
+              <button type="button" className="button-v2" onClick={saveSchedule}>SPARA KÖRSCHEMA</button>
+              : <button type="button" className="button-v2" onClick={saveSchedule} disabled>SPARA KÖRSCHEMA</button>
+            }
+            
           </div>
-          
+
           <div className="fill-out-page-bottom"></div>
-          
+
         </form>
       </div>
     </div>

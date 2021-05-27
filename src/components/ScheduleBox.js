@@ -71,6 +71,7 @@ export default function ScheduleBox({ dataAllToAll, ride, schedule, members }) {
   return (
     <div>
       <div className="loose-text-field">
+        <br/>
         <h5>{ride.dateAsStringShort()}</h5>
       </div>
 

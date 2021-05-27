@@ -22,7 +22,7 @@ export default function ViewSchedule({ currentGroup, schedule, members }) {
 
         <div className="loose-text-field">
           <h4>Översikt körschema</h4>
-          <p class="overview-info">{dayOfWeekAsString(schedule.weekday)}ar, {schedule.startTime}-{schedule.endTime}, {schedule.destination}<br></br></p>
+          <p /*class="overview-info"*/>{dayOfWeekAsString(schedule.weekday)}ar, {schedule.startTime}-{schedule.endTime}, {schedule.destination}<br></br></p>
         </div>
 
         <br className="changesizeofbr"></br>

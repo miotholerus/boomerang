@@ -284,9 +284,13 @@ div.button-holder-center {
 
   text-transform: uppercase;
 }
-/* .button-v2:hover{
-  background-color: #fcba03
-} */
+.button-v2:disabled {
+  background-color: #f8dd93;
+  color: #404040;
+}
+.button-v2:active {
+  background-color: #ffb800
+}
 .button-grupp{
   margin: auto;
   margin-top: 30px;
