@@ -27,7 +27,7 @@ export default function ScheduleBox({ dataAllToAll, ride, schedule, members }) {
 
   //console.log("startTime", startTime);
 
-  var margin = 5 * 60; // 5 min. DetailedSchedule?
+  var margin = 7 * 60; // 5 min. DetailedSchedule?
 
   var timeAtA = addSeconds(startTime, -(timeAB + margin + timeBC + margin + timeCD + margin)).toLocaleTimeString('sv-se').substring(0, 5);
   var timeAtB = addSeconds(startTime, -(timeBC + margin + timeCD + margin)).toLocaleTimeString('sv-se').substring(0, 5);
