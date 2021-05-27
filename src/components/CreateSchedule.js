@@ -8,15 +8,21 @@ export default function CreateSchedule({ schedule, setSchedule, members, setMemb
 
   useEffect(() => {
     // setMembers([]);
-    var memberList = [];
+    var i = 1;
+    var allMembersWithId = [];
 
-    memberList.push(currentGroup.admin);
+    const adminWithId = {...currentGroup.admin, id: 0}; // "id" ?
 
-    currentGroup.members.map(member => memberList.push(member));
+    allMembersWithId.push(adminWithId);
 
-    // console.log("memberList: ", memberList);
+    currentGroup.members.map(member => {
+      const memberWithId = {...member, id: i++};
+      allMembersWithId.push(memberWithId);
+    });
 
-    setMembers(memberList);
+    console.log("allMembersWithId: ", allMembersWithId);
+
+    setMembers(allMembersWithId);
   }, []);
 
   let history = useHistory();
